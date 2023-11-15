@@ -1,4 +1,4 @@
-import { Contract, Wallet, providers, chain } from 'ethers';
+import { Contract, Wallet, providers } from 'ethers';
 
 const CHAIN_ID = 31337;
 const PROVIDER_URL = 'http://localhost:8545';

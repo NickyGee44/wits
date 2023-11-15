@@ -11,7 +11,7 @@ export const environment = {
   },
   api: {
     base: 'http://localhost:4300/',
-    addresses: '.netlify/functions/addresses',
+    addresses: '.netlify/functions/main',
   },
   mainnet: {
     gBabies: '0x0ff1f3a53f521d74af73fe7433abf802f91ddd4e' as const,
