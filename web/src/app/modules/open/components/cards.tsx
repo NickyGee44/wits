@@ -155,6 +155,24 @@ export function CardsWithAnimationsStacked({
   const [showButtons, setShowButtons] = useState(false);
   const [index, setIndex] = useState(0);
 
+  useEffect(() => {
+    const factions = [
+      'air',
+      'cyber',
+      'dark',
+      'fire',
+      'ice',
+      'light',
+      'normies',
+      'water',
+      'wild',
+    ];
+    factions.forEach((faction) => {
+      const images = new Image();
+      images.src = environment.metadata.image + `/${faction}.png`;
+    });
+  }, []);
+
   const openNextPacket = () => {
     if (index < cardsWithAnimations.length - 1) {
       setIndex(index + 1);
