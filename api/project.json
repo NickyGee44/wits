@@ -13,7 +13,6 @@
         "outputPath": "dist/api",
         "main": "api/src/main.ts",
         "tsConfig": "api/tsconfig.app.json",
-        "assets": ["api/src/assets"]
       },
       "configurations": {
         "production": {
