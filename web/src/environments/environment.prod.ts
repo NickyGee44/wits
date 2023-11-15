@@ -5,7 +5,7 @@ export const environment = {
     image: 'https://d24nwmc6w5dhne.cloudfront.net',
   },
   api: {
-    base: 'http://localhost:4300/',
+    base: '/',
     addresses: '.netlify/functions/main',
   },
   mainnet: {
