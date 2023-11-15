@@ -4,6 +4,7 @@ import { MintTab } from './mint-tab';
 import { useTotalSupply } from '../../core/hooks/use-total-supply';
 import { usePrice } from '../../core/hooks/use-price';
 import { usePresaleMint, usePublicMint } from '../hooks/use-mint';
+import { Packets } from '../../core/constants/packets';
 
 interface MintContainerProps {
   packets: `0x${string}`;
@@ -11,43 +12,51 @@ interface MintContainerProps {
 }
 
 export function MintContainer(props: MintContainerProps) {
-  const singleSupply = useTotalSupply(props.packets, 1);
-  const boosterSupply = useTotalSupply(props.packets, 2);
-  const jumboSupply = useTotalSupply(props.packets, 3);
-  const mysterySupply = useTotalSupply(props.packets, 4);
+  const singleSupply = useTotalSupply(props.packets, Packets[0].id);
+  const boosterSupply = useTotalSupply(props.packets, Packets[1].id);
+  const jumboSupply = useTotalSupply(props.packets, Packets[2].id);
+  const mysterySupply = useTotalSupply(props.packets, Packets[3].id);
 
-  const singlePrice = usePrice(props.packets, 1);
-  const boosterPrice = usePrice(props.packets, 2);
-  const jumboPrice = usePrice(props.packets, 3);
-  const mysteryPrice = usePrice(props.packets, 4);
+  const singlePrice = usePrice(props.packets, Packets[0].id);
+  const boosterPrice = usePrice(props.packets, Packets[1].id);
+  const jumboPrice = usePrice(props.packets, Packets[2].id);
+  const mysteryPrice = usePrice(props.packets, Packets[3].id);
 
   const single = usePacket(
-    1,
+    Packets[0].id,
     'single',
     singleSupply,
     singlePrice,
     '15',
     '00',
-    5
+    Packets[0].count
   );
   const booster = usePacket(
-    2,
-    'booster',
+    Packets[1].id,
+    Packets[1].name,
     boosterSupply,
     boosterPrice,
     '10',
     '13',
-    20
+    Packets[1].count
   );
-  const jumbo = usePacket(3, 'jumbo', jumboSupply, jumboPrice, '9', '32', 50);
+  const jumbo = usePacket(
+    Packets[2].id,
+    Packets[2].name,
+    jumboSupply,
+    jumboPrice,
+    '9',
+    '32',
+    Packets[2].count
+  );
   const mystery = usePacket(
-    4,
-    'mystery',
+    Packets[3].id,
+    Packets[3].name,
     mysterySupply,
     mysteryPrice,
     '7',
     '50',
-    25
+    Packets[3].count
   );
 
   const cards = useMemo(
