@@ -2,7 +2,7 @@ import { ethers, upgrades, run } from 'hardhat';
 
 async function main() {
   const signers = await ethers.getSigners();
-  const testingAddress = '0x70997970C51812dc3A010C7d01b50e0d17dc79C8';
+  const testingAddress = '0xf02DD82D4F5062E00fCD55B4501055faA8f2fE2C';
 
   const Gbabies = await ethers.getContractFactory('Gbaby');
   const gbabies = await upgrades.deployProxy(Gbabies, []);
