@@ -12,7 +12,7 @@
         "compiler": "tsc",
         "outputPath": "dist/api",
         "main": "api/src/main.ts",
-        "tsConfig": "api/tsconfig.app.json",
+        "tsConfig": "api/tsconfig.app.json"
       },
       "configurations": {
         "production": {
