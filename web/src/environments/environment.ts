@@ -32,7 +32,7 @@ export const environment = {
   goerli: {
     cards: '0x8360B4E32f431A70a27d678B781A67ca29fF4F5A' as const,
     packets: '0xC9a67E383c5b39bA48723C84Eb9095D9e0d13Ff9' as const,
-    gbabies: '0x79436b6E87b7360B72A2BcAFEA2367581697ba08' as const,
-    quill: '0x6606cd1c7b7Df63c6ca70B2d2e68e46d19DdDE9a' as const,
+    gBabies: '0x79436b6E87b7360B72A2BcAFEA2367581697ba08' as const,
+    quillAndInk: '0x6606cd1c7b7Df63c6ca70B2d2e68e46d19DdDE9a' as const,
   },
 };
