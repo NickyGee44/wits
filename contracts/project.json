@@ -1,0 +1,15 @@
+{
+  "name": "contracts",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "./contracts/src",
+  "targets": {
+    "build": {
+      "executor": "@chocolate-factory/nx-solidity:build"
+    },
+    "test": {
+      "executor": "@chocolate-factory/nx-solidity:test"
+    }
+  },
+  "tags": []
+}
