@@ -1,29 +1,29 @@
 import { ethers, upgrades, run } from 'hardhat';
 
 async function main() {
-  const test = '0xf02DD82D4F5062E00fCD55B4501055faA8f2fE2C';
+  const test = [
+    '0x3B502B054715A8e0D8F657169615A88B2CCDD429',
+    '0x1B90a714A6609f57a5f78A846fcFC617B1f17237',
+  ];
   const packets = await ethers.getContractAt(
     'Packets',
-    '0xC9a67E383c5b39bA48723C84Eb9095D9e0d13Ff9'
+    '0x11938E514FC800b1D8539dCB3FF2FF3FbD37C938'
   );
 
   const gBabies = await ethers.getContractAt(
     'Gbaby',
-    '0x79436b6E87b7360B72A2BcAFEA2367581697ba08'
+    '0x5236b48E1EB121Ca8B1d5DB64DdAcE764AD53D1A'
   );
 
   const quillAndInk = await ethers.getContractAt(
     'QuillAndInk',
-    '0x6606cd1c7b7Df63c6ca70B2d2e68e46d19DdDE9a'
+    '0xdd9bacf25fAfA302269aF5341Ecb224762EB0D32'
   );
 
-  await gBabies.mint(test, 3);
-  await quillAndInk.adminMint([test], [3]);
-
-  // await packets.setPrice(1, ethers.utils.parseEther('0.1'));
-  // await packets.setActiveIndex(2);
-
-  // await packets.setSigner('0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266');
+  for (const address of test) {
+    await gBabies.mint(address, 3);
+    await quillAndInk.adminMint([address], [3]);
+  }
 }
 
 main().catch((error) => {
