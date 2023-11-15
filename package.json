@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "build": "nx build web && nx build api",
     "dev-api": "netlify functions:serve --functions ./api/src --port 4300",
     "hardhat-script": "TS_NODE_PROJECT=./contracts/tsconfig.json npx hardhat run ./contracts/src/scripts/set-live.ts --config ./contracts/hardhat.config.ts --network localhost",
     "hardhat-node": "TS_NODE_PROJECT=./contracts/tsconfig.json npx hardhat node --config ./contracts/hardhat.config.ts",
