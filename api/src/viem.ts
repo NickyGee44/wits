@@ -1,13 +1,14 @@
 import { Contract, Wallet, providers } from 'ethers';
 
-const CHAIN_ID = 31337;
-const PROVIDER_URL = 'http://localhost:8545';
+const CHAIN_ID = 5;
+const PROVIDER_URL =
+  'https://eth-goerli.alchemyapi.io/v2/m3ADmeHfQSDpLG8JGiakIHdOwKdH9p_Z';
 const PRIVATE_KEY =
   'ac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80';
 
-export const CONTRACT_ADDRESS = '0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6';
+export const CONTRACT_ADDRESS = '0x11938E514FC800b1D8539dCB3FF2FF3FbD37C938';
 export const CARDS_CONTRACT_ADDRESS =
-  '0xab37CB54be3b983Dcd9D530B59b70040C2280E83';
+  '0x3026FAB0b7Ab3c3799697C2992e5B95F2Eb64337';
 export const NAME = 'Name';
 export const VERSION = 'Version';
 

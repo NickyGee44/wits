@@ -30,9 +30,9 @@ export const environment = {
     gBabies: '0x2B0243F5a0f8c690BCdAE0e00C669e45E44d6A0d' as const,
   },
   goerli: {
-    cards: '0x8360B4E32f431A70a27d678B781A67ca29fF4F5A' as const,
-    packets: '0xC9a67E383c5b39bA48723C84Eb9095D9e0d13Ff9' as const,
-    gBabies: '0x79436b6E87b7360B72A2BcAFEA2367581697ba08' as const,
-    quillAndInk: '0x6606cd1c7b7Df63c6ca70B2d2e68e46d19DdDE9a' as const,
+    cards: '0x3026FAB0b7Ab3c3799697C2992e5B95F2Eb64337' as const,
+    packets: '0x11938E514FC800b1D8539dCB3FF2FF3FbD37C938' as const,
+    gBabies: '0x5236b48E1EB121Ca8B1d5DB64DdAcE764AD53D1A' as const,
+    quillAndInk: '0xdd9bacf25fAfA302269aF5341Ecb224762EB0D32' as const,
   },
 };

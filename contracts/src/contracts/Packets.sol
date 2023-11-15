@@ -232,7 +232,6 @@ contract Packets is
             }
             gbabiesContract.burn(id);
         }
-        _checkSupply(1, total);
         return (total, 0);
     }
 
@@ -248,7 +247,6 @@ contract Packets is
             quillContract.burn(id);
         }
         uint256 amount = length / 2;
-        _checkSupply(1, amount);
         return (amount, price(1) * amount);
     }
 
