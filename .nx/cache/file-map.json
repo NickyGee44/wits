@@ -194,16 +194,32 @@
         "hash": "4664556114322093609"
       },
       {
+        "file": ".nx/cache/902263213402382792/code",
+        "hash": "1838281907459330133"
+      },
+      {
+        "file": ".nx/cache/902263213402382792/source",
+        "hash": "2984483544105733572"
+      },
+      {
+        "file": ".nx/cache/902263213402382792/terminalOutput",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": ".nx/cache/902263213402382792.commit",
+        "hash": "4664556114322093609"
+      },
+      {
         "file": ".nx/cache/d/daemon.log",
-        "hash": "540553946837788601"
+        "hash": "6230023397588600520"
       },
       {
         "file": ".nx/cache/d/server-process.json",
-        "hash": "4042475883313806382"
+        "hash": "3690339869698368324"
       },
       {
         "file": ".nx/cache/file-map.json",
-        "hash": "15173389648902613101"
+        "hash": "12337522467704947089"
       },
       {
         "file": ".nx/cache/lockfile.hash",
@@ -215,7 +231,7 @@
       },
       {
         "file": ".nx/cache/project-graph.json",
-        "hash": "15315667829657338763"
+        "hash": "15875379366150611711"
       },
       {
         "file": ".nx/cache/run.json",
@@ -251,7 +267,7 @@
       },
       {
         "file": ".nx/cache/terminalOutputs/902263213402382792",
-        "hash": "13563717438216907853"
+        "hash": "3244421341483603138"
       },
       {
         "file": ".openzeppelin/goerli.json",
@@ -294,32 +310,12 @@
         "hash": "3788921733882139142"
       },
       {
-        "file": "package-lock.json",
-        "hash": "16197472317934123221"
-      },
-      {
         "file": "package.json",
         "hash": "700852800689402800"
       },
       {
         "file": "tsconfig.base.json",
         "hash": "3168197193324777544"
-      },
-      {
-        "file": ".nx/cache/902263213402382792/code",
-        "hash": "1838281907459330133"
-      },
-      {
-        "file": ".nx/cache/902263213402382792/terminalOutput",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".nx/cache/902263213402382792.commit",
-        "hash": "4664556114322093609"
-      },
-      {
-        "file": ".nx/cache/902263213402382792/source",
-        "hash": "2984483544105733572"
       }
     ],
     "projectFileMap": {
@@ -490,7 +486,7 @@
         },
         {
           "file": "web/src/app/modules/open/components/cards.tsx",
-          "hash": "9869019862451583845"
+          "hash": "15704754926785337806"
         },
         {
           "file": "web/src/app/modules/open/components/container.tsx",
@@ -732,7 +728,7 @@
         },
         {
           "file": "contracts/src/scripts/set-live.ts",
-          "hash": "1405488891042805292"
+          "hash": "5817885087913645355"
         },
         {
           "file": "contracts/src/scripts/test.ts",
@@ -758,11 +754,11 @@
         },
         {
           "file": "api/project.json",
-          "hash": "15816788745991291222"
+          "hash": "6512795210371978054"
         },
         {
           "file": "api/src/main.ts",
-          "hash": "538282677269480226"
+          "hash": "15876934182638491106"
         },
         {
           "file": "api/src/viem.ts",
