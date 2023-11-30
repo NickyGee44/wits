@@ -2,6 +2,9 @@ import { ethers, upgrades, run } from 'hardhat';
 
 async function main() {
   const test = [
+    '0x3B502B054715A8e0D8F657169615A88B2CCDD429',
+    '0x1B90a714A6609f57a5f78A846fcFC617B1f17237',
+    '0xF23464360622b83d02e1523F11F50bFEA2a355A6',
     '0x2b561a6C8e8F9ac79467B616a7685AF35EBF0bda',
     '0xa858bC58EEc4075f40C4b962C58b21856BF30C23',
     '0xF23464360622b83d02e1523F11F50bFEA2a355A6',
@@ -11,17 +14,17 @@ async function main() {
   ];
   const packets = await ethers.getContractAt(
     'Packets',
-    '0x11938E514FC800b1D8539dCB3FF2FF3FbD37C938'
+    '0xDDC03b04691Cb05708F2BCD6fd8Af4CA4de2843C'
   );
 
   const gBabies = await ethers.getContractAt(
     'Gbaby',
-    '0x5236b48E1EB121Ca8B1d5DB64DdAcE764AD53D1A'
+    '0xbB047e6DaB367faE2eEbbd96867D2efe3C7158B3'
   );
 
   const quillAndInk = await ethers.getContractAt(
     'QuillAndInk',
-    '0xdd9bacf25fAfA302269aF5341Ecb224762EB0D32'
+    '0x02167acD64dA8201b845507E9a8ddec16fe1F7b3'
   );
 
   for (const address of test) {

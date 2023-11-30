@@ -4,6 +4,7 @@ export const environment = {
     url: 'https://d3q40xds4jmbwq.cloudfront.net',
     image: 'https://d24nwmc6w5dhne.cloudfront.net',
   },
+  chain: 'goerli',
   api: {
     base: '/',
     addresses: '.netlify/functions/main',
@@ -25,9 +26,9 @@ export const environment = {
     gBabies: '0x2B0243F5a0f8c690BCdAE0e00C669e45E44d6A0d' as const,
   },
   goerli: {
-    cards: '0x3026FAB0b7Ab3c3799697C2992e5B95F2Eb64337' as const,
-    packets: '0x11938E514FC800b1D8539dCB3FF2FF3FbD37C938' as const,
-    gBabies: '0x5236b48E1EB121Ca8B1d5DB64DdAcE764AD53D1A' as const,
-    quillAndInk: '0xdd9bacf25fAfA302269aF5341Ecb224762EB0D32' as const,
+    cards: '0x843DA53761346a528121cC494883A4E7d2014a4e' as const,
+    packets: '0xDDC03b04691Cb05708F2BCD6fd8Af4CA4de2843C' as const,
+    gBabies: '0xbB047e6DaB367faE2eEbbd96867D2efe3C7158B3' as const,
+    quillAndInk: '0x02167acD64dA8201b845507E9a8ddec16fe1F7b3' as const,
   },
 };

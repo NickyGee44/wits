@@ -219,7 +219,7 @@
       },
       {
         "file": ".nx/cache/file-map.json",
-        "hash": "16458873962886502805"
+        "hash": "18231560178646505848"
       },
       {
         "file": ".nx/cache/lockfile.hash",
@@ -271,7 +271,7 @@
       },
       {
         "file": ".openzeppelin/goerli.json",
-        "hash": "201471494609448656"
+        "hash": "15542666000599598225"
       },
       {
         "file": ".openzeppelin/polygon-mumbai.json",
@@ -311,7 +311,7 @@
       },
       {
         "file": "package.json",
-        "hash": "11177156177455264538"
+        "hash": "700852800689402800"
       },
       {
         "file": "tsconfig.base.json",
@@ -320,6 +320,10 @@
       {
         "file": ".nx/cache/terminalOutputs/16184660792816533825",
         "hash": "15780046233252479203"
+      },
+      {
+        "file": ".nx/cache/terminalOutputs/4813121972335578128",
+        "hash": "7284531828067173729"
       }
     ],
     "projectFileMap": {
@@ -374,7 +378,7 @@
         },
         {
           "file": "contracts/src/scripts/set-live.ts",
-          "hash": "5817885087913645355"
+          "hash": "16571800466099619421"
         },
         {
           "file": "contracts/src/scripts/test.ts",
@@ -446,7 +450,7 @@
         },
         {
           "file": "web/src/app/app.tsx",
-          "hash": "8710454269820548357"
+          "hash": "13889997862915244412"
         },
         {
           "file": "web/src/app/modules/burn/components/burn-tab.tsx",
@@ -694,11 +698,11 @@
         },
         {
           "file": "web/src/environments/environment.prod.ts",
-          "hash": "9934229004638321615"
+          "hash": "9199130302371351981"
         },
         {
           "file": "web/src/environments/environment.ts",
-          "hash": "683912639983437638"
+          "hash": "13490893026030191425"
         },
         {
           "file": "web/src/favicon.ico",
