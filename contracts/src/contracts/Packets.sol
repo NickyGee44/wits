@@ -160,7 +160,7 @@ contract Packets is
             uint256[] memory ids, 
             uint256[] memory amounts
         ) = _tallyMintRequests(mintRequests);
-        require( _minted[msg.sender] + totalMints <= request.amount, "Exceeds limit");
+        require( _minted[msg.sender] + totalMints <= request.amount, "Cannot mint more than assigned.");
 
         _minted[msg.sender] += totalMints;
         _handleMints(msg.sender, ids, amounts, totalPrice);
@@ -243,7 +243,7 @@ contract Packets is
         require(length % 2 == 0, "Must be divisble by 2");
         for(uint256 i; i < length; i++) {
             uint256 id = ids[i];
-            require(quillContract.ownerOf(id) == msg.sender, "not owner");
+            require(quillContract.ownerOf(id) == msg.sender, "Invalid Owner");
             quillContract.burn(id);
         }
         uint256 amount = length / 2;
@@ -399,6 +399,8 @@ contract Packets is
                 }                           
             }
         }
-        cardsContract.mint(msg.sender, total - original);
+        uint256 mintQuantity = total - original - 1;
+        require(mintQuantity > 0, "Minting Zero");
+        cardsContract.mint(msg.sender, mintQuantity);
     }
 }

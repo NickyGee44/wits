@@ -22,6 +22,19 @@ module.exports = {
         'dark-gold': '#8C8C73',
         'dark-grey': '#151515',
       },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': {
+            transform: 'rotate(-1deg)',
+          },
+          '50%': {
+            transform: 'rotate(1deg)',
+          },
+        },
+      },
+      animation: {
+        wiggle: 'wiggle 0.3s ease-in-out infinite',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],
