@@ -13,6 +13,7 @@ export const environment = {
     base: 'http://localhost:4300/',
     addresses: '.netlify/functions/main',
   },
+  chain: 'goerli',
   mainnet: {
     gBabies: '0x0ff1f3a53f521d74af73fe7433abf802f91ddd4e' as const,
     quillAndInk: '0xd38123a8f534a7bbcefefa59e74f254a46818538' as const,
@@ -30,9 +31,9 @@ export const environment = {
     gBabies: '0x2B0243F5a0f8c690BCdAE0e00C669e45E44d6A0d' as const,
   },
   goerli: {
-    cards: '0x3026FAB0b7Ab3c3799697C2992e5B95F2Eb64337' as const,
-    packets: '0x11938E514FC800b1D8539dCB3FF2FF3FbD37C938' as const,
-    gBabies: '0x5236b48E1EB121Ca8B1d5DB64DdAcE764AD53D1A' as const,
-    quillAndInk: '0xdd9bacf25fAfA302269aF5341Ecb224762EB0D32' as const,
+    cards: '0x9FC5df68cFE7826D4E8a957E50DD0eef567518D8' as const,
+    packets: '0x260e3B084f19a0684Ed730AA1f9bbecdD13E43e2' as const,
+    gBabies: '0xc7780b2BF9c6B5f04B3e929695EF5C97974F8883' as const,
+    quillAndInk: '0x2E976FDB0dAFBD88e3A69D48C332e72db894688a' as const,
   },
 };

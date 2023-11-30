@@ -9,7 +9,7 @@ async function main() {
   // });
 
   const factory = 'Packets';
-  const address = '0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6';
+  const address = '0x260e3B084f19a0684Ed730AA1f9bbecdD13E43e2';
   const ContractFactory = await ethers.getContractFactory(factory);
   const contract = await upgrades.upgradeProxy(address, ContractFactory);
 

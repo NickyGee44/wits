@@ -4,6 +4,7 @@ import { decodeEventLog } from 'viem';
 import { sortBy } from 'lodash';
 import { useMemo } from 'react';
 import toast from 'react-hot-toast';
+import { TransactionLink } from '../../core/components/transaction';
 
 export function useOpen(
   packets: `0x${string}`,
@@ -22,8 +23,8 @@ export function useOpen(
     functionName: 'open',
     args: [ids, amounts],
     onSettled: reset,
-    onSuccess: () => {
-      toast.success('Opened!');
+    onSuccess: (data) => {
+      toast.success(<TransactionLink tx={data.hash} />, { duration: 5000 });
     },
     onError: (error) => {
       toast.error('Error opening');
@@ -78,6 +79,7 @@ export function useOpen(
   return {
     open,
     idsByPackets,
+    // idsByPackets: [{ id: 4, cards: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] }],
     isSuccess,
     writeReset,
   };

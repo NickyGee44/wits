@@ -5,6 +5,7 @@ import axios from 'axios';
 import { environment } from '../../../../environments/environment';
 import { lowerCase } from 'lodash';
 import { IPacket } from '../../core/types/packets';
+import { RARITY } from '../types/cards';
 
 export enum Faction {
   AIR = 'air',
@@ -22,6 +23,7 @@ interface ICard {
   id: number;
   faction: Faction;
   image: string;
+  rarity: RARITY;
 }
 
 interface CardsProps {
@@ -39,9 +41,13 @@ export function Card({ card, isRevealed = false }: CardProps) {
   const flip = () => setRevealed(true);
 
   const show = revealed || isRevealed;
+  const isWiggle = [RARITY.UNCOMMON].includes(card.rarity);
 
   return (
-    <button className="relative" onClick={flip}>
+    <button
+      className={classnames('relative', isWiggle ? 'animate-wiggle' : '')}
+      onClick={flip}
+    >
       <img
         className={classnames(
           show ? 'opacity-0' : 'absolute opacity-100 inset-0'
@@ -115,6 +121,9 @@ export function CardsWithAnimations({
           id: cardId,
           faction,
           image: environment.metadata.image + `/${cardId}.png`,
+          rarity: card.attributes.find(
+            (attribute: any) => attribute.trait_type === 'Rarity'
+          ).value,
         };
       })
     );

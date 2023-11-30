@@ -1,6 +1,7 @@
 import { useContractWrite, usePrepareContractWrite } from 'wagmi';
 import toast from 'react-hot-toast';
 import { formatError } from '../utils/error';
+import { TransactionLink } from '../components/transaction';
 
 export function useWrite(
   config: any,
@@ -14,8 +15,10 @@ export function useWrite(
   const { data, writeAsync, reset } = useContractWrite({
     ...prepareConfig,
     onSettled: stateReset,
-    onSuccess: () => {
-      toast.success(successMessage || 'Transaction sent!');
+    onSuccess: (data) => {
+      toast.success(successMessage || <TransactionLink tx={data.hash} />, {
+        duration: 3000,
+      });
       reset();
     },
     onError: (error) => {

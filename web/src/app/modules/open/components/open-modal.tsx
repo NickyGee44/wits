@@ -29,12 +29,25 @@ export function OpenModal({ idsByPackets, writeReset }: OpenModalProps) {
         writeReset();
       }}
     >
-      <CardsWithAnimationsStacked
-        cardsWithAnimations={idsByPackets.map((c) => ({
-          packetType: getPacketType(c.id) as IPacket,
-          cards: c.cards,
-        }))}
-      />
+      <div className="flex flex-col space-y-4 relative min-h-screen">
+        <div className="flex flex-row w-full justify-end">
+          <img
+            className="w-24 hover:cursor-pointer"
+            onClick={() => {
+              closeModalOpen();
+              writeReset();
+            }}
+            src="/assets/images/close.png"
+            alt=""
+          />
+        </div>
+        <CardsWithAnimationsStacked
+          cardsWithAnimations={idsByPackets.map((c) => ({
+            packetType: getPacketType(c.id) as IPacket,
+            cards: c.cards,
+          }))}
+        />
+      </div>
     </Modal>
   );
 }
