@@ -9,7 +9,7 @@ import { OpenContainer } from './modules/open/components/container';
 import { environment } from '../environments/environment';
 import { Toaster } from 'react-hot-toast';
 
-const network = 'goerli';
+const network = environment.chain === 'mainnet' ? 'mainnet' : 'goerli';
 
 export function App() {
   const { address } = useAccount();
