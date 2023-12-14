@@ -4,14 +4,15 @@ import * as ReactDOM from 'react-dom/client';
 
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
-import { goerli } from 'wagmi/chains';
+import { goerli, mainnet } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import App from './app/app';
 import { environment } from './environments/environment';
 
 const { chains, publicClient } = configureChains(
-  [goerli],
+  // [goerli],
+  [mainnet],
   [alchemyProvider({ apiKey: environment.ALCHEMY_KEY }), publicProvider()]
 );
 

@@ -73,7 +73,7 @@
     "autoprefixer": "10.4.13",
     "babel-jest": "^29.4.1",
     "chai": "^4.3.6",
-    "esbuild": "^0.17.17",
+    "esbuild": "~0.19.2",
     "eslint": "~8.46.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-import": "2.27.5",
