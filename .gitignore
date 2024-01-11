@@ -40,4 +40,4 @@ Thumbs.db
 
 # Local Netlify folder
 .netlify
-.envnode_modules/
+.env

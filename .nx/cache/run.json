@@ -1,21 +1,21 @@
 {
   "run": {
-    "command": "nx build api",
-    "startTime": "2023-11-15T17:53:04.114Z",
-    "endTime": "2023-11-15T17:53:06.281Z",
+    "command": "nx serve web",
+    "startTime": "2023-12-19T22:49:32.056Z",
+    "endTime": "2023-12-19T22:49:33.974Z",
     "inner": false
   },
   "tasks": [
     {
-      "taskId": "api:build:production",
-      "target": "build",
-      "projectName": "api",
-      "hash": "902263213402382792",
-      "startTime": "2023-11-15T17:53:04.116Z",
-      "endTime": "2023-11-15T17:53:06.281Z",
+      "taskId": "web:serve:development",
+      "target": "serve",
+      "projectName": "web",
+      "hash": "17294749232326342502",
+      "startTime": "2023-12-19T22:49:32.062Z",
+      "endTime": "2023-12-19T22:49:33.973Z",
       "params": "",
       "cacheStatus": "cache-miss",
-      "status": 0
+      "status": 1
     }
   ]
 }

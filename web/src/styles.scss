@@ -2,23 +2,30 @@
 @tailwind base;
 @tailwind utilities;
 
-
 @font-face {
-  font-family: "Dragon";
-  src: url("/assets/"); /* IE9*/
-  src: url("/assets/?#iefix") format("embedded-opentype"),
-    /* IE6-IE8 */ url("/assets/fonts/DRAGONFIRE.woff2") format("woff2"),
-    /* chrome、firefox */ url("/assets/fonts/DRAGONFIRE.woff") format("woff"),
-    /* chrome、firefox */ url("/assets/fonts/DRAGONFIRE.ttf") format("truetype"),
+  font-family: 'Dragon';
+  src: url('/assets/'); /* IE9*/
+  src: url('/assets/?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('/assets/fonts/DRAGONFIRE.woff2') format('woff2'),
+    /* chrome、firefox */ url('/assets/fonts/DRAGONFIRE.woff') format('woff'),
+    /* chrome、firefox */ url('/assets/fonts/DRAGONFIRE.ttf') format('truetype'),
     /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-      url("/assets/fonts/DRAGONFIRE.svg#Nokia Cellphone FC Small") format("svg"); /* iOS 4.1- */
+      url('/assets/fonts/DRAGONFIRE.svg#Nokia Cellphone FC Small') format('svg'); /* iOS 4.1- */
 }
 
+// body {
+//   background-image: url('/assets/images/The_Gates.png');
+//   color: #ece8e0;
+//   background-position: center;
+//   background-size: 100%;
+// }
 body {
-  background: black;
-  color: #ECE8E0;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url('/assets/images/background.png');
+  color: #ece8e0;
+  background-size: cover;
+  background-position: center;
 }
-
 .font-dragon {
   padding-top: 0.5rem;
 }

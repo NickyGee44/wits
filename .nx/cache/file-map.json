@@ -111,7 +111,7 @@
       },
       {
         "file": ".gitignore",
-        "hash": "4770978712846299382"
+        "hash": "11383471539184839043"
       },
       {
         "file": ".nx/cache/13353051992692538277/code",
@@ -211,15 +211,15 @@
       },
       {
         "file": ".nx/cache/d/daemon.log",
-        "hash": "1005436895945564889"
+        "hash": "13890583836345188737"
       },
       {
         "file": ".nx/cache/d/server-process.json",
-        "hash": "8835066050585196758"
+        "hash": "11149460455786132348"
       },
       {
         "file": ".nx/cache/file-map.json",
-        "hash": "4886455819384803080"
+        "hash": "8345211554274553471"
       },
       {
         "file": ".nx/cache/lockfile.hash",
@@ -231,11 +231,11 @@
       },
       {
         "file": ".nx/cache/project-graph.json",
-        "hash": "5375151176125080507"
+        "hash": "13289740342347652981"
       },
       {
         "file": ".nx/cache/run.json",
-        "hash": "1290013107534477011"
+        "hash": "6577712936052833967"
       },
       {
         "file": ".nx/cache/terminalOutputs/12179239388842765503",
@@ -258,8 +258,16 @@
         "hash": "15780046233252479203"
       },
       {
+        "file": ".nx/cache/terminalOutputs/17294749232326342502",
+        "hash": "14396312446230018353"
+      },
+      {
         "file": ".nx/cache/terminalOutputs/17480120112394877515",
         "hash": "706216572225995970"
+      },
+      {
+        "file": ".nx/cache/terminalOutputs/4280254819735131784",
+        "hash": "8216373359380509308"
       },
       {
         "file": ".nx/cache/terminalOutputs/4813121972335578128",
@@ -330,8 +338,12 @@
         "hash": "3168197193324777544"
       },
       {
-        "file": ".nx/cache/terminalOutputs/4280254819735131784",
-        "hash": "3244421341483603138"
+        "file": ".nx/cache/terminalOutputs/12504306896882496828",
+        "hash": "877701829025374819"
+      },
+      {
+        "file": ".nx/cache/terminalOutputs/11415664022522649467",
+        "hash": "4267150079407471236"
       }
     ],
     "projectFileMap": {
@@ -401,40 +413,6 @@
           "hash": "8860430392960548210"
         }
       ],
-      "api": [
-        {
-          "file": "api/.eslintrc.json",
-          "hash": "11808533155536463924"
-        },
-        {
-          "file": "api/jest.config.ts",
-          "hash": "10410655590686536064"
-        },
-        {
-          "file": "api/project.json",
-          "hash": "6512795210371978054"
-        },
-        {
-          "file": "api/src/main.ts",
-          "hash": "15876934182638491106"
-        },
-        {
-          "file": "api/src/viem.ts",
-          "hash": "10649112055067964979"
-        },
-        {
-          "file": "api/tsconfig.app.json",
-          "hash": "1650782542565282680"
-        },
-        {
-          "file": "api/tsconfig.json",
-          "hash": "9420862676426701392"
-        },
-        {
-          "file": "api/tsconfig.spec.json",
-          "hash": "17313551537729802733"
-        }
-      ],
       "web": [
         {
           "file": "web/.babelrc",
@@ -462,7 +440,7 @@
         },
         {
           "file": "web/src/app/data/whitelist.ts",
-          "hash": "16960760058745714397"
+          "hash": "4164640063345249146"
         },
         {
           "file": "web/src/app/modules/burn/components/burn-tab.tsx",
@@ -669,6 +647,10 @@
           "hash": "2445163497508419870"
         },
         {
+          "file": "web/src/assets/images/The_Gates.png",
+          "hash": "2093556432795343588"
+        },
+        {
           "file": "web/src/assets/images/active.png",
           "hash": "3082390434477904426"
         },
@@ -786,7 +768,7 @@
         },
         {
           "file": "web/src/styles.scss",
-          "hash": "6942681013549480953"
+          "hash": "12646390647723832979"
         },
         {
           "file": "web/tailwind.config.js",
@@ -807,6 +789,44 @@
         {
           "file": "web/webpack.config.js",
           "hash": "1043731587818967490"
+        },
+        {
+          "file": "web/src/assets/images/background.png",
+          "hash": "6055797173246684728"
+        }
+      ],
+      "api": [
+        {
+          "file": "api/.eslintrc.json",
+          "hash": "11808533155536463924"
+        },
+        {
+          "file": "api/jest.config.ts",
+          "hash": "10410655590686536064"
+        },
+        {
+          "file": "api/project.json",
+          "hash": "6512795210371978054"
+        },
+        {
+          "file": "api/src/main.ts",
+          "hash": "15876934182638491106"
+        },
+        {
+          "file": "api/src/viem.ts",
+          "hash": "10649112055067964979"
+        },
+        {
+          "file": "api/tsconfig.app.json",
+          "hash": "1650782542565282680"
+        },
+        {
+          "file": "api/tsconfig.json",
+          "hash": "9420862676426701392"
+        },
+        {
+          "file": "api/tsconfig.spec.json",
+          "hash": "17313551537729802733"
         }
       ]
     }
