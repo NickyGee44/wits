@@ -4,7 +4,7 @@ export const environment = {
     url: 'https://d3q40xds4jmbwq.cloudfront.net',
     image: 'https://d24nwmc6w5dhne.cloudfront.net',
   },
-  chain: 'goerli',
+  chain: 'mainnet',
   api: {
     base: '/',
     addresses: '.netlify/functions/main',
