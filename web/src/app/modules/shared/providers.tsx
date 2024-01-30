@@ -8,8 +8,10 @@ const passportInstance = new passport.Passport({
     publishableKey: 'pk_imapik-test-1-ps6t8Kn5HcDvXXPeMP',
   },
   clientId: 'edXzCFlOvpQ9qCDjiBFQlFb9YgRK5RYh',
-  redirectUri: '/redirect',
-  logoutRedirectUri: '/logout',
+  redirectUri:
+    'https://deploy-preview-2--papaya-faun-a29515.netlify.app/redirect',
+  logoutRedirectUri:
+    'https://deploy-preview-2--papaya-faun-a29515.netlify.app/logout',
   audience: 'platform_api',
   scope: 'openid offline_access email transact',
 });
