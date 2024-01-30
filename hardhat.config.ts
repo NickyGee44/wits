@@ -6,7 +6,7 @@ import { HardhatUserConfig } from 'hardhat/config';
 
 const config: HardhatUserConfig = {
   solidity: {
-    version: '0.8.17',
+    version: '0.8.19',
     settings: {
       optimizer: {
         enabled: true,
@@ -25,6 +25,11 @@ const config: HardhatUserConfig = {
     goerli: {
       url:
         `https://eth-goerli.g.alchemy.com/v2/${process.env.ALCHEMY_KEY}` || '',
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    'imx-testing': {
+      url: 'https://rpc.testnet.immutable.com',
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },

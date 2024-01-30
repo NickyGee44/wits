@@ -18,6 +18,7 @@ export function useApi(account: `0x${string}`) {
       const json = response.data;
       setSignature(json.signature);
       setAssignedValue(json.value);
+      return json;
     } catch (e) {
       console.error(e);
       setSignature('');

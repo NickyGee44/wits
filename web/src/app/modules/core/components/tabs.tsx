@@ -2,13 +2,22 @@ import classnames from 'classnames';
 
 interface TabProps {
   text: string;
+  disabled?: boolean;
   handleClick?: () => void;
   isActive?: boolean;
 }
 
-export const Tab = ({ text, isActive = false, handleClick }: TabProps) => (
+export const Tab = ({
+  text,
+  disabled,
+  isActive = false,
+  handleClick,
+}: TabProps) => (
   <div
-    className="bg-[#0C0C0C] rounded relative cursor-pointer"
+    className={classnames(
+      'relative w-full h-full flex flex-col justify-center items-center',
+      disabled && 'opacity-40'
+    )}
     onClick={handleClick}
   >
     <div

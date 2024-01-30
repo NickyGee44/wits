@@ -1,3 +1,5 @@
+import { Contract } from 'ethers';
+
 export const CARDS_ABI = [
   {
     inputs: [],
@@ -1564,15 +1566,87 @@ export const CARDS_ABI = [
 
 export const PACKETS_ABI = [
   {
+    inputs: [],
+    name: 'AllowlistDoesNotImplementIOperatorAllowlist',
+    type: 'error',
+  },
+  {
     inputs: [
       {
         internalType: 'address',
-        name: 'operator',
+        name: 'target',
         type: 'address',
       },
     ],
-    name: 'OperatorNotAllowed',
+    name: 'ApproveTargetNotInAllowlist',
     type: 'error',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address',
+        name: 'approver',
+        type: 'address',
+      },
+    ],
+    name: 'ApproverNotInAllowlist',
+    type: 'error',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address',
+        name: 'caller',
+        type: 'address',
+      },
+    ],
+    name: 'CallerNotInAllowlist',
+    type: 'error',
+  },
+  {
+    inputs: [],
+    name: 'InvalidSignature',
+    type: 'error',
+  },
+  {
+    inputs: [],
+    name: 'PermitExpired',
+    type: 'error',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address',
+        name: 'from',
+        type: 'address',
+      },
+    ],
+    name: 'TransferFromNotInAllowlist',
+    type: 'error',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address',
+        name: 'to',
+        type: 'address',
+      },
+    ],
+    name: 'TransferToNotInAllowlist',
+    type: 'error',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'index',
+        type: 'uint256',
+      },
+    ],
+    name: 'ActiveIndexChanged',
+    type: 'event',
   },
   {
     anonymous: false,
@@ -1601,6 +1675,12 @@ export const PACKETS_ABI = [
   },
   {
     anonymous: false,
+    inputs: [],
+    name: 'EIP712DomainChanged',
+    type: 'event',
+  },
+  {
+    anonymous: false,
     inputs: [
       {
         indexed: false,
@@ -1610,6 +1690,25 @@ export const PACKETS_ABI = [
       },
     ],
     name: 'Initialized',
+    type: 'event',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: 'address',
+        name: 'oldRegistry',
+        type: 'address',
+      },
+      {
+        indexed: false,
+        internalType: 'address',
+        name: 'newRegistry',
+        type: 'address',
+      },
+    ],
+    name: 'OperatorAllowlistRegistryUpdated',
     type: 'event',
   },
   {
@@ -1636,55 +1735,74 @@ export const PACKETS_ABI = [
     inputs: [
       {
         indexed: true,
-        internalType: 'address',
-        name: 'account',
-        type: 'address',
+        internalType: 'bytes32',
+        name: 'role',
+        type: 'bytes32',
       },
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'cardId',
-        type: 'uint256',
+        indexed: true,
+        internalType: 'bytes32',
+        name: 'previousAdminRole',
+        type: 'bytes32',
       },
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'startingId',
-        type: 'uint256',
-      },
-      {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'total',
-        type: 'uint256',
-      },
-      {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'timestamp',
-        type: 'uint256',
+        indexed: true,
+        internalType: 'bytes32',
+        name: 'newAdminRole',
+        type: 'bytes32',
       },
     ],
-    name: 'PacketOpened',
+    name: 'RoleAdminChanged',
     type: 'event',
   },
   {
     anonymous: false,
     inputs: [
       {
-        indexed: false,
+        indexed: true,
+        internalType: 'bytes32',
+        name: 'role',
+        type: 'bytes32',
+      },
+      {
+        indexed: true,
         internalType: 'address',
-        name: 'recipient',
+        name: 'account',
         type: 'address',
       },
       {
-        indexed: false,
-        internalType: 'uint256',
-        name: 'amount',
-        type: 'uint256',
+        indexed: true,
+        internalType: 'address',
+        name: 'sender',
+        type: 'address',
       },
     ],
-    name: 'RoyaltiesSet',
+    name: 'RoleGranted',
+    type: 'event',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: 'bytes32',
+        name: 'role',
+        type: 'bytes32',
+      },
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'account',
+        type: 'address',
+      },
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'sender',
+        type: 'address',
+      },
+    ],
+    name: 'RoleRevoked',
     type: 'event',
   },
   {
@@ -1782,6 +1900,32 @@ export const PACKETS_ABI = [
   },
   {
     inputs: [],
+    name: 'DEFAULT_ADMIN_ROLE',
+    outputs: [
+      {
+        internalType: 'bytes32',
+        name: '',
+        type: 'bytes32',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [],
+    name: 'DOMAIN_SEPARATOR',
+    outputs: [
+      {
+        internalType: 'bytes32',
+        name: '',
+        type: 'bytes32',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [],
     name: 'activeIndex',
     outputs: [
       {
@@ -1797,42 +1941,23 @@ export const PACKETS_ABI = [
     inputs: [
       {
         internalType: 'address[]',
-        name: 'accounts_',
+        name: 'accounts',
         type: 'address[]',
       },
       {
         internalType: 'uint256[]',
-        name: 'amounts_',
+        name: 'amounts',
         type: 'uint256[]',
       },
       {
-        internalType: 'uint256',
-        name: 'tokenId',
-        type: 'uint256',
+        internalType: 'uint256[]',
+        name: 'ids',
+        type: 'uint256[]',
       },
     ],
     name: 'adminMint',
     outputs: [],
     stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
-    inputs: [
-      {
-        internalType: 'uint8',
-        name: 'stageId_',
-        type: 'uint8',
-      },
-    ],
-    name: 'balanceLimit',
-    outputs: [
-      {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256',
-      },
-    ],
-    stateMutability: 'view',
     type: 'function',
   },
   {
@@ -1884,16 +2009,97 @@ export const PACKETS_ABI = [
     type: 'function',
   },
   {
+    inputs: [],
+    name: 'baseURI',
+    outputs: [
+      {
+        internalType: 'string',
+        name: '',
+        type: 'string',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
     inputs: [
       {
+        internalType: 'address',
+        name: 'account',
+        type: 'address',
+      },
+      {
+        internalType: 'uint256',
+        name: 'id',
+        type: 'uint256',
+      },
+      {
+        internalType: 'uint256',
+        name: 'value',
+        type: 'uint256',
+      },
+    ],
+    name: 'burn',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address',
+        name: 'account',
+        type: 'address',
+      },
+      {
         internalType: 'uint256[]',
-        name: 'gbabies',
+        name: 'ids',
         type: 'uint256[]',
       },
       {
         internalType: 'uint256[]',
-        name: 'quills',
+        name: 'values',
         type: 'uint256[]',
+      },
+    ],
+    name: 'burnBatch',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        components: [
+          {
+            internalType: 'uint256',
+            name: 'amount',
+            type: 'uint256',
+          },
+          {
+            internalType: 'address',
+            name: 'recipient',
+            type: 'address',
+          },
+          {
+            internalType: 'uint256',
+            name: 'price',
+            type: 'uint256',
+          },
+          {
+            internalType: 'uint256',
+            name: 'nonce',
+            type: 'uint256',
+          },
+        ],
+        internalType: 'struct WitsPacketUpgradeable.BurnRequest',
+        name: 'request',
+        type: 'tuple',
+      },
+      {
+        internalType: 'bytes',
+        name: 'signature',
+        type: 'bytes',
       },
     ],
     name: 'burnMint',
@@ -1902,32 +2108,14 @@ export const PACKETS_ABI = [
     type: 'function',
   },
   {
-    inputs: [],
-    name: 'cardsContract',
-    outputs: [
-      {
-        internalType: 'contract ICards',
-        name: '',
-        type: 'address',
-      },
-    ],
-    stateMutability: 'view',
-    type: 'function',
-  },
-  {
     inputs: [
       {
-        internalType: 'uint8',
-        name: 'stageId_',
-        type: 'uint8',
-      },
-      {
-        internalType: 'address',
-        name: 'account_',
-        type: 'address',
+        internalType: 'uint256',
+        name: 'id',
+        type: 'uint256',
       },
     ],
-    name: 'currentBalance',
+    name: 'capacity',
     outputs: [
       {
         internalType: 'uint256',
@@ -1940,76 +2128,38 @@ export const PACKETS_ABI = [
   },
   {
     inputs: [],
-    name: 'gbabiesContract',
+    name: 'contractURI',
     outputs: [
       {
-        internalType: 'contract IERC721ABurnableUpgradeable',
+        internalType: 'string',
         name: '',
-        type: 'address',
+        type: 'string',
       },
     ],
     stateMutability: 'view',
     type: 'function',
   },
   {
-    inputs: [
-      {
-        internalType: 'uint256[]',
-        name: 'numbers',
-        type: 'uint256[]',
-      },
-    ],
-    name: 'getTotal',
+    inputs: [],
+    name: 'designatedSigner',
     outputs: [
-      {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256',
-      },
-    ],
-    stateMutability: 'pure',
-    type: 'function',
-  },
-  {
-    inputs: [
-      {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256',
-      },
-    ],
-    name: 'idToCards',
-    outputs: [
-      {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256',
-      },
-    ],
-    stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    inputs: [
-      {
-        internalType: 'string',
-        name: 'prefix_',
-        type: 'string',
-      },
-      {
-        internalType: 'string',
-        name: 'suffix_',
-        type: 'string',
-      },
       {
         internalType: 'address',
-        name: 'recipient',
+        name: '',
         type: 'address',
       },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [],
+    name: 'eip712Domain',
+    outputs: [
       {
-        internalType: 'uint256',
-        name: 'amount',
-        type: 'uint256',
+        internalType: 'bytes1',
+        name: 'fields',
+        type: 'bytes1',
       },
       {
         internalType: 'string',
@@ -2022,25 +2172,38 @@ export const PACKETS_ABI = [
         type: 'string',
       },
       {
+        internalType: 'uint256',
+        name: 'chainId',
+        type: 'uint256',
+      },
+      {
         internalType: 'address',
-        name: '_signer',
+        name: 'verifyingContract',
         type: 'address',
       },
+      {
+        internalType: 'bytes32',
+        name: 'salt',
+        type: 'bytes32',
+      },
+      {
+        internalType: 'uint256[]',
+        name: 'extensions',
+        type: 'uint256[]',
+      },
     ],
-    name: 'initialize',
-    outputs: [],
-    stateMutability: 'nonpayable',
+    stateMutability: 'view',
     type: 'function',
   },
   {
     inputs: [
       {
-        internalType: 'address',
-        name: 'account_',
-        type: 'address',
+        internalType: 'uint256',
+        name: 'id',
+        type: 'uint256',
       },
     ],
-    name: 'isAdmin',
+    name: 'exists',
     outputs: [
       {
         internalType: 'bool',
@@ -2049,6 +2212,166 @@ export const PACKETS_ABI = [
       },
     ],
     stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [],
+    name: 'getAdmins',
+    outputs: [
+      {
+        internalType: 'address[]',
+        name: '',
+        type: 'address[]',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'bytes32',
+        name: 'role',
+        type: 'bytes32',
+      },
+    ],
+    name: 'getRoleAdmin',
+    outputs: [
+      {
+        internalType: 'bytes32',
+        name: '',
+        type: 'bytes32',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'bytes32',
+        name: 'role',
+        type: 'bytes32',
+      },
+      {
+        internalType: 'uint256',
+        name: 'index',
+        type: 'uint256',
+      },
+    ],
+    name: 'getRoleMember',
+    outputs: [
+      {
+        internalType: 'address',
+        name: '',
+        type: 'address',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'bytes32',
+        name: 'role',
+        type: 'bytes32',
+      },
+    ],
+    name: 'getRoleMemberCount',
+    outputs: [
+      {
+        internalType: 'uint256',
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'bytes32',
+        name: 'role',
+        type: 'bytes32',
+      },
+      {
+        internalType: 'address',
+        name: 'account',
+        type: 'address',
+      },
+    ],
+    name: 'grantRole',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'bytes32',
+        name: 'role',
+        type: 'bytes32',
+      },
+      {
+        internalType: 'address',
+        name: 'account',
+        type: 'address',
+      },
+    ],
+    name: 'hasRole',
+    outputs: [
+      {
+        internalType: 'bool',
+        name: '',
+        type: 'bool',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'string',
+        name: 'name_',
+        type: 'string',
+      },
+      {
+        internalType: 'string',
+        name: 'baseURI_',
+        type: 'string',
+      },
+      {
+        internalType: 'string',
+        name: 'contractURI_',
+        type: 'string',
+      },
+      {
+        internalType: 'address',
+        name: '_operatorAllowlist',
+        type: 'address',
+      },
+      {
+        internalType: 'address',
+        name: '_receiver',
+        type: 'address',
+      },
+      {
+        internalType: 'uint96',
+        name: '_feeNumerator',
+        type: 'uint96',
+      },
+      {
+        internalType: 'address',
+        name: '_signer',
+        type: 'address',
+      },
+    ],
+    name: 'initialize',
+    outputs: [],
+    stateMutability: 'nonpayable',
     type: 'function',
   },
   {
@@ -2079,7 +2402,7 @@ export const PACKETS_ABI = [
     inputs: [
       {
         internalType: 'address',
-        name: 'to',
+        name: 'account',
         type: 'address',
       },
     ],
@@ -2097,19 +2420,52 @@ export const PACKETS_ABI = [
   {
     inputs: [
       {
-        internalType: 'uint256[]',
-        name: 'ids',
-        type: 'uint256[]',
-      },
-      {
-        internalType: 'uint256[]',
-        name: 'amounts',
-        type: 'uint256[]',
+        internalType: 'address',
+        name: 'account',
+        type: 'address',
       },
     ],
-    name: 'open',
-    outputs: [],
-    stateMutability: 'nonpayable',
+    name: 'nonceOf',
+    outputs: [
+      {
+        internalType: 'uint256',
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address',
+        name: 'owner',
+        type: 'address',
+      },
+    ],
+    name: 'nonces',
+    outputs: [
+      {
+        internalType: 'uint256',
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [],
+    name: 'operatorAllowlist',
+    outputs: [
+      {
+        internalType: 'contract IOperatorAllowlist',
+        name: '',
+        type: 'address',
+      },
+    ],
+    stateMutability: 'view',
     type: 'function',
   },
   {
@@ -2126,16 +2482,36 @@ export const PACKETS_ABI = [
     type: 'function',
   },
   {
-    inputs: [],
-    name: 'prefix',
-    outputs: [
+    inputs: [
       {
-        internalType: 'string',
-        name: '',
-        type: 'string',
+        internalType: 'address',
+        name: 'owner',
+        type: 'address',
+      },
+      {
+        internalType: 'address',
+        name: 'spender',
+        type: 'address',
+      },
+      {
+        internalType: 'bool',
+        name: 'approved',
+        type: 'bool',
+      },
+      {
+        internalType: 'uint256',
+        name: 'deadline',
+        type: 'uint256',
+      },
+      {
+        internalType: 'bytes',
+        name: 'sig',
+        type: 'bytes',
       },
     ],
-    stateMutability: 'view',
+    name: 'permit',
+    outputs: [],
+    stateMutability: 'nonpayable',
     type: 'function',
   },
   {
@@ -2153,7 +2529,7 @@ export const PACKETS_ABI = [
             type: 'address',
           },
         ],
-        internalType: 'struct Packets.PresaleRequest',
+        internalType: 'struct WitsPacketUpgradeable.PresaleRequest',
         name: 'request',
         type: 'tuple',
       },
@@ -2170,7 +2546,7 @@ export const PACKETS_ABI = [
             type: 'uint256',
           },
         ],
-        internalType: 'struct Packets.MintRequest[]',
+        internalType: 'struct WitsPacketUpgradeable.MintRequest[]',
         name: 'mintRequests',
         type: 'tuple[]',
       },
@@ -2219,7 +2595,7 @@ export const PACKETS_ABI = [
             type: 'uint256',
           },
         ],
-        internalType: 'struct Packets.MintRequest[]',
+        internalType: 'struct WitsPacketUpgradeable.MintRequest[]',
         name: 'mintRequests',
         type: 'tuple[]',
       },
@@ -2227,56 +2603,6 @@ export const PACKETS_ABI = [
     name: 'publicMint',
     outputs: [],
     stateMutability: 'payable',
-    type: 'function',
-  },
-  {
-    inputs: [],
-    name: 'quillContract',
-    outputs: [
-      {
-        internalType: 'contract IERC721ABurnableUpgradeable',
-        name: '',
-        type: 'address',
-      },
-    ],
-    stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    inputs: [],
-    name: 'randomizer',
-    outputs: [
-      {
-        internalType: 'contract IRandomizer',
-        name: '',
-        type: 'address',
-      },
-    ],
-    stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    inputs: [
-      {
-        internalType: 'uint8',
-        name: 'stageId_',
-        type: 'uint8',
-      },
-      {
-        internalType: 'address',
-        name: 'account_',
-        type: 'address',
-      },
-    ],
-    name: 'remainingBalance',
-    outputs: [
-      {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256',
-      },
-    ],
-    stateMutability: 'view',
     type: 'function',
   },
   {
@@ -2289,13 +2615,49 @@ export const PACKETS_ABI = [
   {
     inputs: [
       {
+        internalType: 'bytes32',
+        name: 'role',
+        type: 'bytes32',
+      },
+      {
+        internalType: 'address',
+        name: 'account',
+        type: 'address',
+      },
+    ],
+    name: 'renounceRole',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'bytes32',
+        name: 'role',
+        type: 'bytes32',
+      },
+      {
+        internalType: 'address',
+        name: 'account',
+        type: 'address',
+      },
+    ],
+    name: 'revokeRole',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
         internalType: 'uint256',
-        name: '',
+        name: 'tokenId',
         type: 'uint256',
       },
       {
         internalType: 'uint256',
-        name: 'value_',
+        name: 'salePrice',
         type: 'uint256',
       },
     ],
@@ -2303,12 +2665,12 @@ export const PACKETS_ABI = [
     outputs: [
       {
         internalType: 'address',
-        name: 'receiver',
+        name: '',
         type: 'address',
       },
       {
         internalType: 'uint256',
-        name: 'royaltyAmount',
+        name: '',
         type: 'uint256',
       },
     ],
@@ -2362,7 +2724,7 @@ export const PACKETS_ABI = [
       },
       {
         internalType: 'uint256',
-        name: 'tokenId',
+        name: 'id',
         type: 'uint256',
       },
       {
@@ -2398,24 +2760,6 @@ export const PACKETS_ABI = [
     inputs: [
       {
         internalType: 'address',
-        name: 'account_',
-        type: 'address',
-      },
-      {
-        internalType: 'bool',
-        name: 'enable_',
-        type: 'bool',
-      },
-    ],
-    name: 'setAdminPermissions',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
-    inputs: [
-      {
-        internalType: 'address',
         name: 'operator',
         type: 'address',
       },
@@ -2433,22 +2777,12 @@ export const PACKETS_ABI = [
   {
     inputs: [
       {
-        internalType: 'contract IERC721ABurnableUpgradeable',
-        name: 'gbabies',
-        type: 'address',
-      },
-      {
-        internalType: 'contract IERC721ABurnableUpgradeable',
-        name: 'quills',
-        type: 'address',
-      },
-      {
-        internalType: 'contract ICards',
-        name: 'cards',
-        type: 'address',
+        internalType: 'string',
+        name: 'baseURI_',
+        type: 'string',
       },
     ],
-    name: 'setContracts',
+    name: 'setBaseURI',
     outputs: [],
     stateMutability: 'nonpayable',
     type: 'function',
@@ -2457,11 +2791,75 @@ export const PACKETS_ABI = [
     inputs: [
       {
         internalType: 'string',
-        name: 'prefix_',
+        name: 'contractURI_',
         type: 'string',
       },
     ],
-    name: 'setPrefix',
+    name: 'setContractURI',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address',
+        name: 'receiver',
+        type: 'address',
+      },
+      {
+        internalType: 'uint96',
+        name: 'feeNumerator',
+        type: 'uint96',
+      },
+    ],
+    name: 'setDefaultRoyaltyReceiver',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'uint256',
+        name: 'tokenId',
+        type: 'uint256',
+      },
+      {
+        internalType: 'address',
+        name: 'receiver',
+        type: 'address',
+      },
+      {
+        internalType: 'uint96',
+        name: 'feeNumerator',
+        type: 'uint96',
+      },
+    ],
+    name: 'setNFTRoyaltyReceiver',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'uint256[]',
+        name: 'tokenIds',
+        type: 'uint256[]',
+      },
+      {
+        internalType: 'address',
+        name: 'receiver',
+        type: 'address',
+      },
+      {
+        internalType: 'uint96',
+        name: 'feeNumerator',
+        type: 'uint96',
+      },
+    ],
+    name: 'setNFTRoyaltyReceiverBatch',
     outputs: [],
     stateMutability: 'nonpayable',
     type: 'function',
@@ -2487,37 +2885,6 @@ export const PACKETS_ABI = [
   {
     inputs: [
       {
-        internalType: 'contract IRandomizer',
-        name: '_randomizer',
-        type: 'address',
-      },
-    ],
-    name: 'setRandomizer',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
-    inputs: [
-      {
-        internalType: 'address',
-        name: 'recipient_',
-        type: 'address',
-      },
-      {
-        internalType: 'uint256',
-        name: 'amount_',
-        type: 'uint256',
-      },
-    ],
-    name: 'setRoyalties',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
-    inputs: [
-      {
         internalType: 'address',
         name: '_signer',
         type: 'address',
@@ -2526,45 +2893,6 @@ export const PACKETS_ABI = [
     name: 'setSigner',
     outputs: [],
     stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
-    inputs: [
-      {
-        internalType: 'string',
-        name: 'suffix_',
-        type: 'string',
-      },
-    ],
-    name: 'setSuffix',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
-    inputs: [],
-    name: 'signer',
-    outputs: [
-      {
-        internalType: 'address',
-        name: '',
-        type: 'address',
-      },
-    ],
-    stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    inputs: [],
-    name: 'suffix',
-    outputs: [
-      {
-        internalType: 'string',
-        name: '',
-        type: 'string',
-      },
-    ],
-    stateMutability: 'view',
     type: 'function',
   },
   {
@@ -2621,26 +2949,8 @@ export const PACKETS_ABI = [
   {
     inputs: [
       {
-        internalType: 'uint8',
-        name: 'stageId_',
-        type: 'uint8',
-      },
-      {
         internalType: 'uint256',
-        name: 'limit_',
-        type: 'uint256',
-      },
-    ],
-    name: 'updateBalanceLimit',
-    outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function',
-  },
-  {
-    inputs: [
-      {
-        internalType: 'uint256',
-        name: 'tokenId',
+        name: '',
         type: 'uint256',
       },
     ],

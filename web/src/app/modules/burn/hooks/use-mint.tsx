@@ -1,3 +1,4 @@
+import { BigNumber } from 'ethers';
 import { PACKETS_ABI } from '../../core/constants/abi';
 import { useStage } from '../../core/hooks/use-stage';
 import { useWrite } from '../../core/hooks/use-write';
@@ -6,7 +7,7 @@ export function useBurnMint(
   address: `0x${string}`,
   gbabies: number[],
   quillAndInkIds: number[],
-  value: bigint,
+  value: BigNumber,
   reset: () => void
 ) {
   const { action } = useWrite(
@@ -19,7 +20,7 @@ export function useBurnMint(
     },
     reset
   );
-  const stage = useStage(address);
+  const { stage } = useStage();
   const isLive = stage === 1;
 
   return {

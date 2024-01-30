@@ -1,26 +1,58 @@
-import { useMemo } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { usePacket } from '../hooks/use-packet';
 import { MintTab } from './mint-tab';
 import { useTotalSupply } from '../../core/hooks/use-total-supply';
 import { usePrice } from '../../core/hooks/use-price';
-import { usePresaleMint, usePublicMint } from '../hooks/use-mint';
+import { useMinted, usePresaleMint, usePublicMint } from '../hooks/use-mint';
 import { Packets } from '../../core/constants/packets';
+import { useStage } from '../../core/hooks/use-stage';
+import { useContract } from '../../core/hooks/use-contract';
+import { BigNumber, constants } from 'ethers';
+import { useBurnMint } from '../../burn/hooks/use-burn-mint';
 
 interface MintContainerProps {
   packets: `0x${string}`;
   account: `0x${string}`;
+  singleSupply: number;
+  boosterSupply: number;
+  jumboSupply: number;
+  mysterySupply: number;
 }
 
-export function MintContainer(props: MintContainerProps) {
-  const singleSupply = useTotalSupply(props.packets, Packets[0].id);
-  const boosterSupply = useTotalSupply(props.packets, Packets[1].id);
-  const jumboSupply = useTotalSupply(props.packets, Packets[2].id);
-  const mysterySupply = useTotalSupply(props.packets, Packets[3].id);
+export function MintContainer({
+  singleSupply,
+  boosterSupply,
+  jumboSupply,
+  mysterySupply,
 
-  const singlePrice = usePrice(props.packets, Packets[0].id);
-  const boosterPrice = usePrice(props.packets, Packets[1].id);
-  const jumboPrice = usePrice(props.packets, Packets[2].id);
-  const mysteryPrice = usePrice(props.packets, Packets[3].id);
+  ...props
+}: MintContainerProps) {
+  const { stage } = useStage();
+  const { minted } = useMinted(props.account);
+
+  const { price: singlePrice, fetchPrice: fetchSinglePrice } = usePrice(
+    props.packets,
+    Packets[0].id
+  );
+  const { price: boosterPrice, fetchPrice: fetchBoosterPrice } = usePrice(
+    props.packets,
+    Packets[1].id
+  );
+  const { price: jumboPrice, fetchPrice: fetchJumboPrice } = usePrice(
+    props.packets,
+    Packets[2].id
+  );
+  const { price: mysteryPrice, fetchPrice: fetchMysteryPrice } = usePrice(
+    props.packets,
+    Packets[3].id
+  );
+
+  useEffect(() => {
+    fetchSinglePrice();
+    fetchBoosterPrice();
+    fetchJumboPrice();
+    fetchMysteryPrice();
+  }, [fetchSinglePrice, fetchBoosterPrice, fetchJumboPrice, fetchMysteryPrice]);
 
   const single = usePacket(
     Packets[0].id,
@@ -66,8 +98,8 @@ export function MintContainer(props: MintContainerProps) {
 
   const value = useMemo(() => {
     return cards.reduce((acc, curr) => {
-      return acc + BigInt(curr.count) * curr.price;
-    }, BigInt(0));
+      return acc.add(BigNumber.from(curr.count).mul(curr.price));
+    }, BigNumber.from(0));
   }, [cards]);
 
   const mintRequests = useMemo(
@@ -88,20 +120,31 @@ export function MintContainer(props: MintContainerProps) {
     });
   };
 
-  const { isLive: publicLive, write: publicMint } = usePublicMint(
+  const {
+    isLive: publicLive,
+    write: publicMint,
+    loading: publicLoading,
+  } = usePublicMint(props.packets, stage, mintRequests, value, reset);
+
+  const {
+    write: presaleMint,
+    isLive: presaleLive,
+    loading: presaleLoading,
+  } = usePresaleMint(
     props.packets,
+    props.account,
+    minted,
+    stage,
     mintRequests,
     value,
     reset
   );
 
-  const { write: presaleMint, isLive: presaleLive } = usePresaleMint(
-    props.packets,
-    props.account,
-    mintRequests,
-    value,
-    reset
-  );
+  const {
+    write: burnMint,
+    loading: burnLoading,
+    assignedValue,
+  } = useBurnMint();
 
   const write = async () => {
     if (presaleLive) {
@@ -111,5 +154,13 @@ export function MintContainer(props: MintContainerProps) {
     }
   };
 
-  return <MintTab write={write} cards={[single, booster, jumbo, mystery]} />;
+  return (
+    <MintTab
+      write={write}
+      cards={[single, booster, jumbo, mystery]}
+      loading={publicLoading || presaleLoading || burnLoading}
+      burnMint={burnMint}
+      isShowBurnMint={assignedValue > 0}
+    />
+  );
 }

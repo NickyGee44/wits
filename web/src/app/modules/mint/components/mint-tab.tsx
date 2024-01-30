@@ -1,12 +1,15 @@
+import { BigNumber } from 'ethers';
 import { SubmitButton } from '../../core/components/buttons';
 import { Dollar } from '../../core/components/dollar';
 import { Packet } from '../../core/components/packet';
 
 interface MintTabProps {
   write: () => void;
+  loading: boolean;
+  burnMint: () => void;
   cards: {
     name: string;
-    price: bigint;
+    price: BigNumber;
     supply: number;
     count: number;
     cardCount: number;
@@ -15,9 +18,16 @@ interface MintTabProps {
     handleIncrement: () => void;
     handleDecrement: () => void;
   }[];
+  isShowBurnMint: boolean;
 }
 
-export function MintTab({ cards, write }: MintTabProps) {
+export function MintTab({
+  cards,
+  burnMint,
+  loading,
+  write,
+  isShowBurnMint,
+}: MintTabProps) {
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-9/12 md:w-full mx-auto mt-8">
@@ -41,8 +51,19 @@ export function MintTab({ cards, write }: MintTabProps) {
           />
         ))}
       </div>
-      <div className="flex flex-row justify-center items-center w-full">
-        <SubmitButton handleClick={write}>MINT</SubmitButton>
+      <div className="flex flex-col space-y-4 p-4">
+        <div className="flex flex-row justify-center items-center w-full">
+          <SubmitButton disabled={loading} handleClick={write}>
+            MINT
+          </SubmitButton>
+        </div>
+        {isShowBurnMint && (
+          <div className="flex flex-row justify-center items-center w-full">
+            <SubmitButton disabled={loading} handleClick={burnMint}>
+              BURN MINT
+            </SubmitButton>
+          </div>
+        )}
       </div>
     </>
   );

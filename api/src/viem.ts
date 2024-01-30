@@ -1,20 +1,59 @@
-import { Contract, Wallet, providers } from 'ethers';
+import { BigNumber, Contract, Wallet, providers } from 'ethers';
 
-const CHAIN_ID = 5;
-const PROVIDER_URL =
-  'https://eth-goerli.alchemyapi.io/v2/m3ADmeHfQSDpLG8JGiakIHdOwKdH9p_Z';
+const PROVIDER_URL = 'https://rpc.testnet.immutable.com';
 const PRIVATE_KEY =
-  'ac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80';
+  '6abecb9c379f3557cc9f72ad7a9034774f970b9450fab24989d75985258ff78a';
 
-export const CONTRACT_ADDRESS = '0x260e3B084f19a0684Ed730AA1f9bbecdD13E43e2';
+export const CONTRACT_ADDRESS = '0xCF4d84AB78c06B4CDB278521E016ed62600D0A63';
 export const CARDS_CONTRACT_ADDRESS =
-  '0x9FC5df68cFE7826D4E8a957E50DD0eef567518D8';
-export const NAME = 'Name';
-export const VERSION = 'Version';
+  '0x1c3cF14fB52AE4feD9d6D73694F278F946FfC85d';
 
 const PACKETS_CONTRACT = new Contract(
   CONTRACT_ADDRESS,
   [
+    {
+      inputs: [],
+      name: 'eip712Domain',
+      outputs: [
+        {
+          internalType: 'bytes1',
+          name: 'fields',
+          type: 'bytes1',
+        },
+        {
+          internalType: 'string',
+          name: 'name',
+          type: 'string',
+        },
+        {
+          internalType: 'string',
+          name: 'version',
+          type: 'string',
+        },
+        {
+          internalType: 'uint256',
+          name: 'chainId',
+          type: 'uint256',
+        },
+        {
+          internalType: 'address',
+          name: 'verifyingContract',
+          type: 'address',
+        },
+        {
+          internalType: 'bytes32',
+          name: 'salt',
+          type: 'bytes32',
+        },
+        {
+          internalType: 'uint256[]',
+          name: 'extensions',
+          type: 'uint256[]',
+        },
+      ],
+      stateMutability: 'view',
+      type: 'function',
+    },
     {
       inputs: [
         {
@@ -34,21 +73,132 @@ const PACKETS_CONTRACT = new Contract(
       stateMutability: 'view',
       type: 'function',
     },
+    {
+      inputs: [
+        {
+          internalType: 'uint8',
+          name: 'stage_',
+          type: 'uint8',
+        },
+      ],
+      name: 'price',
+      outputs: [
+        {
+          internalType: 'uint256',
+          name: '',
+          type: 'uint256',
+        },
+      ],
+      stateMutability: 'view',
+      type: 'function',
+    },
+    {
+      inputs: [
+        {
+          internalType: 'address',
+          name: 'account',
+          type: 'address',
+        },
+      ],
+      name: 'nonceOf',
+      outputs: [
+        {
+          internalType: 'uint256',
+          name: '',
+          type: 'uint256',
+        },
+      ],
+      stateMutability: 'view',
+      type: 'function',
+    },
+    {
+      inputs: [],
+      name: 'designatedSigner',
+      outputs: [
+        {
+          internalType: 'address',
+          name: '',
+          type: 'address',
+        },
+      ],
+      stateMutability: 'view',
+      type: 'function',
+    },
   ],
   new providers.JsonRpcProvider(PROVIDER_URL)
 );
 
-export const createSignature = async (address: string, amount: number) => {
-  const wallet = new Wallet(PRIVATE_KEY);
+const wallet = new Wallet(PRIVATE_KEY);
 
-  console.log(wallet, NAME, VERSION, CHAIN_ID, CONTRACT_ADDRESS);
+export const createBurnSignature = async (
+  address: string,
+  _amount: number,
+  isGbaby: boolean
+) => {
+  const domain = await PACKETS_CONTRACT.eip712Domain();
+  const designatedSigner = await PACKETS_CONTRACT.designatedSigner();
+  const areSignersEqual =
+    wallet.address.toLowerCase() === designatedSigner.toLowerCase();
+
+  if (!areSignersEqual) {
+    console.log('ERROR: Invalid signers');
+  }
+  const nonce = await PACKETS_CONTRACT.nonceOf(address);
+  const amount = BigNumber.from(1).eq(nonce) ? 0 : _amount;
+
+  const priceOfSingle = await PACKETS_CONTRACT.price(1);
+  const price = isGbaby ? BigNumber.from(0) : priceOfSingle.mul(amount);
 
   const signature = await wallet._signTypedData(
     {
-      name: NAME,
-      version: VERSION,
-      chainId: CHAIN_ID,
-      verifyingContract: CONTRACT_ADDRESS,
+      name: domain.name,
+      version: domain.version,
+      chainId: domain.chainId,
+      verifyingContract: domain.verifyingContract,
+    },
+    {
+      BurnRequest: [
+        { name: 'amount', type: 'uint256' },
+        { name: 'recipient', type: 'address' },
+        { name: 'price', type: 'uint256' },
+        { name: 'nonce', type: 'uint256' },
+      ],
+    },
+    {
+      amount,
+      recipient: address,
+      price,
+      nonce,
+    }
+  );
+
+  return {
+    signature,
+    request: {
+      amount,
+      recipient: address,
+      nonce,
+      price,
+    },
+  };
+};
+
+export const createSignature = async (address: string, amount: number) => {
+  const domain = await PACKETS_CONTRACT.eip712Domain();
+  const designatedSigner = await PACKETS_CONTRACT.designatedSigner();
+  const areSignersEqual =
+    wallet.address.toLowerCase() === designatedSigner.toLowerCase();
+
+  if (!areSignersEqual) {
+    console.log('ERROR: Invalid signers');
+  }
+
+  const signature = await wallet._signTypedData(
+    {
+      name: domain.name,
+      version: domain.version,
+      chainId: domain.chainId,
+      verifyingContract: domain.verifyingContract,
     },
     {
       PresaleRequest: [

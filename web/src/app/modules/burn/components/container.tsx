@@ -7,6 +7,7 @@ import { useBurnMint } from '../hooks/use-mint';
 import { usePrice } from '../../core/hooks/use-price';
 import { formatUnits } from 'viem';
 import { useApproval } from '../../core/hooks/use-approval';
+import { BigNumber, utils } from 'ethers';
 
 interface BurnContainerProps {
   gbabies: `0x${string}`;
@@ -36,11 +37,11 @@ export function BurnContainer({
     clearBalance,
     quillAndInkBurnReturnValue,
   } = useQuillAndInkBalance(quillAndInkBalance, quillAndInkTokens);
-  const priceForQuillAndInk = usePrice(packets, 1);
+  const { price: priceForQuillAndInk } = usePrice(packets, 1);
   // const singleSupply = useTotalSupply(packets, 1);
 
   const price = useMemo(() => {
-    return priceForQuillAndInk * BigInt(quillAndInkBurnReturnValue);
+    return priceForQuillAndInk.mul(BigNumber.from(quillAndInkBurnReturnValue));
   }, [quillAndInkBurnReturnValue, priceForQuillAndInk]);
 
   const { write } = useBurnMint(packets, selectedIds, toBurn, price, () => {
@@ -82,7 +83,7 @@ export function BurnContainer({
       onDecrement={handleDecrement}
       balance={balance}
       count={quillAndInkBurnReturnValue}
-      price={formatUnits(price, 18)}
+      price={utils.formatUnits(price, 18)}
       total={quillAndInkBurnReturnValue + gbabiesReturnValue}
     />
   );

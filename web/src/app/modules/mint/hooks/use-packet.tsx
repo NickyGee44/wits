@@ -1,10 +1,11 @@
+import { BigNumber } from 'ethers';
 import { useState } from 'react';
 
 export function usePacket(
   id: number,
   name: string,
   supply: number,
-  price: bigint,
+  price: BigNumber,
   dollar: string,
   cent: string,
   cardCount: number

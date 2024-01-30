@@ -13,7 +13,13 @@ export const environment = {
     base: 'http://localhost:4300/',
     addresses: '.netlify/functions/main',
   },
-  chain: 'goerli',
+  imxRpcURL: 'https://rpc.testnet.immutable.com',
+  chain: 'imx',
+  imx: {
+    chainId: 13473,
+    explorer: 'https://explorer.testnet.immutable.com',
+    packets: '0xCF4d84AB78c06B4CDB278521E016ed62600D0A63' as const,
+  },
   mainnet: {
     gBabies: '0x0ff1f3a53f521d74af73fe7433abf802f91ddd4e' as const,
     quillAndInk: '0xd38123a8f534a7bbcefefa59e74f254a46818538' as const,
