@@ -31,7 +31,7 @@ export function App() {
         <>
           <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
             <Tab
-              text="WalletChecker"
+              text="Wallet Checker"
               handleClick={() => setTabIndex(0)}
               isActive={tabIndex === 0}
             />
