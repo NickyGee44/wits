@@ -16,7 +16,6 @@ import { userInfo } from 'os';
 import { useConnectUI } from './modules/shared/hooks/use-connect-ui';
 import { useWalletUI } from './modules/shared/hooks/use-wallet-ui';
 import { constants } from 'ethers';
-import { useContract } from './modules/core/hooks/use-contract';
 import { useStage } from './modules/core/hooks/use-stage';
 import { useTotalSupply } from './modules/core/hooks/use-total-supply';
 import { Packets } from './modules/core/constants/packets';
@@ -66,7 +65,7 @@ export function App() {
       });
 
       if (isMetamaskConnected.isConnected) {
-        connect(metamaskProviderResult.provider);
+        await connect(metamaskProviderResult.provider);
         return;
       }
 
@@ -79,7 +78,7 @@ export function App() {
       });
 
       if (isPassportConnected.isConnected || authenticated) {
-        connect(passportProviderResult.provider);
+        await connect(passportProviderResult.provider);
         return;
       }
     })();

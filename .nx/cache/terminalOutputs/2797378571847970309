@@ -1,0 +1,639 @@
+
+[36m>[39m [7m[1m[36m NX [39m[22m[27m [1mWeb Development Server is listening at http://localhost:4200/[22m
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB 3 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 683 KiB (833 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB 3 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (ae86070dfbe6ea4c)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.ae86070dfbe6ea4c.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB 4 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.ae86070dfbe6ea4c.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.ae86070dfbe6ea4c.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.ae86070dfbe6ea4c.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.ae86070dfbe6ea4c.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (004fc13298605c95)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.004fc13298605c95.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.004fc13298605c95.hot-update.js[39m[22m 4.34 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.004fc13298605c95.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.004fc13298605c95.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.004fc13298605c95.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.004fc13298605c95.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.004fc13298605c95.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (6eb875fd2122b796)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.6eb875fd2122b796.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.6eb875fd2122b796.hot-update.js[39m[22m 4.34 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.6eb875fd2122b796.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.6eb875fd2122b796.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.6eb875fd2122b796.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.6eb875fd2122b796.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.6eb875fd2122b796.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (1e97b7be40ce2c17)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.1e97b7be40ce2c17.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.1e97b7be40ce2c17.hot-update.js[39m[22m 4.33 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.1e97b7be40ce2c17.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.1e97b7be40ce2c17.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.1e97b7be40ce2c17.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.1e97b7be40ce2c17.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.1e97b7be40ce2c17.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (9b816acdeaab3e4e)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.9b816acdeaab3e4e.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.9b816acdeaab3e4e.hot-update.js[39m[22m 4.34 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.9b816acdeaab3e4e.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.9b816acdeaab3e4e.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.9b816acdeaab3e4e.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.9b816acdeaab3e4e.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.9b816acdeaab3e4e.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (6a0560840eecbd84)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.6a0560840eecbd84.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.6a0560840eecbd84.hot-update.js[39m[22m 4.34 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.6a0560840eecbd84.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.6a0560840eecbd84.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.6a0560840eecbd84.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.6a0560840eecbd84.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.6a0560840eecbd84.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (58a042c8f833f0a6)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.58a042c8f833f0a6.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.58a042c8f833f0a6.hot-update.js[39m[22m 4.35 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.58a042c8f833f0a6.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.58a042c8f833f0a6.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.58a042c8f833f0a6.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.58a042c8f833f0a6.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.58a042c8f833f0a6.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (4f3724be7539ceed)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.4f3724be7539ceed.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.4f3724be7539ceed.hot-update.js[39m[22m 4.32 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.4f3724be7539ceed.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.4f3724be7539ceed.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.4f3724be7539ceed.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.4f3724be7539ceed.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.4f3724be7539ceed.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (20da3b6f53f0e2b5)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.20da3b6f53f0e2b5.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.20da3b6f53f0e2b5.hot-update.js[39m[22m 4.32 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.20da3b6f53f0e2b5.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.20da3b6f53f0e2b5.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.20da3b6f53f0e2b5.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.20da3b6f53f0e2b5.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.20da3b6f53f0e2b5.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (7d0064360a77473b)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.7d0064360a77473b.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.7d0064360a77473b.hot-update.js[39m[22m 4.34 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.7d0064360a77473b.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.7d0064360a77473b.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.7d0064360a77473b.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.7d0064360a77473b.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.7d0064360a77473b.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (29f840c4ab20429c)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.29f840c4ab20429c.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.29f840c4ab20429c.hot-update.js[39m[22m 4.32 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.29f840c4ab20429c.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.29f840c4ab20429c.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.29f840c4ab20429c.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.29f840c4ab20429c.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.29f840c4ab20429c.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (50a200e7f7a19730)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.50a200e7f7a19730.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.50a200e7f7a19730.hot-update.js[39m[22m 4.32 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.50a200e7f7a19730.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.50a200e7f7a19730.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.50a200e7f7a19730.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.50a200e7f7a19730.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.50a200e7f7a19730.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (d7de5ea30d89e564)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.d7de5ea30d89e564.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.d7de5ea30d89e564.hot-update.js[39m[22m 4.31 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.d7de5ea30d89e564.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.d7de5ea30d89e564.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.d7de5ea30d89e564.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.d7de5ea30d89e564.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.d7de5ea30d89e564.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (e2442c28203b9a98)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.e2442c28203b9a98.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.e2442c28203b9a98.hot-update.js[39m[22m 4.32 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.e2442c28203b9a98.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.e2442c28203b9a98.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.e2442c28203b9a98.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.e2442c28203b9a98.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.e2442c28203b9a98.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (e3d3dfa7bfab7dfe)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.e3d3dfa7bfab7dfe.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 172 KiB [1m[32mmain.e3d3dfa7bfab7dfe.hot-update.js[39m[22m 4.37 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.e3d3dfa7bfab7dfe.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.e3d3dfa7bfab7dfe.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.e3d3dfa7bfab7dfe.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.e3d3dfa7bfab7dfe.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.e3d3dfa7bfab7dfe.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (3f674600ea0e37b1)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.3f674600ea0e37b1.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 172 KiB 4 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.3f674600ea0e37b1.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.3f674600ea0e37b1.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.3f674600ea0e37b1.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.3f674600ea0e37b1.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (261e87dc756d83de)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.261e87dc756d83de.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 172 KiB 4 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.261e87dc756d83de.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.261e87dc756d83de.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.261e87dc756d83de.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.261e87dc756d83de.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (2f0fb405f2a35c75)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 11 MiB (15.2 MiB) = 6 assets 6 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.2f0fb405f2a35c75.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.2f0fb405f2a35c75.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.2f0fb405f2a35c75.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.2f0fb405f2a35c75.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.2f0fb405f2a35c75.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m, [1m[32mvendor.2f0fb405f2a35c75.hot-update.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (4f8c06948e6d7a58)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 11 MiB (15.2 MiB) = 6 assets 6 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.4f8c06948e6d7a58.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.4f8c06948e6d7a58.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.4f8c06948e6d7a58.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.4f8c06948e6d7a58.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.4f8c06948e6d7a58.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m, [1m[32mvendor.4f8c06948e6d7a58.hot-update.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (5bef462f28c7072f)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.5bef462f28c7072f.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.5bef462f28c7072f.hot-update.js[39m[22m 4.32 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.5bef462f28c7072f.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.5bef462f28c7072f.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.5bef462f28c7072f.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.5bef462f28c7072f.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.5bef462f28c7072f.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (73dd3b40c69150d3)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.73dd3b40c69150d3.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.73dd3b40c69150d3.hot-update.js[39m[22m 4.37 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.73dd3b40c69150d3.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.73dd3b40c69150d3.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.73dd3b40c69150d3.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.73dd3b40c69150d3.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.73dd3b40c69150d3.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (6b3aa9cb68948ca2)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.6b3aa9cb68948ca2.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.6b3aa9cb68948ca2.hot-update.js[39m[22m 4.37 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.6b3aa9cb68948ca2.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.6b3aa9cb68948ca2.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.6b3aa9cb68948ca2.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.6b3aa9cb68948ca2.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.6b3aa9cb68948ca2.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (4b6313c0582216f6)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 11 MiB (15.2 MiB) = 6 assets 6 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.4b6313c0582216f6.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.4b6313c0582216f6.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.4b6313c0582216f6.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.4b6313c0582216f6.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.4b6313c0582216f6.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m, [1m[32mvendor.4b6313c0582216f6.hot-update.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (9d709c17354b4600)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.32 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.9d709c17354b4600.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.9d709c17354b4600.hot-update.js[39m[22m 15 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.9d709c17354b4600.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.9d709c17354b4600.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.9d709c17354b4600.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.9d709c17354b4600.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.9d709c17354b4600.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (c031e9f1a5f46d8d)
+Found [31m[1m1 error[22m[39m in 616 ms.
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.32 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.c031e9f1a5f46d8d.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.c031e9f1a5f46d8d.hot-update.js[39m[22m 15 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.c031e9f1a5f46d8d.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.c031e9f1a5f46d8d.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.c031e9f1a5f46d8d.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.c031e9f1a5f46d8d.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.c031e9f1a5f46d8d.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (90ce611c0cf90619)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.32 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.90ce611c0cf90619.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 172 KiB [1m[32mmain.90ce611c0cf90619.hot-update.js[39m[22m 15.1 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.90ce611c0cf90619.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.90ce611c0cf90619.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.90ce611c0cf90619.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.90ce611c0cf90619.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.90ce611c0cf90619.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (04ccb35ea7b9d815)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.32 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.04ccb35ea7b9d815.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.04ccb35ea7b9d815.hot-update.js[39m[22m 15 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.04ccb35ea7b9d815.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.04ccb35ea7b9d815.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.04ccb35ea7b9d815.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.04ccb35ea7b9d815.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.04ccb35ea7b9d815.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (4d0dad6c8c5ae85c)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.32 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.4d0dad6c8c5ae85c.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 172 KiB [1m[32mmain.4d0dad6c8c5ae85c.hot-update.js[39m[22m 15 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.4d0dad6c8c5ae85c.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.4d0dad6c8c5ae85c.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.4d0dad6c8c5ae85c.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.4d0dad6c8c5ae85c.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.4d0dad6c8c5ae85c.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (7c2230277cc28559)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.33 MiB (11.1 MiB) = 6 assets 6 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.7c2230277cc28559.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.7c2230277cc28559.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.7c2230277cc28559.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.7c2230277cc28559.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.7c2230277cc28559.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m, [1m[32mvendor.7c2230277cc28559.hot-update.js[39m[22m (vendor) (id hint: vendor) 7.92 MiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m./src/app/app.tsx[39m[22m [1m[32m131:14-22[39m[22m
+[1mexport 'userInfo' (imported as 'userInfo') was [1m[31mnot found[39m[22m[1m in 'os' (possible exports: [1m[32mEOL, arch, cpus, endianness, freemem, getNetworkInterfaces, homedir, hostname, loadavg, networkInterfaces, platform, release, tmpDir, tmpdir, totalmem, type, uptime[39m[22m[1m)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m3 warnings[39m[22m (01a30626fa4c7813)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 11 MiB (15.2 MiB) = 6 assets 6 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.01a30626fa4c7813.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.01a30626fa4c7813.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.01a30626fa4c7813.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.01a30626fa4c7813.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.01a30626fa4c7813.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m, [1m[32mvendor.01a30626fa4c7813.hot-update.js[39m[22m (vendor) (id hint: vendor) 7.92 MiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m./src/app/app.tsx[39m[22m [1m[32m131:14-22[39m[22m
+[1mexport 'userInfo' (imported as 'userInfo') was [1m[31mnot found[39m[22m[1m in 'os' (possible exports: [1m[32mEOL, arch, cpus, endianness, freemem, getNetworkInterfaces, homedir, hostname, loadavg, networkInterfaces, platform, release, tmpDir, tmpdir, totalmem, type, uptime[39m[22m[1m)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m3 warnings[39m[22m (a525eba1bab7268b)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 11 MiB (15.2 MiB) = 6 assets 6 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.a525eba1bab7268b.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.a525eba1bab7268b.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.a525eba1bab7268b.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.a525eba1bab7268b.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.a525eba1bab7268b.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m, [1m[32mvendor.a525eba1bab7268b.hot-update.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (d9a01a3eeeb79fef)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.32 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.d9a01a3eeeb79fef.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.d9a01a3eeeb79fef.hot-update.js[39m[22m 15 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.d9a01a3eeeb79fef.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.d9a01a3eeeb79fef.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.d9a01a3eeeb79fef.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.d9a01a3eeeb79fef.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.d9a01a3eeeb79fef.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (6e875e5b25451fae)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 11 MiB (15.2 MiB) = 6 assets 6 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.6e875e5b25451fae.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.6e875e5b25451fae.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.6e875e5b25451fae.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.6e875e5b25451fae.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.6e875e5b25451fae.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m, [1m[32mvendor.6e875e5b25451fae.hot-update.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (1771cca41ff8d1e8)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.1771cca41ff8d1e8.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.1771cca41ff8d1e8.hot-update.js[39m[22m 4.35 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.1771cca41ff8d1e8.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.1771cca41ff8d1e8.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.1771cca41ff8d1e8.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.1771cca41ff8d1e8.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.1771cca41ff8d1e8.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (c1ffe1019f8227da)
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 8.31 MiB (11.1 MiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.c1ffe1019f8227da.hot-update.js[39m[22m 343 bytes [1m[32mvendor.js[39m[22m 8.09 MiB [1m[32mmain.js[39m[22m 171 KiB [1m[32mmain.c1ffe1019f8227da.hot-update.js[39m[22m 4.14 KiB 5 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.c1ffe1019f8227da.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.c1ffe1019f8227da.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.c1ffe1019f8227da.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.c1ffe1019f8227da.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.c1ffe1019f8227da.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (b7747b2ec1485cf9)
+[36mType-checking in progress...[39m
+[32mNo errors found.[39m
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 11 MiB (15.2 MiB) = 6 assets 6 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 684 KiB (834 KiB) = [1m[32mruntime.js[39m[22m 50.6 KiB [1m[32mruntime.b7747b2ec1485cf9.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 68.3 KiB [1m[32mstyles.js[39m[22m 564 KiB [1m[32mstyles.b7747b2ec1485cf9.hot-update.js[39m[22m 516 bytes 5 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.js[39m[22m, [1m[32mmain.b7747b2ec1485cf9.hot-update.js[39m[22m (main) 127 KiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.b7747b2ec1485cf9.hot-update.js[39m[22m (runtime) 33.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.b7747b2ec1485cf9.hot-update.js[39m[22m (styles) 542 KiB (javascript) 68.3 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.js[39m[22m, [1m[32mvendor.b7747b2ec1485cf9.hot-update.js[39m[22m (vendor) (id hint: vendor) 7.91 MiB [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/enc-utils/dist/cjs/index.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/enc-utils/src/index.ts'[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m../node_modules/jsbi/dist/jsbi-umd.js[39m[22m
+[1mModule Warning (from ../node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map from '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts' file: [1m[31mError[39m[22m[1m: ENOENT: no such file or directory, open '/Users/hyun/web3-auditing/witts/node_modules/jsbi/lib/jsbi.ts'[39m[22m
+
+webpack compiled with [1m[33m2 warnings[39m[22m (2a41a8103475c71c)
+[32mNo errors found.[39m

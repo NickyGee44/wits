@@ -217,15 +217,15 @@
       },
       {
         "file": ".nx/cache/d/daemon.log",
-        "hash": "13119585176515917835"
+        "hash": "7772577029066570639"
       },
       {
         "file": ".nx/cache/d/server-process.json",
-        "hash": "2673465121707925193"
+        "hash": "10411250567177156011"
       },
       {
         "file": ".nx/cache/file-map.json",
-        "hash": "4399734107879848723"
+        "hash": "16743545286713664733"
       },
       {
         "file": ".nx/cache/lockfile.hash",
@@ -237,7 +237,7 @@
       },
       {
         "file": ".nx/cache/project-graph.json",
-        "hash": "10368802387040658903"
+        "hash": "15813319362106682215"
       },
       {
         "file": ".nx/cache/run.json",
@@ -248,20 +248,12 @@
         "hash": "13563717438216907853"
       },
       {
-        "file": ".nx/cache/terminalOutputs/13287158507631206678",
-        "hash": "5847311365294766184"
-      },
-      {
         "file": ".nx/cache/terminalOutputs/13353051992692538277",
         "hash": "9918673864689471038"
       },
       {
         "file": ".nx/cache/terminalOutputs/13877612029435711045",
         "hash": "17049687793969639979"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/14649126315360478364",
-        "hash": "17561195357116645042"
       },
       {
         "file": ".nx/cache/terminalOutputs/15012325851409080993",
@@ -272,20 +264,8 @@
         "hash": "15780046233252479203"
       },
       {
-        "file": ".nx/cache/terminalOutputs/16582902954870805624",
-        "hash": "1440480913623806611"
-      },
-      {
         "file": ".nx/cache/terminalOutputs/17480120112394877515",
         "hash": "706216572225995970"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/249399480186310691",
-        "hash": "14567253322664310485"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/4078155732756622093",
-        "hash": "13395669257666982480"
       },
       {
         "file": ".nx/cache/terminalOutputs/4813121972335578128",
@@ -296,20 +276,8 @@
         "hash": "3244421341483603138"
       },
       {
-        "file": ".nx/cache/terminalOutputs/7199584023849167283",
-        "hash": "15141872659371955832"
-      },
-      {
         "file": ".nx/cache/terminalOutputs/7445091383399598796",
         "hash": "9772891771231309482"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/7900834519549803710",
-        "hash": "13945023074439762743"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/8849154605504789122",
-        "hash": "14133959282058834174"
       },
       {
         "file": ".nx/cache/terminalOutputs/902263213402382792",
@@ -360,10 +328,6 @@
         "hash": "3788921733882139142"
       },
       {
-        "file": "package-lock.json",
-        "hash": "5249395490970396107"
-      },
-      {
         "file": "package.json",
         "hash": "10918404633145134413"
       },
@@ -372,133 +336,11 @@
         "hash": "3168197193324777544"
       },
       {
-        "file": ".nx/cache/terminalOutputs/7539235833192315672",
-        "hash": "3025172787608226560"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/14610232404752722741",
-        "hash": "14862210787007329805"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/9561328172028566789",
-        "hash": "8229706910710322727"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/15005557228038773939",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/9879336641241762318",
-        "hash": "12900154203188919279"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/3694323930517497923",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/57834609797270863",
-        "hash": "8634108982398989391"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/2897695030103479177",
-        "hash": "3244421341483603138"
+        "file": ".nx/cache/terminalOutputs/2797378571847970309",
+        "hash": "10895161291994951383"
       }
     ],
     "projectFileMap": {
-      "contracts": [
-        {
-          "file": "contracts/.gitignore",
-          "hash": "16205332367941202596"
-        },
-        {
-          "file": "contracts/hardhat.config.ts",
-          "hash": "6113876073411572618"
-        },
-        {
-          "file": "contracts/project.json",
-          "hash": "8459517128468499037"
-        },
-        {
-          "file": "contracts/src/contracts/Cards.sol",
-          "hash": "14551487529285069794"
-        },
-        {
-          "file": "contracts/src/contracts/GBaby.sol",
-          "hash": "14482560369709874636"
-        },
-        {
-          "file": "contracts/src/contracts/Packets.sol",
-          "hash": "9833771644063746464"
-        },
-        {
-          "file": "contracts/src/contracts/QuillAndInk.sol",
-          "hash": "7393881661210093183"
-        },
-        {
-          "file": "contracts/src/contracts/Randomizer.sol",
-          "hash": "7070633941137574202"
-        },
-        {
-          "file": "contracts/src/contracts/imx/ERC1155BaseUpgradeable.sol",
-          "hash": "2597855355772131047"
-        },
-        {
-          "file": "contracts/src/contracts/imx/ERC1155PermitUpgradeable.sol",
-          "hash": "10171695120061656430"
-        },
-        {
-          "file": "contracts/src/contracts/imx/IERC1155Permit.sol",
-          "hash": "16829943685101649725"
-        },
-        {
-          "file": "contracts/src/contracts/imx/OperatorAllowlistEnforcedUpgradeable.sol",
-          "hash": "17069537270003714364"
-        },
-        {
-          "file": "contracts/src/contracts/imx/WitsPacketUpgradeable.sol",
-          "hash": "11402450756120714140"
-        },
-        {
-          "file": "contracts/src/contracts/interfaces/ICards.sol",
-          "hash": "17183023352076346684"
-        },
-        {
-          "file": "contracts/src/contracts/interfaces/IRandomizer.sol",
-          "hash": "13827590350622231568"
-        },
-        {
-          "file": "contracts/src/scripts/gbaby.ts",
-          "hash": "15103719549233242941"
-        },
-        {
-          "file": "contracts/src/scripts/imx-packets.ts",
-          "hash": "10300265447129803839"
-        },
-        {
-          "file": "contracts/src/scripts/packets.ts",
-          "hash": "14809190798157883110"
-        },
-        {
-          "file": "contracts/src/scripts/set-live.ts",
-          "hash": "2077118664021065296"
-        },
-        {
-          "file": "contracts/src/scripts/test.ts",
-          "hash": "3194396382896753613"
-        },
-        {
-          "file": "contracts/src/scripts/upgrade.ts",
-          "hash": "11563407213661887152"
-        },
-        {
-          "file": "contracts/tsconfig.json",
-          "hash": "8860430392960548210"
-        },
-        {
-          "file": "contracts/src/test/test.ts",
-          "hash": "5881527463004360126"
-        }
-      ],
       "api": [
         {
           "file": "api/.eslintrc.json",
@@ -552,11 +394,15 @@
         },
         {
           "file": "web/project.json",
-          "hash": "11254634335200293218"
+          "hash": "12952539865577311429"
+        },
+        {
+          "file": "web/src/_redirects",
+          "hash": "18160711383778974283"
         },
         {
           "file": "web/src/app/app.tsx",
-          "hash": "4035761981082438460"
+          "hash": "18203783265609725555"
         },
         {
           "file": "web/src/app/modules/burn/components/burn-tab.tsx",
@@ -577,6 +423,14 @@
         {
           "file": "web/src/app/modules/burn/components/quill-and-ink-input.tsx",
           "hash": "563253072416008858"
+        },
+        {
+          "file": "web/src/app/modules/burn/hooks/use-burn-api.tsx",
+          "hash": "9491044098039112207"
+        },
+        {
+          "file": "web/src/app/modules/burn/hooks/use-burn-mint.tsx",
+          "hash": "2641751721408781834"
         },
         {
           "file": "web/src/app/modules/burn/hooks/use-burn-to-mint.tsx",
@@ -739,12 +593,20 @@
           "hash": "15809026855737607228"
         },
         {
+          "file": "web/src/app/modules/shared/hooks/use-connect-ui.tsx",
+          "hash": "17033115712599382537"
+        },
+        {
           "file": "web/src/app/modules/shared/hooks/use-passport.tsx",
-          "hash": "15230859947117515080"
+          "hash": "17480955715006625120"
+        },
+        {
+          "file": "web/src/app/modules/shared/hooks/use-wallet-ui.tsx",
+          "hash": "5995082650865605738"
         },
         {
           "file": "web/src/app/modules/shared/providers.tsx",
-          "hash": "44068377921301575"
+          "hash": "11088760200160786144"
         },
         {
           "file": "web/src/assets/.gitkeep",
@@ -876,7 +738,7 @@
         },
         {
           "file": "web/src/environments/environment.prod.ts",
-          "hash": "9199130302371351981"
+          "hash": "17311179139785410005"
         },
         {
           "file": "web/src/environments/environment.ts",
@@ -917,22 +779,100 @@
         {
           "file": "web/webpack.config.js",
           "hash": "2121882521388735947"
+        }
+      ],
+      "contracts": [
+        {
+          "file": "contracts/.gitignore",
+          "hash": "16205332367941202596"
         },
         {
-          "file": "web/src/app/modules/shared/hooks/use-connect-ui.tsx",
-          "hash": "17033115712599382537"
+          "file": "contracts/hardhat.config.ts",
+          "hash": "6113876073411572618"
         },
         {
-          "file": "web/src/app/modules/shared/hooks/use-wallet-ui.tsx",
-          "hash": "5995082650865605738"
+          "file": "contracts/project.json",
+          "hash": "8459517128468499037"
         },
         {
-          "file": "web/src/app/modules/burn/hooks/use-burn-mint.tsx",
-          "hash": "2641751721408781834"
+          "file": "contracts/src/contracts/Cards.sol",
+          "hash": "14551487529285069794"
         },
         {
-          "file": "web/src/app/modules/burn/hooks/use-burn-api.tsx",
-          "hash": "9491044098039112207"
+          "file": "contracts/src/contracts/GBaby.sol",
+          "hash": "14482560369709874636"
+        },
+        {
+          "file": "contracts/src/contracts/Packets.sol",
+          "hash": "9833771644063746464"
+        },
+        {
+          "file": "contracts/src/contracts/QuillAndInk.sol",
+          "hash": "7393881661210093183"
+        },
+        {
+          "file": "contracts/src/contracts/Randomizer.sol",
+          "hash": "7070633941137574202"
+        },
+        {
+          "file": "contracts/src/contracts/imx/ERC1155BaseUpgradeable.sol",
+          "hash": "2597855355772131047"
+        },
+        {
+          "file": "contracts/src/contracts/imx/ERC1155PermitUpgradeable.sol",
+          "hash": "10171695120061656430"
+        },
+        {
+          "file": "contracts/src/contracts/imx/IERC1155Permit.sol",
+          "hash": "16829943685101649725"
+        },
+        {
+          "file": "contracts/src/contracts/imx/OperatorAllowlistEnforcedUpgradeable.sol",
+          "hash": "17069537270003714364"
+        },
+        {
+          "file": "contracts/src/contracts/imx/WitsPacketUpgradeable.sol",
+          "hash": "11402450756120714140"
+        },
+        {
+          "file": "contracts/src/contracts/interfaces/ICards.sol",
+          "hash": "17183023352076346684"
+        },
+        {
+          "file": "contracts/src/contracts/interfaces/IRandomizer.sol",
+          "hash": "13827590350622231568"
+        },
+        {
+          "file": "contracts/src/scripts/gbaby.ts",
+          "hash": "15103719549233242941"
+        },
+        {
+          "file": "contracts/src/scripts/imx-packets.ts",
+          "hash": "10300265447129803839"
+        },
+        {
+          "file": "contracts/src/scripts/packets.ts",
+          "hash": "14809190798157883110"
+        },
+        {
+          "file": "contracts/src/scripts/set-live.ts",
+          "hash": "2077118664021065296"
+        },
+        {
+          "file": "contracts/src/scripts/test.ts",
+          "hash": "3194396382896753613"
+        },
+        {
+          "file": "contracts/src/scripts/upgrade.ts",
+          "hash": "11563407213661887152"
+        },
+        {
+          "file": "contracts/src/test/test.ts",
+          "hash": "5881527463004360126"
+        },
+        {
+          "file": "contracts/tsconfig.json",
+          "hash": "8860430392960548210"
         }
       ]
     }

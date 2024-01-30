@@ -15,7 +15,6 @@ export function usePassport() {
   const fetchUser = useCallback(async () => {
     try {
       const user = await passport.getUserInfo();
-
       if (!user) {
         setAuthenticated(false);
         return;
@@ -30,8 +29,8 @@ export function usePassport() {
   const logout = useCallback(async () => {
     try {
       setLoading(true);
-      await passport.logout();
-      await fetchUser();
+      passport.logout();
+      fetchUser();
     } catch (e) {
       console.error(e);
     } finally {
@@ -42,8 +41,8 @@ export function usePassport() {
   const login = useCallback(async () => {
     try {
       setLoading(true);
-      await passport.login();
-      await fetchUser();
+      passport.login();
+      fetchUser();
     } catch (e) {
       console.error(e);
     } finally {
@@ -56,13 +55,14 @@ export function usePassport() {
       await passport.loginCallback();
       await fetchUser();
     } catch (e) {
-      console.error(e);
+      console.log(e, '------');
     }
   };
 
   const logoutCallback = async () => {
     try {
       await passport.logoutSilentCallback('/');
+      await fetchUser();
     } catch (e) {
       console.error(e);
     }

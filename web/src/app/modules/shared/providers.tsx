@@ -2,16 +2,17 @@ import { Web3Provider } from '@ethersproject/providers';
 import { passport, config, checkout } from '@imtbl/sdk';
 import { Context, createContext, useContext, useEffect } from 'react';
 
+const baseUrl = 'https://deploy-preview-2--papaya-faun-a29515.netlify.app';
+// const baseUrl = 'http://localhost:4200';
+
 const passportInstance = new passport.Passport({
   baseConfig: {
     environment: config.Environment.SANDBOX,
     publishableKey: 'pk_imapik-test-1-ps6t8Kn5HcDvXXPeMP',
   },
   clientId: 'edXzCFlOvpQ9qCDjiBFQlFb9YgRK5RYh',
-  redirectUri:
-    'https://deploy-preview-2--papaya-faun-a29515.netlify.app/redirect',
-  logoutRedirectUri:
-    'https://deploy-preview-2--papaya-faun-a29515.netlify.app/logout',
+  redirectUri: `${baseUrl}/redirect`,
+  logoutRedirectUri: `${baseUrl}/logout`,
   audience: 'platform_api',
   scope: 'openid offline_access email transact',
 });
