@@ -4,7 +4,13 @@ export const environment = {
     url: 'https://d3q40xds4jmbwq.cloudfront.net',
     image: 'https://d24nwmc6w5dhne.cloudfront.net',
   },
-  chain: 'goerli',
+  imxRpcURL: 'https://rpc.testnet.immutable.com',
+  chain: 'imx',
+  imx: {
+    chainId: 13473,
+    explorer: 'https://explorer.testnet.immutable.com',
+    packets: '0xCF4d84AB78c06B4CDB278521E016ed62600D0A63' as const,
+  },
   api: {
     base: '/',
     addresses: '.netlify/functions/main',
