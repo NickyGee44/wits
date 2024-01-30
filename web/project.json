@@ -15,7 +15,7 @@
         "baseHref": "/",
         "main": "web/src/main.tsx",
         "tsConfig": "web/tsconfig.app.json",
-        "assets": ["web/src/favicon.ico", "web/src/assets"],
+        "assets": ["web/src/favicon.ico", "web/src/assets", "web/src/_redirects"],
         "styles": ["web/src/styles.scss", "node_modules/@rainbow-me/rainbowkit/styles.css"],
         "scripts": [],
         "isolatedConfig": true,
