@@ -167,40 +167,6 @@
       }
     ],
     "projectFileMap": {
-      "api": [
-        {
-          "file": "api/.eslintrc.json",
-          "hash": "11808533155536463924"
-        },
-        {
-          "file": "api/jest.config.ts",
-          "hash": "10410655590686536064"
-        },
-        {
-          "file": "api/project.json",
-          "hash": "6512795210371978054"
-        },
-        {
-          "file": "api/src/main.ts",
-          "hash": "6320028479342321959"
-        },
-        {
-          "file": "api/src/viem.ts",
-          "hash": "2717517603402910573"
-        },
-        {
-          "file": "api/tsconfig.app.json",
-          "hash": "1650782542565282680"
-        },
-        {
-          "file": "api/tsconfig.json",
-          "hash": "9420862676426701392"
-        },
-        {
-          "file": "api/tsconfig.spec.json",
-          "hash": "17313551537729802733"
-        }
-      ],
       "contracts": [
         {
           "file": "contracts/.gitignore",
@@ -252,7 +218,7 @@
         },
         {
           "file": "contracts/src/scripts/set-live.ts",
-          "hash": "2199751150620144688"
+          "hash": "8671924275660027103"
         },
         {
           "file": "contracts/src/scripts/test.ts",
@@ -290,7 +256,7 @@
         },
         {
           "file": "web/src/app/app.tsx",
-          "hash": "6205101891655125675"
+          "hash": "10592278051805987497"
         },
         {
           "file": "web/src/app/data/whitelist.ts",
@@ -426,11 +392,11 @@
         },
         {
           "file": "web/src/app/modules/mint/components/container.tsx",
-          "hash": "5559709425054775050"
+          "hash": "6569079190514749987"
         },
         {
           "file": "web/src/app/modules/mint/components/mint-tab.tsx",
-          "hash": "707828861070824659"
+          "hash": "15552893419416590539"
         },
         {
           "file": "web/src/app/modules/mint/hooks/use-mint.tsx",
@@ -606,11 +572,7 @@
         },
         {
           "file": "web/src/environments/environment.ts",
-          "hash": "616037547748150596"
-        },
-        {
-          "file": "web/src/favicon.ico",
-          "hash": "9303420814833116677"
+          "hash": "15901076191745463593"
         },
         {
           "file": "web/src/index.html",
@@ -659,6 +621,44 @@
         {
           "file": "web/webpack.config.js",
           "hash": "1043731587818967490"
+        },
+        {
+          "file": "web/src/favicon.ico",
+          "hash": "16909475405208918648"
+        }
+      ],
+      "api": [
+        {
+          "file": "api/.eslintrc.json",
+          "hash": "11808533155536463924"
+        },
+        {
+          "file": "api/jest.config.ts",
+          "hash": "10410655590686536064"
+        },
+        {
+          "file": "api/project.json",
+          "hash": "6512795210371978054"
+        },
+        {
+          "file": "api/src/main.ts",
+          "hash": "6320028479342321959"
+        },
+        {
+          "file": "api/src/viem.ts",
+          "hash": "2705650680231960321"
+        },
+        {
+          "file": "api/tsconfig.app.json",
+          "hash": "1650782542565282680"
+        },
+        {
+          "file": "api/tsconfig.json",
+          "hash": "9420862676426701392"
+        },
+        {
+          "file": "api/tsconfig.spec.json",
+          "hash": "17313551537729802733"
         }
       ]
     }

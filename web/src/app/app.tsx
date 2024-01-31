@@ -9,12 +9,14 @@ import { OpenContainer } from './modules/open/components/container';
 import { environment } from '../environments/environment';
 import { Toaster } from 'react-hot-toast';
 import { addresses } from './data/whitelist';
+import { useStage } from './modules/core/hooks/use-stage';
 
 // const network = environment.chain === 'mainnet' ? 'mainnet' : 'goerli';
 const network = 'mumbai';
 
 export function App() {
   const { address } = useAccount();
+  const stage = useStage(environment[network].packets);
   const { tabIndex, setTabIndex } = useTabs();
 
   const addressLower = address ? address.toLowerCase() : '';
@@ -26,32 +28,33 @@ export function App() {
       <Toaster />
       <div className="flex flex-col w-10/12 mx-auto py-8 justify-center items-center space-y-16">
         <HeaderContainer packets={environment[network].packets} />
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* <Tab
+        {stage !== 0 && (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {/* <Tab
             text="WalletChecker"
             handleClick={() => setTabIndex(0)}
             isActive={tabIndex === 0}
           /> */}
-          <Tab
-            text="BURN TO MINT"
-            handleClick={() => setTabIndex(0)}
-            isActive={tabIndex === 0}
-          />
-          <Tab
-            text="MINT A PACK"
-            handleClick={() => setTabIndex(1)}
-            isActive={tabIndex === 1}
-          />
-          <Tab
-            text="OPEN PACK"
-            handleClick={() => setTabIndex(2)}
-            isActive={tabIndex === 2}
-          />
-        </div>
-        <Container hasBorder isOpaque>
-          {/* <TabBody activeIndex={tabIndex} tabIndex={0}> */}
-          {/* <div className="w-11/12 mx-auto">
+              <Tab
+                text="BURN TO MINT"
+                handleClick={() => setTabIndex(0)}
+                isActive={tabIndex === 0}
+              />
+              <Tab
+                text="MINT A PACK"
+                handleClick={() => setTabIndex(1)}
+                isActive={tabIndex === 1}
+              />
+              <Tab
+                text="OPEN PACK"
+                handleClick={() => setTabIndex(2)}
+                isActive={tabIndex === 2}
+              />
+            </div>
+            <Container hasBorder isOpaque>
+              {/* <TabBody activeIndex={tabIndex} tabIndex={0}> */}
+              {/* <div className="w-11/12 mx-auto">
               <div>
                 <div className="flex flex-col justify-center items-center space-y-4">
                   <div
@@ -87,30 +90,32 @@ export function App() {
                 </div>
               </div>
             </div> */}
-          {/* </TabBody> */}
-          <div className="w-11/12 mx-auto">
-            <TabBody activeIndex={tabIndex} tabIndex={0}>
-              <BurnContainer
-                gbabies={environment[network].gBabies}
-                quillAndInk={environment[network].quillAndInk}
-                packets={environment[network].packets}
-                account={address ?? '0x'}
-              />
-            </TabBody>
-            <TabBody activeIndex={tabIndex} tabIndex={1}>
-              <MintContainer
-                packets={environment[network].packets}
-                account={address ?? '0x'}
-              />
-            </TabBody>
-            <TabBody activeIndex={tabIndex} tabIndex={2}>
-              <OpenContainer
-                packets={environment[network].packets}
-                account={address ?? '0x'}
-              />
-            </TabBody>
-          </div>
-        </Container>
+              {/* </TabBody> */}
+              <div className="w-11/12 mx-auto">
+                <TabBody activeIndex={tabIndex} tabIndex={0}>
+                  <BurnContainer
+                    gbabies={environment[network].gBabies}
+                    quillAndInk={environment[network].quillAndInk}
+                    packets={environment[network].packets}
+                    account={address ?? '0x'}
+                  />
+                </TabBody>
+                <TabBody activeIndex={tabIndex} tabIndex={1}>
+                  <MintContainer
+                    packets={environment[network].packets}
+                    account={address ?? '0x'}
+                  />
+                </TabBody>
+                <TabBody activeIndex={tabIndex} tabIndex={2}>
+                  <OpenContainer
+                    packets={environment[network].packets}
+                    account={address ?? '0x'}
+                  />
+                </TabBody>
+              </div>
+            </Container>
+          </>
+        )}
       </div>
     </main>
   );

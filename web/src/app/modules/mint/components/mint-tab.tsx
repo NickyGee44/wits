@@ -5,6 +5,9 @@ import { Packet } from '../../core/components/packet';
 interface MintTabProps {
   write: () => void;
   loading: boolean;
+  presaleLive: boolean;
+  publicLive: boolean;
+  totalMintable: number;
   cards: {
     name: string;
     price: bigint;
@@ -18,7 +21,13 @@ interface MintTabProps {
   }[];
 }
 
-export function MintTab({ loading, cards, write }: MintTabProps) {
+export function MintTab({
+  loading,
+  presaleLive,
+  totalMintable,
+  cards,
+  write,
+}: MintTabProps) {
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-9/12 md:w-full mx-auto mt-8">
@@ -43,9 +52,12 @@ export function MintTab({ loading, cards, write }: MintTabProps) {
         ))}
       </div>
       <div className="flex flex-row justify-center items-center w-full">
-        <SubmitButton disabled={loading} handleClick={write}>
-          MINT
-        </SubmitButton>
+        <div className="flex flex-col space-y-2 justify-center items-center">
+          {presaleLive && totalMintable > 0 && <div>{totalMintable} Left</div>}
+          <SubmitButton disabled={loading} handleClick={write}>
+            MINT
+          </SubmitButton>
+        </div>
       </div>
     </>
   );

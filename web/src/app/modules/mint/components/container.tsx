@@ -96,6 +96,7 @@ export function MintContainer(props: MintContainerProps) {
 
   const {
     write: presaleMint,
+    totalMintable,
     isLive: presaleLive,
     loading,
   } = usePresaleMint(props.packets, props.account, mintRequests, value, reset);
@@ -113,6 +114,9 @@ export function MintContainer(props: MintContainerProps) {
       write={write}
       cards={[single, booster, jumbo, mystery]}
       loading={loading || publicLoading}
+      presaleLive={presaleLive}
+      publicLive={publicLive}
+      totalMintable={totalMintable}
     />
   );
 }

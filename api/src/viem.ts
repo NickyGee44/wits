@@ -8,12 +8,68 @@ const PRIVATE_KEY =
 
 export const CONTRACT_ADDRESS = '0x51Ac32651d8a33c137B9B56BCdD1E037CACB7A8A';
 export const CARDS_CONTRACT_ADDRESS = '0x4DC6BC7ea2d9F148f715D5Cd0c3D3937b3072F13';
-export const NAME = 'Name';
-export const VERSION = 'Version';
+export const NAME = 'WITS';
+export const VERSION = '1';
 
 const PACKETS_CONTRACT = new Contract(
   CONTRACT_ADDRESS,
   [
+    {
+      inputs: [],
+      name: 'eip712Domain',
+      outputs: [
+        {
+          internalType: 'bytes1',
+          name: 'fields',
+          type: 'bytes1',
+        },
+        {
+          internalType: 'string',
+          name: 'name',
+          type: 'string',
+        },
+        {
+          internalType: 'string',
+          name: 'version',
+          type: 'string',
+        },
+        {
+          internalType: 'uint256',
+          name: 'chainId',
+          type: 'uint256',
+        },
+        {
+          internalType: 'address',
+          name: 'verifyingContract',
+          type: 'address',
+        },
+        {
+          internalType: 'bytes32',
+          name: 'salt',
+          type: 'bytes32',
+        },
+        {
+          internalType: 'uint256[]',
+          name: 'extensions',
+          type: 'uint256[]',
+        },
+      ],
+      stateMutability: 'view',
+      type: 'function',
+    },
+    {
+      inputs: [],
+      name: 'signer',
+      outputs: [
+        {
+          internalType: 'address',
+          name: '',
+          type: 'address',
+        },
+      ],
+      stateMutability: 'view',
+      type: 'function',
+    },
     {
       inputs: [
         {
@@ -40,6 +96,8 @@ const PACKETS_CONTRACT = new Contract(
 export const createSignature = async (address: string, amount: number) => {
   const wallet = new Wallet(PRIVATE_KEY);
 
+  console.log(await PACKETS_CONTRACT.eip712Domain());
+  console.log(await PACKETS_CONTRACT.functions['signer()']());
   console.log(wallet, NAME, VERSION, CHAIN_ID, CONTRACT_ADDRESS);
 
   const signature = await wallet._signTypedData(
