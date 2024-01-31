@@ -4,6 +4,7 @@ import { Packet } from '../../core/components/packet';
 
 interface MintTabProps {
   write: () => void;
+  loading: boolean;
   cards: {
     name: string;
     price: bigint;
@@ -17,7 +18,7 @@ interface MintTabProps {
   }[];
 }
 
-export function MintTab({ cards, write }: MintTabProps) {
+export function MintTab({ loading, cards, write }: MintTabProps) {
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-9/12 md:w-full mx-auto mt-8">
@@ -42,7 +43,9 @@ export function MintTab({ cards, write }: MintTabProps) {
         ))}
       </div>
       <div className="flex flex-row justify-center items-center w-full">
-        <SubmitButton handleClick={write}>MINT</SubmitButton>
+        <SubmitButton disabled={loading} handleClick={write}>
+          MINT
+        </SubmitButton>
       </div>
     </>
   );

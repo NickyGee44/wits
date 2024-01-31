@@ -4,9 +4,14 @@ import { useGbabiesSelected } from '../hooks/use-gbabies-selected';
 import { useQuillAndInkBalance } from '../hooks/use-quill-and-ink-balance';
 import { useMemo } from 'react';
 import { useBurnMint } from '../hooks/use-mint';
-import { usePrice } from '../../core/hooks/use-price';
+import { useDiscountedPrice, usePrice } from '../../core/hooks/use-price';
 import { formatUnits } from 'viem';
 import { useApproval } from '../../core/hooks/use-approval';
+import {
+  useTransaction,
+  useWaitForTransaction,
+  useWatchPendingTransactions,
+} from 'wagmi';
 
 interface BurnContainerProps {
   gbabies: `0x${string}`;
@@ -36,20 +41,29 @@ export function BurnContainer({
     clearBalance,
     quillAndInkBurnReturnValue,
   } = useQuillAndInkBalance(quillAndInkBalance, quillAndInkTokens);
-  const priceForQuillAndInk = usePrice(packets, 1);
-  // const singleSupply = useTotalSupply(packets, 1);
+  const priceForQuillAndInk = useDiscountedPrice(packets);
 
   const price = useMemo(() => {
     return priceForQuillAndInk * BigInt(quillAndInkBurnReturnValue);
   }, [quillAndInkBurnReturnValue, priceForQuillAndInk]);
 
-  const { write } = useBurnMint(packets, selectedIds, toBurn, price, () => {
-    clearBalance();
-    clearSelected();
-  });
+  const { write, loading: burnLoading } = useBurnMint(
+    packets,
+    selectedIds,
+    toBurn,
+    price,
+    () => {
+      clearBalance();
+      clearSelected();
+    }
+  );
 
-  const { isApprovedForAll: gbabiesIsApprovedForAll, write: gbabiesWrite } =
-    useApproval(gbabies, account, packets, clearSelected);
+  const {
+    isApprovedForAll: gbabiesIsApprovedForAll,
+    write: gbabiesWrite,
+    tx,
+    loading,
+  } = useApproval(gbabies, account, packets, clearSelected);
 
   const showIsApprovedForAll = useMemo(() => {
     return !gbabiesIsApprovedForAll && selectedIds.length;
@@ -77,6 +91,7 @@ export function BurnContainer({
       ids={gBabyTokens}
       selected={selectedIds}
       totalWits={gbabiesReturnValue}
+      loading={loading || burnLoading}
       handleSelected={handleSelected}
       onIncrement={handleIncrement}
       onDecrement={handleDecrement}

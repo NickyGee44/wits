@@ -40,7 +40,7 @@ export function useApproval(
     watch: true,
   });
 
-  const { action } = useWrite(
+  const { loading, action, data } = useWrite(
     {
       abi: [
         {
@@ -71,6 +71,8 @@ export function useApproval(
 
   return {
     isApprovedForAll: isApprovedForAll as boolean,
+    loading,
+    tx: data,
     write: action,
   };
 }

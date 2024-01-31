@@ -16,10 +16,12 @@ interface BurnTabProps {
   total: number;
   write?: () => void;
   buttonLabel: string;
+  loading: boolean;
 }
 
 export function BurnTab({
   buttonLabel,
+  loading,
   write,
   ids,
   selected,
@@ -55,7 +57,9 @@ export function BurnTab({
       </Container>
 
       <div className="flex flex-row justify-center items-center w-full">
-        <SubmitButton handleClick={() => write?.()}>{buttonLabel}</SubmitButton>
+        <SubmitButton disabled={loading} handleClick={() => write?.()}>
+          {buttonLabel}
+        </SubmitButton>
       </div>
     </>
   );

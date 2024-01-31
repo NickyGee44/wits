@@ -14,23 +14,26 @@ async function main() {
   ];
   const packets = await ethers.getContractAt(
     'Packets',
-    '0xDDC03b04691Cb05708F2BCD6fd8Af4CA4de2843C'
+    '0x5CB234f98050485c9BFE44521f846035F7779177'
   );
 
   const gBabies = await ethers.getContractAt(
     'Gbaby',
-    '0xbB047e6DaB367faE2eEbbd96867D2efe3C7158B3'
+    '0xcA49cBA91B55cA7216586BDdFE4FbcBfF57E15a5'
   );
 
   const quillAndInk = await ethers.getContractAt(
     'QuillAndInk',
-    '0x02167acD64dA8201b845507E9a8ddec16fe1F7b3'
+    '0x18489f8666b06788957Da42F97aAf9Cb0E82d60B'
   );
 
   for (const address of test) {
     await gBabies.mint(address, 3);
     await quillAndInk.adminMint([address], [3]);
   }
+
+  let tx = await packets.setDiscountPrice(ethers.utils.parseEther('0.0008'));
+  await tx.wait();
 }
 
 main().catch((error) => {

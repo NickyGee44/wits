@@ -34,7 +34,7 @@ export function usePresaleMint(
     };
   }, [assignedValue, account]);
 
-  const { action } = useWrite(
+  const { action, loading } = useWrite(
     {
       abi: PACKETS_ABI,
       address,
@@ -42,13 +42,15 @@ export function usePresaleMint(
       args: [presaleRequest, mintRequests, signature],
       value,
     },
-    reset
+    reset,
+    'Presale Mint'
   );
   const stage = useStage(address);
 
   return {
     write: action,
     totalMintable,
+    loading,
     isLive: stage === 1,
   };
 }
@@ -62,7 +64,7 @@ export function usePublicMint(
   value: bigint,
   reset: () => void
 ) {
-  const { action } = useWrite(
+  const { action, loading } = useWrite(
     {
       abi: PACKETS_ABI,
       address,
@@ -70,12 +72,13 @@ export function usePublicMint(
       args: [mintRequests],
       value,
     },
-    reset
+    reset,
+    'Public Mint'
   );
   const stage = useStage(address);
   const isLive = stage === 2;
 
-  return { write: action, isLive };
+  return { write: action, isLive, loading };
 }
 
 export function useMinted(account: `0x${string}`, tokenAddress: `0x${string}`) {

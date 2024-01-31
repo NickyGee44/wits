@@ -88,20 +88,17 @@ export function MintContainer(props: MintContainerProps) {
     });
   };
 
-  const { isLive: publicLive, write: publicMint } = usePublicMint(
-    props.packets,
-    mintRequests,
-    value,
-    reset
-  );
+  const {
+    isLive: publicLive,
+    write: publicMint,
+    loading: publicLoading,
+  } = usePublicMint(props.packets, mintRequests, value, reset);
 
-  const { write: presaleMint, isLive: presaleLive } = usePresaleMint(
-    props.packets,
-    props.account,
-    mintRequests,
-    value,
-    reset
-  );
+  const {
+    write: presaleMint,
+    isLive: presaleLive,
+    loading,
+  } = usePresaleMint(props.packets, props.account, mintRequests, value, reset);
 
   const write = async () => {
     if (presaleLive) {
@@ -111,5 +108,11 @@ export function MintContainer(props: MintContainerProps) {
     }
   };
 
-  return <MintTab write={write} cards={[single, booster, jumbo, mystery]} />;
+  return (
+    <MintTab
+      write={write}
+      cards={[single, booster, jumbo, mystery]}
+      loading={loading || publicLoading}
+    />
+  );
 }

@@ -32,7 +32,10 @@ contract Packets is
     uint256 public activeIndex;
     mapping(uint256 => uint256) public idToCards;
     mapping(uint256 => uint256) private _totalSupply;
+    
     event PacketOpened(address indexed account, uint256 cardId, uint256 startingId, uint256 total, uint256 timestamp);
+    event QuillsBurned(address indexed account, uint256 amount, uint256 timestamp);
+    event GbaiesBurned(address indexed account, uint256 amount, uint256 timestamp);
 
     function initialize(
         string memory prefix_,
@@ -142,7 +145,7 @@ contract Packets is
         (uint256 gbabyTotal,) = _calculateGBabies(gbabies);
         (uint256 quillTotal, uint256 quillPrice) = _calculateQuills(quills);
         uint256 totalMints = gbabyTotal + quillTotal;
-        _handleMint(msg.sender, 1, totalMints, quillPrice);
+        _handleMint(msg.sender, totalMints, 1, quillPrice);
     }
     
     function presaleMint(
@@ -188,23 +191,21 @@ contract Packets is
         uint256 totalPrice;
         uint256 totalMints;
         uint256 length = mintRequests.length;
-        uint256[] memory ids = new uint256[](4);
-        ids[0] = 1;
-        ids[1] = 2;
-        ids[2] = 3;
-        ids[3] = 4;
-        uint256[] memory amounts = new uint256[](4);
-        amounts[0] = 0;
-        amounts[1] = 0;
-        amounts[2] = 0;
-        amounts[3] = 0;
+
+        uint256[] memory ids = new uint256[](length);
+        uint256[] memory amounts = new uint256[](length);
+
         for(uint256 i; i < length; i++) {
             MintRequest memory mintRequest = mintRequests[i];
-            require(mintRequest.id < 5 && mintRequest.id > 0, "Invalid ID");
-            amounts[mintRequest.id - 1] += mintRequest.amount;
-            _checkSupply(mintRequest.id, mintRequest.amount);
-            totalPrice += price(uint8(mintRequest.id)) * mintRequest.amount;
-            totalMints += mintRequest.amount;
+            uint256 id = mintRequest.id;
+            require(id < 5 && id > 0, "Invalid ID");            
+            uint256 amount = mintRequest.amount;
+            _checkSupply(id, amount);
+            uint256 priceValue = price(uint8(id));
+            totalPrice += priceValue * amount;
+            totalMints += amount;
+            ids[i] = id;
+            amounts[i] = amount;
         }
         require(totalMints > 0, "Zero");
 
@@ -232,7 +233,14 @@ contract Packets is
             }
             gbabiesContract.burn(id);
         }
+        emit GbaiesBurned(msg.sender, total, block.timestamp);
         return (total, 0);
+    }
+
+    uint256 public discountPrice;
+
+    function setDiscountPrice(uint256 _discountPrice) external onlyAdmin {
+        discountPrice = _discountPrice;
     }
 
     function _calculateQuills(
@@ -246,8 +254,9 @@ contract Packets is
             require(quillContract.ownerOf(id) == msg.sender, "Invalid Owner");
             quillContract.burn(id);
         }
+        emit QuillsBurned(msg.sender, length, block.timestamp);
         uint256 amount = length / 2;
-        return (amount, price(1) * amount);
+        return (amount, amount * discountPrice);
     }
 
     function adminMint(
@@ -272,7 +281,7 @@ contract Packets is
         uint256 tokenId
     ) internal{
         _checkSupply(tokenId, amount);
-        _mint(account, amount, tokenId, "");
+        _mint(account, tokenId, amount, "");
     }
 
     function _handleMint(

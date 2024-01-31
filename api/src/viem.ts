@@ -1,14 +1,14 @@
 import { Contract, Wallet, providers } from 'ethers';
 
-const CHAIN_ID = 5;
+const CHAIN_ID = 80001;
 const PROVIDER_URL =
-  'https://eth-goerli.alchemyapi.io/v2/m3ADmeHfQSDpLG8JGiakIHdOwKdH9p_Z';
+  'https://polygon-mumbai.g.alchemy.com/v2/m3ADmeHfQSDpLG8JGiakIHdOwKdH9p_Z';
 const PRIVATE_KEY =
   'ac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80';
 
-export const CONTRACT_ADDRESS = '0x260e3B084f19a0684Ed730AA1f9bbecdD13E43e2';
+export const CONTRACT_ADDRESS = '0xB97BE417cf491BA49A96566A8886DC58B1723a7c';
 export const CARDS_CONTRACT_ADDRESS =
-  '0x9FC5df68cFE7826D4E8a957E50DD0eef567518D8';
+  '0x136B07d5862fC98C3a98565F4F14f8fA9bBb4CBa';
 export const NAME = 'Name';
 export const VERSION = 'Version';
 

@@ -55,7 +55,9 @@ export function OpenTab({ idsByPackets, cards, open }: OpenTabProps) {
         ))}
       </div>
       <div className="flex flex-row justify-center items-center w-full">
-        <SubmitButton handleClick={action}>OPEN PACKS</SubmitButton>
+        <SubmitButton disabled handleClick={action}>
+          OPEN PACKS
+        </SubmitButton>
       </div>
     </>
   );

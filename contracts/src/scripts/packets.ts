@@ -57,6 +57,8 @@ async function main() {
   console.log('=================== CARDS =====================');
 
   await packets.setContracts(gbabies.address, quill.address, cards.address);
+  let tx = await packets.setDiscountPrice(ethers.utils.parseEther('0.0008'));
+  await tx.wait();
 
   console.log('=================== RANDOMIZER =====================');
 

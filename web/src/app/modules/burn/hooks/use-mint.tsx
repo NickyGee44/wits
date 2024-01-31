@@ -9,7 +9,7 @@ export function useBurnMint(
   value: bigint,
   reset: () => void
 ) {
-  const { action } = useWrite(
+  const { action, loading } = useWrite(
     {
       address,
       abi: PACKETS_ABI,
@@ -24,6 +24,7 @@ export function useBurnMint(
 
   return {
     isLive,
+    loading,
     write: action,
   };
 }

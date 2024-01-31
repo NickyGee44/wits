@@ -11,3 +11,13 @@ export function usePrice(address: `0x${string}`, stage: number): bigint {
 
   return (data as bigint) ?? BigInt(0);
 }
+
+export function useDiscountedPrice(address: `0x${string}`) {
+  const { data } = useContractRead({
+    abi: PACKETS_ABI,
+    address,
+    functionName: 'discountPrice',
+  });
+
+  return (data as bigint) ?? BigInt(0);
+}
