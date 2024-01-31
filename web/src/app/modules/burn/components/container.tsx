@@ -7,11 +7,6 @@ import { useBurnMint } from '../hooks/use-mint';
 import { useDiscountedPrice, usePrice } from '../../core/hooks/use-price';
 import { formatUnits } from 'viem';
 import { useApproval } from '../../core/hooks/use-approval';
-import {
-  useTransaction,
-  useWaitForTransaction,
-  useWatchPendingTransactions,
-} from 'wagmi';
 
 interface BurnContainerProps {
   gbabies: `0x${string}`;

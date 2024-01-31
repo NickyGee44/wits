@@ -40,7 +40,7 @@ export function OpenTab({ idsByPackets, cards, open }: OpenTabProps) {
               <div className="flex flex-row justify-center items-center">
                 <div className="flex flex-row space-x-4">
                   <div className="font-dragon capitalize">
-                    PACKET {card.cardCount}
+                    {card.name} {card.cardCount}
                   </div>
                   <span className="font-sans">•</span>
                   <div className="font-dragon">COUNT {card.balance}</div>
