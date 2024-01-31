@@ -25,12 +25,6 @@ export const environment = {
     cards: '0x610178dA211FEF7D417bC0e6FeD39F05609AD788' as const,
     packets: '0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6' as const,
   },
-  mumbai: {
-    cards: '0xab37CB54be3b983Dcd9D530B59b70040C2280E83' as const,
-    packets: '0x1c3cF14fB52AE4feD9d6D73694F278F946FfC85d' as const,
-    quillAndInk: '0x1e89A706Ee63dc488435c4f6175AfA7168B58d61' as const,
-    gBabies: '0x2B0243F5a0f8c690BCdAE0e00C669e45E44d6A0d' as const,
-  },
   goerli: {
     cards: '0x843DA53761346a528121cC494883A4E7d2014a4e' as const,
     packets: '0xDDC03b04691Cb05708F2BCD6fd8Af4CA4de2843C' as const,
