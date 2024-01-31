@@ -4,7 +4,13 @@ export const environment = {
     url: 'https://d3q40xds4jmbwq.cloudfront.net',
     image: 'https://d24nwmc6w5dhne.cloudfront.net',
   },
-  chain: 'mainnet',
+  chain: 'mumbai',
+  mumbai: {
+    cards: '0xBE8c4D70E379AFe0068dAA546038097F58006459' as const,
+    packets: '0xB97BE417cf491BA49A96566A8886DC58B1723a7c' as const,
+    quillAndInk: '0x75c180302d758c0077137c045326Ce7aD3e8c73F' as const,
+    gBabies: '0x69A5A0e9920aa3a85973136F90F961dD962f5e4b' as const,
+  },
   api: {
     base: '/',
     addresses: '.netlify/functions/main',
