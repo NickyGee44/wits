@@ -43452,6 +43452,69 @@ export const addresses = [
   {
     Wallet: '0xf801AC00C830E70F0a6D6b000afc67A9af54097E',
   },
+  {
+    Wallet: '0xB731207807EAf1Fb7d0e67327868aC04f399A977',
+  },
+  {
+    Wallet: '0x595662AcDCd3A69374B57E208dB168C7ac11dbB2',
+  },
+  {
+    Wallet: '0xA33377f0fb8E2A957057e18A5eA6af4e22F4BF2b',
+  },
+  {
+    Wallet: '0x9ac5390eE927E940bEA7451809D0476C93184D1b',
+  },
+  {
+    Wallet: '0x9542C747257D245806514179fBb45d45D19ce34E',
+  },
+  {
+    Wallet: '0x87c89F5F027b0Dc4626e92D92E5964Ff8661DF84',
+  },
+  {
+    Wallet: '0x0b12A8a077768E036A496bcE6e8A79BC827D29a7',
+  },
+  {
+    Wallet: '0x8285253CdcD7Ac274A908C0F2E53AF2AFb96C7ea',
+  },
+  {
+    Wallet: '0x757CF88dEE8e3E426d09F99EcC9474160E506F87',
+  },
+  {
+    Wallet: '0x2Dd8e501827882A7ec2B1f5D1aA85C054a1Aa3C3',
+  },
+  {
+    Wallet: '0xF4bE84EE5560C52BB964d9c119AD8cAAFe99e541',
+  },
+  {
+    Wallet: '0x19dC51950eeCd6a6b84998dA6C15b92ef7982AcD',
+  },
+  {
+    Wallet: '0x32F14803485175d0D5DE4BF7C1495A0734C9Aa65',
+  },
+  {
+    Wallet: '0xa3f2ea3683e8116A5FAf5e52a695a5171baE088E',
+  },
+  {
+    Wallet: '0x2fB23F30F584094C94Fa61B7dc976B2ef91741C5',
+  },
+  {
+    Wallet: '0x0C85E48e616fdd33720c00baE14668e833C82DEC',
+  },
+  {
+    Wallet: '0x122a55dfE7886Db8f128F97527cb0E9C1FF08257',
+  },
+  {
+    Wallet: '0x33526DE5F4259A021e2a5ff2E6A429ae0A972Eca',
+  },
+  {
+    Wallet: '0x99e763eE6f480C9876714E2eb3aA8D29e860fd2F',
+  },
+  {
+    Wallet: '0xC4808f39fCe8d4ef8aAA0B013727d3025d4BCc23',
+  },
+  {
+    Wallet: '0xf43df57B6C2B52cC16EC9284b635Ce11c4070ACb',
+  },
 ]
   .filter((c) => c['Wallet'])
   .map((c) => c['Wallet']) as string[];
