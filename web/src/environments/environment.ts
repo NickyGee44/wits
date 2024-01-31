@@ -27,10 +27,10 @@ export const environment = {
     packets: '0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6' as const,
   },
   mumbai: {
-    cards: '0xBE8c4D70E379AFe0068dAA546038097F58006459' as const,
-    packets: '0xB97BE417cf491BA49A96566A8886DC58B1723a7c' as const,
-    quillAndInk: '0x75c180302d758c0077137c045326Ce7aD3e8c73F' as const,
-    gBabies: '0x69A5A0e9920aa3a85973136F90F961dD962f5e4b' as const,
+    cards: '0x4DC6BC7ea2d9F148f715D5Cd0c3D3937b3072F13' as const,
+    packets: '0xa20F575F3754efEE0494E9FA1177209BAa85174B' as const,
+    quillAndInk: '0x260e3B084f19a0684Ed730AA1f9bbecdD13E43e2' as const,
+    gBabies: '0x2f1c6194B564e871133787953c9A7996E41F62d1' as const,
   },
   goerli: {
     cards: '0x6aa8a980f78E22b55cbb326E1351cC2578623DA3' as const,

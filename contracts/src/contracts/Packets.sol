@@ -62,12 +62,12 @@ contract Packets is
         _totalSupply[1] = 5225;
         _totalSupply[2] = 1355;
         _totalSupply[3] = 400;
-        _totalSupply[4] = 400;
+        _totalSupply[4] = 300;
 
-        setPrice(1, 0.02 ether);
-        setPrice(2, 0.08 ether);
-        setPrice(3, 0.225 ether);
-        setPrice(4, 0.125 ether);
+        setPrice(1, 0.002 ether);
+        setPrice(2, 0.008 ether);
+        setPrice(3, 0.0225 ether);
+        setPrice(4, 0.0125 ether);
     }
 
     IERC721ABurnableUpgradeable public gbabiesContract;
@@ -396,6 +396,7 @@ contract Packets is
             if(id == 4) {
                 for(uint256 j; j < amount; j++) {
                     uint256 cardId = randomizer.random(total, msg.sender);
+                    require(cardId > 0, "Error: Out of stock");
                     uint256 cards =  idToCards[cardId];
                     emit PacketOpened(msg.sender, cardId, total, cards, block.timestamp);
                     total += cards;

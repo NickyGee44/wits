@@ -3,10 +3,13 @@ import { ethers, upgrades, run } from 'hardhat';
 async function main() {
   const signers = await ethers.getSigners();
   const testingAddress = '0xf02DD82D4F5062E00fCD55B4501055faA8f2fE2C';
+  const testingAddress2 = '0xa4d39c33Cfe7630b413C2eFc9bD8861909B70E34';
 
   const Gbabies = await ethers.getContractFactory('Gbaby');
   const gbabies = await upgrades.deployProxy(Gbabies, []);
+
   await gbabies.mint(testingAddress, 2);
+  await gbabies.mint(testingAddress2, 2);
 
   console.log('=================== GBABIES =====================');
 
@@ -18,7 +21,8 @@ async function main() {
     [signers[0].address],
     [100],
   ]);
-  await quill.adminMint([testingAddress], [2]);
+
+  await quill.adminMint([testingAddress, testingAddress2], [2, 2]);
 
   console.log('=================== QUILL =====================');
 
