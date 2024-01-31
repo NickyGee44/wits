@@ -52,17 +52,18 @@ export function useWrite(
   });
 
   const action = async () => {
-    setLoading(true);
     if (error) {
       toast.error(formatError(error));
       return;
     }
     let loading;
     try {
+      setLoading(true);
       loading = toast.loading(loadingMessage || 'Sending transaction...');
       writeAsync && (await writeAsync());
     } catch (error) {
       console.log(error);
+      setLoading(false);
     } finally {
       toast.dismiss(loading);
       setLoading(false);

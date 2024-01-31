@@ -4786,3 +4786,17 @@
 [NX Daemon Server] - 2024-01-31T11:08:04.182Z - [WATCHER]: Processing file changes in outputs
 [NX Daemon Server] - 2024-01-31T11:08:54.154Z - [WATCHER]: Processing file changes in outputs
 [NX Daemon Server] - 2024-01-31T11:08:54.155Z - [WATCHER]: web/src/app/modules/core/hooks/use-write.tsx was modified
+[NX Daemon Server] - 2024-01-31T11:09:00.571Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T11:09:00.571Z - [REQUEST]: web/src/app/modules/core/hooks/use-write.tsx
+[NX Daemon Server] - 2024-01-31T11:09:00.571Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T11:09:00.575Z - Time taken for 'hash changed files from watcher' 12.729816973209381ms
+[NX Daemon Server] - 2024-01-31T11:09:00.636Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T11:11:57.825Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T11:11:57.826Z - [WATCHER]: web/src/app/modules/core/hooks/use-write.tsx was modified
+[NX Daemon Server] - 2024-01-31T11:12:04.252Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T11:12:04.252Z - [REQUEST]: web/src/app/modules/core/hooks/use-write.tsx
+[NX Daemon Server] - 2024-01-31T11:12:04.252Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T11:12:04.260Z - Time taken for 'hash changed files from watcher' 21.11808705329895ms
+[NX Daemon Server] - 2024-01-31T11:12:04.318Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T11:12:16.527Z - [WATCHER]: web/src/app/modules/core/hooks/use-write.tsx was modified
+[NX Daemon Server] - 2024-01-31T11:12:16.527Z - [WATCHER]: Processing file changes in outputs
