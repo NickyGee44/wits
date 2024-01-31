@@ -66,7 +66,8 @@ export function useApproval(
       functionName: 'setApprovalForAll',
       args: [operator, true],
     },
-    reset
+    reset,
+    'Approve'
   );
 
   return {

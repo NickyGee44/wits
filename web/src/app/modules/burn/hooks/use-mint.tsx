@@ -17,7 +17,8 @@ export function useBurnMint(
       args: [gbabies, quillAndInkIds],
       value,
     },
-    reset
+    reset,
+    'Burn Mint'
   );
   const stage = useStage(address);
   const isLive = stage === 1;
