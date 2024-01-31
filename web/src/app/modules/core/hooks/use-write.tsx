@@ -18,9 +18,11 @@ export function useWrite(
   config: any,
   stateReset?: () => void,
   context?: string,
+  dontShowAccountModal?: boolean,
   successMessage?: string,
   loadingMessage?: string
 ) {
+  const [hash, setHash] = useState<`0x${string}` | undefined>();
   const [loading, setLoading] = useState(false);
   const addRecentTransaction = useAddRecentTransaction();
   const { openAccountModal } = useAccountModal();
@@ -38,12 +40,13 @@ export function useWrite(
       toast.success(successMessage || <TransactionLink tx={data.hash} />, {
         duration: 3000,
       });
+      setHash(data.hash);
       addRecentTransaction({
         hash: data.hash,
         description: context || 'Transaction',
         confirmations: 10,
       });
-      openAccountModal && openAccountModal();
+      if (!dontShowAccountModal) openAccountModal && openAccountModal();
       setLoading(false);
       reset();
     },
@@ -53,11 +56,17 @@ export function useWrite(
     },
   });
 
-  useWaitForTransaction({
-    hash: data?.hash,
+  const { status } = useWaitForTransaction({
+    hash: hash ?? '0x',
     onSuccess(data) {
+      setHash(undefined);
       toast.success(
-        successMessage || <TransactionLink tx={data.transactionHash} />,
+        successMessage || (
+          <TransactionLink
+            message="Successful! Click here to see transaction"
+            tx={data.transactionHash}
+          />
+        ),
         {
           duration: 3000,
         }
@@ -66,6 +75,8 @@ export function useWrite(
       reset();
     },
   });
+
+  console.log(status, data);
 
   const action = async () => {
     if (error) {

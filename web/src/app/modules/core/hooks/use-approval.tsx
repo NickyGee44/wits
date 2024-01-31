@@ -67,7 +67,8 @@ export function useApproval(
       args: [operator, true],
     },
     reset,
-    'Approve'
+    'Approve',
+    true
   );
 
   return {
