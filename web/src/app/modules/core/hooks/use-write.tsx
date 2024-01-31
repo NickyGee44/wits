@@ -1,6 +1,8 @@
 import {
   useContractWrite,
   usePrepareContractWrite,
+  useTransaction,
+  useWaitForTransaction,
   useWatchPendingTransactions,
 } from 'wagmi';
 import toast from 'react-hot-toast';
@@ -48,6 +50,20 @@ export function useWrite(
     onError: (error) => {
       setLoading(false);
       toast.error(formatError(error));
+    },
+  });
+
+  useWaitForTransaction({
+    hash: data?.hash,
+    onSuccess(data) {
+      toast.success(
+        successMessage || <TransactionLink tx={data.transactionHash} />,
+        {
+          duration: 3000,
+        }
+      );
+      setLoading(false);
+      reset();
     },
   });
 
