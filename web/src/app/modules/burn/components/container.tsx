@@ -79,6 +79,10 @@ export function BurnContainer({
     return write;
   }, [showIsApprovedForAll, gbabiesWrite, write]);
 
+  const isEmpty = useMemo(() => {
+    return selectedIds.length === 0 && toBurn.length === 0;
+  }, [selectedIds.length, toBurn]);
+
   return (
     <BurnTab
       buttonLabel={buttonLabel}
@@ -92,6 +96,7 @@ export function BurnContainer({
       onDecrement={handleDecrement}
       balance={balance}
       count={quillAndInkBurnReturnValue}
+      isEmpty={isEmpty}
       price={formatUnits(price, 18)}
       total={quillAndInkBurnReturnValue + gbabiesReturnValue}
     />
