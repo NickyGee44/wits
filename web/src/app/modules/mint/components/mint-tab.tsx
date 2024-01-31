@@ -23,7 +23,7 @@ interface MintTabProps {
 
 export function MintTab({
   loading,
-  presaleLive,
+  publicLive,
   totalMintable,
   cards,
   write,
@@ -53,7 +53,7 @@ export function MintTab({
       </div>
       <div className="flex flex-row justify-center items-center w-full">
         <div className="flex flex-col space-y-2 justify-center items-center">
-          {presaleLive && totalMintable > 0 && <div>{totalMintable} Left</div>}
+          {!publicLive && totalMintable > 0 && <div>{totalMintable} Left</div>}
           <SubmitButton disabled={loading} handleClick={write}>
             MINT
           </SubmitButton>
