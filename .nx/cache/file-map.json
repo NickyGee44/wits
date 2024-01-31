@@ -111,171 +111,7 @@
       },
       {
         "file": ".gitignore",
-        "hash": "4770978712846299382"
-      },
-      {
-        "file": ".nx/cache/13353051992692538277/code",
-        "hash": "1838281907459330133"
-      },
-      {
-        "file": ".nx/cache/13353051992692538277/source",
-        "hash": "2984483544105733572"
-      },
-      {
-        "file": ".nx/cache/13353051992692538277/terminalOutput",
-        "hash": "9918673864689471038"
-      },
-      {
-        "file": ".nx/cache/13353051992692538277.commit",
-        "hash": "4664556114322093609"
-      },
-      {
-        "file": ".nx/cache/13877612029435711045/code",
-        "hash": "1838281907459330133"
-      },
-      {
-        "file": ".nx/cache/13877612029435711045/source",
-        "hash": "2984483544105733572"
-      },
-      {
-        "file": ".nx/cache/13877612029435711045/terminalOutput",
-        "hash": "17049687793969639979"
-      },
-      {
-        "file": ".nx/cache/13877612029435711045.commit",
-        "hash": "4664556114322093609"
-      },
-      {
-        "file": ".nx/cache/15012325851409080993/code",
-        "hash": "1838281907459330133"
-      },
-      {
-        "file": ".nx/cache/15012325851409080993/source",
-        "hash": "2984483544105733572"
-      },
-      {
-        "file": ".nx/cache/15012325851409080993/terminalOutput",
-        "hash": "6714199530081202290"
-      },
-      {
-        "file": ".nx/cache/15012325851409080993.commit",
-        "hash": "4664556114322093609"
-      },
-      {
-        "file": ".nx/cache/4836979771106342344/code",
-        "hash": "1838281907459330133"
-      },
-      {
-        "file": ".nx/cache/4836979771106342344/source",
-        "hash": "2984483544105733572"
-      },
-      {
-        "file": ".nx/cache/4836979771106342344/terminalOutput",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".nx/cache/4836979771106342344.commit",
-        "hash": "4664556114322093609"
-      },
-      {
-        "file": ".nx/cache/7445091383399598796/code",
-        "hash": "1838281907459330133"
-      },
-      {
-        "file": ".nx/cache/7445091383399598796/source",
-        "hash": "2984483544105733572"
-      },
-      {
-        "file": ".nx/cache/7445091383399598796/terminalOutput",
-        "hash": "9772891771231309482"
-      },
-      {
-        "file": ".nx/cache/7445091383399598796.commit",
-        "hash": "4664556114322093609"
-      },
-      {
-        "file": ".nx/cache/902263213402382792/code",
-        "hash": "1838281907459330133"
-      },
-      {
-        "file": ".nx/cache/902263213402382792/source",
-        "hash": "2984483544105733572"
-      },
-      {
-        "file": ".nx/cache/902263213402382792/terminalOutput",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".nx/cache/902263213402382792.commit",
-        "hash": "4664556114322093609"
-      },
-      {
-        "file": ".nx/cache/d/daemon.log",
-        "hash": "1547837352503219633"
-      },
-      {
-        "file": ".nx/cache/d/server-process.json",
-        "hash": "5085190885106760846"
-      },
-      {
-        "file": ".nx/cache/file-map.json",
-        "hash": "439902449523023948"
-      },
-      {
-        "file": ".nx/cache/lockfile.hash",
-        "hash": "14835932053748444790"
-      },
-      {
-        "file": ".nx/cache/parsed-lock-file.json",
-        "hash": "17155864984113408410"
-      },
-      {
-        "file": ".nx/cache/project-graph.json",
-        "hash": "4610187940723242305"
-      },
-      {
-        "file": ".nx/cache/run.json",
-        "hash": "1290013107534477011"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/12179239388842765503",
-        "hash": "13563717438216907853"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/13353051992692538277",
-        "hash": "9918673864689471038"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/13877612029435711045",
-        "hash": "17049687793969639979"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/15012325851409080993",
-        "hash": "6714199530081202290"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/16184660792816533825",
-        "hash": "15780046233252479203"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/17480120112394877515",
-        "hash": "706216572225995970"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/4813121972335578128",
-        "hash": "7284531828067173729"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/4836979771106342344",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/7445091383399598796",
-        "hash": "9772891771231309482"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/902263213402382792",
-        "hash": "3244421341483603138"
+        "hash": "5596439481714804226"
       },
       {
         "file": ".openzeppelin/goerli.json",
@@ -324,83 +160,9 @@
       {
         "file": "tsconfig.base.json",
         "hash": "3168197193324777544"
-      },
-      {
-        "file": ".nx/cache/nx-console-project-graph/static/favicon.ico",
-        "hash": "9303420814833116677"
-      },
-      {
-        "file": ".nx/cache/nx-console-project-graph/static/3rdpartylicenses.txt",
-        "hash": "5667550289807473445"
-      },
-      {
-        "file": ".nx/cache/nx-console-project-graph/static/main.js",
-        "hash": "8597522611683477441"
-      },
-      {
-        "file": ".nx/cache/nx-console-project-graph/static/styles.js",
-        "hash": "13596360365094399219"
-      },
-      {
-        "file": ".nx/cache/nx-console-project-graph/static/runtime.js",
-        "hash": "9652903316845995179"
-      },
-      {
-        "file": ".nx/cache/nx-console-project-graph/static/styles.css",
-        "hash": "2125456314194136822"
-      },
-      {
-        "file": ".nx/cache/nx-console-project-graph/static/polyfills.js",
-        "hash": "11549993343875971570"
-      },
-      {
-        "file": ".nx/cache/nx-console-project-graph/static/environment.js",
-        "hash": "15556875336182742697"
-      },
-      {
-        "file": ".nx/cache/nx-console-project-graph/project-graph.html",
-        "hash": "17036869540637447991"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/12525501576548287890",
-        "hash": "17512434706928584106"
       }
     ],
     "projectFileMap": {
-      "api": [
-        {
-          "file": "api/.eslintrc.json",
-          "hash": "11808533155536463924"
-        },
-        {
-          "file": "api/jest.config.ts",
-          "hash": "10410655590686536064"
-        },
-        {
-          "file": "api/project.json",
-          "hash": "6512795210371978054"
-        },
-        {
-          "file": "api/src/main.ts",
-          "hash": "15876934182638491106"
-        },
-        {
-          "file": "api/src/viem.ts",
-          "hash": "10649112055067964979"
-        },
-        {
-          "file": "api/tsconfig.app.json",
-          "hash": "1650782542565282680"
-        },
-        {
-          "file": "api/tsconfig.json",
-          "hash": "9420862676426701392"
-        },
-        {
-          "file": "api/tsconfig.spec.json",
-          "hash": "17313551537729802733"
-        }
-      ],
       "web": [
         {
           "file": "web/.babelrc",
@@ -428,7 +190,7 @@
         },
         {
           "file": "web/src/app/data/whitelist.ts",
-          "hash": "9119716190700017450"
+          "hash": "5588132791602323688"
         },
         {
           "file": "web/src/app/modules/burn/components/burn-tab.tsx",
@@ -777,6 +539,40 @@
         {
           "file": "web/webpack.config.js",
           "hash": "1043731587818967490"
+        }
+      ],
+      "api": [
+        {
+          "file": "api/.eslintrc.json",
+          "hash": "11808533155536463924"
+        },
+        {
+          "file": "api/jest.config.ts",
+          "hash": "10410655590686536064"
+        },
+        {
+          "file": "api/project.json",
+          "hash": "6512795210371978054"
+        },
+        {
+          "file": "api/src/main.ts",
+          "hash": "15876934182638491106"
+        },
+        {
+          "file": "api/src/viem.ts",
+          "hash": "10649112055067964979"
+        },
+        {
+          "file": "api/tsconfig.app.json",
+          "hash": "1650782542565282680"
+        },
+        {
+          "file": "api/tsconfig.json",
+          "hash": "9420862676426701392"
+        },
+        {
+          "file": "api/tsconfig.spec.json",
+          "hash": "17313551537729802733"
         }
       ],
       "contracts": [

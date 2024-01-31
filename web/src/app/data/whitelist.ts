@@ -43449,4 +43449,9 @@ export const addresses = [
   {
     Wallet: '0x8D6662Deb08786547aF2C10AA609d469e545BAF8',
   },
-].map((c) => c['Wallet']) as string[];
+  {
+    Wallet: '0xf801AC00C830E70F0a6D6b000afc67A9af54097E',
+  },
+]
+  .filter((c) => c['Wallet'])
+  .map((c) => c['Wallet']) as string[];
