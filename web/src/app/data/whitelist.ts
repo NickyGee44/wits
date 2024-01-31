@@ -33643,6 +33643,9 @@ export const addresses = [
   },
   {
     Wallet: '0x2ae8E333E0Cac176a174357a20C57a5ec84a2740'
+  },
+  {
+    Wallet: '0xb68AE3992BF75Ab34b9a2f93dAD75189e4Dbb499'
   }
 ]
   .filter((c) => c['Wallet'])
