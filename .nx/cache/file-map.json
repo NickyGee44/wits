@@ -334,7 +334,7 @@
         },
         {
           "file": "web/src/app/modules/mint/hooks/use-mint.tsx",
-          "hash": "17524329711354277976"
+          "hash": "166828911001203399"
         },
         {
           "file": "web/src/app/modules/mint/hooks/use-packet.tsx",
@@ -626,7 +626,7 @@
         },
         {
           "file": "api/src/main.ts",
-          "hash": "6521648907540685704"
+          "hash": "6320028479342321959"
         },
         {
           "file": "api/src/viem.ts",

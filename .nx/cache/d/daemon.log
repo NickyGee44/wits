@@ -4821,3 +4821,17 @@
 [NX Daemon Server] - 2024-01-31T11:13:53.185Z - [WATCHER]: Processing file changes in outputs
 [NX Daemon Server] - 2024-01-31T11:50:13.221Z - [WATCHER]: api/src/main.ts was modified
 [NX Daemon Server] - 2024-01-31T11:50:13.222Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T11:50:19.640Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T11:50:19.640Z - [REQUEST]: api/src/main.ts
+[NX Daemon Server] - 2024-01-31T11:50:19.640Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T11:50:19.647Z - Time taken for 'hash changed files from watcher' 13.365335047245026ms
+[NX Daemon Server] - 2024-01-31T11:50:19.709Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T11:51:47.076Z - [WATCHER]: web/src/app/modules/mint/hooks/use-mint.tsx was modified
+[NX Daemon Server] - 2024-01-31T11:51:47.077Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T11:51:52.611Z - [WATCHER]: web/src/app/modules/mint/hooks/use-mint.tsx was modified
+[NX Daemon Server] - 2024-01-31T11:51:52.611Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T11:51:53.498Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T11:51:53.498Z - [REQUEST]: web/src/app/modules/mint/hooks/use-mint.tsx
+[NX Daemon Server] - 2024-01-31T11:51:53.498Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T11:51:53.503Z - Time taken for 'hash changed files from watcher' 18.32015597820282ms
+[NX Daemon Server] - 2024-01-31T11:51:53.563Z - [WATCHER]: Processing file changes in outputs

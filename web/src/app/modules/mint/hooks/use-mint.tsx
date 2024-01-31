@@ -4,6 +4,7 @@ import { useStage } from '../../core/hooks/use-stage';
 import { useApi } from '../../core/hooks/use-api';
 import { useEffect, useMemo } from 'react';
 import { useWrite } from '../../core/hooks/use-write';
+import toast from 'react-hot-toast';
 
 export function usePresaleMint(
   address: `0x${string}`,
@@ -48,7 +49,15 @@ export function usePresaleMint(
   const stage = useStage(address);
 
   return {
-    write: action,
+    write: () => {
+      if (totalMintable > 0) action();
+      if (assignedValue === 0) {
+        toast.error('You are not whitelisted for this presale');
+      }
+      if (totalMintable === 0) {
+        toast.error('You have already minted your allocation');
+      }
+    },
     totalMintable,
     loading,
     isLive: stage === 1,
