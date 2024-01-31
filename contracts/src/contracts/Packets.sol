@@ -59,15 +59,15 @@ contract Packets is
         idToCards[3] = 4;
         idToCards[4] = 5;
 
-        _totalSupply[1] = 1000;
-        _totalSupply[2] = 600;
-        _totalSupply[3] = 500;
+        _totalSupply[1] = 5225;
+        _totalSupply[2] = 1355;
+        _totalSupply[3] = 400;
         _totalSupply[4] = 400;
 
-        setPrice(1, 0.001 ether);
-        setPrice(2, 0.002 ether);
-        setPrice(3, 0.003 ether);
-        setPrice(4, 0.004 ether);
+        setPrice(1, 0.02 ether);
+        setPrice(2, 0.08 ether);
+        setPrice(3, 0.225 ether);
+        setPrice(4, 0.125 ether);
     }
 
     IERC721ABurnableUpgradeable public gbabiesContract;

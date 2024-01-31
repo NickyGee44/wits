@@ -111,15 +111,7 @@
       },
       {
         "file": ".gitignore",
-        "hash": "4770978712846299382"
-      },
-      {
-        "file": ".nx/cache/d/daemon.log",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".nx/cache/d/server-process.json",
-        "hash": "4650529670524277823"
+        "hash": "5596439481714804226"
       },
       {
         "file": ".openzeppelin/goerli.json",
@@ -172,55 +164,9 @@
       {
         "file": "tsconfig.base.json",
         "hash": "3168197193324777544"
-      },
-      {
-        "file": ".nx/cache/terminalOutputs/5431799398951219431",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".nx/cache/project-graph.json",
-        "hash": "15875379366150611711"
-      },
-      {
-        "file": ".nx/cache/file-map.json",
-        "hash": "3297243183949676766"
       }
     ],
     "projectFileMap": {
-      "api": [
-        {
-          "file": "api/.eslintrc.json",
-          "hash": "11808533155536463924"
-        },
-        {
-          "file": "api/jest.config.ts",
-          "hash": "10410655590686536064"
-        },
-        {
-          "file": "api/project.json",
-          "hash": "6512795210371978054"
-        },
-        {
-          "file": "api/src/main.ts",
-          "hash": "6521648907540685704"
-        },
-        {
-          "file": "api/src/viem.ts",
-          "hash": "12476571880451285920"
-        },
-        {
-          "file": "api/tsconfig.app.json",
-          "hash": "1650782542565282680"
-        },
-        {
-          "file": "api/tsconfig.json",
-          "hash": "9420862676426701392"
-        },
-        {
-          "file": "api/tsconfig.spec.json",
-          "hash": "17313551537729802733"
-        }
-      ],
       "contracts": [
         {
           "file": "contracts/.gitignore",
@@ -244,7 +190,7 @@
         },
         {
           "file": "contracts/src/contracts/Packets.sol",
-          "hash": "3661024758388725050"
+          "hash": "15038484033447870529"
         },
         {
           "file": "contracts/src/contracts/QuillAndInk.sol",
@@ -663,6 +609,40 @@
         {
           "file": "web/webpack.config.js",
           "hash": "1043731587818967490"
+        }
+      ],
+      "api": [
+        {
+          "file": "api/.eslintrc.json",
+          "hash": "11808533155536463924"
+        },
+        {
+          "file": "api/jest.config.ts",
+          "hash": "10410655590686536064"
+        },
+        {
+          "file": "api/project.json",
+          "hash": "6512795210371978054"
+        },
+        {
+          "file": "api/src/main.ts",
+          "hash": "6521648907540685704"
+        },
+        {
+          "file": "api/src/viem.ts",
+          "hash": "12476571880451285920"
+        },
+        {
+          "file": "api/tsconfig.app.json",
+          "hash": "1650782542565282680"
+        },
+        {
+          "file": "api/tsconfig.json",
+          "hash": "9420862676426701392"
+        },
+        {
+          "file": "api/tsconfig.spec.json",
+          "hash": "17313551537729802733"
         }
       ]
     }

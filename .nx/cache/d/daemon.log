@@ -4293,3 +4293,58 @@
 [NX Daemon Server] - 2024-01-31T07:41:42.987Z - Time taken for 'hash changed files from watcher' 19.509682000003522ms
 [NX Daemon Server] - 2024-01-31T07:41:43.051Z - [WATCHER]: 2 file(s) created or restored, 1 file(s) modified, 2 file(s) deleted
 [NX Daemon Server] - 2024-01-31T07:41:43.053Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T07:50:28.951Z - Started listening on: /var/folders/mw/b3tg9cy13p9g6wcpz1m5yj840000gn/T/7ba6bfb4adf79872d245/d.sock
+[NX Daemon Server] - 2024-01-31T07:50:28.955Z - [WATCHER]: Subscribed to changes within: /Users/hyun/web3-auditing/witts (native)
+[NX Daemon Server] - 2024-01-31T07:50:28.960Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-01-31T07:50:28.963Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-01-31T07:50:28.965Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-01-31T07:50:28.967Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-01-31T07:50:29.037Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T07:50:29.037Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T07:50:29.037Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T07:50:29.051Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-01-31T07:50:29.052Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-01-31T07:50:29.052Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 85. Response time: 1.
+[NX Daemon Server] - 2024-01-31T07:50:29.052Z - Time taken for 'total for creating and serializing project graph' 84.42427897453308ms
+[NX Daemon Server] - 2024-01-31T07:50:29.054Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-01-31T07:50:29.054Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-01-31T07:50:29.054Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-01-31T07:50:29.056Z - [REQUEST]: Responding to the client. handleRequestFileData
+[NX Daemon Server] - 2024-01-31T07:50:29.056Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-01-31T07:50:29.056Z - Done responding to the client handleRequestFileData
+[NX Daemon Server] - 2024-01-31T07:50:29.056Z - Handled REQUEST_FILE_DATA. Handling time: 1. Response time: 0.
+[NX Daemon Server] - 2024-01-31T07:50:29.159Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T07:50:31.367Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-01-31T07:50:31.368Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-01-31T07:50:31.369Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-01-31T07:50:31.371Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-01-31T07:50:31.371Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-01-31T07:50:31.371Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-01-31T07:50:31.371Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-01-31T07:50:31.371Z - Time taken for 'total for creating and serializing project graph' 0.2782599925994873ms
+[NX Daemon Server] - 2024-01-31T07:50:31.419Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-01-31T07:50:31.419Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-01-31T07:50:31.419Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-01-31T07:50:31.419Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-01-31T07:50:31.419Z - Time taken for 'total for creating and serializing project graph' 0.14619404077529907ms
+[NX Daemon Server] - 2024-01-31T07:50:31.422Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-01-31T07:50:31.422Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-01-31T07:50:31.422Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-01-31T07:50:31.422Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-01-31T07:50:31.422Z - Time taken for 'total for creating and serializing project graph' 0.19726097583770752ms
+[NX Daemon Server] - 2024-01-31T07:50:31.438Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-01-31T07:50:31.482Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T07:51:07.845Z - [WATCHER]: contracts/src/contracts/Packets.sol was modified
+[NX Daemon Server] - 2024-01-31T07:51:07.846Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T07:51:07.981Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T07:51:07.981Z - [REQUEST]: contracts/src/contracts/Packets.sol
+[NX Daemon Server] - 2024-01-31T07:51:07.981Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T07:51:07.986Z - Time taken for 'hash changed files from watcher' 30.05697500705719ms
+[NX Daemon Server] - 2024-01-31T07:51:08.048Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T07:51:33.238Z - [WATCHER]: contracts/src/contracts/Packets.sol was modified
+[NX Daemon Server] - 2024-01-31T07:51:33.238Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T07:51:33.470Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T07:51:33.470Z - [REQUEST]: contracts/src/contracts/Packets.sol
+[NX Daemon Server] - 2024-01-31T07:51:33.471Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T07:51:33.476Z - Time taken for 'hash changed files from watcher' 27.88207596540451ms
+[NX Daemon Server] - 2024-01-31T07:51:33.537Z - [WATCHER]: Processing file changes in outputs
