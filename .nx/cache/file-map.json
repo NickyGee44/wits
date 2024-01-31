@@ -274,7 +274,7 @@
         },
         {
           "file": "web/src/app/modules/core/constants/packets.ts",
-          "hash": "8818344953166726279"
+          "hash": "3893577332990136818"
         },
         {
           "file": "web/src/app/modules/core/hooks/use-api.tsx",
@@ -314,7 +314,7 @@
         },
         {
           "file": "web/src/app/modules/core/hooks/use-write.tsx",
-          "hash": "12703899795318016057"
+          "hash": "1322994812123841161"
         },
         {
           "file": "web/src/app/modules/core/types/packets.ts",

@@ -54,10 +54,10 @@ contract Packets is
         __Royalties_init_unchained(recipient, amount);
         __Signer_init_unchained(name, version, _signer);
 
-        idToCards[1] = 2;
-        idToCards[2] = 3;
-        idToCards[3] = 4;
-        idToCards[4] = 5;
+        idToCards[1] = 5;
+        idToCards[2] = 25;
+        idToCards[3] = 100;
+        idToCards[4] = 40;
 
         _totalSupply[1] = 5225;
         _totalSupply[2] = 1355;
