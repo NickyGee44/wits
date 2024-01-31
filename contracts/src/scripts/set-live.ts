@@ -17,7 +17,7 @@ async function main() {
     '0xa20F575F3754efEE0494E9FA1177209BAa85174B'
   );
 
-  await packets.setActiveIndex(0);
+  await packets.setActiveIndex(1);
 
   // const gBabies = await ethers.getContractAt(
   //   'Gbaby',

@@ -42,9 +42,11 @@ export function useWrite(
         confirmations: 10,
       });
       openAccountModal && openAccountModal();
+      setLoading(false);
       reset();
     },
     onError: (error) => {
+      setLoading(false);
       toast.error(formatError(error));
     },
   });
