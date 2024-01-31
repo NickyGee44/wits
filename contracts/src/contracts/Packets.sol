@@ -53,6 +53,57 @@ contract Packets is
         __DefaultOperatorFilterer_init();
         __Royalties_init_unchained(recipient, amount);
         __Signer_init_unchained(name, version, _signer);
+        
+        _isOG[3] = true;
+        _isOG[14] = true;
+        _isOG[19] = true;
+        _isOG[23] = true;
+        _isOG[24] = true;
+        _isOG[25] = true;
+        _isOG[27] = true;
+        _isOG[29] = true;
+        _isOG[39] = true;
+        _isOG[51] = true;
+        _isOG[61] = true;
+        _isOG[66] = true;
+        _isOG[69] = true;
+        _isOG[73] = true;
+        _isOG[80] = true;
+        _isOG[90] = true;
+        _isOG[96] = true;
+        _isOG[129] = true;
+        _isOG[130] = true;
+        _isOG[138] = true;
+        _isOG[140] = true;
+        _isOG[168] = true;
+        _isOG[169] = true;
+        _isOG[171] = true;
+        _isOG[176] = true;
+        _isOG[191] = true;
+        _isOG[193] = true;
+        _isOG[194] = true;
+        _isOG[201] = true;
+        _isOG[210] = true;
+        _isOG[216] = true;
+        _isOG[258] = true;
+        _isOG[262] = true;
+        _isOG[273] = true;
+        _isOG[299] = true;
+        _isOG[301] = true;
+        _isOG[303] = true;
+        _isOG[309] = true;
+        _isOG[311] = true;
+        _isOG[323] = true;
+        _isOG[327] = true;
+        _isOG[336] = true;
+        _isOG[342] = true;
+        _isOG[344] = true;
+        _isOG[345] = true;
+        _isOG[353] = true;
+        _isOG[355] = true;
+        _isOG[361] = true;
+        _isOG[382] = true;
+        _isOG[394] = true;
 
         idToCards[1] = 5;
         idToCards[2] = 25;
@@ -65,9 +116,10 @@ contract Packets is
         _totalSupply[4] = 300;
 
         setPrice(1, 0.002 ether);
+        discountPrice = 0.0018 ether;
         setPrice(2, 0.008 ether);
         setPrice(3, 0.0225 ether);
-        setPrice(4, 0.0125 ether);
+        setPrice(4, 0.0125 ether);        
     }
 
     IERC721ABurnableUpgradeable public gbabiesContract;

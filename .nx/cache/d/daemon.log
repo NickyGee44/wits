@@ -4888,3 +4888,275 @@
 [NX Daemon Server] - 2024-01-31T12:03:06.621Z - [REQUEST]: 
 [NX Daemon Server] - 2024-01-31T12:03:06.625Z - Time taken for 'hash changed files from watcher' 15.203496038913727ms
 [NX Daemon Server] - 2024-01-31T12:03:06.687Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:56:17.240Z - Started listening on: /var/folders/mw/b3tg9cy13p9g6wcpz1m5yj840000gn/T/7ba6bfb4adf79872d245/d.sock
+[NX Daemon Server] - 2024-01-31T15:56:17.264Z - [WATCHER]: Subscribed to changes within: /Users/hyun/web3-auditing/witts (native)
+[NX Daemon Server] - 2024-01-31T15:56:17.268Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-01-31T15:56:17.271Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-01-31T15:56:17.276Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-01-31T15:56:17.375Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T15:56:17.376Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T15:56:17.376Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T15:56:17.405Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-01-31T15:56:17.406Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-01-31T15:56:17.406Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 130. Response time: 1.
+[NX Daemon Server] - 2024-01-31T15:56:17.407Z - Time taken for 'total for creating and serializing project graph' 129.76011699438095ms
+[NX Daemon Server] - 2024-01-31T15:56:17.407Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-01-31T15:56:17.409Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-01-31T15:56:17.410Z - Established a connection. Number of open connections: 3
+[NX Daemon Server] - 2024-01-31T15:56:17.410Z - Closed a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-01-31T15:56:17.411Z - [REQUEST]: Responding to the client. handleRequestFileData
+[NX Daemon Server] - 2024-01-31T15:56:17.412Z - Done responding to the client handleRequestFileData
+[NX Daemon Server] - 2024-01-31T15:56:17.412Z - Handled REQUEST_FILE_DATA. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-01-31T15:56:17.412Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-01-31T15:56:17.517Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:56:19.131Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-01-31T15:56:19.132Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-01-31T15:56:19.133Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-01-31T15:56:19.135Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-01-31T15:56:19.135Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-01-31T15:56:19.135Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-01-31T15:56:19.135Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-01-31T15:56:19.135Z - Time taken for 'total for creating and serializing project graph' 0.2512580156326294ms
+[NX Daemon Server] - 2024-01-31T15:56:19.169Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-01-31T15:56:19.169Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-01-31T15:56:19.170Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-01-31T15:56:19.170Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-01-31T15:56:19.170Z - Time taken for 'total for creating and serializing project graph' 0.14686501026153564ms
+[NX Daemon Server] - 2024-01-31T15:56:19.171Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-01-31T15:56:19.172Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-01-31T15:56:19.172Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-01-31T15:56:19.172Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 1. Response time: 0.
+[NX Daemon Server] - 2024-01-31T15:56:19.172Z - Time taken for 'total for creating and serializing project graph' 0.14764899015426636ms
+[NX Daemon Server] - 2024-01-31T15:56:19.181Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-01-31T15:56:19.210Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:56:33.380Z - [WATCHER]: contracts/src/scripts/set-live.ts was modified
+[NX Daemon Server] - 2024-01-31T15:56:33.380Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:56:33.498Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T15:56:33.498Z - [REQUEST]: contracts/src/scripts/set-live.ts
+[NX Daemon Server] - 2024-01-31T15:56:33.498Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T15:56:33.503Z - Time taken for 'hash changed files from watcher' 14.087770998477936ms
+[NX Daemon Server] - 2024-01-31T15:56:33.564Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:56:40.013Z - [WATCHER]: contracts/src/scripts/set-live.ts was modified
+[NX Daemon Server] - 2024-01-31T15:56:40.013Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:56:40.229Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T15:56:40.230Z - [REQUEST]: contracts/src/scripts/set-live.ts
+[NX Daemon Server] - 2024-01-31T15:56:40.230Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T15:56:40.234Z - Time taken for 'hash changed files from watcher' 14.158131003379822ms
+[NX Daemon Server] - 2024-01-31T15:56:40.296Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:56:41.678Z - [WATCHER]: contracts/src/scripts/set-live.ts was modified
+[NX Daemon Server] - 2024-01-31T15:56:41.678Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:56:42.097Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T15:56:42.097Z - [REQUEST]: contracts/src/scripts/set-live.ts
+[NX Daemon Server] - 2024-01-31T15:56:42.097Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T15:56:42.103Z - Time taken for 'hash changed files from watcher' 15.850176990032196ms
+[NX Daemon Server] - 2024-01-31T15:56:42.164Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:57:02.248Z - [WATCHER]: contracts/src/scripts/set-live.ts was modified
+[NX Daemon Server] - 2024-01-31T15:57:02.249Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:57:03.067Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T15:57:03.067Z - [REQUEST]: contracts/src/scripts/set-live.ts
+[NX Daemon Server] - 2024-01-31T15:57:03.067Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T15:57:03.072Z - Time taken for 'hash changed files from watcher' 15.073170006275177ms
+[NX Daemon Server] - 2024-01-31T15:57:03.134Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:57:09.783Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:59:06.530Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:59:16.770Z - [WATCHER]: .openzeppelin/polygon-mumbai.json was modified
+[NX Daemon Server] - 2024-01-31T15:59:16.771Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:59:18.400Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T15:59:18.400Z - [REQUEST]: .openzeppelin/polygon-mumbai.json
+[NX Daemon Server] - 2024-01-31T15:59:18.400Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T15:59:18.408Z - Time taken for 'hash changed files from watcher' 22.723324954509735ms
+[NX Daemon Server] - 2024-01-31T15:59:18.468Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:59:33.609Z - [WATCHER]: .openzeppelin/polygon-mumbai.json was modified
+[NX Daemon Server] - 2024-01-31T15:59:33.610Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:59:36.830Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T15:59:36.830Z - [REQUEST]: .openzeppelin/polygon-mumbai.json
+[NX Daemon Server] - 2024-01-31T15:59:36.830Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T15:59:36.835Z - Time taken for 'hash changed files from watcher' 16.583613991737366ms
+[NX Daemon Server] - 2024-01-31T15:59:36.898Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:59:45.568Z - [WATCHER]: .openzeppelin/polygon-mumbai.json was modified
+[NX Daemon Server] - 2024-01-31T15:59:45.569Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:59:51.989Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T15:59:51.989Z - [REQUEST]: .openzeppelin/polygon-mumbai.json
+[NX Daemon Server] - 2024-01-31T15:59:51.989Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T15:59:51.994Z - Time taken for 'hash changed files from watcher' 17.62183302640915ms
+[NX Daemon Server] - 2024-01-31T15:59:52.056Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T15:59:56.264Z - [WATCHER]: .openzeppelin/polygon-mumbai.json was modified
+[NX Daemon Server] - 2024-01-31T15:59:56.264Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:00:02.689Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:00:02.690Z - [REQUEST]: .openzeppelin/polygon-mumbai.json
+[NX Daemon Server] - 2024-01-31T16:00:02.690Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:00:02.696Z - Time taken for 'hash changed files from watcher' 20.269804000854492ms
+[NX Daemon Server] - 2024-01-31T16:00:02.758Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:00:02.782Z - [WATCHER]: .openzeppelin/polygon-mumbai.json was modified
+[NX Daemon Server] - 2024-01-31T16:00:09.197Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:00:09.197Z - [REQUEST]: .openzeppelin/polygon-mumbai.json
+[NX Daemon Server] - 2024-01-31T16:00:09.197Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:00:09.201Z - Time taken for 'hash changed files from watcher' 12.635255992412567ms
+[NX Daemon Server] - 2024-01-31T16:00:09.263Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:00:16.700Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:00:16.701Z - [WATCHER]: contracts/src/scripts/set-live.ts was modified
+[NX Daemon Server] - 2024-01-31T16:00:18.806Z - [WATCHER]: .openzeppelin/polygon-mumbai.json was modified
+[NX Daemon Server] - 2024-01-31T16:00:18.806Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:00:23.118Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:00:23.118Z - [REQUEST]: contracts/src/scripts/set-live.ts,.openzeppelin/polygon-mumbai.json
+[NX Daemon Server] - 2024-01-31T16:00:23.118Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:00:23.123Z - Time taken for 'hash changed files from watcher' 13.881172955036163ms
+[NX Daemon Server] - 2024-01-31T16:00:23.185Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:01:11.886Z - [WATCHER]: contracts/src/scripts/set-live.ts was modified
+[NX Daemon Server] - 2024-01-31T16:01:11.887Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:01:13.583Z - [WATCHER]: contracts/src/scripts/set-live.ts was modified
+[NX Daemon Server] - 2024-01-31T16:01:13.583Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:01:16.314Z - [WATCHER]: contracts/src/scripts/set-live.ts was modified
+[NX Daemon Server] - 2024-01-31T16:01:16.314Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:01:18.311Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:01:18.311Z - [REQUEST]: contracts/src/scripts/set-live.ts
+[NX Daemon Server] - 2024-01-31T16:01:18.311Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:01:18.315Z - Time taken for 'hash changed files from watcher' 19.382784008979797ms
+[NX Daemon Server] - 2024-01-31T16:01:18.379Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:01:40.303Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:02:30.770Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:02:40.891Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:02:40.892Z - [WATCHER]: .openzeppelin/polygon-mumbai.json was modified
+[NX Daemon Server] - 2024-01-31T16:02:47.312Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:02:47.312Z - [REQUEST]: .openzeppelin/polygon-mumbai.json
+[NX Daemon Server] - 2024-01-31T16:02:47.312Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:02:47.316Z - Time taken for 'hash changed files from watcher' 16.049673974514008ms
+[NX Daemon Server] - 2024-01-31T16:02:47.379Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:03:00.855Z - [WATCHER]: .openzeppelin/polygon-mumbai.json was modified
+[NX Daemon Server] - 2024-01-31T16:03:00.855Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:03:07.274Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:03:07.274Z - [REQUEST]: .openzeppelin/polygon-mumbai.json
+[NX Daemon Server] - 2024-01-31T16:03:07.274Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:03:07.278Z - Time taken for 'hash changed files from watcher' 15.450787007808685ms
+[NX Daemon Server] - 2024-01-31T16:03:07.340Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:03:27.598Z - [WATCHER]: .openzeppelin/polygon-mumbai.json was modified
+[NX Daemon Server] - 2024-01-31T16:03:27.599Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:03:33.665Z - [WATCHER]: .openzeppelin/polygon-mumbai.json was modified
+[NX Daemon Server] - 2024-01-31T16:03:33.666Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:03:34.033Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:03:34.034Z - [REQUEST]: .openzeppelin/polygon-mumbai.json
+[NX Daemon Server] - 2024-01-31T16:03:34.034Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:03:34.038Z - Time taken for 'hash changed files from watcher' 29.92584800720215ms
+[NX Daemon Server] - 2024-01-31T16:03:34.100Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:03:49.896Z - [WATCHER]: .openzeppelin/polygon-mumbai.json was modified
+[NX Daemon Server] - 2024-01-31T16:03:49.897Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:03:56.317Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:03:56.317Z - [REQUEST]: .openzeppelin/polygon-mumbai.json
+[NX Daemon Server] - 2024-01-31T16:03:56.317Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:03:56.321Z - Time taken for 'hash changed files from watcher' 15.833042025566101ms
+[NX Daemon Server] - 2024-01-31T16:03:56.382Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:04:03.402Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:04:03.403Z - [WATCHER]: contracts/src/contracts/Packets.sol was modified
+[NX Daemon Server] - 2024-01-31T16:04:09.819Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:04:09.820Z - [REQUEST]: contracts/src/contracts/Packets.sol
+[NX Daemon Server] - 2024-01-31T16:04:09.820Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:04:09.824Z - Time taken for 'hash changed files from watcher' 13.30993402004242ms
+[NX Daemon Server] - 2024-01-31T16:04:09.886Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:05:28.348Z - [WATCHER]: contracts/src/contracts/Packets.sol was modified
+[NX Daemon Server] - 2024-01-31T16:05:28.349Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:05:34.383Z - [WATCHER]: contracts/src/contracts/Packets.sol was modified
+[NX Daemon Server] - 2024-01-31T16:05:34.383Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:05:34.765Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:05:34.765Z - [REQUEST]: contracts/src/contracts/Packets.sol
+[NX Daemon Server] - 2024-01-31T16:05:34.765Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:05:34.769Z - Time taken for 'hash changed files from watcher' 12.88305002450943ms
+[NX Daemon Server] - 2024-01-31T16:05:34.832Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:05:54.260Z - [WATCHER]: contracts/src/contracts/Packets.sol was modified
+[NX Daemon Server] - 2024-01-31T16:05:54.260Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:06:00.682Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:06:00.682Z - [REQUEST]: contracts/src/contracts/Packets.sol
+[NX Daemon Server] - 2024-01-31T16:06:00.682Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:06:00.687Z - Time taken for 'hash changed files from watcher' 15.896890997886658ms
+[NX Daemon Server] - 2024-01-31T16:06:00.750Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:06:06.381Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:06:06.382Z - [WATCHER]: contracts/src/contracts/Packets.sol was modified
+[NX Daemon Server] - 2024-01-31T16:06:12.803Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:06:12.803Z - [REQUEST]: contracts/src/contracts/Packets.sol
+[NX Daemon Server] - 2024-01-31T16:06:12.803Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:06:12.809Z - Time taken for 'hash changed files from watcher' 17.483476996421814ms
+[NX Daemon Server] - 2024-01-31T16:06:12.870Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:08:12.461Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:08:12.462Z - [WATCHER]: contracts/src/contracts/Packets.sol was modified
+[NX Daemon Server] - 2024-01-31T16:08:14.844Z - [WATCHER]: contracts/src/contracts/Packets.sol was modified
+[NX Daemon Server] - 2024-01-31T16:08:14.844Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:08:18.881Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:08:18.882Z - [REQUEST]: contracts/src/contracts/Packets.sol
+[NX Daemon Server] - 2024-01-31T16:08:18.882Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:08:18.886Z - Time taken for 'hash changed files from watcher' 14.611184000968933ms
+[NX Daemon Server] - 2024-01-31T16:08:18.940Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:08:51.688Z - [WATCHER]: web/src/app/modules/burn/components/gbaby-input.tsx was modified
+[NX Daemon Server] - 2024-01-31T16:08:51.688Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:08:58.094Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:08:58.095Z - [REQUEST]: web/src/app/modules/burn/components/gbaby-input.tsx
+[NX Daemon Server] - 2024-01-31T16:08:58.095Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:08:58.099Z - Time taken for 'hash changed files from watcher' 14.469379007816315ms
+[NX Daemon Server] - 2024-01-31T16:08:58.160Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:09:19.595Z - [WATCHER]: web/src/app/modules/burn/components/gbaby-input.tsx was modified
+[NX Daemon Server] - 2024-01-31T16:09:19.596Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:09:26.012Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:09:26.012Z - [REQUEST]: web/src/app/modules/burn/components/gbaby-input.tsx
+[NX Daemon Server] - 2024-01-31T16:09:26.012Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:09:26.017Z - Time taken for 'hash changed files from watcher' 16.043230950832367ms
+[NX Daemon Server] - 2024-01-31T16:09:26.079Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:09:28.918Z - [WATCHER]: web/src/app/modules/burn/components/gbaby-input.tsx was modified
+[NX Daemon Server] - 2024-01-31T16:09:28.919Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:09:35.334Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:09:35.353Z - [REQUEST]: web/src/app/modules/burn/components/gbaby-input.tsx
+[NX Daemon Server] - 2024-01-31T16:09:35.353Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:09:35.397Z - Time taken for 'hash changed files from watcher' 13.896565020084381ms
+[NX Daemon Server] - 2024-01-31T16:09:35.437Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:09:44.456Z - [WATCHER]: web/src/app/modules/burn/components/gbaby-input.tsx was modified
+[NX Daemon Server] - 2024-01-31T16:09:44.456Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:09:50.874Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:09:50.874Z - [REQUEST]: web/src/app/modules/burn/components/gbaby-input.tsx
+[NX Daemon Server] - 2024-01-31T16:09:50.874Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:09:50.880Z - Time taken for 'hash changed files from watcher' 15.335103988647461ms
+[NX Daemon Server] - 2024-01-31T16:09:50.941Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:10:01.054Z - [WATCHER]: web/src/app/modules/burn/hooks/use-gbabies-selected.tsx was modified
+[NX Daemon Server] - 2024-01-31T16:10:01.054Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:10:03.769Z - [WATCHER]: web/src/app/modules/burn/hooks/use-gbabies-selected.tsx was modified
+[NX Daemon Server] - 2024-01-31T16:10:03.769Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:10:07.471Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:10:07.471Z - [REQUEST]: web/src/app/modules/burn/hooks/use-gbabies-selected.tsx
+[NX Daemon Server] - 2024-01-31T16:10:07.471Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:10:07.475Z - Time taken for 'hash changed files from watcher' 13.504029989242554ms
+[NX Daemon Server] - 2024-01-31T16:10:07.537Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:10:29.642Z - [WATCHER]: web/src/environments/environment.prod.ts was modified
+[NX Daemon Server] - 2024-01-31T16:10:29.643Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:10:36.059Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:10:36.059Z - [REQUEST]: web/src/environments/environment.prod.ts
+[NX Daemon Server] - 2024-01-31T16:10:36.059Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:10:36.064Z - Time taken for 'hash changed files from watcher' 13.804776966571808ms
+[NX Daemon Server] - 2024-01-31T16:10:36.126Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:10:47.515Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:10:47.516Z - [WATCHER]: contracts/src/scripts/set-live.ts was modified
+[NX Daemon Server] - 2024-01-31T16:10:53.932Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:10:53.932Z - [REQUEST]: contracts/src/scripts/set-live.ts
+[NX Daemon Server] - 2024-01-31T16:10:53.932Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:10:53.938Z - Time taken for 'hash changed files from watcher' 12.599048018455505ms
+[NX Daemon Server] - 2024-01-31T16:10:54.000Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:11:04.324Z - [WATCHER]: contracts/src/scripts/set-live.ts was modified
+[NX Daemon Server] - 2024-01-31T16:11:04.324Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:11:07.169Z - [WATCHER]: contracts/src/scripts/set-live.ts was modified
+[NX Daemon Server] - 2024-01-31T16:11:07.169Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:11:10.742Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:11:10.742Z - [REQUEST]: contracts/src/scripts/set-live.ts
+[NX Daemon Server] - 2024-01-31T16:11:10.742Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:11:10.746Z - Time taken for 'hash changed files from watcher' 14.729761958122253ms
+[NX Daemon Server] - 2024-01-31T16:11:10.808Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:11:20.915Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:11:21.420Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:11:21.421Z - [WATCHER]: api/src/viem.ts was modified
+[NX Daemon Server] - 2024-01-31T16:11:21.795Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:11:21.906Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:11:22.032Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:11:22.091Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:11:22.148Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:11:22.207Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:11:22.261Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:11:22.354Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T16:11:27.840Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T16:11:27.840Z - [REQUEST]: api/src/viem.ts
+[NX Daemon Server] - 2024-01-31T16:11:27.840Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T16:11:27.845Z - Time taken for 'hash changed files from watcher' 13.654473006725311ms
+[NX Daemon Server] - 2024-01-31T16:11:27.905Z - [WATCHER]: Processing file changes in outputs

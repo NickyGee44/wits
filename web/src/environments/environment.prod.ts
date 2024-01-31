@@ -6,10 +6,10 @@ export const environment = {
   },
   chain: 'mumbai',
   mumbai: {
-    cards: '0x4DC6BC7ea2d9F148f715D5Cd0c3D3937b3072F13' as const,
-    packets: '0xa20F575F3754efEE0494E9FA1177209BAa85174B' as const,
-    quillAndInk: '0x260e3B084f19a0684Ed730AA1f9bbecdD13E43e2' as const,
-    gBabies: '0x2f1c6194B564e871133787953c9A7996E41F62d1' as const,
+    cards: '0xe6718CcA1f367549E4070518a4f4C9ca0B872892' as const,
+    packets: '0x51Ac32651d8a33c137B9B56BCdD1E037CACB7A8A' as const,
+    quillAndInk: '0x71e90Ef6ff6a322ED24838Faca5F80996eDf615B' as const,
+    gBabies: '0x5CB234f98050485c9BFE44521f846035F7779177' as const,
   },
   api: {
     base: '/',
