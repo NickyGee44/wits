@@ -11248,7 +11248,7 @@ const handler: Handler = async (event: HandlerEvent) => {
       statusCode: 200,
       body: JSON.stringify({
         address: formatted,
-        value,
+        value: mintAmount,
         signature,
       }),
     };
