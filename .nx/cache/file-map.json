@@ -159,7 +159,7 @@
       },
       {
         "file": "package.json",
-        "hash": "8013746402210877348"
+        "hash": "11307011154474360407"
       },
       {
         "file": "tsconfig.base.json",
@@ -502,7 +502,7 @@
         },
         {
           "file": "web/src/environments/environment.prod.ts",
-          "hash": "6507710973388129341"
+          "hash": "14573854200111126221"
         },
         {
           "file": "web/src/environments/environment.ts",
@@ -596,7 +596,7 @@
         },
         {
           "file": "contracts/src/scripts/set-live.ts",
-          "hash": "10603043606175143084"
+          "hash": "7008106890185963044"
         },
         {
           "file": "contracts/src/scripts/test.ts",
