@@ -65,6 +65,7 @@ export function useWrite(
       console.log(error);
     } finally {
       toast.dismiss(loading);
+      setLoading(false);
     }
   };
 

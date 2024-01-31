@@ -4779,3 +4779,10 @@
 [NX Daemon Server] - 2024-01-31T11:07:55.218Z - [WATCHER]: Processing file changes in outputs
 [NX Daemon Server] - 2024-01-31T11:07:57.691Z - [WATCHER]: web/src/app/modules/burn/components/burn-tab.tsx was modified
 [NX Daemon Server] - 2024-01-31T11:07:57.691Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T11:08:04.106Z - [REQUEST]: Updated file-hasher based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-01-31T11:08:04.119Z - [REQUEST]: web/src/app/modules/burn/components/burn-tab.tsx
+[NX Daemon Server] - 2024-01-31T11:08:04.119Z - [REQUEST]: 
+[NX Daemon Server] - 2024-01-31T11:08:04.124Z - Time taken for 'hash changed files from watcher' 12.482831954956055ms
+[NX Daemon Server] - 2024-01-31T11:08:04.182Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T11:08:54.154Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-31T11:08:54.155Z - [WATCHER]: web/src/app/modules/core/hooks/use-write.tsx was modified
