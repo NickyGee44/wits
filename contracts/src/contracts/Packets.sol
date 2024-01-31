@@ -428,6 +428,15 @@ contract Packets is
         return _totalSupply[id];
     }
 
+    function setTotalSupply(
+        uint256[] memory ids,
+        uint256[] memory values
+    ) external onlyAdmin {
+        for(uint256 i; i < ids.length; i++) {
+            _totalSupply[ids[i]] = values[i];
+        }
+    }
+
     IRandomizer public randomizer;
 
     function setRandomizer(IRandomizer _randomizer) external onlyAdmin {
