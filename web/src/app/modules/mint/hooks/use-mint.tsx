@@ -52,10 +52,10 @@ export function usePresaleMint(
     write: () => {
       if (totalMintable > 0) action();
       if (assignedValue === 0) {
-        toast.error('You are not whitelisted for this presale');
+        return toast.error('You are not whitelisted for this presale');
       }
       if (totalMintable === 0) {
-        toast.error('You have already minted your allocation');
+        return toast.error('You have already minted your allocation');
       }
     },
     totalMintable,

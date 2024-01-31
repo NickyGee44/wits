@@ -14,10 +14,10 @@ async function main() {
   // ];
   const packets = await ethers.getContractAt(
     'Packets',
-    '0xa20F575F3754efEE0494E9FA1177209BAa85174B'
+    '0x195e38ffdbEEf9CE2FddbD9002B14C7a3d127B6f'
   );
 
-  await packets.setActiveIndex(2);
+  console.log(await packets.uri(2));
 
   // const gBabies = await ethers.getContractAt(
   //   'Gbaby',

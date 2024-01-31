@@ -28,13 +28,13 @@ async function main() {
 
   const Packets = await ethers.getContractFactory('Packets');
   const packets = await upgrades.deployProxy(Packets, [
-    '',
-    '',
-    signers[0].address,
-    1000,
-    'Name',
-    'Version',
-    signers[0].address,
+    'https://wits-metadata.s3.us-east-2.amazonaws.com/',
+    '.json',
+    '0x4EBCDAf033Cf9Dc27Ca45fA6bB0Cd132c2382565',
+    250,
+    'WITS',
+    '1',
+    '0xE499e4803953C3C070B4A8e05107b2CC35ac5316',
   ]);
 
   console.log('=================== PACKETS =====================');

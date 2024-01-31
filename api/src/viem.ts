@@ -4,9 +4,9 @@ const CHAIN_ID = 80001;
 const PROVIDER_URL =
   'https://polygon-mumbai.g.alchemy.com/v2/m3ADmeHfQSDpLG8JGiakIHdOwKdH9p_Z';
 const PRIVATE_KEY =
-  'ac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80';
+  '4979158a5681f9b3e0d4f5cf29b5373858f56d663184c38e062e245c336c9a30';
 
-export const CONTRACT_ADDRESS = '0xa20F575F3754efEE0494E9FA1177209BAa85174B';
+export const CONTRACT_ADDRESS = '0x195e38ffdbEEf9CE2FddbD9002B14C7a3d127B6f';
 export const CARDS_CONTRACT_ADDRESS = '0x4DC6BC7ea2d9F148f715D5Cd0c3D3937b3072F13';
 export const NAME = 'Name';
 export const VERSION = 'Version';

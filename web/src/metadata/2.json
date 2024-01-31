@@ -1,0 +1,22 @@
+{
+  "dna": "00002",
+  "name": "#2",
+  "description": "What is this Sorcery? Is a collection of 10 Factions of Wizards from The Land of Catena that are at war for the throne. WITS is a story telling IP and TCG that is driven by the events of the real blockchain and crypto worlds. Web2 meets Web3 in this thrilling fictitious world of Wizardry.",
+  "image": "https://wits-metadata.s3.us-east-2.amazonaws.com/BoosterBox.png",
+  "edition": 1,
+  "date": 1706516965501,
+  "attributes": [
+    {
+      "trait_type": "Name",
+      "value": "Booster Pack"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "001"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Includes atleast 5 Rare or Higher"
+    }
+  ]
+}
