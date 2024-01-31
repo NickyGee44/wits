@@ -1,12 +1,12 @@
 import { Contract, Wallet, providers } from 'ethers';
 
-const CHAIN_ID = 80001;
+const CHAIN_ID = 1;
 const PROVIDER_URL =
-  'https://polygon-mumbai.g.alchemy.com/v2/m3ADmeHfQSDpLG8JGiakIHdOwKdH9p_Z';
+  'https://eth-mainnet.g.alchemy.com/v2/m3ADmeHfQSDpLG8JGiakIHdOwKdH9p_Z';
 const PRIVATE_KEY =
   '4979158a5681f9b3e0d4f5cf29b5373858f56d663184c38e062e245c336c9a30';
 
-export const CONTRACT_ADDRESS = '0x51Ac32651d8a33c137B9B56BCdD1E037CACB7A8A';
+export const CONTRACT_ADDRESS = '0x2B0243F5a0f8c690BCdAE0e00C669e45E44d6A0d';
 export const CARDS_CONTRACT_ADDRESS = '0x4DC6BC7ea2d9F148f715D5Cd0c3D3937b3072F13';
 export const NAME = 'WITS';
 export const VERSION = '1';

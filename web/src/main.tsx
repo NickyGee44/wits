@@ -11,8 +11,7 @@ import App from './app/app';
 import { environment } from './environments/environment';
 
 const { chains, publicClient } = configureChains(
-  [polygonMumbai],
-  // [mainnet],
+  [mainnet],
   [alchemyProvider({ apiKey: environment.ALCHEMY_KEY }), publicProvider()]
 );
 

@@ -12,7 +12,7 @@ import { addresses } from './data/whitelist';
 import { useStage } from './modules/core/hooks/use-stage';
 
 // const network = environment.chain === 'mainnet' ? 'mainnet' : 'goerli';
-const network = 'mumbai';
+const network = 'mainnet';
 
 export function App() {
   const { address } = useAccount();

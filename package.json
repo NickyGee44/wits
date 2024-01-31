@@ -7,7 +7,8 @@
     "dev-api": "netlify functions:serve --functions ./api/src --port 4300",
     "hardhat-script": "TS_NODE_PROJECT=./contracts/tsconfig.json npx hardhat run ./contracts/src/scripts/set-live.ts --config ./contracts/hardhat.config.ts --network mumbai",
     "hardhat-node": "TS_NODE_PROJECT=./contracts/tsconfig.json npx hardhat node --config ./contracts/hardhat.config.ts",
-    "hardhat-deploy": "TS_NODE_PROJECT=./contracts/tsconfig.json npx hardhat run ./contracts/src/scripts/packets.ts --config ./contracts/hardhat.config.ts --network mumbai"
+    "hardhat-deploy": "TS_NODE_PROJECT=./contracts/tsconfig.json npx hardhat run ./contracts/src/scripts/packets-mainnet.ts --config ./contracts/hardhat.config.ts --network mainnet",
+    "hh-verify": "TS_NODE_PROJECT=./contracts/tsconfig.json npx hardhat verify 0x2B0243F5a0f8c690BCdAE0e00C669e45E44d6A0d --network mainnet"
   },
   "private": true,
   "dependencies": {
