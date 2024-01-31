@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { Toaster } from 'react-hot-toast';
 import { addresses } from './data/whitelist';
 import { ConnectButton } from './modules/core/components/buttons';
+import { toLower } from 'lodash';
 
 // const network = environment.chain === 'mainnet' ? 'mainnet' : 'goerli';
 const network = 'mainnet';
@@ -19,8 +20,7 @@ export function App() {
   const { tabIndex, setTabIndex } = useTabs();
 
   const addressLower = address ? address.toLowerCase() : '';
-
-  const addressesLower = addresses.map((addr) => addr.toLowerCase());
+  const addressesLower = addresses.map(toLower);
 
   return (
     <main className="min-h-screen text-light-gold">
