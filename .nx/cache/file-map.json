@@ -163,6 +163,40 @@
       }
     ],
     "projectFileMap": {
+      "api": [
+        {
+          "file": "api/.eslintrc.json",
+          "hash": "11808533155536463924"
+        },
+        {
+          "file": "api/jest.config.ts",
+          "hash": "10410655590686536064"
+        },
+        {
+          "file": "api/project.json",
+          "hash": "6512795210371978054"
+        },
+        {
+          "file": "api/src/main.ts",
+          "hash": "15876934182638491106"
+        },
+        {
+          "file": "api/src/viem.ts",
+          "hash": "10649112055067964979"
+        },
+        {
+          "file": "api/tsconfig.app.json",
+          "hash": "1650782542565282680"
+        },
+        {
+          "file": "api/tsconfig.json",
+          "hash": "9420862676426701392"
+        },
+        {
+          "file": "api/tsconfig.spec.json",
+          "hash": "17313551537729802733"
+        }
+      ],
       "web": [
         {
           "file": "web/.babelrc",
@@ -190,7 +224,7 @@
         },
         {
           "file": "web/src/app/data/whitelist.ts",
-          "hash": "18360403290146874050"
+          "hash": "10003576658410601582"
         },
         {
           "file": "web/src/app/modules/burn/components/burn-tab.tsx",
@@ -539,40 +573,6 @@
         {
           "file": "web/webpack.config.js",
           "hash": "1043731587818967490"
-        }
-      ],
-      "api": [
-        {
-          "file": "api/.eslintrc.json",
-          "hash": "11808533155536463924"
-        },
-        {
-          "file": "api/jest.config.ts",
-          "hash": "10410655590686536064"
-        },
-        {
-          "file": "api/project.json",
-          "hash": "6512795210371978054"
-        },
-        {
-          "file": "api/src/main.ts",
-          "hash": "15876934182638491106"
-        },
-        {
-          "file": "api/src/viem.ts",
-          "hash": "10649112055067964979"
-        },
-        {
-          "file": "api/tsconfig.app.json",
-          "hash": "1650782542565282680"
-        },
-        {
-          "file": "api/tsconfig.json",
-          "hash": "9420862676426701392"
-        },
-        {
-          "file": "api/tsconfig.spec.json",
-          "hash": "17313551537729802733"
         }
       ],
       "contracts": [
