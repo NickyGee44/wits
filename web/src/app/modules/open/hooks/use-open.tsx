@@ -5,6 +5,7 @@ import { sortBy } from 'lodash';
 import { useMemo } from 'react';
 import toast from 'react-hot-toast';
 import { TransactionLink } from '../../core/components/transaction';
+import { useAddRecentTransaction } from '@rainbow-me/rainbowkit';
 
 export function useOpen(
   packets: `0x${string}`,
@@ -12,6 +13,8 @@ export function useOpen(
   amounts: number[],
   reset: () => void
 ) {
+  const addRecentTransaction = useAddRecentTransaction();
+
   const {
     writeAsync,
     data,
@@ -25,6 +28,11 @@ export function useOpen(
     onSettled: reset,
     onSuccess: (data) => {
       toast.success(<TransactionLink tx={data.hash} />, { duration: 5000 });
+      addRecentTransaction({
+        hash: data.hash,
+        description: 'Open Pack',
+        confirmations: 10,
+      });
     },
     onError: (error) => {
       toast.error('Error opening');
@@ -44,7 +52,8 @@ export function useOpen(
     return (
       sortBy(
         logs
-          ?.map((log) =>
+          ?.filter((log) => log.address.toLowerCase() === packets.toLowerCase())
+          .map((log) =>
             decodeEventLog({
               abi: [...CARDS_ABI, ...PACKETS_ABI],
               data: log.data,

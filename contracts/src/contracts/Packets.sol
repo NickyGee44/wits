@@ -35,7 +35,7 @@ contract Packets is
     
     event PacketOpened(address indexed account, uint256 cardId, uint256 startingId, uint256 total, uint256 timestamp);
     event QuillsBurned(address indexed account, uint256 amount, uint256 timestamp);
-    event GbaiesBurned(address indexed account, uint256 amount, uint256 timestamp);
+    event GbabiesBurned(address indexed account, uint256 amount, uint256 timestamp);
 
     function initialize(
         string memory prefix_,
@@ -233,7 +233,7 @@ contract Packets is
             }
             gbabiesContract.burn(id);
         }
-        emit GbaiesBurned(msg.sender, total, block.timestamp);
+        emit GbabiesBurned(msg.sender, total, block.timestamp);
         return (total, 0);
     }
 
