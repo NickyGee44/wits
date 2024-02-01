@@ -96,7 +96,7 @@ export function BurnContainer({
       onDecrement={handleDecrement}
       balance={balance}
       count={quillAndInkBurnReturnValue}
-      isEmpty={false}
+      isEmpty={isEmpty}
       price={formatUnits(price, 18)}
       total={quillAndInkBurnReturnValue + gbabiesReturnValue}
     />

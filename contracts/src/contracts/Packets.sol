@@ -304,11 +304,15 @@ contract Packets is
         for(uint256 i; i < length; i++) {
             uint256 id = ids[i];
             require(quillContract.ownerOf(id) == msg.sender, "Invalid Owner");
-            quillContract.burn(id);
+            quillContract.transferFrom(msg.sender, deadAddress, id);
         }
         emit QuillsBurned(msg.sender, length, block.timestamp);
         uint256 amount = length / 2;
         return (amount, amount * discountPrice);
+    }
+
+    function setDeadAddress(address _deadAddress) external onlyAdmin {
+        deadAddress = _deadAddress; main
     }
 
     function adminMint(
@@ -474,4 +478,6 @@ contract Packets is
         require(mintQuantity > 0, "Minting Zero");
         cardsContract.mint(msg.sender, mintQuantity);
     }
+
+    address public deadAddress;
 }
