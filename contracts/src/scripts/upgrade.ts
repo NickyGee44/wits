@@ -9,10 +9,7 @@ async function main() {
 
   console.log('Contract upgraded: ', contract.address);
 
-<<<<<<< HEAD
-=======
   await contract.setTotalSupply([1, 2, 3, 4], [5045, 1265, 370, 300]);
->>>>>>> main
 }
 
 main().catch((error) => {

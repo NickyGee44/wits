@@ -293,11 +293,7 @@ contract Packets is
 
     function setDiscountPrice(uint256 _discountPrice) external onlyAdmin {
         discountPrice = _discountPrice;
-<<<<<<< HEAD
-    }    
-=======
     }
->>>>>>> main
 
     function _calculateQuills(
         uint256[] memory ids
@@ -313,13 +309,10 @@ contract Packets is
         emit QuillsBurned(msg.sender, length, block.timestamp);
         uint256 amount = length / 2;
         return (amount, amount * discountPrice);
-<<<<<<< HEAD
     }
 
     function setDeadAddress(address _deadAddress) external onlyAdmin {
-        deadAddress = _deadAddress;
-=======
->>>>>>> main
+        deadAddress = _deadAddress; main
     }
 
     function adminMint(
