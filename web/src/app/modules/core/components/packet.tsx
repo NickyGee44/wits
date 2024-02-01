@@ -12,7 +12,7 @@ export const Packet = (props: PacketProps) => {
   return (
     <div className="flex flex-col space-y-2">
       <img
-        src={`/assets/images/${props.cardPack}.png`}
+        src={`/assets/images/${props.cardPack}.webp`}
         alt=""
         className="w-full object-cover h-auto w-full lg:h-100"
       />

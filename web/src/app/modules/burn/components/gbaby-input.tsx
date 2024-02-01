@@ -1,5 +1,4 @@
 import { Container } from '../../core/components/containers';
-import { Svg } from '../../core/components/svgs';
 import { Layout } from './layout';
 
 interface GBabyInputProps {

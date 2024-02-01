@@ -9,7 +9,7 @@ export function useBurnMint(
   value: bigint,
   reset: () => void
 ) {
-  const { action } = useWrite(
+  const { action, loading } = useWrite(
     {
       address,
       abi: PACKETS_ABI,
@@ -17,13 +17,15 @@ export function useBurnMint(
       args: [gbabies, quillAndInkIds],
       value,
     },
-    reset
+    reset,
+    'Burn Mint'
   );
   const stage = useStage(address);
   const isLive = stage === 1;
 
   return {
     isLive,
+    loading,
     write: action,
   };
 }

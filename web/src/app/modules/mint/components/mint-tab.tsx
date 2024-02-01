@@ -4,6 +4,10 @@ import { Packet } from '../../core/components/packet';
 
 interface MintTabProps {
   write: () => void;
+  loading: boolean;
+  presaleLive: boolean;
+  publicLive: boolean;
+  totalMintable: number;
   cards: {
     name: string;
     price: bigint;
@@ -17,9 +21,20 @@ interface MintTabProps {
   }[];
 }
 
-export function MintTab({ cards, write }: MintTabProps) {
+export function MintTab({
+  loading,
+  publicLive,
+  totalMintable,
+  cards,
+  write,
+}: MintTabProps) {
   return (
-    <>
+    <div className="flex flex-col space-y-6">
+      <div className="font-dragon text-gold text-xl w-full text-center">
+        {!publicLive
+          ? `You have ${totalMintable} allocated.`
+          : 'Public mint is live'}
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-9/12 md:w-full mx-auto mt-8">
         {cards.map((card) => (
           <Packet
@@ -42,8 +57,13 @@ export function MintTab({ cards, write }: MintTabProps) {
         ))}
       </div>
       <div className="flex flex-row justify-center items-center w-full">
-        <SubmitButton handleClick={write}>MINT</SubmitButton>
+        <div className="flex flex-col space-y-2 justify-center items-center">
+          {!publicLive && totalMintable > 0 && <div>{totalMintable} Left</div>}
+          <SubmitButton disabled={loading} handleClick={write}>
+            MINT
+          </SubmitButton>
+        </div>
       </div>
-    </>
+    </div>
   );
 }

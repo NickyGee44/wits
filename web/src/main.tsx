@@ -4,14 +4,13 @@ import * as ReactDOM from 'react-dom/client';
 
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
-import { goerli, mainnet } from 'wagmi/chains';
+import { goerli, mainnet, polygonMumbai } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import App from './app/app';
 import { environment } from './environments/environment';
 
 const { chains, publicClient } = configureChains(
-  // [goerli],
   [mainnet],
   [alchemyProvider({ apiKey: environment.ALCHEMY_KEY }), publicProvider()]
 );
@@ -37,7 +36,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <StrictMode>
     <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider chains={chains}>
+      <RainbowKitProvider chains={chains} showRecentTransactions>
         <App />
       </RainbowKitProvider>
     </WagmiConfig>

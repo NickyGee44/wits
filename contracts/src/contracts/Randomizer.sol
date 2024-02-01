@@ -8,12 +8,19 @@ contract Randomizer is Initializable, OwnableUpgradeable {
     uint256 private seed;
     address public caller;
 
+    uint256 singleSupply;
+    uint256 boostSupply;
+    uint256 jumboSupply;
+
     function initialize(
         address _caller
     ) public initializer {
         __Ownable_init();
         caller = _caller;
         seed = uint256(keccak256(abi.encodePacked(block.timestamp, block.difficulty)));
+        singleSupply = 180;
+        boostSupply = 90;
+        jumboSupply = 30;
     }
 
     function random(
@@ -24,12 +31,42 @@ contract Randomizer is Initializable, OwnableUpgradeable {
         uint256 randomNumber = uint256(keccak256(abi.encodePacked(seed, nonce, block.timestamp, sender, block.difficulty)));
         seed = randomNumber;
         uint256 modulus = seed % 100;
-        if (modulus <= 50) {
-            return 1;
-        } else if (modulus <= 85) {
-            return 2;
+        if (modulus <= 60) {
+            if(singleSupply > 0) {
+                singleSupply--;
+                return 1;
+            } else if(boostSupply > 0) {
+                boostSupply--;
+                return 2;
+            } else if(jumboSupply > 0) {
+                jumboSupply--;
+                return 3;
+            }
+            return 0;
+        } else if (modulus <= 90) {
+            if(boostSupply > 0) {
+                boostSupply--;
+                return 2;
+            } else if(singleSupply > 0) {
+                singleSupply--;
+                return 1;
+            } else if(jumboSupply > 0) {
+                jumboSupply--;
+                return 3;
+            }
+            return 0;
         } else {
-            return 3;
+            if(jumboSupply > 0) {
+                jumboSupply--;
+                return 3;
+            } else if(singleSupply > 0) {
+                singleSupply--;
+                return 1;
+            } else if(boostSupply > 0) {
+                boostSupply--;
+                return 2;
+            }
+            return 0;
         }
     }
 }

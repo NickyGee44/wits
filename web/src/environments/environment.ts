@@ -13,12 +13,12 @@ export const environment = {
     base: 'http://localhost:4300/',
     addresses: '.netlify/functions/main',
   },
-  chain: 'goerli',
+  chain: 'mumbai',
   mainnet: {
     gBabies: '0x0ff1f3a53f521d74af73fe7433abf802f91ddd4e' as const,
     quillAndInk: '0xd38123a8f534a7bbcefefa59e74f254a46818538' as const,
     cards: '0x610178dA211FEF7D417bC0e6FeD39F05609AD788' as const,
-    packets: '0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6' as const,
+    packets: '0x2B0243F5a0f8c690BCdAE0e00C669e45E44d6A0d' as const,
   },
   hardhat: {
     gBabies: '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0' as const,
@@ -27,15 +27,15 @@ export const environment = {
     packets: '0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6' as const,
   },
   mumbai: {
-    cards: '0xab37CB54be3b983Dcd9D530B59b70040C2280E83' as const,
-    packets: '0x1c3cF14fB52AE4feD9d6D73694F278F946FfC85d' as const,
-    quillAndInk: '0x1e89A706Ee63dc488435c4f6175AfA7168B58d61' as const,
-    gBabies: '0x2B0243F5a0f8c690BCdAE0e00C669e45E44d6A0d' as const,
+    cards: '0xe6718CcA1f367549E4070518a4f4C9ca0B872892' as const,
+    packets: '0x51Ac32651d8a33c137B9B56BCdD1E037CACB7A8A' as const,
+    quillAndInk: '0x71e90Ef6ff6a322ED24838Faca5F80996eDf615B' as const,
+    gBabies: '0x5CB234f98050485c9BFE44521f846035F7779177' as const,
   },
   goerli: {
-    cards: '0x843DA53761346a528121cC494883A4E7d2014a4e' as const,
-    packets: '0xDDC03b04691Cb05708F2BCD6fd8Af4CA4de2843C' as const,
-    gBabies: '0xbB047e6DaB367faE2eEbbd96867D2efe3C7158B3' as const,
-    quillAndInk: '0x02167acD64dA8201b845507E9a8ddec16fe1F7b3' as const,
+    cards: '0x6aa8a980f78E22b55cbb326E1351cC2578623DA3' as const,
+    packets: '0x5CB234f98050485c9BFE44521f846035F7779177' as const,
+    gBabies: '0xcA49cBA91B55cA7216586BDdFE4FbcBfF57E15a5' as const,
+    quillAndInk: '0x18489f8666b06788957Da42F97aAf9Cb0E82d60' as const,
   },
 };

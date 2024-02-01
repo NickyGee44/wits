@@ -32,7 +32,10 @@ contract Packets is
     uint256 public activeIndex;
     mapping(uint256 => uint256) public idToCards;
     mapping(uint256 => uint256) private _totalSupply;
+    
     event PacketOpened(address indexed account, uint256 cardId, uint256 startingId, uint256 total, uint256 timestamp);
+    event QuillsBurned(address indexed account, uint256 amount, uint256 timestamp);
+    event GbabiesBurned(address indexed account, uint256 amount, uint256 timestamp);
 
     function initialize(
         string memory prefix_,
@@ -50,21 +53,73 @@ contract Packets is
         __DefaultOperatorFilterer_init();
         __Royalties_init_unchained(recipient, amount);
         __Signer_init_unchained(name, version, _signer);
+        
+        _isOG[3] = true;
+        _isOG[14] = true;
+        _isOG[19] = true;
+        _isOG[23] = true;
+        _isOG[24] = true;
+        _isOG[25] = true;
+        _isOG[27] = true;
+        _isOG[29] = true;
+        _isOG[39] = true;
+        _isOG[51] = true;
+        _isOG[61] = true;
+        _isOG[66] = true;
+        _isOG[69] = true;
+        _isOG[73] = true;
+        _isOG[80] = true;
+        _isOG[90] = true;
+        _isOG[96] = true;
+        _isOG[129] = true;
+        _isOG[130] = true;
+        _isOG[138] = true;
+        _isOG[140] = true;
+        _isOG[168] = true;
+        _isOG[169] = true;
+        _isOG[171] = true;
+        _isOG[176] = true;
+        _isOG[191] = true;
+        _isOG[193] = true;
+        _isOG[194] = true;
+        _isOG[201] = true;
+        _isOG[210] = true;
+        _isOG[216] = true;
+        _isOG[258] = true;
+        _isOG[262] = true;
+        _isOG[273] = true;
+        _isOG[299] = true;
+        _isOG[301] = true;
+        _isOG[303] = true;
+        _isOG[309] = true;
+        _isOG[311] = true;
+        _isOG[323] = true;
+        _isOG[327] = true;
+        _isOG[336] = true;
+        _isOG[342] = true;
+        _isOG[344] = true;
+        _isOG[345] = true;
+        _isOG[353] = true;
+        _isOG[355] = true;
+        _isOG[361] = true;
+        _isOG[382] = true;
+        _isOG[394] = true;
 
-        idToCards[1] = 2;
-        idToCards[2] = 3;
-        idToCards[3] = 4;
-        idToCards[4] = 5;
+        idToCards[1] = 5;
+        idToCards[2] = 25;
+        idToCards[3] = 100;
+        idToCards[4] = 40;
 
-        _totalSupply[1] = 1000;
-        _totalSupply[2] = 600;
-        _totalSupply[3] = 500;
-        _totalSupply[4] = 400;
+        _totalSupply[1] = 5225;
+        _totalSupply[2] = 1355;
+        _totalSupply[3] = 400;
+        _totalSupply[4] = 300;
 
-        setPrice(1, 0.001 ether);
-        setPrice(2, 0.002 ether);
-        setPrice(3, 0.003 ether);
-        setPrice(4, 0.004 ether);
+        setPrice(1, 0.002 ether);
+        discountPrice = 0.0018 ether;
+        setPrice(2, 0.008 ether);
+        setPrice(3, 0.0225 ether);
+        setPrice(4, 0.0125 ether);        
     }
 
     IERC721ABurnableUpgradeable public gbabiesContract;
@@ -142,7 +197,7 @@ contract Packets is
         (uint256 gbabyTotal,) = _calculateGBabies(gbabies);
         (uint256 quillTotal, uint256 quillPrice) = _calculateQuills(quills);
         uint256 totalMints = gbabyTotal + quillTotal;
-        _handleMint(msg.sender, 1, totalMints, quillPrice);
+        _handleMint(msg.sender, totalMints, 1, quillPrice);
     }
     
     function presaleMint(
@@ -188,23 +243,21 @@ contract Packets is
         uint256 totalPrice;
         uint256 totalMints;
         uint256 length = mintRequests.length;
-        uint256[] memory ids = new uint256[](4);
-        ids[0] = 1;
-        ids[1] = 2;
-        ids[2] = 3;
-        ids[3] = 4;
-        uint256[] memory amounts = new uint256[](4);
-        amounts[0] = 0;
-        amounts[1] = 0;
-        amounts[2] = 0;
-        amounts[3] = 0;
+
+        uint256[] memory ids = new uint256[](length);
+        uint256[] memory amounts = new uint256[](length);
+
         for(uint256 i; i < length; i++) {
             MintRequest memory mintRequest = mintRequests[i];
-            require(mintRequest.id < 5 && mintRequest.id > 0, "Invalid ID");
-            amounts[mintRequest.id - 1] += mintRequest.amount;
-            _checkSupply(mintRequest.id, mintRequest.amount);
-            totalPrice += price(uint8(mintRequest.id)) * mintRequest.amount;
-            totalMints += mintRequest.amount;
+            uint256 id = mintRequest.id;
+            require(id < 5 && id > 0, "Invalid ID");            
+            uint256 amount = mintRequest.amount;
+            _checkSupply(id, amount);
+            uint256 priceValue = price(uint8(id));
+            totalPrice += priceValue * amount;
+            totalMints += amount;
+            ids[i] = id;
+            amounts[i] = amount;
         }
         require(totalMints > 0, "Zero");
 
@@ -232,7 +285,14 @@ contract Packets is
             }
             gbabiesContract.burn(id);
         }
+        emit GbabiesBurned(msg.sender, total, block.timestamp);
         return (total, 0);
+    }
+
+    uint256 public discountPrice;
+
+    function setDiscountPrice(uint256 _discountPrice) external onlyAdmin {
+        discountPrice = _discountPrice;
     }
 
     function _calculateQuills(
@@ -246,8 +306,9 @@ contract Packets is
             require(quillContract.ownerOf(id) == msg.sender, "Invalid Owner");
             quillContract.burn(id);
         }
+        emit QuillsBurned(msg.sender, length, block.timestamp);
         uint256 amount = length / 2;
-        return (amount, price(1) * amount);
+        return (amount, amount * discountPrice);
     }
 
     function adminMint(
@@ -272,7 +333,7 @@ contract Packets is
         uint256 tokenId
     ) internal{
         _checkSupply(tokenId, amount);
-        _mint(account, amount, tokenId, "");
+        _mint(account, tokenId, amount, "");
     }
 
     function _handleMint(
@@ -367,6 +428,15 @@ contract Packets is
         return _totalSupply[id];
     }
 
+    function setTotalSupply(
+        uint256[] memory ids,
+        uint256[] memory values
+    ) external onlyAdmin {
+        for(uint256 i; i < ids.length; i++) {
+            _totalSupply[ids[i]] = values[i];
+        }
+    }
+
     IRandomizer public randomizer;
 
     function setRandomizer(IRandomizer _randomizer) external onlyAdmin {
@@ -387,6 +457,7 @@ contract Packets is
             if(id == 4) {
                 for(uint256 j; j < amount; j++) {
                     uint256 cardId = randomizer.random(total, msg.sender);
+                    require(cardId > 0, "Error: Out of stock");
                     uint256 cards =  idToCards[cardId];
                     emit PacketOpened(msg.sender, cardId, total, cards, block.timestamp);
                     total += cards;

@@ -4,22 +4,22 @@ export const Packets = [
   {
     id: 1,
     name: IPacket.SINGLE,
-    count: 2,
+    count: 5,
   },
   {
     id: 2,
     name: IPacket.BOOSTER,
-    count: 3,
+    count: 25,
   },
   {
     id: 3,
     name: IPacket.JUMBO,
-    count: 4,
+    count: 100,
   },
   {
     id: 4,
     name: IPacket.MYSTERY,
-    count: 5,
+    count: 40,
   },
 ];
 

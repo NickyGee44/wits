@@ -4,6 +4,7 @@ import { useStage } from '../../core/hooks/use-stage';
 import { useApi } from '../../core/hooks/use-api';
 import { useEffect, useMemo } from 'react';
 import { useWrite } from '../../core/hooks/use-write';
+import toast from 'react-hot-toast';
 
 export function usePresaleMint(
   address: `0x${string}`,
@@ -34,7 +35,7 @@ export function usePresaleMint(
     };
   }, [assignedValue, account]);
 
-  const { action } = useWrite(
+  const { action, loading } = useWrite(
     {
       abi: PACKETS_ABI,
       address,
@@ -42,13 +43,23 @@ export function usePresaleMint(
       args: [presaleRequest, mintRequests, signature],
       value,
     },
-    reset
+    reset,
+    'Presale Mint'
   );
   const stage = useStage(address);
 
   return {
-    write: action,
+    write: () => {
+      if (totalMintable > 0) action();
+      if (assignedValue === 0) {
+        return toast.error('You are not whitelisted for this presale');
+      }
+      if (totalMintable === 0) {
+        return toast.error('You have already minted your allocation');
+      }
+    },
     totalMintable,
+    loading,
     isLive: stage === 1,
   };
 }
@@ -62,7 +73,7 @@ export function usePublicMint(
   value: bigint,
   reset: () => void
 ) {
-  const { action } = useWrite(
+  const { action, loading } = useWrite(
     {
       abi: PACKETS_ABI,
       address,
@@ -70,12 +81,13 @@ export function usePublicMint(
       args: [mintRequests],
       value,
     },
-    reset
+    reset,
+    'Public Mint'
   );
   const stage = useStage(address);
   const isLive = stage === 2;
 
-  return { write: action, isLive };
+  return { write: action, isLive, loading };
 }
 
 export function useMinted(account: `0x${string}`, tokenAddress: `0x${string}`) {

@@ -3,10 +3,13 @@ import { ethers, upgrades, run } from 'hardhat';
 async function main() {
   const signers = await ethers.getSigners();
   const testingAddress = '0xf02DD82D4F5062E00fCD55B4501055faA8f2fE2C';
+  const testingAddress2 = '0xa4d39c33Cfe7630b413C2eFc9bD8861909B70E34';
 
   const Gbabies = await ethers.getContractFactory('Gbaby');
   const gbabies = await upgrades.deployProxy(Gbabies, []);
+
   await gbabies.mint(testingAddress, 2);
+  await gbabies.mint(testingAddress2, 2);
 
   console.log('=================== GBABIES =====================');
 
@@ -18,19 +21,20 @@ async function main() {
     [signers[0].address],
     [100],
   ]);
-  await quill.adminMint([testingAddress], [2]);
+
+  await quill.adminMint([testingAddress, testingAddress2], [2, 2]);
 
   console.log('=================== QUILL =====================');
 
   const Packets = await ethers.getContractFactory('Packets');
   const packets = await upgrades.deployProxy(Packets, [
-    '',
-    '',
-    signers[0].address,
-    1000,
-    'Name',
-    'Version',
-    signers[0].address,
+    'https://wits-metadata.s3.us-east-2.amazonaws.com/',
+    '.json',
+    '0x4EBCDAf033Cf9Dc27Ca45fA6bB0Cd132c2382565',
+    250,
+    'WITS',
+    '1',
+    '0xE499e4803953C3C070B4A8e05107b2CC35ac5316',
   ]);
 
   console.log('=================== PACKETS =====================');
@@ -57,6 +61,8 @@ async function main() {
   console.log('=================== CARDS =====================');
 
   await packets.setContracts(gbabies.address, quill.address, cards.address);
+  let tx = await packets.setDiscountPrice(ethers.utils.parseEther('0.0008'));
+  await tx.wait();
 
   console.log('=================== RANDOMIZER =====================');
 

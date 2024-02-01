@@ -27,7 +27,7 @@ export function MintContainer(props: MintContainerProps) {
     'single',
     singleSupply,
     singlePrice,
-    '15',
+    '47',
     '00',
     Packets[0].count
   );
@@ -36,8 +36,8 @@ export function MintContainer(props: MintContainerProps) {
     Packets[1].name,
     boosterSupply,
     boosterPrice,
-    '10',
-    '13',
+    '233',
+    '00',
     Packets[1].count
   );
   const jumbo = usePacket(
@@ -45,8 +45,8 @@ export function MintContainer(props: MintContainerProps) {
     Packets[2].name,
     jumboSupply,
     jumboPrice,
-    '9',
-    '32',
+    '690',
+    '00',
     Packets[2].count
   );
   const mystery = usePacket(
@@ -54,8 +54,8 @@ export function MintContainer(props: MintContainerProps) {
     Packets[3].name,
     mysterySupply,
     mysteryPrice,
-    '7',
-    '50',
+    '445',
+    '00',
     Packets[3].count
   );
 
@@ -88,20 +88,18 @@ export function MintContainer(props: MintContainerProps) {
     });
   };
 
-  const { isLive: publicLive, write: publicMint } = usePublicMint(
-    props.packets,
-    mintRequests,
-    value,
-    reset
-  );
+  const {
+    isLive: publicLive,
+    write: publicMint,
+    loading: publicLoading,
+  } = usePublicMint(props.packets, mintRequests, value, reset);
 
-  const { write: presaleMint, isLive: presaleLive } = usePresaleMint(
-    props.packets,
-    props.account,
-    mintRequests,
-    value,
-    reset
-  );
+  const {
+    write: presaleMint,
+    totalMintable,
+    isLive: presaleLive,
+    loading,
+  } = usePresaleMint(props.packets, props.account, mintRequests, value, reset);
 
   const write = async () => {
     if (presaleLive) {
@@ -111,5 +109,14 @@ export function MintContainer(props: MintContainerProps) {
     }
   };
 
-  return <MintTab write={write} cards={[single, booster, jumbo, mystery]} />;
+  return (
+    <MintTab
+      write={write}
+      cards={[single, booster, jumbo, mystery]}
+      loading={loading || publicLoading}
+      presaleLive={presaleLive}
+      publicLive={publicLive}
+      totalMintable={totalMintable}
+    />
+  );
 }
