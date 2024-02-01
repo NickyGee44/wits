@@ -8,10 +8,7 @@ import { MintContainer } from './modules/mint/components/container';
 import { OpenContainer } from './modules/open/components/container';
 import { environment } from '../environments/environment';
 import { Toaster } from 'react-hot-toast';
-import { addresses } from './data/whitelist';
-import { useStage } from './modules/core/hooks/use-stage';
 import { ConnectButton } from './modules/core/components/buttons';
-import { toLower } from 'lodash';
 
 // const network = environment.chain === 'mainnet' ? 'mainnet' : 'goerli';
 const network = 'mainnet';
@@ -20,18 +17,11 @@ export function App() {
   const { address } = useAccount();
   const { tabIndex, setTabIndex } = useTabs();
 
-<<<<<<< HEAD
-=======
-  const addressLower = address ? address.toLowerCase() : '';
-  const addressesLower = addresses.map(toLower);
-
->>>>>>> main
   return (
     <main className="min-h-screen text-light-gold">
       <Toaster />
       <div className="flex flex-col w-10/12 mx-auto py-8 justify-center items-center space-y-16">
         <HeaderContainer packets={environment[network].packets} />
-<<<<<<< HEAD
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* <Tab
             text="WalletChecker"
@@ -61,39 +51,6 @@ export function App() {
                 <div className="flex flex-col justify-center items-center space-y-4">
                   <div
                     className="text-2xl font-bold
-=======
-
-        <>
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
-            <Tab
-              text="Wallet Checker"
-              handleClick={() => setTabIndex(0)}
-              isActive={tabIndex === 0}
-            />
-            {/* <Tab
-                text="BURN TO MINT"
-                handleClick={() => setTabIndex(0)}
-                isActive={tabIndex === 0}
-              />
-              <Tab
-                text="MINT A PACK"
-                handleClick={() => setTabIndex(1)}
-                isActive={tabIndex === 1}
-              />
-              <Tab
-                text="OPEN PACK"
-                handleClick={() => setTabIndex(2)}
-                isActive={tabIndex === 2}
-              /> */}
-          </div>
-          <Container hasBorder isOpaque>
-            <TabBody activeIndex={tabIndex} tabIndex={0}>
-              <div className="w-11/12 mx-auto">
-                <div>
-                  <div className="flex flex-col justify-center items-center space-y-4">
-                    <div
-                      className="text-2xl font-bold
->>>>>>> main
                       text-center"
                   >
                     Wallet Checker
