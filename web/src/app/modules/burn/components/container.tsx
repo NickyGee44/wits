@@ -38,6 +38,7 @@ export function BurnContainer({
     quillAndInkBurnReturnValue,
   } = useQuillAndInkBalance(quillAndInkBalance, quillAndInkTokens);
   const priceForQuillAndInk = useDiscountedPrice(packets);
+<<<<<<< HEAD
 
   const { data: isApprovedForAll } = useContractRead({
     abi: [
@@ -73,6 +74,8 @@ export function BurnContainer({
   });
 
   console.log(isApprovedForAll);
+=======
+>>>>>>> main
 
   const price = useMemo(() => {
     return priceForQuillAndInk * BigInt(quillAndInkBurnReturnValue);
