@@ -7,6 +7,7 @@ import { useBurnMint } from '../hooks/use-mint';
 import { useDiscountedPrice, usePrice } from '../../core/hooks/use-price';
 import { formatUnits } from 'viem';
 import { useApproval } from '../../core/hooks/use-approval';
+import { useContractRead } from 'wagmi';
 
 interface BurnContainerProps {
   gbabies: `0x${string}`;
@@ -37,6 +38,41 @@ export function BurnContainer({
     quillAndInkBurnReturnValue,
   } = useQuillAndInkBalance(quillAndInkBalance, quillAndInkTokens);
   const priceForQuillAndInk = useDiscountedPrice(packets);
+
+  const { data: isApprovedForAll } = useContractRead({
+    abi: [
+      {
+        inputs: [
+          {
+            internalType: 'address',
+            name: 'account',
+            type: 'address',
+          },
+          {
+            internalType: 'address',
+            name: 'operator',
+            type: 'address',
+          },
+        ],
+        name: 'isApprovedForAll',
+        outputs: [
+          {
+            internalType: 'bool',
+            name: '',
+            type: 'bool',
+          },
+        ],
+        stateMutability: 'view',
+        type: 'function',
+      },
+    ],
+    address: quillAndInk,
+    functionName: 'isApprovedForAll',
+    args: [account, packets],
+    watch: true,
+  });
+
+  console.log(isApprovedForAll);
 
   const price = useMemo(() => {
     return priceForQuillAndInk * BigInt(quillAndInkBurnReturnValue);
