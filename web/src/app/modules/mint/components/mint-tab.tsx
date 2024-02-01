@@ -29,7 +29,12 @@ export function MintTab({
   write,
 }: MintTabProps) {
   return (
-    <>
+    <div className="flex flex-col space-y-6">
+      <div className="font-dragon text-gold text-xl w-full text-center">
+        {!publicLive
+          ? `You have ${totalMintable} allocated.`
+          : 'Public mint is live'}
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-9/12 md:w-full mx-auto mt-8">
         {cards.map((card) => (
           <Packet
@@ -59,6 +64,6 @@ export function MintTab({
           </SubmitButton>
         </div>
       </div>
-    </>
+    </div>
   );
 }

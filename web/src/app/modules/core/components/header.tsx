@@ -5,6 +5,7 @@ import { ConnectButton, PrimaryButton } from './buttons';
 
 interface HeaderProps {
   title?: string;
+  subtitle?: string;
 }
 
 export function Header({ title }: HeaderProps) {
