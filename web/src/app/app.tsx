@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { Toaster } from 'react-hot-toast';
 import { addresses } from './data/whitelist';
 import { useStage } from './modules/core/hooks/use-stage';
+import { ConnectButton } from './modules/core/components/buttons';
 
 // const network = environment.chain === 'mainnet' ? 'mainnet' : 'goerli';
 const network = 'mainnet';
@@ -85,26 +86,34 @@ export function App() {
             </div> */}
           {/* </TabBody> */}
           <div className="w-11/12 mx-auto">
-            <TabBody activeIndex={tabIndex} tabIndex={0}>
-              <BurnContainer
-                gbabies={environment[network].gBabies}
-                quillAndInk={environment[network].quillAndInk}
-                packets={environment[network].packets}
-                account={address ?? '0x'}
-              />
-            </TabBody>
-            <TabBody activeIndex={tabIndex} tabIndex={1}>
-              <MintContainer
-                packets={environment[network].packets}
-                account={address ?? '0x'}
-              />
-            </TabBody>
-            <TabBody activeIndex={tabIndex} tabIndex={2}>
-              <OpenContainer
-                packets={environment[network].packets}
-                account={address ?? '0x'}
-              />
-            </TabBody>
+            {!address ? (
+              <div className="flex flex-row justify-center items-center min-h-[10rem] lg:min-h-[50rem]">
+                <ConnectButton />
+              </div>
+            ) : (
+              <>
+                <TabBody activeIndex={tabIndex} tabIndex={0}>
+                  <BurnContainer
+                    gbabies={environment[network].gBabies}
+                    quillAndInk={environment[network].quillAndInk}
+                    packets={environment[network].packets}
+                    account={address ?? '0x'}
+                  />
+                </TabBody>
+                <TabBody activeIndex={tabIndex} tabIndex={1}>
+                  <MintContainer
+                    packets={environment[network].packets}
+                    account={address ?? '0x'}
+                  />
+                </TabBody>
+                <TabBody activeIndex={tabIndex} tabIndex={2}>
+                  <OpenContainer
+                    packets={environment[network].packets}
+                    account={address ?? '0x'}
+                  />
+                </TabBody>
+              </>
+            )}
           </div>
         </Container>
       </div>
