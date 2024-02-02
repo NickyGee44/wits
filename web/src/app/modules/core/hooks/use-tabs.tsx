@@ -1,6 +1,6 @@
 import { atom, useAtom } from 'jotai';
 
-const tabValueAtom = atom(0);
+const tabValueAtom = atom(1);
 
 export function useTabs() {
   const [tabIndex, setTabIndex] = useAtom(tabValueAtom);
