@@ -312,7 +312,7 @@ contract Packets is
     }
 
     function setDeadAddress(address _deadAddress) external onlyAdmin {
-        deadAddress = _deadAddress; main
+        deadAddress = _deadAddress;
     }
 
     function adminMint(
@@ -323,7 +323,7 @@ contract Packets is
         uint256 accountsLength = accounts_.length;
         require(accountsLength == amounts_.length, "Admin mint: bad request");
         for (uint256 i; i < accountsLength; i++) {
-            _internalMint(accounts_[i], tokenId, amounts_[i]);
+            _internalMint(accounts_[i], amounts_[i], tokenId);
         }
     }
 
