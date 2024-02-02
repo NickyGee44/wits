@@ -5,7 +5,7 @@
   "scripts": {
     "build": "nx build web && nx build api",
     "dev-api": "netlify functions:serve --functions ./api/src --port 4300",
-    "hardhat-script": "TS_NODE_PROJECT=./contracts/tsconfig.json npx hardhat run ./contracts/src/scripts/upgrade.ts --config ./contracts/hardhat.config.ts --network mainnet",
+    "hardhat-script": "TS_NODE_PROJECT=./contracts/tsconfig.json npx hardhat run ./contracts/src/scripts/set-live.ts --config ./contracts/hardhat.config.ts --network mainnet",
     "hardhat-node": "TS_NODE_PROJECT=./contracts/tsconfig.json npx hardhat node --config ./contracts/hardhat.config.ts",
     "hardhat-deploy": "TS_NODE_PROJECT=./contracts/tsconfig.json npx hardhat run ./contracts/src/scripts/packets-mainnet.ts --config ./contracts/hardhat.config.ts --network mainnet",
     "hh-verify": "TS_NODE_PROJECT=./contracts/tsconfig.json npx hardhat verify 0x51Ac32651d8a33c137B9B56BCdD1E037CACB7A8A --network mumbai"

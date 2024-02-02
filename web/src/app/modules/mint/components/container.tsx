@@ -28,7 +28,7 @@ export function MintContainer(props: MintContainerProps) {
     singleSupply,
     singlePrice,
     '00',
-    '02',
+    '00',
     Packets[0].count
   );
   const booster = usePacket(
@@ -37,7 +37,7 @@ export function MintContainer(props: MintContainerProps) {
     boosterSupply,
     boosterPrice,
     '00',
-    '08',
+    '00',
     Packets[1].count
   );
   const jumbo = usePacket(
@@ -46,7 +46,7 @@ export function MintContainer(props: MintContainerProps) {
     jumboSupply,
     jumboPrice,
     '00',
-    '225',
+    '00',
     Packets[2].count
   );
   const mystery = usePacket(
@@ -55,7 +55,7 @@ export function MintContainer(props: MintContainerProps) {
     mysterySupply,
     mysteryPrice,
     '00',
-    '125',
+    '00',
     Packets[3].count
   );
 
