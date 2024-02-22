@@ -7,13 +7,13 @@ import "@openzeppelin/contracts-upgradeable/token/ERC1155/ERC1155Upgradeable.sol
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol";
 import "operator-filter-registry/src/upgradeable/DefaultOperatorFiltererUpgradeable.sol";
-import "@chocolate-factory/contracts/supply/ReservedSupplyUpgradeable.sol";
-import "@chocolate-factory/contracts/admin-manager/AdminManagerUpgradable.sol";
-import "@chocolate-factory/contracts/uri-manager/UriManagerUpgradable.sol";
-import "@chocolate-factory/contracts/price/PriceUpgradable.sol";
-import "@chocolate-factory/contracts/royalties/RoyaltiesUpgradable.sol";
-import "@chocolate-factory/contracts/balance-limit/BalanceLimitUpgradable.sol";
-import "@chocolate-factory/contracts/signer/SignerUpgradeable.sol";
+import "./chocolate-factory/ReservedSupplyUpgradeable.sol";
+import "./chocolate-factory/AdminManagerUpgradable.sol";
+import "./chocolate-factory/UriManagerUpgradable.sol";
+import "./chocolate-factory/PriceUpgradable.sol";
+import "./chocolate-factory/RoyaltiesUpgradable.sol";
+import "./chocolate-factory/BalanceLimitUpgradable.sol";
+import "./chocolate-factory/SignerUpgradeable.sol";
 import "./interfaces/ICards.sol";
 import "./interfaces/IRandomizer.sol";
 

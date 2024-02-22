@@ -3,8 +3,6 @@
 /* eslint-disable */
 import type * as access from "./access";
 export type { access };
-import type * as finance from "./finance";
-export type { finance };
 import type * as interfaces from "./interfaces";
 export type { interfaces };
 import type * as proxy from "./proxy";

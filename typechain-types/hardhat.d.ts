@@ -13,77 +13,9 @@ import * as Contracts from ".";
 declare module "hardhat/types/runtime" {
   interface HardhatEthersHelpers extends HardhatEthersHelpersBase {
     getContractFactory(
-      name: "AdminManager",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.AdminManager__factory>;
-    getContractFactory(
-      name: "AdminManagerUpgradable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.AdminManagerUpgradable__factory>;
-    getContractFactory(
-      name: "AdminMintUpgradable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.AdminMintUpgradable__factory>;
-    getContractFactory(
-      name: "BalanceLimit",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.BalanceLimit__factory>;
-    getContractFactory(
-      name: "BalanceLimitUpgradable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.BalanceLimitUpgradable__factory>;
-    getContractFactory(
-      name: "CustomPaymentSplitterUpgradeable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.CustomPaymentSplitterUpgradeable__factory>;
-    getContractFactory(
-      name: "PriceUpgradable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.PriceUpgradable__factory>;
-    getContractFactory(
-      name: "IERC2981Royalties",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IERC2981Royalties__factory>;
-    getContractFactory(
-      name: "RoyaltiesUpgradable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.RoyaltiesUpgradable__factory>;
-    getContractFactory(
-      name: "SignerUpgradeable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.SignerUpgradeable__factory>;
-    getContractFactory(
-      name: "ReservedSupplyUpgradable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ReservedSupplyUpgradable__factory>;
-    getContractFactory(
-      name: "SupplyUpgradable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.SupplyUpgradable__factory>;
-    getContractFactory(
-      name: "Base",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Base__factory>;
-    getContractFactory(
-      name: "TwoStage",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.TwoStage__factory>;
-    getContractFactory(
-      name: "UriManagerUpgradable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.UriManagerUpgradable__factory>;
-    getContractFactory(
-      name: "WhitelistUpgradable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.WhitelistUpgradable__factory>;
-    getContractFactory(
       name: "OwnableUpgradeable",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.OwnableUpgradeable__factory>;
-    getContractFactory(
-      name: "PaymentSplitterUpgradeable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.PaymentSplitterUpgradeable__factory>;
     getContractFactory(
       name: "IERC5267Upgradeable",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -108,14 +40,6 @@ declare module "hardhat/types/runtime" {
       name: "IERC1155Upgradeable",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IERC1155Upgradeable__factory>;
-    getContractFactory(
-      name: "IERC20PermitUpgradeable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IERC20PermitUpgradeable__factory>;
-    getContractFactory(
-      name: "IERC20Upgradeable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IERC20Upgradeable__factory>;
     getContractFactory(
       name: "ERC721Upgradeable",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -157,9 +81,45 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IERC165Upgradeable__factory>;
     getContractFactory(
-      name: "Cards",
+      name: "AdminManager",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Cards__factory>;
+    ): Promise<Contracts.AdminManager__factory>;
+    getContractFactory(
+      name: "AdminManagerUpgradable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.AdminManagerUpgradable__factory>;
+    getContractFactory(
+      name: "BalanceLimit",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.BalanceLimit__factory>;
+    getContractFactory(
+      name: "BalanceLimitUpgradable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.BalanceLimitUpgradable__factory>;
+    getContractFactory(
+      name: "IERC2981Royalties",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IERC2981Royalties__factory>;
+    getContractFactory(
+      name: "PriceUpgradable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.PriceUpgradable__factory>;
+    getContractFactory(
+      name: "ReservedSupplyUpgradable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ReservedSupplyUpgradable__factory>;
+    getContractFactory(
+      name: "RoyaltiesUpgradable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.RoyaltiesUpgradable__factory>;
+    getContractFactory(
+      name: "SignerUpgradeable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.SignerUpgradeable__factory>;
+    getContractFactory(
+      name: "UriManagerUpgradable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.UriManagerUpgradable__factory>;
     getContractFactory(
       name: "Gbaby",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -177,37 +137,13 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Packets__factory>;
     getContractFactory(
-      name: "QuillAndInk",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.QuillAndInk__factory>;
-    getContractFactory(
       name: "Randomizer",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Randomizer__factory>;
     getContractFactory(
-      name: "ERC721A__IERC721ReceiverUpgradeable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ERC721A__IERC721ReceiverUpgradeable__factory>;
-    getContractFactory(
-      name: "ERC721AUpgradeable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ERC721AUpgradeable__factory>;
-    getContractFactory(
-      name: "ERC721ABurnableUpgradeable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ERC721ABurnableUpgradeable__factory>;
-    getContractFactory(
-      name: "ERC721AQueryableUpgradeable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ERC721AQueryableUpgradeable__factory>;
-    getContractFactory(
       name: "IERC721ABurnableUpgradeable",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.IERC721ABurnableUpgradeable__factory>;
-    getContractFactory(
-      name: "IERC721AQueryableUpgradeable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IERC721AQueryableUpgradeable__factory>;
     getContractFactory(
       name: "IERC721AUpgradeable",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -226,95 +162,10 @@ declare module "hardhat/types/runtime" {
     ): Promise<Contracts.OperatorFiltererUpgradeable__factory>;
 
     getContractAt(
-      name: "AdminManager",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.AdminManager>;
-    getContractAt(
-      name: "AdminManagerUpgradable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.AdminManagerUpgradable>;
-    getContractAt(
-      name: "AdminMintUpgradable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.AdminMintUpgradable>;
-    getContractAt(
-      name: "BalanceLimit",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.BalanceLimit>;
-    getContractAt(
-      name: "BalanceLimitUpgradable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.BalanceLimitUpgradable>;
-    getContractAt(
-      name: "CustomPaymentSplitterUpgradeable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.CustomPaymentSplitterUpgradeable>;
-    getContractAt(
-      name: "PriceUpgradable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.PriceUpgradable>;
-    getContractAt(
-      name: "IERC2981Royalties",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.IERC2981Royalties>;
-    getContractAt(
-      name: "RoyaltiesUpgradable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.RoyaltiesUpgradable>;
-    getContractAt(
-      name: "SignerUpgradeable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.SignerUpgradeable>;
-    getContractAt(
-      name: "ReservedSupplyUpgradable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ReservedSupplyUpgradable>;
-    getContractAt(
-      name: "SupplyUpgradable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.SupplyUpgradable>;
-    getContractAt(
-      name: "Base",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Base>;
-    getContractAt(
-      name: "TwoStage",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.TwoStage>;
-    getContractAt(
-      name: "UriManagerUpgradable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.UriManagerUpgradable>;
-    getContractAt(
-      name: "WhitelistUpgradable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.WhitelistUpgradable>;
-    getContractAt(
       name: "OwnableUpgradeable",
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.OwnableUpgradeable>;
-    getContractAt(
-      name: "PaymentSplitterUpgradeable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.PaymentSplitterUpgradeable>;
     getContractAt(
       name: "IERC5267Upgradeable",
       address: string,
@@ -345,16 +196,6 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.IERC1155Upgradeable>;
-    getContractAt(
-      name: "IERC20PermitUpgradeable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.IERC20PermitUpgradeable>;
-    getContractAt(
-      name: "IERC20Upgradeable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.IERC20Upgradeable>;
     getContractAt(
       name: "ERC721Upgradeable",
       address: string,
@@ -406,10 +247,55 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.IERC165Upgradeable>;
     getContractAt(
-      name: "Cards",
+      name: "AdminManager",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.Cards>;
+    ): Promise<Contracts.AdminManager>;
+    getContractAt(
+      name: "AdminManagerUpgradable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.AdminManagerUpgradable>;
+    getContractAt(
+      name: "BalanceLimit",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.BalanceLimit>;
+    getContractAt(
+      name: "BalanceLimitUpgradable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.BalanceLimitUpgradable>;
+    getContractAt(
+      name: "IERC2981Royalties",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IERC2981Royalties>;
+    getContractAt(
+      name: "PriceUpgradable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.PriceUpgradable>;
+    getContractAt(
+      name: "ReservedSupplyUpgradable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ReservedSupplyUpgradable>;
+    getContractAt(
+      name: "RoyaltiesUpgradable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.RoyaltiesUpgradable>;
+    getContractAt(
+      name: "SignerUpgradeable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.SignerUpgradeable>;
+    getContractAt(
+      name: "UriManagerUpgradable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.UriManagerUpgradable>;
     getContractAt(
       name: "Gbaby",
       address: string,
@@ -431,45 +317,15 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.Packets>;
     getContractAt(
-      name: "QuillAndInk",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.QuillAndInk>;
-    getContractAt(
       name: "Randomizer",
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.Randomizer>;
     getContractAt(
-      name: "ERC721A__IERC721ReceiverUpgradeable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ERC721A__IERC721ReceiverUpgradeable>;
-    getContractAt(
-      name: "ERC721AUpgradeable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ERC721AUpgradeable>;
-    getContractAt(
-      name: "ERC721ABurnableUpgradeable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ERC721ABurnableUpgradeable>;
-    getContractAt(
-      name: "ERC721AQueryableUpgradeable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.ERC721AQueryableUpgradeable>;
-    getContractAt(
       name: "IERC721ABurnableUpgradeable",
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.IERC721ABurnableUpgradeable>;
-    getContractAt(
-      name: "IERC721AQueryableUpgradeable",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.IERC721AQueryableUpgradeable>;
     getContractAt(
       name: "IERC721AUpgradeable",
       address: string,
