@@ -6,6 +6,7 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC1155/ERC1155Upgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol";
+import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "operator-filter-registry/src/upgradeable/DefaultOperatorFiltererUpgradeable.sol";
 import "./chocolate-factory/ReservedSupplyUpgradeable.sol";
 import "./chocolate-factory/AdminManagerUpgradable.sol";
@@ -480,4 +481,68 @@ contract Packets is
     }
 
     address public deadAddress;
+
+    /// @notice merkle root to validate proofs and claim
+    bytes32 public merkleRoot;
+
+    /// @notice store the URI where list of addresses and their claim token can be found for provenance
+    string public rawDataUri;
+
+    /// @notice reverted when a proof is invalid
+    error InvalidProof();
+
+    /// @notice emitted when claim is done
+    event PacketClaimed(address receiver, uint256 tokenId, uint256 amount);
+
+    /// @notice set parameters for claiming of tokens
+    /// @dev should be called after initialize
+    ///      leaf = keccak256(abi.encode(address, tokenId, amount))
+    /// @param _merkleRoot merkle root
+    /// @param _rawDataUri URI where the raw data from which the merkle root is generated
+    function setClaimingParameters(bytes32 _merkleRoot, string calldata _rawDataUri) external onlyAdmin {
+        merkleRoot = _merkleRoot;
+        rawDataUri = _rawDataUri;
+    }
+
+    /// @notice claim packets
+    /// @dev claim based on merkle root generated from snapshot take on ETH mainnet packets
+    ///      Address: eth:0x2B0243F5a0f8c690BCdAE0e00C669e45E44d6A0d
+    /// @param receiver receiver address
+    /// @param mintRequests array of mint requests
+    /// @param proofs merkle tree proofs to validate request
+    function claimPacket(address receiver, MintRequest[] calldata mintRequests, bytes32[][] calldata proofs) external isLive(3) {
+            // tally mint request
+            (
+                , 
+                ,
+                uint256[] memory ids, 
+                uint256[] memory amounts
+            ) = _tallyMintRequests(mintRequests);
+            
+             for(uint256 i; i<mintRequests.length; i++) {
+                // generate leaf
+                bytes32 leaf = _generateLeaf(receiver, mintRequests[i]);
+
+                // validate proofs
+                if (!MerkleProof.verifyCalldata(proofs[i], merkleRoot,leaf)) {
+                    revert InvalidProof();
+                }
+             }
+
+             // mint packet
+             _handleMints(receiver, ids, amounts, 0);
+
+             // emit event
+             for(uint256 i; i<ids.length; i++) {
+                emit PacketClaimed(receiver, ids[i], amounts[i]);
+             }
+    }
+
+    /// @notice generate leaf hash
+    /// @param account receiver of the tokens
+    /// @param mintRequest Mint Request
+    /// @return leaf hashed leaf
+    function _generateLeaf(address account, MintRequest memory mintRequest) internal pure returns(bytes32) {
+        return keccak256(abi.encode(account, mintRequest.id, mintRequest.amount));
+    }
 }
