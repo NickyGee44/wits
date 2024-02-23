@@ -488,8 +488,14 @@ contract Packets is
     /// @notice store the URI where list of addresses and their claim token can be found for provenance
     string public rawDataUri;
 
+    // @notice keeps registry of claims
+    mapping(bytes32 => bool) public isClaimed;
+
     /// @notice reverted when a proof is invalid
     error InvalidProof();
+
+    /// @notice reverted when a user is trying to claim again
+    error AlreadyClaimed();
 
     /// @notice emitted when claim is done
     event PacketClaimed(address receiver, uint256 tokenId, uint256 amount);
@@ -522,6 +528,12 @@ contract Packets is
              for(uint256 i; i<mintRequests.length; i++) {
                 // generate leaf
                 bytes32 leaf = _generateLeaf(receiver, mintRequests[i]);
+
+                if(isClaimed[leaf]) {
+                    revert AlreadyClaimed();
+                }
+
+                isClaimed[leaf] = true;
 
                 // validate proofs
                 if (!MerkleProof.verifyCalldata(proofs[i], merkleRoot,leaf)) {
