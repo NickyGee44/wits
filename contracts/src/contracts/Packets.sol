@@ -503,6 +503,9 @@ contract Packets is
     /// @notice reverted when claim has ended
     error ClaimEnded();
 
+    /// @notice reverted when claim hasn't ended
+    error ClaimNotEnded();
+
     /// @notice emitted when claim is done
     event PacketClaimed(address receiver, uint256 tokenId, uint256 amount);
 
@@ -511,10 +514,33 @@ contract Packets is
     ///      leaf = keccak256(abi.encode(address, tokenId, amount))
     /// @param _merkleRoot merkle root
     /// @param _rawDataUri URI where the raw data from which the merkle root is generated
-    function setClaimingParameters(bytes32 _merkleRoot, string calldata _rawDataUri, uint256 _deadline) external onlyAdmin {
+    function setClaimingParameters(bytes32 _merkleRoot, string calldata _rawDataUri, uint256 _deadline)
+        external
+        onlyAdmin
+    {
         merkleRoot = _merkleRoot;
         rawDataUri = _rawDataUri;
         claimDeadline = _deadline;
+    }
+
+    function _preclaimCheck(address receiver, MintRequest[] calldata mintRequests, bytes32[][] calldata proofs)
+        internal
+    {
+        for (uint256 i; i < mintRequests.length; i++) {
+            // generate leaf
+            bytes32 leaf = _generateLeaf(receiver, mintRequests[i]);
+
+            if (isClaimed[leaf]) {
+                revert AlreadyClaimed();
+            }
+
+            isClaimed[leaf] = true;
+
+            // validate proofs
+            if (!MerkleProof.verifyCalldata(proofs[i], merkleRoot, leaf)) {
+                revert InvalidProof();
+            }
+        }
     }
 
     /// @notice claim packets
@@ -523,41 +549,49 @@ contract Packets is
     /// @param receiver receiver address
     /// @param mintRequests array of mint requests
     /// @param proofs merkle tree proofs to validate request
-    function claimPacket(address receiver, MintRequest[] calldata mintRequests, bytes32[][] calldata proofs) external isLive(3) {
-        if(block.timestamp > claimDeadline) {
+    function claimPacket(address receiver, MintRequest[] calldata mintRequests, bytes32[][] calldata proofs)
+        external
+        isLive(3)
+    {
+        if (block.timestamp > claimDeadline) {
             revert ClaimEnded();
         }
 
         // tally mint request
-        (
-            , 
-            ,
-            uint256[] memory ids, 
-            uint256[] memory amounts
-        ) = _tallyMintRequests(mintRequests);
-            
-        for(uint256 i; i<mintRequests.length; i++) {
-            // generate leaf
-            bytes32 leaf = _generateLeaf(receiver, mintRequests[i]);
+        (,, uint256[] memory ids, uint256[] memory amounts) = _tallyMintRequests(mintRequests);
 
-            if(isClaimed[leaf]) {
-                revert AlreadyClaimed();
-            }
-
-            isClaimed[leaf] = true;
-
-            // validate proofs
-            if (!MerkleProof.verifyCalldata(proofs[i], merkleRoot,leaf)) {
-                revert InvalidProof();
-            }
-        }
+        _preclaimCheck(receiver, mintRequests, proofs);
 
         // mint packet
         _handleMints(receiver, ids, amounts, 0);
 
         // emit event
-        for(uint256 i; i<ids.length; i++) {
-           emit PacketClaimed(receiver, ids[i], amounts[i]);
+        for (uint256 i; i < ids.length; i++) {
+            emit PacketClaimed(receiver, ids[i], amounts[i]);
+        }
+    }
+
+    function claimPacketsToOwner(
+        address mintReceiver,
+        address receiver,
+        MintRequest[] calldata mintRequests,
+        bytes32[][] calldata proofs
+    ) external onlyAdmin {
+        if (block.timestamp <= claimDeadline) {
+            revert ClaimNotEnded();
+        }
+
+        // tally mint request
+        (,, uint256[] memory ids, uint256[] memory amounts) = _tallyMintRequests(mintRequests);
+
+        _preclaimCheck(receiver, mintRequests, proofs);
+
+        // mint packet
+        _handleMints(mintReceiver, ids, amounts, 0);
+
+        // emit event
+        for (uint256 i; i < ids.length; i++) {
+            emit PacketClaimed(mintReceiver, ids[i], amounts[i]);
         }
     }
 
@@ -565,7 +599,7 @@ contract Packets is
     /// @param account receiver of the tokens
     /// @param mintRequest Mint Request
     /// @return leaf hashed leaf
-    function _generateLeaf(address account, MintRequest memory mintRequest) internal pure returns(bytes32) {
+    function _generateLeaf(address account, MintRequest memory mintRequest) internal pure returns (bytes32) {
         return keccak256(abi.encode(account, mintRequest.id, mintRequest.amount));
     }
 }
