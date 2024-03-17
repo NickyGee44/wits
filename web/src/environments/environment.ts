@@ -18,8 +18,14 @@ export const environment = {
     gBabies: '0x0ff1f3a53f521d74af73fe7433abf802f91ddd4e' as const,
     quillAndInk: '0xd38123a8f534a7bbcefefa59e74f254a46818538' as const,
     cards: '0x610178dA211FEF7D417bC0e6FeD39F05609AD788' as const,
-    packets: '0x2B0243F5a0f8c690BCdAE0e00C669e45E44d6A0d' as const,
+    packets: '0x75d28e4c645ac1384999f094b9abcc1dfb4fd57e' as const,
   },
+  // mainnet: {
+  //   gBabies: '0x0ff1f3a53f521d74af73fe7433abf802f91ddd4e' as const,
+  //   quillAndInk: '0xd38123a8f534a7bbcefefa59e74f254a46818538' as const,
+  //   cards: '0x610178dA211FEF7D417bC0e6FeD39F05609AD788' as const,
+  //   packets: '0x2B0243F5a0f8c690BCdAE0e00C669e45E44d6A0d' as const,
+  // },
   hardhat: {
     gBabies: '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0' as const,
     quillAndInk: '0x5FC8d32690cc91D4c39d9d3abcBD16989F875707' as const,
