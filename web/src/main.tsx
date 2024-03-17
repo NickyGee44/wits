@@ -8,10 +8,11 @@ import { goerli, mainnet, polygonMumbai } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import App from './app/app';
+import { skaleNebulaTestnetCustom } from './app/modules/core/constants/customNetworks';
 import { environment } from './environments/environment';
 
 const { chains, publicClient } = configureChains(
-  [mainnet],
+  [skaleNebulaTestnetCustom],
   [alchemyProvider({ apiKey: environment.ALCHEMY_KEY }), publicProvider()]
 );
 

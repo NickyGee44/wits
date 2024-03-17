@@ -1,14 +1,14 @@
+import { Toaster } from 'react-hot-toast';
 import { useAccount } from 'wagmi';
+import { environment } from '../environments/environment';
 import { BurnContainer } from './modules/burn/components/container';
+import { ConnectButton } from './modules/core/components/buttons';
 import { Container } from './modules/core/components/containers';
 import { HeaderContainer } from './modules/core/components/header';
 import { Tab, TabBody } from './modules/core/components/tabs';
 import { useTabs } from './modules/core/hooks/use-tabs';
 import { MintContainer } from './modules/mint/components/container';
 import { OpenContainer } from './modules/open/components/container';
-import { environment } from '../environments/environment';
-import { Toaster } from 'react-hot-toast';
-import { ConnectButton } from './modules/core/components/buttons';
 
 // const network = environment.chain === 'mainnet' ? 'mainnet' : 'goerli';
 const network = 'mainnet';
@@ -28,20 +28,20 @@ export function App() {
             handleClick={() => setTabIndex(0)}
             isActive={tabIndex === 0}
           /> */}
-          <Tab
+          {/* <Tab
             text="BURN TO MINT"
             handleClick={() => setTabIndex(0)}
             isActive={tabIndex === 0}
-          />
-          <Tab
+          /> */}
+          {/* <Tab
             text="MINT A PACK"
             handleClick={() => setTabIndex(1)}
             isActive={tabIndex === 1}
-          />
+          /> */}
           <Tab
             text="OPEN PACK"
-            handleClick={() => setTabIndex(2)}
-            isActive={tabIndex === 2}
+            handleClick={() => setTabIndex(0)}
+            isActive={tabIndex === 0}
           />
         </div>
         <Container hasBorder isOpaque>
@@ -90,21 +90,21 @@ export function App() {
               </div>
             ) : (
               <>
-                <TabBody activeIndex={tabIndex} tabIndex={0}>
+                {/* <TabBody activeIndex={tabIndex} tabIndex={0}>
                   <BurnContainer
                     gbabies={environment[network].gBabies}
                     quillAndInk={environment[network].quillAndInk}
                     packets={environment[network].packets}
                     account={address ?? '0x'}
                   />
-                </TabBody>
-                <TabBody activeIndex={tabIndex} tabIndex={1}>
+                </TabBody> */}
+                {/* <TabBody activeIndex={tabIndex} tabIndex={1}>
                   <MintContainer
                     packets={environment[network].packets}
                     account={address ?? '0x'}
                   />
-                </TabBody>
-                <TabBody activeIndex={tabIndex} tabIndex={2}>
+                </TabBody> */}
+                <TabBody activeIndex={tabIndex} tabIndex={0}>
                   <OpenContainer
                     packets={environment[network].packets}
                     account={address ?? '0x'}
