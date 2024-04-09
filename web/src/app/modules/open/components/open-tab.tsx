@@ -1,8 +1,8 @@
+import { flatten } from 'lodash';
 import { useMemo } from 'react';
 import { SubmitButton } from '../../core/components/buttons';
 import { Packet } from '../../core/components/packet';
 import { useModal } from '../../core/hooks/use-modal';
-import { flatten } from 'lodash';
 
 interface OpenTabProps {
   idsByPackets: { id: number; cards: number[] }[];
@@ -55,9 +55,7 @@ export function OpenTab({ idsByPackets, cards, open }: OpenTabProps) {
         ))}
       </div>
       <div className="flex flex-row justify-center items-center w-full">
-        <SubmitButton disabled handleClick={action}>
-          OPEN PACKS
-        </SubmitButton>
+        <SubmitButton handleClick={action}>OPEN PACKS</SubmitButton>
       </div>
     </>
   );
