@@ -22,11 +22,6 @@ const _abi = [
   },
   {
     inputs: [],
-    name: "ApproveToCaller",
-    type: "error",
-  },
-  {
-    inputs: [],
     name: "BalanceQueryForZeroAddress",
     type: "error",
   },
@@ -201,7 +196,7 @@ const _abi = [
     ],
     name: "approve",
     outputs: [],
-    stateMutability: "nonpayable",
+    stateMutability: "payable",
     type: "function",
   },
   {
@@ -331,7 +326,7 @@ const _abi = [
     ],
     name: "safeTransferFrom",
     outputs: [],
-    stateMutability: "nonpayable",
+    stateMutability: "payable",
     type: "function",
   },
   {
@@ -359,7 +354,7 @@ const _abi = [
     ],
     name: "safeTransferFrom",
     outputs: [],
-    stateMutability: "nonpayable",
+    stateMutability: "payable",
     type: "function",
   },
   {
@@ -464,7 +459,7 @@ const _abi = [
     ],
     name: "transferFrom",
     outputs: [],
-    stateMutability: "nonpayable",
+    stateMutability: "payable",
     type: "function",
   },
 ] as const;

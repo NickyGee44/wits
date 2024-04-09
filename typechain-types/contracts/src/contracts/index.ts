@@ -3,9 +3,9 @@
 /* eslint-disable */
 import type * as gBabySol from "./GBaby.sol";
 export type { gBabySol };
+import type * as chocolateFactory from "./chocolate-factory";
+export type { chocolateFactory };
 import type * as interfaces from "./interfaces";
 export type { interfaces };
-export type { Cards } from "./Cards";
 export type { Packets } from "./Packets";
-export type { QuillAndInk } from "./QuillAndInk";
 export type { Randomizer } from "./Randomizer";

@@ -60,6 +60,7 @@ export interface PacketsInterface extends utils.Interface {
     "burnMint(uint256[],uint256[])": FunctionFragment;
     "cardsContract()": FunctionFragment;
     "currentBalance(uint8,address)": FunctionFragment;
+    "deadAddress()": FunctionFragment;
     "discountPrice()": FunctionFragment;
     "eip712Domain()": FunctionFragment;
     "gbabiesContract()": FunctionFragment;
@@ -86,6 +87,7 @@ export interface PacketsInterface extends utils.Interface {
     "setAdminPermissions(address,bool)": FunctionFragment;
     "setApprovalForAll(address,bool)": FunctionFragment;
     "setContracts(address,address,address)": FunctionFragment;
+    "setDeadAddress(address)": FunctionFragment;
     "setDiscountPrice(uint256)": FunctionFragment;
     "setPrefix(string)": FunctionFragment;
     "setPrice(uint8,uint256)": FunctionFragment;
@@ -93,6 +95,7 @@ export interface PacketsInterface extends utils.Interface {
     "setRoyalties(address,uint256)": FunctionFragment;
     "setSigner(address)": FunctionFragment;
     "setSuffix(string)": FunctionFragment;
+    "setTotalSupply(uint256[],uint256[])": FunctionFragment;
     "signer()": FunctionFragment;
     "suffix()": FunctionFragment;
     "supportsInterface(bytes4)": FunctionFragment;
@@ -113,6 +116,7 @@ export interface PacketsInterface extends utils.Interface {
       | "burnMint"
       | "cardsContract"
       | "currentBalance"
+      | "deadAddress"
       | "discountPrice"
       | "eip712Domain"
       | "gbabiesContract"
@@ -139,6 +143,7 @@ export interface PacketsInterface extends utils.Interface {
       | "setAdminPermissions"
       | "setApprovalForAll"
       | "setContracts"
+      | "setDeadAddress"
       | "setDiscountPrice"
       | "setPrefix"
       | "setPrice"
@@ -146,6 +151,7 @@ export interface PacketsInterface extends utils.Interface {
       | "setRoyalties"
       | "setSigner"
       | "setSuffix"
+      | "setTotalSupply"
       | "signer"
       | "suffix"
       | "supportsInterface"
@@ -191,6 +197,10 @@ export interface PacketsInterface extends utils.Interface {
   encodeFunctionData(
     functionFragment: "currentBalance",
     values: [PromiseOrValue<BigNumberish>, PromiseOrValue<string>]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "deadAddress",
+    values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "discountPrice",
@@ -319,6 +329,10 @@ export interface PacketsInterface extends utils.Interface {
     ]
   ): string;
   encodeFunctionData(
+    functionFragment: "setDeadAddress",
+    values: [PromiseOrValue<string>]
+  ): string;
+  encodeFunctionData(
     functionFragment: "setDiscountPrice",
     values: [PromiseOrValue<BigNumberish>]
   ): string;
@@ -345,6 +359,10 @@ export interface PacketsInterface extends utils.Interface {
   encodeFunctionData(
     functionFragment: "setSuffix",
     values: [PromiseOrValue<string>]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "setTotalSupply",
+    values: [PromiseOrValue<BigNumberish>[], PromiseOrValue<BigNumberish>[]]
   ): string;
   encodeFunctionData(functionFragment: "signer", values?: undefined): string;
   encodeFunctionData(functionFragment: "suffix", values?: undefined): string;
@@ -394,6 +412,10 @@ export interface PacketsInterface extends utils.Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "currentBalance",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "deadAddress",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -468,6 +490,10 @@ export interface PacketsInterface extends utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(
+    functionFragment: "setDeadAddress",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "setDiscountPrice",
     data: BytesLike
   ): Result;
@@ -483,6 +509,10 @@ export interface PacketsInterface extends utils.Interface {
   ): Result;
   decodeFunctionResult(functionFragment: "setSigner", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "setSuffix", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "setTotalSupply",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "signer", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "suffix", data: BytesLike): Result;
   decodeFunctionResult(
@@ -723,6 +753,8 @@ export interface Packets extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
+    deadAddress(overrides?: CallOverrides): Promise<[string]>;
+
     discountPrice(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     eip712Domain(
@@ -869,6 +901,11 @@ export interface Packets extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
+    setDeadAddress(
+      _deadAddress: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
     setDiscountPrice(
       _discountPrice: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -903,6 +940,12 @@ export interface Packets extends BaseContract {
 
     setSuffix(
       suffix_: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    setTotalSupply(
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
@@ -981,6 +1024,8 @@ export interface Packets extends BaseContract {
     account_: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
+
+  deadAddress(overrides?: CallOverrides): Promise<string>;
 
   discountPrice(overrides?: CallOverrides): Promise<BigNumber>;
 
@@ -1128,6 +1173,11 @@ export interface Packets extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
+  setDeadAddress(
+    _deadAddress: PromiseOrValue<string>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
   setDiscountPrice(
     _discountPrice: PromiseOrValue<BigNumberish>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1162,6 +1212,12 @@ export interface Packets extends BaseContract {
 
   setSuffix(
     suffix_: PromiseOrValue<string>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  setTotalSupply(
+    ids: PromiseOrValue<BigNumberish>[],
+    values: PromiseOrValue<BigNumberish>[],
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
@@ -1238,6 +1294,8 @@ export interface Packets extends BaseContract {
       account_: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
+
+    deadAddress(overrides?: CallOverrides): Promise<string>;
 
     discountPrice(overrides?: CallOverrides): Promise<BigNumber>;
 
@@ -1383,6 +1441,11 @@ export interface Packets extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
+    setDeadAddress(
+      _deadAddress: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
     setDiscountPrice(
       _discountPrice: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
@@ -1417,6 +1480,12 @@ export interface Packets extends BaseContract {
 
     setSuffix(
       suffix_: PromiseOrValue<string>,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    setTotalSupply(
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -1604,6 +1673,8 @@ export interface Packets extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
+    deadAddress(overrides?: CallOverrides): Promise<BigNumber>;
+
     discountPrice(overrides?: CallOverrides): Promise<BigNumber>;
 
     eip712Domain(overrides?: CallOverrides): Promise<BigNumber>;
@@ -1736,6 +1807,11 @@ export interface Packets extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
+    setDeadAddress(
+      _deadAddress: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
     setDiscountPrice(
       _discountPrice: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -1770,6 +1846,12 @@ export interface Packets extends BaseContract {
 
     setSuffix(
       suffix_: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    setTotalSupply(
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
@@ -1849,6 +1931,8 @@ export interface Packets extends BaseContract {
       account_: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
+
+    deadAddress(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     discountPrice(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
@@ -1982,6 +2066,11 @@ export interface Packets extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
+    setDeadAddress(
+      _deadAddress: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
     setDiscountPrice(
       _discountPrice: PromiseOrValue<BigNumberish>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
@@ -2016,6 +2105,12 @@ export interface Packets extends BaseContract {
 
     setSuffix(
       suffix_: PromiseOrValue<string>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    setTotalSupply(
+      ids: PromiseOrValue<BigNumberish>[],
+      values: PromiseOrValue<BigNumberish>[],
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
