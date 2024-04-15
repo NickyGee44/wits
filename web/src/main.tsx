@@ -1,7 +1,6 @@
 import '@rainbow-me/rainbowkit/styles.css';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
-
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import { goerli, mainnet, polygonMumbai } from 'wagmi/chains';
