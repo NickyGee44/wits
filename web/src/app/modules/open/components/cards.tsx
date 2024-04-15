@@ -106,25 +106,35 @@ export function CardsWithAnimations({
   const fetchCards = useCallback(async () => {
     const cards = await Promise.all(
       cardIds.map(async (cardId) => {
-        const images = new Image();
-        images.src = environment.metadata.image + `/${cardId}.png`;
-        const response = await axios.get(
-          environment.metadata.url + `/${cardId}.json`
-        );
-        const card = response.data;
-        const faction = lowerCase(
-          card.attributes.find(
-            (attribute: any) => attribute.trait_type === 'Faction'
-          ).value
-        ) as Faction;
-        return {
-          id: cardId,
-          faction,
-          image: environment.metadata.image + `/${cardId}.png`,
-          rarity: card.attributes.find(
-            (attribute: any) => attribute.trait_type === 'Rarity'
-          ).value,
-        };
+        try {
+          const images = new Image();
+          images.src = environment.metadata.image + `/${cardId}.png`;
+          const response = await axios.get(
+            environment.metadata.url + `/${cardId}.json`
+          );
+          const card = response.data;
+          const faction = lowerCase(
+            card.attributes.find(
+              (attribute: any) => attribute.trait_type === 'Faction'
+            ).value
+          ) as Faction;
+          return {
+            id: cardId,
+            faction,
+            image: environment.metadata.image + `/${cardId}.png`,
+            rarity: card.attributes.find(
+              (attribute: any) => attribute.trait_type === 'Rarity'
+            ).value,
+          };
+        } catch (error) {
+          console.error(error);
+          return {
+            id: cardId,
+            faction: Faction.NORMIES,
+            image: '',
+            rarity: RARITY.COMMON,
+          };
+        }
       })
     );
     setCards(cards);
