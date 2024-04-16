@@ -41,26 +41,25 @@ export function Card({ card, isRevealed = false }: CardProps) {
   const flip = () => setRevealed(true);
 
   const show = revealed || isRevealed;
-  const isWiggle = [RARITY.UNCOMMON].includes(card.rarity);
+  const isWiggle =
+    card.rarity === RARITY.LEGENDARY ||
+    card.rarity === RARITY.ULTRARARE ||
+    card.rarity === RARITY['ONE OF ONE'];
 
   return (
     <button
-      className={classnames('relative', isWiggle ? 'animate-wiggle' : '')}
+      className={classnames(isWiggle ? 'animate-wiggle' : '')}
       onClick={flip}
     >
       <img
-        className={classnames(
-          show ? 'opacity-0' : 'absolute opacity-100 inset-0'
-        )}
+        className={classnames(show ? 'opacity-0' : 'opacity-100')}
         src={`/assets/images/${card.faction}.png`}
         alt={`Back of ${card.faction}`}
       />
       <img
         src={card.image}
         alt={`Front of ${card.faction}`}
-        className={classnames(
-          show ? 'absolute opacity-100 inset-0' : 'opacity-0'
-        )}
+        className={classnames(show ? 'opacity-100' : 'opacity-0')}
       />
     </button>
   );
@@ -72,11 +71,13 @@ export function Cards({ cards }: CardsProps) {
   const revealAll = () => setIsAllRevealed(true);
 
   return (
-    <div className="flex flex-col space-y-12">
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-2">
-        {cards.map((card) => (
-          <Card card={card} isRevealed={isAllRevealed} />
-        ))}
+    <div className="flex flex-col h-full">
+      <div className="flex flex-col space-y-12 overflow-scroll h-full">
+        <div className="grid grid-cols-5 md:grid-cols-5 gap-2">
+          {cards.map((card) => (
+            <Card card={card} isRevealed={isAllRevealed} key={card.id} />
+          ))}
+        </div>
       </div>
       {!isAllRevealed && (
         <div className="w-full flex flex-row justify-center items-center">
@@ -102,6 +103,8 @@ export function CardsWithAnimations({
 }: CardsWithAnimationsProps) {
   const [showCards, setShowCards] = useState(false);
   const [cards, setCards] = useState<ICard[]>([]);
+
+  console.log(cards);
 
   const fetchCards = useCallback(async () => {
     const cards = await Promise.all(
@@ -203,20 +206,22 @@ export function CardsWithAnimationsStacked({
   const shouldShowButtons = showButtons && hasNextPacket;
 
   return (
-    <div>
-      {cardsWithAnimations.map(
-        (cardsWithAnimation, i) =>
-          i === index && (
-            <CardsWithAnimations
-              setShowButtons={setShowButtons}
-              key={`${cardsWithAnimation.packetType}-${i}`}
-              packetType={cardsWithAnimation.packetType}
-              cardIds={cardsWithAnimation.cards}
-              openNextPacket={openNextPacket}
-              hasNextPacket={hasNextPacket}
-            />
-          )
-      )}
+    <div className="h-full overflow-hidden">
+      <div className="flex flex-col h-full overflow-hidden">
+        {cardsWithAnimations.map(
+          (cardsWithAnimation, i) =>
+            i === index && (
+              <CardsWithAnimations
+                setShowButtons={setShowButtons}
+                key={`${cardsWithAnimation.packetType}-${i}`}
+                packetType={cardsWithAnimation.packetType}
+                cardIds={cardsWithAnimation.cards}
+                openNextPacket={openNextPacket}
+                hasNextPacket={hasNextPacket}
+              />
+            )
+        )}
+      </div>
       {shouldShowButtons && (
         <div className="w-full flex flex-row justify-center items-center">
           <SubmitButton handleClick={openNextPacket}>

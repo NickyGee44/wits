@@ -17,11 +17,12 @@ export function OpenModal({ idsByPackets, writeReset }: OpenModalProps) {
       style={{
         overlay: {
           backgroundColor: '#353535CC',
-          margin: 'auto',
+          overflow: 'hidden',
         },
         content: {
           backgroundColor: 'transparent',
           border: 'none',
+          overflow: 'hidden',
         },
       }}
       onRequestClose={() => {
@@ -29,7 +30,7 @@ export function OpenModal({ idsByPackets, writeReset }: OpenModalProps) {
         writeReset();
       }}
     >
-      <div className="flex flex-col space-y-4 relative min-h-screen">
+      <div className="flex flex-col space-y-4 h-full">
         <div className="flex flex-row w-full justify-end">
           <img
             className="w-24 hover:cursor-pointer"
