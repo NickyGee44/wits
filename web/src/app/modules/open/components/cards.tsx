@@ -39,6 +39,7 @@ interface CardProps {
 export function Card({ card, isRevealed = false }: CardProps) {
   const [revealed, setRevealed] = useState(isRevealed);
   const flip = () => setRevealed(true);
+  const regularFactions = ['trap', 'spell', 'relic'];
 
   const show = revealed || isRevealed;
   const isWiggle =
@@ -52,14 +53,18 @@ export function Card({ card, isRevealed = false }: CardProps) {
       onClick={flip}
     >
       <img
-        className={classnames(show ? 'opacity-0' : 'opacity-100')}
-        src={`/assets/images/${card.faction}.png`}
+        className={classnames(show ? 'hidden' : 'flex')}
+        src={
+          regularFactions.includes(card.faction)
+            ? `/assets/images/normies.png`
+            : `/assets/images/${card.faction}.png`
+        }
         alt={`Back of ${card.faction}`}
       />
       <img
         src={card.image}
         alt={`Front of ${card.faction}`}
-        className={classnames(show ? 'opacity-100' : 'opacity-0')}
+        className={classnames(show ? 'flex' : 'hidden')}
       />
     </button>
   );
@@ -104,16 +109,15 @@ export function CardsWithAnimations({
   const [showCards, setShowCards] = useState(false);
   const [cards, setCards] = useState<ICard[]>([]);
 
-  console.log(cards);
-
   const fetchCards = useCallback(async () => {
     const cards = await Promise.all(
       cardIds.map(async (cardId) => {
         try {
-          const images = new Image();
-          images.src = environment.metadata.image + `/${cardId}.png`;
+          // const images = new Image();
+          // images.src = environment.metadata.image + `/${cardId % 100}.png`;
+          const newCardId = cardId % 100 === 0 ? 100 : cardId % 100;
           const response = await axios.get(
-            environment.metadata.url + `/${cardId}.json`
+            environment.metadata.url + `/${newCardId}.json`
           );
           const card = response.data;
           const faction = lowerCase(
@@ -124,7 +128,7 @@ export function CardsWithAnimations({
           return {
             id: cardId,
             faction,
-            image: environment.metadata.image + `/${cardId}.png`,
+            image: environment.metadata.image + `/${newCardId}.png`,
             rarity: card.attributes.find(
               (attribute: any) => attribute.trait_type === 'Rarity'
             ).value,
@@ -177,23 +181,23 @@ export function CardsWithAnimationsStacked({
   const [showButtons, setShowButtons] = useState(false);
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    const factions = [
-      'air',
-      'cyber',
-      'dark',
-      'fire',
-      'ice',
-      'light',
-      'normies',
-      'water',
-      'wild',
-    ];
-    factions.forEach((faction) => {
-      const images = new Image();
-      images.src = environment.metadata.image + `/${faction}.png`;
-    });
-  }, []);
+  // useEffect(() => {
+  //   const factions = [
+  //     'air',
+  //     'cyber',
+  //     'dark',
+  //     'fire',
+  //     'ice',
+  //     'light',
+  //     'normies',
+  //     'water',
+  //     'wild',
+  //   ];
+  //   factions.forEach((faction) => {
+  //     const images = new Image();
+  //     images.src = `/web/src/assets/images/${faction}.png`;
+  //   });
+  // }, []);
 
   const openNextPacket = () => {
     if (index < cardsWithAnimations.length - 1) {

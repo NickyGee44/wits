@@ -6,8 +6,8 @@ export const environment = {
   production: false,
   ALCHEMY_KEY: 'm3ADmeHfQSDpLG8JGiakIHdOwKdH9p_Z',
   metadata: {
-    url: 'https://d3q40xds4jmbwq.cloudfront.net',
-    image: 'https://d24nwmc6w5dhne.cloudfront.net',
+    url: 'https://wits-set-one.s3.us-east-2.amazonaws.com/data',
+    image: 'https://wits-set-one.s3.us-east-2.amazonaws.com',
   },
   api: {
     base: 'http://localhost:4300/',
