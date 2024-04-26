@@ -3,11 +3,12 @@ import { useMemo } from 'react';
 import { SubmitButton } from '../../core/components/buttons';
 import { Packet } from '../../core/components/packet';
 import { useModal } from '../../core/hooks/use-modal';
+import { useState } from 'react';
 
 interface OpenTabProps {
   idsByPackets: { id: number; cards: number[] }[];
   isSuccess: boolean;
-  open: () => void;
+  open: () => Promise<void>;
   cards: {
     name: string;
     count: number;
@@ -20,9 +21,12 @@ interface OpenTabProps {
 
 export function OpenTab({ idsByPackets, cards, open }: OpenTabProps) {
   const { openModalOpen } = useModal();
+  const [isloading, setIsLoading] = useState(false);
 
   const action = async () => {
+    setIsLoading(true);
     await open();
+    setIsLoading(false);
   };
 
   useMemo(() => {
@@ -36,6 +40,7 @@ export function OpenTab({ idsByPackets, cards, open }: OpenTabProps) {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-9/12 md:w-full mx-auto mt-8">
         {cards.map((card) => (
           <Packet
+            key={card.name}
             subtext={
               <div className="flex flex-row justify-center items-center">
                 <div className="flex flex-row space-x-4">
@@ -55,7 +60,9 @@ export function OpenTab({ idsByPackets, cards, open }: OpenTabProps) {
         ))}
       </div>
       <div className="flex flex-row justify-center items-center w-full">
-        <SubmitButton handleClick={action}>OPEN PACKS</SubmitButton>
+        <SubmitButton handleClick={action} disabled={isloading}>
+          OPEN PACKS
+        </SubmitButton>
       </div>
     </>
   );
