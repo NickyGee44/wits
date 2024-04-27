@@ -13,7 +13,7 @@ export function Header({ title }: HeaderProps) {
     <div className="flex flex-col justify-center w-full relative">
       <div className="flex flex-col space-y-4 justify-center items-center">
         <img src="/assets/images/logo.png" alt="logo" className="max-w-sm" />
-        <div className="font-dragon text-gold text-xl">{title}</div>
+        {/* <div className="font-dragon text-gold text-xl">{title}</div> */}
       </div>
       <div className="block lg:absolute right-0 top-0 flex flex-row justify-center items-center m-4">
         <ConnectButton />
