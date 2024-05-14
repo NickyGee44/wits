@@ -3,14 +3,14 @@ import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
-import { arbitrumSepolia } from 'wagmi/chains';
+import { arbitrum, arbitrumSepolia } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import App from './app/app';
 import { environment } from './environments/environment';
 
 const { chains, publicClient } = configureChains(
-  [arbitrumSepolia],
+  [arbitrum],
   [alchemyProvider({ apiKey: environment.ALCHEMY_KEY }), publicProvider()]
 );
 
