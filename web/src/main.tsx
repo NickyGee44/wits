@@ -18,7 +18,7 @@ const { chains, publicClient } = configureChains(
 
 const { connectors } = getDefaultWallets({
   appName: 'Wits',
-  projectId: '848e5ecc8a169ee608e28bd5df264f9d',
+  projectId: '151fefc365d4d7e68f0272463d8e7c34',
   chains,
 });
 
