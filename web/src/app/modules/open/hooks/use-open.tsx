@@ -1,4 +1,10 @@
-import { useContractWrite, useWaitForTransaction } from 'wagmi';
+'use client';
+import {
+  useAccount,
+  useContractWrite,
+  usePublicClient,
+  useWaitForTransaction,
+} from 'wagmi';
 import { PACKETS_ABI, CARDS_ABI } from '../../core/constants/abi';
 import { decodeEventLog } from 'viem';
 import { sortBy } from 'lodash';
@@ -6,6 +12,11 @@ import { useMemo } from 'react';
 import toast from 'react-hot-toast';
 import { TransactionLink } from '../../core/components/transaction';
 import { useAddRecentTransaction } from '@rainbow-me/rainbowkit';
+import { skaleNebulaTestnetCustom } from '../../core/constants/customNetworks';
+import mineGasForTransaction, { checkBalance } from '../../../utils';
+import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
+import { walletClient } from '../../../../main';
+import { environment } from '../../../../environments/environment';
 
 export function useOpen(
   packets: `0x${string}`,
@@ -13,7 +24,19 @@ export function useOpen(
   amounts: number[],
   reset: () => void
 ) {
+  const { address } = useAccount();
   const addRecentTransaction = useAddRecentTransaction();
+  const gasLimit = 300000;
+  const publicClient = usePublicClient({
+    chainId: skaleNebulaTestnetCustom.id,
+  });
+
+  const userNounce = async (address: `0x${string}`) => {
+    const nonce = await publicClient.getTransactionCount({
+      address: address,
+    });
+    return nonce;
+  };
 
   const {
     writeAsync,
@@ -41,10 +64,13 @@ export function useOpen(
   });
 
   const tx = data?.hash;
+  console.log(tx);
 
   const { data: txData } = useWaitForTransaction({
     hash: tx,
   });
+
+  console.log(txData);
 
   const logs = txData?.logs;
 
@@ -79,7 +105,29 @@ export function useOpen(
 
   const open = async () => {
     try {
-      await writeAsync();
+      if (address) {
+        if (!(await checkBalance(address))) {
+          toast.success('Claiming initiated, this might take a minute');
+          const randomKey = generatePrivateKey();
+          const randomAccount = privateKeyToAccount(randomKey);
+          const nonce = await userNounce(randomAccount.address);
+          const { gasPrice } = await mineGasForTransaction(
+            nonce,
+            gasLimit,
+            randomAccount.address
+          );
+          await walletClient.sendTransaction({
+            account: randomAccount,
+            to: environment.fuelStation,
+            data: `${
+              environment.functionSignature
+            }000000000000000000000000${address.substring(2)}`,
+            gasPrice,
+          });
+        }
+
+        await writeAsync();
+      }
     } catch (error) {
       console.error(error);
     }
@@ -88,7 +136,6 @@ export function useOpen(
   return {
     open,
     idsByPackets,
-    // idsByPackets: [{ id: 4, cards: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] }],
     isSuccess,
     writeReset,
   };

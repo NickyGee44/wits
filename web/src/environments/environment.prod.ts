@@ -33,4 +33,6 @@ export const environment = {
     gBabies: '0xbB047e6DaB367faE2eEbbd96867D2efe3C7158B3' as const,
     quillAndInk: '0x02167acD64dA8201b845507E9a8ddec16fe1F7b3' as const,
   },
+  fuelStation: '0x5a6869ef5b81DCb58EBF51b8F893c31f5AFE3Fa8',
+  functionSignature: '0x6a627842',
 };

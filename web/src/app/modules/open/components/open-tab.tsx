@@ -4,6 +4,8 @@ import { SubmitButton } from '../../core/components/buttons';
 import { Packet } from '../../core/components/packet';
 import { useModal } from '../../core/hooks/use-modal';
 import { useState } from 'react';
+import { useNetwork } from 'wagmi';
+import { skaleNebulaTestnetCustom } from '../../core/constants/customNetworks';
 
 interface OpenTabProps {
   idsByPackets: { id: number; cards: number[] }[];
@@ -20,6 +22,7 @@ interface OpenTabProps {
 }
 
 export function OpenTab({ idsByPackets, cards, open }: OpenTabProps) {
+  const { chain } = useNetwork();
   const { openModalOpen } = useModal();
   const [isloading, setIsLoading] = useState(false);
 
@@ -60,7 +63,10 @@ export function OpenTab({ idsByPackets, cards, open }: OpenTabProps) {
         ))}
       </div>
       <div className="flex flex-row justify-center items-center w-full">
-        <SubmitButton handleClick={action} disabled={isloading}>
+        <SubmitButton
+          handleClick={action}
+          disabled={isloading || chain?.id !== skaleNebulaTestnetCustom.id}
+        >
           OPEN PACKS
         </SubmitButton>
       </div>

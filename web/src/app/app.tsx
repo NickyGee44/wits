@@ -1,13 +1,11 @@
 import { Toaster } from 'react-hot-toast';
 import { useAccount } from 'wagmi';
 import { environment } from '../environments/environment';
-import { BurnContainer } from './modules/burn/components/container';
 import { ConnectButton } from './modules/core/components/buttons';
 import { Container } from './modules/core/components/containers';
 import { HeaderContainer } from './modules/core/components/header';
 import { Tab, TabBody } from './modules/core/components/tabs';
 import { useTabs } from './modules/core/hooks/use-tabs';
-import { MintContainer } from './modules/mint/components/container';
 import { OpenContainer } from './modules/open/components/container';
 
 // const network = environment.chain === 'mainnet' ? 'mainnet' : 'goerli';

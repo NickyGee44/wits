@@ -17,8 +17,8 @@ export const environment = {
   mainnet: {
     gBabies: '0x0ff1f3a53f521d74af73fe7433abf802f91ddd4e' as const,
     quillAndInk: '0xd38123a8f534a7bbcefefa59e74f254a46818538' as const,
-    cards: '0xff9508357Ae02b4519D162c9C07e996bC3cfAec2' as const,
-    packets: '0x6a6b5d257C64E79A849b591aA162F393A223c13c' as const,
+    cards: '0x0076929d2BB4244A80Bd721daC0Bb33b3777d3E2' as const,
+    packets: '0x320A41436cF1495702cAC89024Bb95AC3ea29Cb4' as const,
   },
   // mainnet: {
   //   gBabies: '0x0ff1f3a53f521d74af73fe7433abf802f91ddd4e' as const,
@@ -44,4 +44,6 @@ export const environment = {
     gBabies: '0xcA49cBA91B55cA7216586BDdFE4FbcBfF57E15a5' as const,
     quillAndInk: '0x18489f8666b06788957Da42F97aAf9Cb0E82d60' as const,
   },
+  fuelStation: '0x000E9c53C4e2e21F5063f2e232d0AA907318dccb' as `0x${string}`,
+  functionSignature: '0x0c11dedd' as `0x${string}`,
 };
