@@ -12,10 +12,9 @@ import { useMemo } from 'react';
 import toast from 'react-hot-toast';
 import { TransactionLink } from '../../core/components/transaction';
 import { useAddRecentTransaction } from '@rainbow-me/rainbowkit';
-import { skaleNebulaTestnetCustom } from '../../core/constants/customNetworks';
 import mineGasForTransaction, { checkBalance } from '../../../utils';
 import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
-import { walletClient } from '../../../../main';
+import { publicClient, walletClient } from '../../../../main';
 import { environment } from '../../../../environments/environment';
 
 export function useOpen(
@@ -27,9 +26,6 @@ export function useOpen(
   const { address } = useAccount();
   const addRecentTransaction = useAddRecentTransaction();
   const gasLimit = 300000;
-  const publicClient = usePublicClient({
-    chainId: skaleNebulaTestnetCustom.id,
-  });
 
   const userNounce = async (address: `0x${string}`) => {
     const nonce = await publicClient.getTransactionCount({
@@ -54,7 +50,6 @@ export function useOpen(
       addRecentTransaction({
         hash: data.hash,
         description: 'Open Pack',
-        confirmations: 10,
       });
     },
     onError: (error) => {
@@ -64,13 +59,8 @@ export function useOpen(
   });
 
   const tx = data?.hash;
-  console.log(tx);
 
-  const { data: txData } = useWaitForTransaction({
-    hash: tx,
-  });
-
-  console.log(txData);
+  const { data: txData } = useWaitForTransaction({ hash: tx });
 
   const logs = txData?.logs;
 

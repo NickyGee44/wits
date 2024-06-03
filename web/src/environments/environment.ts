@@ -17,8 +17,8 @@ export const environment = {
   mainnet: {
     gBabies: '0x0ff1f3a53f521d74af73fe7433abf802f91ddd4e' as const,
     quillAndInk: '0xd38123a8f534a7bbcefefa59e74f254a46818538' as const,
-    cards: '0x0076929d2BB4244A80Bd721daC0Bb33b3777d3E2' as const,
-    packets: '0x320A41436cF1495702cAC89024Bb95AC3ea29Cb4' as const,
+    cards: '0x3790542EC86aB5e0f317770A45738EEBBDD2188c' as const,
+    packets: '0x82CD04BF683207707b6697cdd53764aA4D1bEC70' as const,
   },
   // mainnet: {
   //   gBabies: '0x0ff1f3a53f521d74af73fe7433abf802f91ddd4e' as const,
