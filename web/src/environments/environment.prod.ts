@@ -1,8 +1,8 @@
 export const environment = {
   ALCHEMY_KEY: 'm3ADmeHfQSDpLG8JGiakIHdOwKdH9p_Z',
   metadata: {
-    url: 'https://d3q40xds4jmbwq.cloudfront.net',
-    image: 'https://d24nwmc6w5dhne.cloudfront.net',
+    url: 'https://wits-set-one.s3.us-east-2.amazonaws.com/data',
+    image: 'https://wits-set-one.s3.us-east-2.amazonaws.com',
   },
   chain: 'mumbai',
   mumbai: {
@@ -12,7 +12,7 @@ export const environment = {
     gBabies: '0x5CB234f98050485c9BFE44521f846035F7779177' as const,
   },
   api: {
-    base: '/',
+    base: 'http://localhost:4300/',
     addresses: '.netlify/functions/main',
   },
   mainnet: {
