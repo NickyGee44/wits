@@ -76,7 +76,7 @@ export function Cards({ cards }: CardsProps) {
   const revealAll = () => setIsAllRevealed(true);
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full gap-4">
       <div className="flex flex-col space-y-12 overflow-scroll h-full">
         <div className="grid grid-cols-5 md:grid-cols-5 gap-2">
           {cards.map((card) => (
@@ -208,10 +208,11 @@ export function CardsWithAnimationsStacked({
 
   const hasNextPacket = index < cardsWithAnimations.length - 1;
   const shouldShowButtons = showButtons && hasNextPacket;
+  console.log(shouldShowButtons);
 
   return (
-    <div className="h-full overflow-hidden">
-      <div className="flex flex-col h-full overflow-hidden">
+    <div className="flex items-center justify-center flex-col h-full w-full overflow-hidden">
+      <div className="flex flex-col h-[90%] overflow-hidden">
         {cardsWithAnimations.map(
           (cardsWithAnimation, i) =>
             i === index && (
