@@ -17,9 +17,9 @@ export function Incrementor({
     <div className="flex flex-row items-center space-x-2">
       <button
         className="font-sans px-4 py-2 rounded-md bg-[#181718] border border-gold-50 w-16"
-        onClick={onIncrement}
+        onClick={onDecrement}
       >
-        +
+        -
       </button>
       <div
         className={classnames(
@@ -31,9 +31,9 @@ export function Incrementor({
       </div>
       <button
         className="font-sans px-4 py-2 rounded-md bg-[#181718] border border-gold-50 w-16"
-        onClick={onDecrement}
+        onClick={onIncrement}
       >
-        -
+        +
       </button>
     </div>
   );

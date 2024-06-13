@@ -208,7 +208,6 @@ export function CardsWithAnimationsStacked({
 
   const hasNextPacket = index < cardsWithAnimations.length - 1;
   const shouldShowButtons = showButtons && hasNextPacket;
-  console.log(shouldShowButtons);
 
   return (
     <div className="flex items-center justify-center flex-col h-full w-full overflow-hidden">
