@@ -8,7 +8,7 @@ interface TabProps {
 
 export const Tab = ({ text, isActive = false, handleClick }: TabProps) => (
   <div
-    className="bg-[#0C0C0C] rounded relative cursor-pointer"
+    className="bg-[#0C0C0C] rounded relative cursor-pointer w-fit"
     onClick={handleClick}
   >
     <div
