@@ -21,7 +21,7 @@ export function App() {
       <div className="flex flex-col w-10/12 mx-auto py-4 justify-center items-center space-y-8">
         <HeaderContainer packets={environment[network].packets} />
         <span className="pb-4 text-gold font-dragon text-xl text-center">
-          It's time to open the packets and reveal the cards you have got
+          Migrate your packets from Ethereum to Skale
           <br />
           Connect Wallet and Open your Packets
           <br />
@@ -31,10 +31,7 @@ export function App() {
             target="_blank"
             rel="noreferrer"
           >
-            https<span className="font-sans">:://</span>www
-            <span className="font-sans">.</span>wits
-            <span className="font-sans">.</span>
-            academy
+            https://www.wits.academy/
           </a>
         </span>
 
