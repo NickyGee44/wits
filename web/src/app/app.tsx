@@ -31,7 +31,10 @@ export function App() {
             target="_blank"
             rel="noreferrer"
           >
-            https://www.wits.academy/
+            https<span className="font-sans">://</span>www
+            <span className="font-sans">.</span>wits
+            <span className="font-sans">.</span>
+            academy
           </a>
         </span>
 
