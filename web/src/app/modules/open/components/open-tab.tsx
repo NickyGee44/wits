@@ -5,7 +5,7 @@ import { Packet } from '../../core/components/packet';
 import { useModal } from '../../core/hooks/use-modal';
 import { useState } from 'react';
 import { useNetwork } from 'wagmi';
-import { skaleNebulaTestnetCustom } from '../../core/constants/customNetworks';
+import { skaleNebula } from 'viem/chains';
 
 interface OpenTabProps {
   idsByPackets: { id: number; cards: number[] }[];
@@ -65,7 +65,7 @@ export function OpenTab({ idsByPackets, cards, open }: OpenTabProps) {
       <div className="flex flex-row justify-center items-center w-full">
         <SubmitButton
           handleClick={action}
-          disabled={isloading || chain?.id !== skaleNebulaTestnetCustom.id}
+          disabled={isloading || chain?.id !== skaleNebula.id}
         >
           OPEN PACKS
         </SubmitButton>
