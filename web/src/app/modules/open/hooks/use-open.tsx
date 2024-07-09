@@ -25,7 +25,7 @@ export function useOpen(
 ) {
   const { address } = useAccount();
   const addRecentTransaction = useAddRecentTransaction();
-  const gasLimit = 300000;
+  const gasLimit = 100000;
 
   const userNounce = async (address: `0x${string}`) => {
     const nonce = await publicClient.getTransactionCount({

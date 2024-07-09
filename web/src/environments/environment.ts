@@ -45,5 +45,5 @@ export const environment = {
     quillAndInk: '0x18489f8666b06788957Da42F97aAf9Cb0E82d60' as const,
   },
   fuelStation: '0x5a6869ef5b81DCb58EBF51b8F893c31f5AFE3Fa8' as `0x${string}`,
-  functionSignature: '0x6a627842' as `0x${string}`,
+  functionSignature: '0x0c11dedd' as `0x${string}`,
 };
