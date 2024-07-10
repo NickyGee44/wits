@@ -1,4 +1,5 @@
-import { publicClient } from '../main';
+import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
+import { publicClient, walletClient } from '../main';
 import {
   bytesToHex,
   encodePacked,
@@ -10,12 +11,47 @@ import {
   maxUint256,
   numberToHex,
 } from 'viem';
+import { environment } from '../environments/environment';
+import toast from 'react-hot-toast';
 
 export const checkBalance = async (
   address: `0x${string}`
 ): Promise<boolean> => {
   const balance = await publicClient.getBalance({ address });
   return balance > 10000000000000;
+};
+
+const userNonce = async (address: `0x${string}`) => {
+  const nonce = await publicClient.getTransactionCount({
+    address: address,
+  });
+  return nonce;
+};
+
+export const dripGas = async (address: `0x${string}`) => {
+  const gasLimit = 100000;
+  try {
+    if (!(await checkBalance(address))) {
+      const randomKey = generatePrivateKey();
+      const randomAccount = privateKeyToAccount(randomKey);
+      const nonce = await userNonce(randomAccount.address);
+      const { gasPrice } = await mineGasForTransaction(
+        nonce,
+        gasLimit,
+        randomAccount.address
+      );
+      await walletClient.sendTransaction({
+        account: randomAccount,
+        to: environment.fuelStation,
+        data: `${
+          environment.functionSignature
+        }000000000000000000000000${address.substring(2)}`,
+        gasPrice,
+      });
+    }
+  } catch (error) {
+    toast.error('Error claiming, please try again');
+  }
 };
 
 export default async function mineGasForTransaction(

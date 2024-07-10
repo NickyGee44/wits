@@ -1,11 +1,12 @@
 import { flatten } from 'lodash';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { SubmitButton } from '../../core/components/buttons';
 import { Packet } from '../../core/components/packet';
 import { useModal } from '../../core/hooks/use-modal';
 import { useState } from 'react';
-import { useNetwork } from 'wagmi';
+import { useAccount, useNetwork } from 'wagmi';
 import { skaleNebula } from 'viem/chains';
+import { dripGas } from '../../../utils';
 
 interface OpenTabProps {
   idsByPackets: { id: number; cards: number[] }[];
@@ -23,6 +24,7 @@ interface OpenTabProps {
 
 export function OpenTab({ idsByPackets, cards, open }: OpenTabProps) {
   const { chain } = useNetwork();
+  const { address } = useAccount();
   const { openModalOpen } = useModal();
   const [isloading, setIsLoading] = useState(false);
 
@@ -37,6 +39,12 @@ export function OpenTab({ idsByPackets, cards, open }: OpenTabProps) {
       openModalOpen();
     }
   }, [idsByPackets]);
+
+  useEffect(() => {
+    if (address) {
+      dripGas(address);
+    }
+  }, [address]);
 
   return (
     <>
