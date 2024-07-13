@@ -56,7 +56,7 @@ export function Card({ card, isRevealed = false }: CardProps) {
         className={classnames(show ? 'hidden' : 'flex')}
         src={
           regularFactions.includes(card.faction)
-            ? `/assets/images/normies.png`
+            ? `/assets/images/regular.png`
             : `/assets/images/${card.faction}.png`
         }
         alt={`Back of ${card.faction}`}
