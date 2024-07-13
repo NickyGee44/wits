@@ -18,7 +18,7 @@ export function App() {
   return (
     <main className="min-h-screen text-light-gold">
       <Toaster />
-      <div className="flex flex-col w-10/12 mx-auto py-4 justify-center items-center space-y-8">
+      <div className="flex flex-col w-10/12 mx-auto py-2 justify-center items-center space-y-4">
         <HeaderContainer packets={environment[network].packets} />
         <span className="pb-4 text-gold font-dragon text-xl text-center">
           It's time to open the packets and reveal the cards you have got
