@@ -11,6 +11,7 @@ import { dripGas } from '../../../utils';
 interface OpenTabProps {
   idsByPackets: { id: number; cards: number[] }[];
   isSuccess: boolean;
+  isTxnLoading: boolean;
   open: () => Promise<void>;
   cards: {
     name: string;
@@ -22,11 +23,16 @@ interface OpenTabProps {
   }[];
 }
 
-export function OpenTab({ idsByPackets, cards, open }: OpenTabProps) {
+export function OpenTab({
+  idsByPackets,
+  cards,
+  open,
+  isTxnLoading,
+}: OpenTabProps) {
   const { chain } = useNetwork();
   const { address } = useAccount();
   const { openModalOpen } = useModal();
-  const [isloading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const action = async () => {
     setIsLoading(true);
@@ -73,9 +79,9 @@ export function OpenTab({ idsByPackets, cards, open }: OpenTabProps) {
       <div className="flex flex-row justify-center items-center w-full">
         <SubmitButton
           handleClick={action}
-          disabled={isloading || chain?.id !== skaleNebula.id}
+          disabled={isLoading || isTxnLoading || chain?.id !== skaleNebula.id}
         >
-          OPEN PACKS
+          {isTxnLoading ? 'Opening your packs' : 'OPEN PACKS'}
         </SubmitButton>
       </div>
     </>

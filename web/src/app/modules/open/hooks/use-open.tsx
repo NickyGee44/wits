@@ -44,7 +44,9 @@ export function useOpen(
 
   const tx = data?.hash;
 
-  const { data: txData } = useWaitForTransaction({ hash: tx });
+  const { data: txData, isLoading } = useWaitForTransaction({
+    hash: tx,
+  });
 
   const logs = txData?.logs;
 
@@ -94,5 +96,6 @@ export function useOpen(
     idsByPackets,
     isSuccess,
     writeReset,
+    isLoading,
   };
 }
