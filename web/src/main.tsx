@@ -1,27 +1,27 @@
+import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
+import { createPublicClient, createWalletClient, http } from 'viem';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import App from './app/app';
+import { skaleNebulaTestnetCustom } from './app/modules/core/constants/customNetworks';
 import { environment } from './environments/environment';
-import { skaleNebula } from 'viem/chains';
-import { createPublicClient, createWalletClient, http } from 'viem';
 
 const { chains } = configureChains(
-  [skaleNebula],
+  [skaleNebulaTestnetCustom],
   [alchemyProvider({ apiKey: environment.ALCHEMY_KEY }), publicProvider()]
 );
 
 export const publicClient = createPublicClient({
-  chain: skaleNebula,
+  chain: skaleNebulaTestnetCustom,
   transport: http(),
 });
 
 export const walletClient = createWalletClient({
-  chain: skaleNebula,
+  chain: skaleNebulaTestnetCustom,
   transport: http(),
 });
 

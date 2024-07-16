@@ -1,12 +1,11 @@
 import { flatten } from 'lodash';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useAccount, useNetwork } from 'wagmi';
+import { dripGas } from '../../../utils';
 import { SubmitButton } from '../../core/components/buttons';
 import { Packet } from '../../core/components/packet';
+import { skaleNebulaTestnetCustom } from '../../core/constants/customNetworks';
 import { useModal } from '../../core/hooks/use-modal';
-import { useState } from 'react';
-import { useAccount, useNetwork } from 'wagmi';
-import { skaleNebula } from 'viem/chains';
-import { dripGas } from '../../../utils';
 
 interface OpenTabProps {
   idsByPackets: { id: number; cards: number[] }[];
@@ -79,7 +78,11 @@ export function OpenTab({
       <div className="flex flex-row justify-center items-center w-full">
         <SubmitButton
           handleClick={action}
-          disabled={isLoading || isTxnLoading || chain?.id !== skaleNebula.id}
+          disabled={
+            isLoading ||
+            isTxnLoading ||
+            chain?.id !== skaleNebulaTestnetCustom.id
+          }
         >
           {isTxnLoading ? 'Opening your packs' : 'OPEN PACKS'}
         </SubmitButton>
