@@ -36,8 +36,8 @@ interface TabBodyProps {
 
 export const TabBody = ({ children, activeIndex, tabIndex }: TabBodyProps) =>
   activeIndex === tabIndex ? (
-    <div className="flex flex-row justify-center items-center min-h-[10rem] lg:min-h-[50rem]">
-      <div className="w-full flex flex-col space-y-8">{children}</div>
+    <div className="flex flex-row justify-center items-center pt-8 pb-6">
+      <div className="w-full flex flex-col gap-6">{children}</div>
     </div>
   ) : (
     <div />

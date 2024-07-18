@@ -54,7 +54,7 @@ export function OpenTab({
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-9/12 md:w-full mx-auto mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-9/12 md:w-full mx-auto">
         {cards.map((card) => (
           <Packet
             key={card.name}

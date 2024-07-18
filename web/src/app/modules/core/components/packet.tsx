@@ -14,7 +14,7 @@ export const Packet = (props: PacketProps) => {
       <img
         src={`/assets/images/${props.cardPack}.webp`}
         alt=""
-        className="w-full object-cover h-auto w-full lg:h-100"
+        className="object-cover h-auto w-full lg:h-100"
       />
 
       {props.subtext}

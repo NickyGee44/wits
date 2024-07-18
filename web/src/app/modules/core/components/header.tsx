@@ -11,7 +11,11 @@ export function Header({ title }: HeaderProps) {
   return (
     <div className="flex flex-col justify-center w-full relative">
       <div className="flex flex-col space-y-4 justify-center items-center pt-6">
-        <img src="/assets/images/logo.png" alt="logo" className="max-w-[240px]" />
+        <img
+          src="/assets/images/logo.png"
+          alt="logo"
+          className="max-w-[200px]"
+        />
         {/* <div className="font-dragon text-gold text-xl">{title}</div> */}
       </div>
       <div className="lg:absolute right-0 top-0 flex flex-row justify-center items-center m-4">
