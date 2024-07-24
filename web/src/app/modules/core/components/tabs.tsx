@@ -18,7 +18,7 @@ export const Tab = ({ text, isActive = false, handleClick }: TabProps) => (
           'rounded border-[#161616] border-2 cursor-pointer opacity-40'
       )}
     >
-      <div className="text-xl text-light-gold font-dragon">{text}</div>
+      <div className="text-xl text-light-gold font-beaufort">{text}</div>
     </div>
     <img
       src="/assets/images/tab.png"

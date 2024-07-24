@@ -16,11 +16,11 @@ export function App() {
   const { tabIndex, setTabIndex } = useTabs();
 
   return (
-    <main className="min-h-screen text-light-gold">
+    <main className={'min-h-screen text-light-gold'}>
       <Toaster />
       <div className="flex flex-col w-10/12 mx-auto py-2 justify-center items-center space-y-4">
         <HeaderContainer packets={environment[network].packets} />
-        <span className="pb-4 text-gold font-dragon text-lg text-center">
+        <span className="pb-4 text-gold font-lato text-lg text-center">
           It's time to open the packets and reveal the cards you have got
           <br />
           Connect Wallet and Open your Packets
