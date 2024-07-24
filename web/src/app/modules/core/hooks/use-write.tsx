@@ -1,18 +1,16 @@
 import {
+  useAccountModal,
+  useAddRecentTransaction,
+} from '@rainbow-me/rainbowkit';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
+import {
   useContractWrite,
   usePrepareContractWrite,
-  useTransaction,
   useWaitForTransaction,
-  useWatchPendingTransactions,
 } from 'wagmi';
-import toast from 'react-hot-toast';
-import { formatError } from '../utils/error';
 import { TransactionLink } from '../components/transaction';
-import { useState } from 'react';
-import {
-  useAddRecentTransaction,
-  useAccountModal,
-} from '@rainbow-me/rainbowkit';
+import { formatError } from '../utils/error';
 
 export function useWrite(
   config: any,

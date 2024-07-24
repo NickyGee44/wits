@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
-import { usePresaleMint } from '../../mint/hooks/use-mint';
 import { useStage } from '../hooks/use-stage';
-import { ConnectButton, PrimaryButton } from './buttons';
+import { ConnectButton } from './buttons';
 
 interface HeaderProps {
   title?: string;
@@ -11,11 +10,15 @@ interface HeaderProps {
 export function Header({ title }: HeaderProps) {
   return (
     <div className="flex flex-col justify-center w-full relative">
-      <div className="flex flex-col space-y-4 justify-center items-center">
-        <img src="/assets/images/logo.png" alt="logo" className="max-w-sm" />
+      <div className="flex flex-col space-y-4 justify-center items-center pt-6">
+        <img
+          src="/assets/images/logo.png"
+          alt="logo"
+          className="max-w-[200px]"
+        />
         {/* <div className="font-dragon text-gold text-xl">{title}</div> */}
       </div>
-      <div className="block lg:absolute right-0 top-0 flex flex-row justify-center items-center m-4">
+      <div className="lg:absolute right-0 top-0 flex flex-row justify-center items-center m-4">
         <ConnectButton />
       </div>
     </div>

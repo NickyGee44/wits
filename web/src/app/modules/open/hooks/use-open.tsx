@@ -1,11 +1,13 @@
-import { useContractWrite, useWaitForTransaction } from 'wagmi';
-import { PACKETS_ABI, CARDS_ABI } from '../../core/constants/abi';
-import { decodeEventLog } from 'viem';
+'use client';
+import { useAddRecentTransaction } from '@rainbow-me/rainbowkit';
 import { sortBy } from 'lodash';
 import { useMemo } from 'react';
 import toast from 'react-hot-toast';
+import { decodeEventLog } from 'viem';
+import { useAccount, useContractWrite, useWaitForTransaction } from 'wagmi';
+import { dripGas } from '../../../utils';
 import { TransactionLink } from '../../core/components/transaction';
-import { useAddRecentTransaction } from '@rainbow-me/rainbowkit';
+import { CARDS_ABI, PACKETS_ABI } from '../../core/constants/abi';
 
 export function useOpen(
   packets: `0x${string}`,
@@ -13,6 +15,7 @@ export function useOpen(
   amounts: number[],
   reset: () => void
 ) {
+  const { address } = useAccount();
   const addRecentTransaction = useAddRecentTransaction();
 
   const {
@@ -31,7 +34,6 @@ export function useOpen(
       addRecentTransaction({
         hash: data.hash,
         description: 'Open Pack',
-        confirmations: 10,
       });
     },
     onError: (error) => {
@@ -42,7 +44,7 @@ export function useOpen(
 
   const tx = data?.hash;
 
-  const { data: txData } = useWaitForTransaction({
+  const { data: txData, isLoading } = useWaitForTransaction({
     hash: tx,
   });
 
@@ -79,7 +81,11 @@ export function useOpen(
 
   const open = async () => {
     try {
-      await writeAsync();
+      if (address) {
+        await dripGas(address);
+
+        await writeAsync();
+      }
     } catch (error) {
       console.error(error);
     }
@@ -88,8 +94,8 @@ export function useOpen(
   return {
     open,
     idsByPackets,
-    // idsByPackets: [{ id: 4, cards: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] }],
     isSuccess,
     writeReset,
+    isLoading,
   };
 }

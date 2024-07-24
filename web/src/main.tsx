@@ -3,18 +3,27 @@ import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
-import { arbitrum, arbitrumSepolia } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import App from './app/app';
 import { environment } from './environments/environment';
+import { skaleNebula } from 'viem/chains';
+import { createPublicClient, createWalletClient, http } from 'viem';
 
-const { chains, publicClient } = configureChains(
-  [arbitrum],
+const { chains } = configureChains(
+  [skaleNebula],
   [alchemyProvider({ apiKey: environment.ALCHEMY_KEY }), publicProvider()]
 );
 
-// console.log(environment.ALCHEMY_KEY, publicClient({ chainId: 80001 }));
+export const publicClient = createPublicClient({
+  chain: skaleNebula,
+  transport: http(),
+});
+
+export const walletClient = createWalletClient({
+  chain: skaleNebula,
+  transport: http(),
+});
 
 const { connectors } = getDefaultWallets({
   appName: 'Wits',

@@ -8,7 +8,7 @@ interface TabProps {
 
 export const Tab = ({ text, isActive = false, handleClick }: TabProps) => (
   <div
-    className="bg-[#0C0C0C] rounded relative cursor-pointer"
+    className="bg-[#0C0C0C] rounded relative cursor-pointer w-fit"
     onClick={handleClick}
   >
     <div
@@ -18,7 +18,7 @@ export const Tab = ({ text, isActive = false, handleClick }: TabProps) => (
           'rounded border-[#161616] border-2 cursor-pointer opacity-40'
       )}
     >
-      <div className="text-xl text-light-gold font-dragon">{text}</div>
+      <div className="text-xl text-light-gold font-beaufort">{text}</div>
     </div>
     <img
       src="/assets/images/tab.png"
@@ -36,8 +36,8 @@ interface TabBodyProps {
 
 export const TabBody = ({ children, activeIndex, tabIndex }: TabBodyProps) =>
   activeIndex === tabIndex ? (
-    <div className="flex flex-row justify-center items-center min-h-[10rem] lg:min-h-[50rem]">
-      <div className="w-full flex flex-col space-y-8">{children}</div>
+    <div className="flex flex-row justify-center items-center pt-8 pb-6">
+      <div className="w-full flex flex-col gap-6">{children}</div>
     </div>
   ) : (
     <div />

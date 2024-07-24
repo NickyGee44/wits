@@ -13,6 +13,8 @@ module.exports = {
     extend: {
       fontFamily: {
         dragon: ['Dragon', 'font-sans'],
+        beaufort: ['BeaufortPro', 'sans-serif'],
+        lato: ['Lato', 'sans-serif'],
       },
       colors: {
         'gold-50': '#A5A488',
