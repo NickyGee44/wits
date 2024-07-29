@@ -21,7 +21,7 @@ export function QuillAndInkInput({
       header="MINT BY BURNING QUILL & INK"
       subheader="YOUR QUILL & INK BALANCE"
       footer={
-        <div className="font-beaufort text-md">
+        <div className="font-beaufort uppercase text-md">
           BURN ${balance} <span className="font-sans">&</span> MINT ${count} FOR{' '}
           <span className="font-sans">{price}</span>
         </div>

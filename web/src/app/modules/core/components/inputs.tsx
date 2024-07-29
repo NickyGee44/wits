@@ -27,7 +27,7 @@ export function Incrementor({
           px
         )}
       >
-        <div className="font-beaufort">{count}</div>
+        <div className="font-beaufort uppercase">{count}</div>
       </div>
       <button
         className="font-sans px-4 py-2 rounded-md bg-[#181718] border border-gold-50 w-16"

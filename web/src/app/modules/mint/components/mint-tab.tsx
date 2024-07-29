@@ -30,7 +30,7 @@ export function MintTab({
 }: MintTabProps) {
   return (
     <div className="flex flex-col space-y-6">
-      <div className="font-beaufort text-gold text-xl w-full text-center">
+      <div className="font-beaufort uppercase text-gold text-xl w-full text-center">
         {!publicLive
           ? `You have ${totalMintable} allocated.`
           : 'Public mint is live'}
@@ -40,11 +40,11 @@ export function MintTab({
           <Packet
             subtext={
               <div className="flex flex-col md:flex-row justify-center items-center lg:whitespace-nowrap">
-                <div className="font-beaufort capitalize">
+                <div className="font-beaufort uppercase">
                   {card.name} Pack ({card.cardCount}){' '}
                 </div>
                 <span className="font-sans">•</span>
-                <div className="font-beaufort">SUPPLY {card.supply}</div>
+                <div className="font-beaufort uppercase">SUPPLY {card.supply}</div>
                 <span className="font-sans">•</span>
                 <Dollar dollar={card.dollar} cents={card.cent} />
               </div>

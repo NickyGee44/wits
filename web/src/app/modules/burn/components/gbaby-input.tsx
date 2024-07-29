@@ -30,7 +30,7 @@ export function GBabyInput({
             handleClick={() => handleSelected(id)}
             isSelected={selected.includes(id)}
           >
-            <div className="text-center px-16 font-beaufort">{id}</div>
+            <div className="text-center px-16 font-beaufort uppercase">{id}</div>
           </Container>
         ))}
       </div>

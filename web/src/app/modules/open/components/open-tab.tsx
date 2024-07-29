@@ -61,11 +61,11 @@ export function OpenTab({
             subtext={
               <div className="flex flex-row justify-center items-center">
                 <div className="flex flex-row space-x-4">
-                  <div className="font-beaufort capitalize">
+                  <div className="font-beaufort uppercase">
                     {card.name} {card.cardCount}
                   </div>
                   <span className="font-sans">•</span>
-                  <div className="font-beaufort">COUNT {card.balance}</div>
+                  <div className="font-beaufort uppercase">COUNT {card.balance}</div>
                 </div>
               </div>
             }

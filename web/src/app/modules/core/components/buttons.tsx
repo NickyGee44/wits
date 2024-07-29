@@ -23,7 +23,7 @@ export const SubmitButton = ({
       handleClick && handleClick();
     }}
   >
-    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gold group-hover:text-black group-active:text-black font-beaufort">
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gold group-hover:text-black group-active:text-black font-beaufort uppercase">
       {children}
     </div>
     <img
@@ -49,7 +49,7 @@ export const PrimaryButton = ({ children, handleClick }: ButtonProps) => (
     onClick={handleClick}
     className="px-4 py-2 bg-[#181718]/[0.1] border border-gold-50"
   >
-    <div className="font-beaufort">{children}</div>
+    <div className="font-beaufort uppercase">{children}</div>
   </button>
 );
 

@@ -55,7 +55,7 @@ export function BurnTab({
       </div>
 
       <Container className="bg-dark-grey">
-        <div className="font-beaufort text-center my-4">TOTAL {total}</div>
+        <div className="font-beaufort uppercase text-center my-4">TOTAL {total}</div>
       </Container>
 
       <div className="flex flex-row justify-center items-center w-full">
