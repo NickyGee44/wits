@@ -63,7 +63,7 @@ export function Card({ card, isRevealed = false }: CardProps) {
       />
       <img
         src={card.image}
-        alt={`Front of ${card.faction}`}
+        alt={`Front of ${card.id}`}
         className={classnames(show ? 'flex' : 'hidden')}
       />
     </button>
@@ -143,21 +143,16 @@ export function CardsWithAnimations({
           // images.src = environment.metadata.image + `/${cardId % 100}.png`;
           const newCardId = cardId % 100 === 0 ? 100 : cardId % 100;
           const response = await axios.get(
-            environment.metadata.url + `/${newCardId}.json`
+            environment.metadata.url + `/${newCardId}`
           );
           const card = response.data;
-          const faction = lowerCase(
-            card.attributes.find(
-              (attribute: any) => attribute.trait_type === 'Faction'
-            ).value
-          ) as Faction;
+          const id = card.tid;
+          const faction = lowerCase(card.team) as Faction;
           return {
             id: cardId,
             faction,
-            image: environment.metadata.image + `/${newCardId}.png`,
-            rarity: card.attributes.find(
-              (attribute: any) => attribute.trait_type === 'Rarity'
-            ).value,
+            image: environment.metadata.image + `/${id}.png`,
+            rarity: card.rarity,
           };
         } catch (error) {
           console.error(error);
