@@ -118,7 +118,7 @@ export function CardsWithAnimations({
         setTimeout(() => {
           setShowCards(true);
           setShowButtons(true);
-        }, 11000);
+        }, 9000);
       };
 
       gif.addEventListener('load', handleGifLoad);
@@ -188,7 +188,7 @@ export function CardsWithAnimations({
     <img
       src="/assets/videos/card-opening.gif"
       alt="Card opening animation"
-      className="w-full h-full border"
+      className="w-full h-full"
       ref={gifRef}
     />
   );
