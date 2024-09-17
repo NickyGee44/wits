@@ -108,22 +108,36 @@ export function CardsWithAnimations({
 }: CardsWithAnimationsProps) {
   const [showCards, setShowCards] = useState(false);
   const [cards, setCards] = useState<ICard[]>([]);
+
   const gifRef = useRef<HTMLImageElement>(null);
+  const animationTimeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const gif = gifRef.current;
     if (gif) {
+      gif.style.animation = 'none'; // Disable any existing animation
+
       const handleGifLoad = () => {
-        setTimeout(() => {
+        // Force a reflow to reset the animation
+        void gif.offsetWidth;
+
+        // Apply the animation
+        gif.style.animation = 'playOnce 13s steps(333) forwards';
+
+        // Set a timeout to show cards after the GIF finishes (13 seconds)
+        animationTimeout.current = setTimeout(() => {
           setShowCards(true);
           setShowButtons(true);
-        }, 8000);
+        }, 13000);
       };
 
       gif.addEventListener('load', handleGifLoad);
 
       return () => {
         gif.removeEventListener('load', handleGifLoad);
+        if (animationTimeout.current) {
+          clearTimeout(animationTimeout.current);
+        }
       };
     }
   }, [setShowButtons]);
@@ -170,27 +184,52 @@ export function CardsWithAnimations({
     fetchCards();
   }, [cardIds, fetchCards]);
 
-  return showCards ? (
-    <Cards cards={cards} />
-  ) : (
-    // <video
-    //   muted
-    //   autoPlay
-    //   onEnded={() => {
-    //     setShowCards(true);
-    //     setShowButtons(true);
-    //   }}
-    //   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-    // >
-    //   <source src={`/assets/videos/${packetType}.mp4`} type="video/mp4" />
-    // </video>
-    <img
-      src="/assets/videos/card-opening.gif"
-      alt="Card opening animation"
-      className="w-full h-full"
-      ref={gifRef}
-    />
+  return (
+    <>
+      <style>
+        {`
+          @keyframes playOnce {
+            0% { opacity: 1; }
+            99% { opacity: 1; }
+            100% { opacity: 0; }
+          }
+        `}
+      </style>
+      {showCards ? (
+        <Cards cards={cards} />
+      ) : (
+        <img
+          src="/assets/videos/card-opening.gif"
+          alt="Card opening animation"
+          className="w-full h-full"
+          ref={gifRef}
+          style={{ animation: 'none' }}
+        />
+      )}
+    </>
   );
+
+  // return showCards ? (
+  //   <Cards cards={cards} />
+  // ) : (
+  //   // <video
+  //   //   muted
+  //   //   autoPlay
+  //   //   onEnded={() => {
+  //   //     setShowCards(true);
+  //   //     setShowButtons(true);
+  //   //   }}
+  //   //   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+  //   // >
+  //   //   <source src={`/assets/videos/${packetType}.mp4`} type="video/mp4" />
+  //   // </video>
+  //   <img
+  //     src="/assets/videos/card-opening.gif"
+  //     alt="Card opening animation"
+  //     className="w-full h-full"
+  //     ref={gifRef}
+  //   />
+  // );
 }
 
 interface CardsWithAnimationsStackedProps {
