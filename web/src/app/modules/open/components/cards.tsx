@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import classnames from 'classnames';
-import { PrimaryButton, SubmitButton } from '../../core/components/buttons';
 import axios from 'axios';
-import { environment } from '../../../../environments/environment';
+import classnames from 'classnames';
 import { lowerCase } from 'lodash';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { environment } from '../../../../environments/environment';
+import { PrimaryButton, SubmitButton } from '../../core/components/buttons';
 import { IPacket } from '../../core/types/packets';
 import { RARITY } from '../types/cards';
 
@@ -108,6 +108,26 @@ export function CardsWithAnimations({
 }: CardsWithAnimationsProps) {
   const [showCards, setShowCards] = useState(false);
   const [cards, setCards] = useState<ICard[]>([]);
+  const gifRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const gif = gifRef.current;
+    if (gif) {
+      const handleGifLoad = () => {
+        // Set timeout for the duration of the GIF (13 seconds)
+        setTimeout(() => {
+          setShowCards(true);
+          setShowButtons(true);
+        }, 13000);
+      };
+
+      gif.addEventListener('load', handleGifLoad);
+
+      return () => {
+        gif.removeEventListener('load', handleGifLoad);
+      };
+    }
+  }, [setShowButtons]);
 
   const fetchCards = useCallback(async () => {
     const cards = await Promise.all(
@@ -154,17 +174,23 @@ export function CardsWithAnimations({
   return showCards ? (
     <Cards cards={cards} />
   ) : (
-    <video
-      muted
-      autoPlay
-      onEnded={() => {
-        setShowCards(true);
-        setShowButtons(true);
-      }}
-      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-    >
-      <source src={`/assets/videos/${packetType}.mp4`} type="video/mp4" />
-    </video>
+    // <video
+    //   muted
+    //   autoPlay
+    //   onEnded={() => {
+    //     setShowCards(true);
+    //     setShowButtons(true);
+    //   }}
+    //   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+    // >
+    //   <source src={`/assets/videos/${packetType}.mp4`} type="video/mp4" />
+    // </video>
+    <img
+      src="/assets/videos/card-opening.gif"
+      alt="Card opening animation"
+      className="w-full h-full"
+      ref={gifRef}
+    />
   );
 }
 
@@ -180,24 +206,6 @@ export function CardsWithAnimationsStacked({
 }: CardsWithAnimationsStackedProps) {
   const [showButtons, setShowButtons] = useState(false);
   const [index, setIndex] = useState(0);
-
-  // useEffect(() => {
-  //   const factions = [
-  //     'air',
-  //     'cyber',
-  //     'dark',
-  //     'fire',
-  //     'ice',
-  //     'light',
-  //     'normies',
-  //     'water',
-  //     'wild',
-  //   ];
-  //   factions.forEach((faction) => {
-  //     const images = new Image();
-  //     images.src = `/web/src/assets/images/${faction}.png`;
-  //   });
-  // }, []);
 
   const openNextPacket = () => {
     if (index < cardsWithAnimations.length - 1) {
