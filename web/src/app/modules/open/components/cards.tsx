@@ -114,11 +114,10 @@ export function CardsWithAnimations({
     const gif = gifRef.current;
     if (gif) {
       const handleGifLoad = () => {
-        // Set timeout for the duration of the GIF (13 seconds)
         setTimeout(() => {
           setShowCards(true);
           setShowButtons(true);
-        }, 9000);
+        }, 8000);
       };
 
       gif.addEventListener('load', handleGifLoad);
