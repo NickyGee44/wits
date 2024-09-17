@@ -110,34 +110,27 @@ export function CardsWithAnimations({
   const [cards, setCards] = useState<ICard[]>([]);
 
   const gifRef = useRef<HTMLImageElement>(null);
-  const animationTimeout = useRef<NodeJS.Timeout | null>(null);
+  const [gifEnded, setGifEnded] = useState(false);
 
   useEffect(() => {
     const gif = gifRef.current;
     if (gif) {
-      gif.style.animation = 'none'; // Disable any existing animation
+      const animationDuration = 13000; // 13 seconds in milliseconds
 
-      const handleGifLoad = () => {
-        // Force a reflow to reset the animation
-        void gif.offsetWidth;
-
-        // Apply the animation
-        gif.style.animation = 'playOnce 13s steps(333) forwards';
-
-        // Set a timeout to show cards after the GIF finishes (13 seconds)
-        animationTimeout.current = setTimeout(() => {
-          setShowCards(true);
-          setShowButtons(true);
-        }, 13000);
+      const handleGifEnd = () => {
+        setGifEnded(true);
+        setShowCards(true);
+        setShowButtons(true);
       };
 
-      gif.addEventListener('load', handleGifLoad);
+      // Start the GIF animation
+      gif.style.opacity = '1';
+
+      // Set a timeout to handle the end of the GIF
+      const timeoutId = setTimeout(handleGifEnd, animationDuration);
 
       return () => {
-        gif.removeEventListener('load', handleGifLoad);
-        if (animationTimeout.current) {
-          clearTimeout(animationTimeout.current);
-        }
+        clearTimeout(timeoutId);
       };
     }
   }, [setShowButtons]);
@@ -188,9 +181,8 @@ export function CardsWithAnimations({
     <>
       <style>
         {`
-          @keyframes playOnce {
-            0% { opacity: 1; }
-            99% { opacity: 1; }
+          @keyframes hideGif {
+            0%, 99% { opacity: 1; }
             100% { opacity: 0; }
           }
         `}
@@ -198,13 +190,21 @@ export function CardsWithAnimations({
       {showCards ? (
         <Cards cards={cards} />
       ) : (
-        <img
-          src="/assets/videos/card-opening.gif"
-          alt="Card opening animation"
-          className="w-full h-full"
-          ref={gifRef}
-          style={{ animation: 'none' }}
-        />
+        <div className="w-full h-full relative">
+          <img
+            ref={gifRef}
+            src="/assets/videos/card-opening.gif"
+            alt="Card opening animation"
+            className="w-full h-full object-cover"
+            style={{
+              animation: 'hideGif 13s linear forwards',
+              opacity: 0,
+            }}
+          />
+          {gifEnded && (
+            <div className="absolute top-0 left-0 w-full h-full bg-black"></div>
+          )}
+        </div>
       )}
     </>
   );
