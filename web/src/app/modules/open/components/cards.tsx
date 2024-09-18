@@ -43,9 +43,10 @@ export function Card({ card, isRevealed = false }: CardProps) {
 
   const show = revealed || isRevealed;
   const isWiggle =
-    card.rarity === RARITY.LEGENDARY ||
-    card.rarity === RARITY.ULTRARARE ||
-    card.rarity === RARITY['ONE OF ONE'];
+    card.rarity.toLowerCase() === RARITY.RARE.toLowerCase() ||
+    card.rarity.toLowerCase() === RARITY.LEGENDARY.toLowerCase() ||
+    card.rarity.toLowerCase() === RARITY.ULTRARARE.toLowerCase() ||
+    card.rarity.toLowerCase() === RARITY['ONE OF ONE'].toLowerCase();
 
   return (
     <button
@@ -141,7 +142,7 @@ export function CardsWithAnimations({
         try {
           // const images = new Image();
           // images.src = environment.metadata.image + `/${cardId % 100}.png`;
-          const newCardId = cardId % 100 === 0 ? 100 : cardId % 100;
+          const newCardId = cardId % 214 === 0 ? 214 : cardId % 214;
           const response = await axios.get(
             environment.metadata.url + `/${newCardId}`
           );
