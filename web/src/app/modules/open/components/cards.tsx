@@ -78,7 +78,7 @@ export function Cards({ cards }: CardsProps) {
 
   return (
     <div className="flex flex-col h-full gap-4">
-      <div className="flex flex-col space-y-12 overflow-scroll h-full">
+      <div className="flex flex-col space-y-12 overflow-scroll h-full custom-scrollbar">
         <div className="grid grid-cols-5 md:grid-cols-5 gap-2">
           {cards.map((card) => (
             <Card card={card} isRevealed={isAllRevealed} key={card.id} />
