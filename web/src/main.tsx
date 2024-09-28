@@ -8,20 +8,20 @@ import { publicProvider } from 'wagmi/providers/public';
 import App from './app/app';
 import { environment } from './environments/environment';
 import { createPublicClient, createWalletClient, http } from 'viem';
-import { skaleNebulaTestnetCustom } from './app/modules/core/constants/customNetworks';
+import { skaleNebula } from 'viem/chains';
 
 const { chains } = configureChains(
-  [skaleNebulaTestnetCustom],
+  [skaleNebula],
   [alchemyProvider({ apiKey: environment.ALCHEMY_KEY }), publicProvider()]
 );
 
 export const publicClient = createPublicClient({
-  chain: skaleNebulaTestnetCustom,
+  chain: skaleNebula,
   transport: http(),
 });
 
 export const walletClient = createWalletClient({
-  chain: skaleNebulaTestnetCustom,
+  chain: skaleNebula,
   transport: http(),
 });
 
