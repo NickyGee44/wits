@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import classnames from 'classnames';
-import { PrimaryButton, SubmitButton } from '../../core/components/buttons';
 import axios from 'axios';
-import { environment } from '../../../../environments/environment';
+import classnames from 'classnames';
 import { lowerCase } from 'lodash';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { environment } from '../../../../environments/environment';
+import { PrimaryButton, SubmitButton } from '../../core/components/buttons';
 import { IPacket } from '../../core/types/packets';
 import { RARITY } from '../types/cards';
 
@@ -43,9 +43,10 @@ export function Card({ card, isRevealed = false }: CardProps) {
 
   const show = revealed || isRevealed;
   const isWiggle =
-    card.rarity === RARITY.LEGENDARY ||
-    card.rarity === RARITY.ULTRARARE ||
-    card.rarity === RARITY['ONE OF ONE'];
+    card.rarity.toLowerCase() === RARITY.RARE.toLowerCase() ||
+    card.rarity.toLowerCase() === RARITY.LEGENDARY.toLowerCase() ||
+    card.rarity.toLowerCase() === RARITY.ULTRARARE.toLowerCase() ||
+    card.rarity.toLowerCase() === RARITY['ONE OF ONE'].toLowerCase();
 
   return (
     <button
@@ -63,7 +64,7 @@ export function Card({ card, isRevealed = false }: CardProps) {
       />
       <img
         src={card.image}
-        alt={`Front of ${card.faction}`}
+        alt={`Front of ${card.id}`}
         className={classnames(show ? 'flex' : 'hidden')}
       />
     </button>
@@ -77,7 +78,7 @@ export function Cards({ cards }: CardsProps) {
 
   return (
     <div className="flex flex-col h-full gap-4">
-      <div className="flex flex-col space-y-12 overflow-scroll h-full">
+      <div className="flex flex-col space-y-12 overflow-scroll h-full custom-scrollbar">
         <div className="grid grid-cols-5 md:grid-cols-5 gap-2">
           {cards.map((card) => (
             <Card card={card} isRevealed={isAllRevealed} key={card.id} />
@@ -109,29 +110,50 @@ export function CardsWithAnimations({
   const [showCards, setShowCards] = useState(false);
   const [cards, setCards] = useState<ICard[]>([]);
 
+  const gifRef = useRef<HTMLImageElement>(null);
+  const [gifEnded, setGifEnded] = useState(false);
+
+  useEffect(() => {
+    const gif = gifRef.current;
+    if (gif) {
+      const animationDuration = 13000; // 13 seconds in milliseconds
+
+      const handleGifEnd = () => {
+        setGifEnded(true);
+        setShowCards(true);
+        setShowButtons(true);
+      };
+
+      // Start the GIF animation
+      gif.style.opacity = '1';
+
+      // Set a timeout to handle the end of the GIF
+      const timeoutId = setTimeout(handleGifEnd, animationDuration);
+
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    }
+  }, [setShowButtons]);
+
   const fetchCards = useCallback(async () => {
     const cards = await Promise.all(
       cardIds.map(async (cardId) => {
         try {
           // const images = new Image();
           // images.src = environment.metadata.image + `/${cardId % 100}.png`;
-          const newCardId = cardId % 100 === 0 ? 100 : cardId % 100;
+          const newCardId = cardId % 214 === 0 ? 214 : cardId % 214;
           const response = await axios.get(
-            environment.metadata.url + `/${newCardId}.json`
+            environment.metadata.url + `/${newCardId}`
           );
           const card = response.data;
-          const faction = lowerCase(
-            card.attributes.find(
-              (attribute: any) => attribute.trait_type === 'Faction'
-            ).value
-          ) as Faction;
+          const id = card.tid;
+          const faction = lowerCase(card.team) as Faction;
           return {
             id: cardId,
             faction,
-            image: environment.metadata.image + `/${newCardId}.png`,
-            rarity: card.attributes.find(
-              (attribute: any) => attribute.trait_type === 'Rarity'
-            ).value,
+            image: environment.metadata.image + `/${id}.png`,
+            rarity: card.rarity,
           };
         } catch (error) {
           console.error(error);
@@ -151,21 +173,59 @@ export function CardsWithAnimations({
     fetchCards();
   }, [cardIds, fetchCards]);
 
-  return showCards ? (
-    <Cards cards={cards} />
-  ) : (
-    <video
-      muted
-      autoPlay
-      onEnded={() => {
-        setShowCards(true);
-        setShowButtons(true);
-      }}
-      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-    >
-      <source src={`/assets/videos/${packetType}.mp4`} type="video/mp4" />
-    </video>
+  return (
+    <>
+      <style>
+        {`
+          @keyframes hideGif {
+            0%, 99% { opacity: 1; }
+            100% { opacity: 0; }
+          }
+        `}
+      </style>
+      {showCards ? (
+        <Cards cards={cards} />
+      ) : (
+        <div className="w-full h-full relative">
+          <img
+            ref={gifRef}
+            src="/assets/videos/card-opening.gif"
+            alt="Card opening animation"
+            className="w-full h-full object-cover"
+            style={{
+              animation: 'hideGif 13s linear forwards',
+              opacity: 0,
+            }}
+          />
+          {gifEnded && (
+            <div className="absolute top-0 left-0 w-full h-full bg-black"></div>
+          )}
+        </div>
+      )}
+    </>
   );
+
+  // return showCards ? (
+  //   <Cards cards={cards} />
+  // ) : (
+  //   // <video
+  //   //   muted
+  //   //   autoPlay
+  //   //   onEnded={() => {
+  //   //     setShowCards(true);
+  //   //     setShowButtons(true);
+  //   //   }}
+  //   //   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+  //   // >
+  //   //   <source src={`/assets/videos/${packetType}.mp4`} type="video/mp4" />
+  //   // </video>
+  //   <img
+  //     src="/assets/videos/card-opening.gif"
+  //     alt="Card opening animation"
+  //     className="w-full h-full"
+  //     ref={gifRef}
+  //   />
+  // );
 }
 
 interface CardsWithAnimationsStackedProps {
@@ -180,24 +240,6 @@ export function CardsWithAnimationsStacked({
 }: CardsWithAnimationsStackedProps) {
   const [showButtons, setShowButtons] = useState(false);
   const [index, setIndex] = useState(0);
-
-  // useEffect(() => {
-  //   const factions = [
-  //     'air',
-  //     'cyber',
-  //     'dark',
-  //     'fire',
-  //     'ice',
-  //     'light',
-  //     'normies',
-  //     'water',
-  //     'wild',
-  //   ];
-  //   factions.forEach((faction) => {
-  //     const images = new Image();
-  //     images.src = `/web/src/assets/images/${faction}.png`;
-  //   });
-  // }, []);
 
   const openNextPacket = () => {
     if (index < cardsWithAnimations.length - 1) {

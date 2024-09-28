@@ -107,3 +107,12 @@ body {
 .font-dragon {
   padding-top: 0.5rem;
 }
+
+.custom-scrollbar {
+  -ms-overflow-style: none; // IE and Edge
+  scrollbar-width: none; // Firefox
+
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari and Opera
+  }
+}

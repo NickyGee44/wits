@@ -7,8 +7,8 @@ import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import App from './app/app';
 import { environment } from './environments/environment';
-import { skaleNebula } from 'viem/chains';
 import { createPublicClient, createWalletClient, http } from 'viem';
+import { skaleNebula } from 'viem/chains';
 
 const { chains } = configureChains(
   [skaleNebula],

@@ -1,8 +1,8 @@
 export const environment = {
   ALCHEMY_KEY: 'm3ADmeHfQSDpLG8JGiakIHdOwKdH9p_Z',
   metadata: {
-    url: 'https://wits-set-one.s3.us-east-2.amazonaws.com/data',
-    image: 'https://wits-set-one.s3.us-east-2.amazonaws.com',
+    url: 'https://api.wits.academy/cards/id',
+    image: 'https://api.wits.academy/images/cards',
   },
   chain: 'mumbai',
   mumbai: {

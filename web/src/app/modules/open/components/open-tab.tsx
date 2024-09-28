@@ -5,8 +5,8 @@ import { Packet } from '../../core/components/packet';
 import { useModal } from '../../core/hooks/use-modal';
 import { useState } from 'react';
 import { useAccount, useNetwork } from 'wagmi';
-import { skaleNebula } from 'viem/chains';
 import { dripGas } from '../../../utils';
+import { skaleNebula } from 'viem/chains';
 
 interface OpenTabProps {
   idsByPackets: { id: number; cards: number[] }[];
@@ -65,7 +65,9 @@ export function OpenTab({
                     {card.name} {card.cardCount}
                   </div>
                   <span className="font-sans">•</span>
-                  <div className="font-beaufort uppercase">COUNT {card.balance}</div>
+                  <div className="font-beaufort uppercase">
+                    COUNT {card.balance}
+                  </div>
                 </div>
               </div>
             }
