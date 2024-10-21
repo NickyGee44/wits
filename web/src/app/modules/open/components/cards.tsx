@@ -128,7 +128,7 @@ export function CardsWithAnimations({
   useEffect(() => {
     const gif = gifRef.current;
     if (gif) {
-      const animationDuration = 13000; // 13 seconds in milliseconds
+      const animationDuration = 7000; // 7 seconds in milliseconds
 
       const handleGifEnd = () => {
         setGifEnded(true);
@@ -194,7 +194,7 @@ export function CardsWithAnimations({
         <div className="w-full h-full relative">
           <img
             ref={gifRef}
-            src="/assets/videos/card-opening.gif"
+            src={`/assets/videos/${packetType}.gif`}
             alt="Card opening animation"
             className="w-full h-full object-cover"
             style={{
