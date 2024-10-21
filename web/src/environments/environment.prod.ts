@@ -17,6 +17,12 @@ export const environment = {
     auth: 'https://api.wits.academy/auth',
     addresses: '.netlify/functions/main',
   },
+  packImages: {
+    single: 'https://wits-metadata.s3.us-east-2.amazonaws.com/SinglePack.png',
+    booster: 'https://wits-metadata.s3.us-east-2.amazonaws.com/BoosterBox.png',
+    jumbo: 'https://wits-metadata.s3.us-east-2.amazonaws.com/JumboBox.png',
+    mystery: 'https://wits-metadata.s3.us-east-2.amazonaws.com/MysteryBox.png',
+  },
   mainnet: {
     gBabies: '0x0ff1f3a53f521d74af73fe7433abf802f91ddd4e' as const,
     quillAndInk: '0xd38123a8f534a7bbcefefa59e74f254a46818538' as const,
