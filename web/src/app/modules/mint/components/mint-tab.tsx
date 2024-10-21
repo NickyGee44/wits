@@ -1,6 +1,6 @@
 import { SubmitButton } from '../../core/components/buttons';
 import { Dollar } from '../../core/components/dollar';
-import { Packet } from '../../core/components/packet';
+import { CardPackType, Packet } from '../../core/components/packet';
 
 interface MintTabProps {
   write: () => void;
@@ -9,7 +9,7 @@ interface MintTabProps {
   publicLive: boolean;
   totalMintable: number;
   cards: {
-    name: string;
+    name: CardPackType;
     price: bigint;
     supply: number;
     count: number;
@@ -44,7 +44,9 @@ export function MintTab({
                   {card.name} Pack ({card.cardCount}){' '}
                 </div>
                 <span className="font-sans">•</span>
-                <div className="font-beaufort uppercase">SUPPLY {card.supply}</div>
+                <div className="font-beaufort uppercase">
+                  SUPPLY {card.supply}
+                </div>
                 <span className="font-sans">•</span>
                 <Dollar dollar={card.dollar} cents={card.cent} />
               </div>

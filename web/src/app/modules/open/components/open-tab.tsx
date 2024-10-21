@@ -1,7 +1,7 @@
 import { flatten } from 'lodash';
 import { useEffect, useMemo } from 'react';
 import { SubmitButton } from '../../core/components/buttons';
-import { Packet } from '../../core/components/packet';
+import { CardPackType, Packet } from '../../core/components/packet';
 import { useModal } from '../../core/hooks/use-modal';
 import { useState } from 'react';
 import { useAccount, useNetwork } from 'wagmi';
@@ -14,7 +14,7 @@ interface OpenTabProps {
   isTxnLoading: boolean;
   open: () => Promise<void>;
   cards: {
-    name: string;
+    name: CardPackType;
     count: number;
     cardCount: number;
     balance: number;
