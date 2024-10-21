@@ -123,27 +123,36 @@ export function CardsWithAnimations({
   const [cards, setCards] = useState<ICard[]>([]);
 
   const gifRef = useRef<HTMLImageElement>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
   const [gifEnded, setGifEnded] = useState(false);
 
   useEffect(() => {
     const gif = gifRef.current;
-    if (gif) {
-      const animationDuration = 7000; // 7 seconds in milliseconds
+    const audio = audioRef.current;
+    if (gif && audio) {
+      const animationDuration = 8000; // 8 seconds in milliseconds
 
       const handleGifEnd = () => {
         setGifEnded(true);
         setShowCards(true);
         setShowButtons(true);
+        audio.pause();
+        audio.currentTime = 0;
       };
 
-      // Start the GIF animation
+      // Start the GIF animation and audio
       gif.style.opacity = '1';
+      audio
+        .play()
+        .catch((error) => console.error('Audio playback failed:', error));
 
       // Set a timeout to handle the end of the GIF
       const timeoutId = setTimeout(handleGifEnd, animationDuration);
 
       return () => {
         clearTimeout(timeoutId);
+        audio.pause();
+        audio.currentTime = 0;
       };
     }
   }, [setShowButtons]);
@@ -188,6 +197,7 @@ export function CardsWithAnimations({
           }
         `}
       </style>
+      <audio ref={audioRef} src="/assets/audio/card-opening.mp3" />
       {showCards ? (
         <Cards cards={cards} />
       ) : (
@@ -209,28 +219,6 @@ export function CardsWithAnimations({
       )}
     </>
   );
-
-  // return showCards ? (
-  //   <Cards cards={cards} />
-  // ) : (
-  //   // <video
-  //   //   muted
-  //   //   autoPlay
-  //   //   onEnded={() => {
-  //   //     setShowCards(true);
-  //   //     setShowButtons(true);
-  //   //   }}
-  //   //   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-  //   // >
-  //   //   <source src={`/assets/videos/${packetType}.mp4`} type="video/mp4" />
-  //   // </video>
-  //   <img
-  //     src="/assets/videos/card-opening.gif"
-  //     alt="Card opening animation"
-  //     className="w-full h-full"
-  //     ref={gifRef}
-  //   />
-  // );
 }
 
 interface CardsWithAnimationsStackedProps {
