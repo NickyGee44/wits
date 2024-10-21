@@ -20,10 +20,13 @@ export enum Faction {
 }
 
 interface ICard {
-  id: number;
-  faction: Faction;
+  name: string;
+  description: string;
   image: string;
-  rarity: RARITY;
+  attributes: {
+    trait_type: string;
+    value: string;
+  }[];
 }
 
 interface CardsProps {
@@ -42,11 +45,20 @@ export function Card({ card, isRevealed = false }: CardProps) {
   const regularFactions = ['trap', 'spell', 'relic'];
 
   const show = revealed || isRevealed;
+
+  const rarity = card.attributes.find(
+    (attribute) => attribute.trait_type === 'Rarity'
+  )?.value;
+
+  const faction = card.attributes.find(
+    (attribute) => attribute.trait_type === 'Team'
+  )?.value;
+
   const isWiggle =
-    card.rarity.toLowerCase() === RARITY.RARE.toLowerCase() ||
-    card.rarity.toLowerCase() === RARITY.LEGENDARY.toLowerCase() ||
-    card.rarity.toLowerCase() === RARITY.ULTRARARE.toLowerCase() ||
-    card.rarity.toLowerCase() === RARITY['ONE OF ONE'].toLowerCase();
+    rarity?.toLowerCase() === RARITY.RARE.toLowerCase() ||
+    rarity?.toLowerCase() === RARITY.LEGENDARY.toLowerCase() ||
+    rarity?.toLowerCase() === RARITY.ULTRARARE.toLowerCase() ||
+    rarity?.toLowerCase() === RARITY['ONE OF ONE'].toLowerCase();
 
   return (
     <button
@@ -56,15 +68,15 @@ export function Card({ card, isRevealed = false }: CardProps) {
       <img
         className={classnames(show ? 'hidden' : 'flex')}
         src={
-          regularFactions.includes(card.faction)
+          regularFactions.includes(faction || 'regular')
             ? `/assets/images/regular.png`
-            : `/assets/images/${card.faction}.png`
+            : `/assets/images/${faction || 'regular'}.png`
         }
-        alt={`Back of ${card.faction}`}
+        alt={`Back of card`}
       />
       <img
         src={card.image}
-        alt={`Front of ${card.id}`}
+        alt={`Front of card`}
         className={classnames(show ? 'flex' : 'hidden')}
       />
     </button>
@@ -80,8 +92,8 @@ export function Cards({ cards }: CardsProps) {
     <div className="flex flex-col h-full gap-4">
       <div className="flex flex-col space-y-12 overflow-scroll h-full custom-scrollbar">
         <div className="grid grid-cols-5 md:grid-cols-5 gap-2">
-          {cards.map((card) => (
-            <Card card={card} isRevealed={isAllRevealed} key={card.id} />
+          {cards.map((card, i) => (
+            <Card card={card} isRevealed={isAllRevealed} key={card.name + i} />
           ))}
         </div>
       </div>
@@ -140,21 +152,14 @@ export function CardsWithAnimations({
     const cards = await Promise.all(
       cardIds.map(async (cardId) => {
         try {
-          // const images = new Image();
-          // images.src = environment.metadata.image + `/${cardId % 100}.png`;
-          const newCardId = cardId % 214 === 0 ? 214 : cardId % 214;
-          const response = await axios.get(
-            environment.metadata.url + `/${newCardId}`
+          const response = await fetch(
+            environment.metadata.url + `/${cardId}`,
+            {
+              method: 'GET',
+            }
           );
-          const card = response.data;
-          const id = card.tid;
-          const faction = lowerCase(card.team) as Faction;
-          return {
-            id: cardId,
-            faction,
-            image: environment.metadata.image + `/${id}.png`,
-            rarity: card.rarity,
-          };
+          const card = await response.json();
+          return card;
         } catch (error) {
           console.error(error);
           return {

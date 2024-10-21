@@ -1,13 +1,30 @@
-'use client';
+import { useState, useCallback, useEffect } from 'react';
 import { useAddRecentTransaction } from '@rainbow-me/rainbowkit';
 import { sortBy } from 'lodash';
-import { useMemo } from 'react';
 import toast from 'react-hot-toast';
-import { decodeEventLog } from 'viem';
+import { decodeEventLog, Log } from 'viem';
 import { useAccount, useContractWrite, useWaitForTransaction } from 'wagmi';
 import { dripGas } from '../../../utils';
 import { TransactionLink } from '../../core/components/transaction';
 import { CARDS_ABI, PACKETS_ABI } from '../../core/constants/abi';
+import { environment } from '../../../../environments/environment';
+
+const admin_username = process.env.NEXT_PUBLIC_ADMIN_USERNAME;
+const admin_password = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
+
+if (!admin_username || !admin_password) {
+  throw new Error('Missing admin credentials');
+}
+
+// Define the structure of the PacketOpened event
+interface PacketOpenedEvent {
+  eventName: 'PacketOpened';
+  args: {
+    cardId: bigint;
+    startingId: bigint;
+    total: bigint;
+  };
+}
 
 export function useOpen(
   packets: `0x${string}`,
@@ -17,11 +34,48 @@ export function useOpen(
 ) {
   const { address } = useAccount();
   const addRecentTransaction = useAddRecentTransaction();
+  const [idsByPackets, setIdsByPackets] = useState<
+    { id: number; cards: number[] }[]
+  >([]);
+  const [apiResult, setApiResult] = useState<any>(null);
+  const [isApiLoading, setIsApiLoading] = useState(false);
+
+  const calculateIdsByPackets = useCallback(
+    (logs: Log[]) => {
+      return sortBy(
+        logs
+          .filter((log) => log.address.toLowerCase() === packets.toLowerCase())
+          .map((log) => {
+            try {
+              return decodeEventLog({
+                abi: [...CARDS_ABI, ...PACKETS_ABI],
+                data: log.data,
+                topics: log.topics,
+                strict: false,
+              }) as PacketOpenedEvent;
+            } catch {
+              return null;
+            }
+          })
+          .filter(
+            (log): log is PacketOpenedEvent => log?.eventName === 'PacketOpened'
+          )
+      ).map((log) => {
+        return {
+          id: Number(log.args.cardId),
+          cards: new Array(Number(log.args.total))
+            .fill(0)
+            .map((_, i) => Number(log.args.startingId) + i),
+        };
+      });
+    },
+    [packets]
+  );
 
   const {
     writeAsync,
-    data,
-    isSuccess,
+    data: writeData,
+    isSuccess: isWriteSuccess,
     reset: writeReset,
   } = useContractWrite({
     abi: PACKETS_ABI,
@@ -42,48 +96,72 @@ export function useOpen(
     },
   });
 
-  const tx = data?.hash;
-
-  const { data: txData, isLoading } = useWaitForTransaction({
-    hash: tx,
+  const {
+    data: txData,
+    isLoading: isTxLoading,
+    isSuccess: isTxSuccess,
+  } = useWaitForTransaction({
+    hash: writeData?.hash,
   });
 
-  const logs = txData?.logs;
+  useEffect(() => {
+    const processTransaction = async () => {
+      if (isTxSuccess && txData) {
+        const calculatedIdsByPackets = calculateIdsByPackets(txData.logs);
 
-  const idsByPackets = useMemo(() => {
-    return (
-      sortBy(
-        logs
-          ?.filter((log) => log.address.toLowerCase() === packets.toLowerCase())
-          .map((log) =>
-            decodeEventLog({
-              abi: [...CARDS_ABI, ...PACKETS_ABI],
-              data: log.data,
-              topics: log.topics,
-              strict: false,
-            })
-          )
-          .filter((log) => log?.eventName === 'PacketOpened'),
-        'args.startingId'
-      ) as {
-        eventName: string;
-        args: { cardId: bigint; startingId: bigint; total: bigint };
-      }[]
-    ).map((log) => {
-      return {
-        id: Number(log.args.cardId),
-        cards: new Array(Number(log.args.total))
-          .fill(0)
-          .map((_, i) => Number(log.args.startingId) + i),
-      };
-    });
-  }, [logs]);
+        setIsApiLoading(true);
+        try {
+          const ApiData = calculatedIdsByPackets.map((packet) => {
+            return {
+              packetType: packet.id,
+              startTokenId: packet.cards[0],
+              endTokenId: packet.cards[packet.cards.length - 1],
+            };
+          });
+
+          const auth_reponse = await fetch(environment.api.auth, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              username: admin_username,
+              password: admin_password,
+            }),
+          });
+
+          const auth_result = await auth_reponse.json();
+          const token = auth_result.access_token;
+
+          if (!token) {
+            throw new Error('Invalid token');
+          }
+
+          await fetch(environment.api.openPackets, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: token,
+            },
+            body: JSON.stringify(ApiData),
+          });
+          setIdsByPackets(calculatedIdsByPackets);
+        } catch (error) {
+          console.error('API call failed:', error);
+          toast.error('Server Error');
+        } finally {
+          setIsApiLoading(false);
+        }
+      }
+    };
+
+    processTransaction();
+  }, [isTxSuccess, txData, calculateIdsByPackets]);
 
   const open = async () => {
     try {
       if (address) {
         await dripGas(address);
-
         await writeAsync();
       }
     } catch (error) {
@@ -94,8 +172,9 @@ export function useOpen(
   return {
     open,
     idsByPackets,
-    isSuccess,
+    isSuccess: isWriteSuccess && isTxSuccess,
     writeReset,
-    isLoading,
+    isLoading: isTxLoading || isApiLoading,
+    apiResult,
   };
 }

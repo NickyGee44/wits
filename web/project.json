@@ -16,11 +16,17 @@
         "main": "web/src/main.tsx",
         "tsConfig": "web/tsconfig.app.json",
         "assets": ["web/src/favicon.ico", "web/src/assets"],
-        "styles": ["web/src/styles.scss", "node_modules/@rainbow-me/rainbowkit/styles.css"],
+        "styles": [
+          "web/src/styles.scss",
+          "node_modules/@rainbow-me/rainbowkit/styles.css"
+        ],
         "scripts": [],
         "isolatedConfig": true,
         "webpackConfig": "web/webpack.config.js",
-        "postcssConfig": "web/postcss.config.js"
+        "postcssConfig": "web/postcss.config.js",
+        "env": {
+          "file": "web/.env.local"
+        }
       },
       "configurations": {
         "development": {

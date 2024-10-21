@@ -12,7 +12,8 @@ export const environment = {
     gBabies: '0x5CB234f98050485c9BFE44521f846035F7779177' as const,
   },
   api: {
-    base: 'http://localhost:4300/',
+    base: 'https://api.wits.academy',
+    openPackets: 'https://api.wits.academy/packs/open-packet',
     addresses: '.netlify/functions/main',
   },
   mainnet: {

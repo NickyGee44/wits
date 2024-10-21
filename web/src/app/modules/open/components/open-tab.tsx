@@ -6,7 +6,7 @@ import { useModal } from '../../core/hooks/use-modal';
 import { useState } from 'react';
 import { useAccount, useNetwork } from 'wagmi';
 import { dripGas } from '../../../utils';
-import { skaleNebula } from 'viem/chains';
+import { skaleNebulaTestnetCustom } from '../../core/constants/customNetworks';
 
 interface OpenTabProps {
   idsByPackets: { id: number; cards: number[] }[];
@@ -62,7 +62,7 @@ export function OpenTab({
               <div className="flex flex-row justify-center items-center">
                 <div className="flex flex-row space-x-4">
                   <div className="font-beaufort uppercase">
-                    {card.name} {card.cardCount}
+                    {card.name} {card.cardCount === 40 ? '?' : card.cardCount}
                   </div>
                   <span className="font-sans">•</span>
                   <div className="font-beaufort uppercase">
@@ -81,7 +81,11 @@ export function OpenTab({
       <div className="flex flex-row justify-center items-center w-full">
         <SubmitButton
           handleClick={action}
-          disabled={isLoading || isTxnLoading || chain?.id !== skaleNebula.id}
+          disabled={
+            isLoading ||
+            isTxnLoading ||
+            chain?.id !== skaleNebulaTestnetCustom.id
+          }
         >
           {isTxnLoading ? 'Opening your packs' : 'OPEN PACKS'}
         </SubmitButton>
