@@ -32,6 +32,7 @@ interface ICard {
 interface CardsProps {
   isRevealed?: boolean;
   cards: ICard[];
+  packetType?: IPacket;
 }
 
 interface CardProps {
@@ -83,15 +84,20 @@ export function Card({ card, isRevealed = false }: CardProps) {
   );
 }
 
-export function Cards({ cards }: CardsProps) {
+export function Cards({ cards, packetType }: CardsProps) {
   const [isAllRevealed, setIsAllRevealed] = useState(false);
 
   const revealAll = () => setIsAllRevealed(true);
 
+  const cardsClassname =
+    packetType === 'booster' || packetType === 'jumbo'
+      ? 'md:grid-cols-10'
+      : 'md:grid-cols-5';
+
   return (
     <div className="flex flex-col h-full gap-4">
       <div className="flex flex-col space-y-12 overflow-scroll h-full custom-scrollbar">
-        <div className="grid grid-cols-5 md:grid-cols-5 gap-2">
+        <div className={classnames('grid gap-2 grid-cols-5', cardsClassname)}>
           {cards.map((card, i) => (
             <Card card={card} isRevealed={isAllRevealed} key={card.name + i} />
           ))}
@@ -199,7 +205,7 @@ export function CardsWithAnimations({
       </style>
       <audio ref={audioRef} src="/assets/audio/card-opening.mp3" />
       {showCards ? (
-        <Cards cards={cards} />
+        <Cards cards={cards} packetType={packetType} />
       ) : (
         <div className="w-full h-full relative">
           <img
