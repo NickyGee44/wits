@@ -9,11 +9,10 @@ import { TransactionLink } from '../../core/components/transaction';
 import { CARDS_ABI, PACKETS_ABI } from '../../core/constants/abi';
 import { environment } from '../../../../environments/environment';
 
-const admin_username = process.env.NEXT_PUBLIC_ADMIN_USERNAME;
-const admin_password = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
+const access_token = process.env.NEXT_PUBLIC_ACCESS_TOKEN;
 
-if (!admin_username || !admin_password) {
-  throw new Error('Missing admin credentials');
+if (!access_token) {
+  throw new Error('Missing environment variables');
 }
 
 // Define the structure of the PacketOpened event
@@ -119,29 +118,29 @@ export function useOpen(
             };
           });
 
-          const auth_reponse = await fetch(environment.api.auth, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              username: admin_username,
-              password: admin_password,
-            }),
-          });
+          // const auth_reponse = await fetch(environment.api.auth, {
+          //   method: 'POST',
+          //   headers: {
+          //     'Content-Type': 'application/json',
+          //   },
+          //   body: JSON.stringify({
+          //     username: admin_username,
+          //     password: admin_password,
+          //   }),
+          // });
 
-          const auth_result = await auth_reponse.json();
-          const token = auth_result.access_token;
+          // const auth_result = await auth_reponse.json();
+          // const token = auth_result.access_token;
 
-          if (!token) {
-            throw new Error('Invalid token');
-          }
+          // if (!token) {
+          //   throw new Error('Invalid token');
+          // }
 
           await fetch(environment.api.openPackets, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              Authorization: token,
+              Authorization: access_token || '',
             },
             body: JSON.stringify(ApiData),
           });
