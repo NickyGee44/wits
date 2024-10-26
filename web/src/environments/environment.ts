@@ -6,12 +6,20 @@ export const environment = {
   production: false,
   ALCHEMY_KEY: 'm3ADmeHfQSDpLG8JGiakIHdOwKdH9p_Z',
   metadata: {
-    url: 'https://api.wits.academy/cards/id',
+    url: 'https://api.wits.academy/packs/token',
     image: 'https://api.wits.academy/images/cards',
   },
   api: {
-    base: 'http://localhost:4300/',
+    base: 'https://api.wits.academy',
+    openPackets: 'https://api.wits.academy/packs/open-packet',
+    auth: 'https://api.wits.academy/auth',
     addresses: '.netlify/functions/main',
+  },
+  packImages: {
+    single: 'https://wits-metadata.s3.us-east-2.amazonaws.com/SinglePack.png',
+    booster: 'https://wits-metadata.s3.us-east-2.amazonaws.com/BoosterBox.png',
+    jumbo: 'https://wits-metadata.s3.us-east-2.amazonaws.com/JumboBox.png',
+    mystery: 'https://wits-metadata.s3.us-east-2.amazonaws.com/MysteryBox.png',
   },
   chain: 'mumbai',
   mainnet: {

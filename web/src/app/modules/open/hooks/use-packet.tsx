@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import { CardPackType } from '../../core/components/packet';
 
 export function usePacket(
   id: number,
-  name: string,
+  name: CardPackType,
   balance: number,
   cardCount: number
 ) {

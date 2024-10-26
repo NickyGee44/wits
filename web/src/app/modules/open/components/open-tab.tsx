@@ -1,7 +1,7 @@
 import { flatten } from 'lodash';
 import { useEffect, useMemo } from 'react';
 import { SubmitButton } from '../../core/components/buttons';
-import { Packet } from '../../core/components/packet';
+import { CardPackType, Packet } from '../../core/components/packet';
 import { useModal } from '../../core/hooks/use-modal';
 import { useState } from 'react';
 import { useAccount, useNetwork } from 'wagmi';
@@ -14,7 +14,7 @@ interface OpenTabProps {
   isTxnLoading: boolean;
   open: () => Promise<void>;
   cards: {
-    name: string;
+    name: CardPackType;
     count: number;
     cardCount: number;
     balance: number;
@@ -62,7 +62,7 @@ export function OpenTab({
               <div className="flex flex-row justify-center items-center">
                 <div className="flex flex-row space-x-4">
                   <div className="font-beaufort uppercase">
-                    {card.name} {card.cardCount}
+                    {card.name} {card.cardCount === 40 ? '?' : card.cardCount}
                   </div>
                   <span className="font-sans">•</span>
                   <div className="font-beaufort uppercase">

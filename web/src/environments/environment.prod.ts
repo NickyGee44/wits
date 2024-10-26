@@ -1,7 +1,7 @@
 export const environment = {
   ALCHEMY_KEY: 'm3ADmeHfQSDpLG8JGiakIHdOwKdH9p_Z',
   metadata: {
-    url: 'https://api.wits.academy/cards/id',
+    url: 'https://api.wits.academy/packs/token',
     image: 'https://api.wits.academy/images/cards',
   },
   chain: 'mumbai',
@@ -12,8 +12,16 @@ export const environment = {
     gBabies: '0x5CB234f98050485c9BFE44521f846035F7779177' as const,
   },
   api: {
-    base: 'http://localhost:4300/',
+    base: 'https://api.wits.academy',
+    openPackets: 'https://api.wits.academy/packs/open-packet',
+    auth: 'https://api.wits.academy/auth',
     addresses: '.netlify/functions/main',
+  },
+  packImages: {
+    single: 'https://wits-metadata.s3.us-east-2.amazonaws.com/SinglePack.png',
+    booster: 'https://wits-metadata.s3.us-east-2.amazonaws.com/BoosterBox.png',
+    jumbo: 'https://wits-metadata.s3.us-east-2.amazonaws.com/JumboBox.png',
+    mystery: 'https://wits-metadata.s3.us-east-2.amazonaws.com/MysteryBox.png',
   },
   mainnet: {
     gBabies: '0x0ff1f3a53f521d74af73fe7433abf802f91ddd4e' as const,

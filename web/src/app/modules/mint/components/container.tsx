@@ -24,7 +24,7 @@ export function MintContainer(props: MintContainerProps) {
 
   const single = usePacket(
     Packets[0].id,
-    'single',
+    Packets[0].name,
     singleSupply,
     singlePrice,
     '00',
