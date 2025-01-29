@@ -43,7 +43,7 @@ export function OpenContainer({ packets, account }: OpenContainerProps) {
 
   const cards = [single, booster, jumbo, mystery];
 
-  const { open, idsByPackets, isSuccess, writeReset, isLoading } = useOpen(
+  const { open, idsByPackets, isSuccess, isLoading } = useOpen(
     packets,
     cards.map((card) => card.id),
     cards.map((card) => card.count),
@@ -61,7 +61,7 @@ export function OpenContainer({ packets, account }: OpenContainerProps) {
         cards={cards}
         isTxnLoading={isLoading}
       />
-      <OpenModal idsByPackets={idsByPackets} writeReset={writeReset} />
+      <OpenModal idsByPackets={idsByPackets} />
     </>
   );
 }

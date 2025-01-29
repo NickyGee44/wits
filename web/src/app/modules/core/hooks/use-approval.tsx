@@ -1,4 +1,4 @@
-import { useContractRead, useContractWrite } from 'wagmi';
+import { useReadContract } from 'wagmi';
 import { useWrite } from './use-write';
 
 export function useApproval(
@@ -7,7 +7,7 @@ export function useApproval(
   operator: `0x${string}`,
   reset: () => void
 ) {
-  const { data: isApprovedForAll } = useContractRead({
+  const { data: isApprovedForAll } = useReadContract({
     abi: [
       {
         inputs: [
@@ -37,7 +37,6 @@ export function useApproval(
     address: tokenAddress,
     functionName: 'isApprovedForAll',
     args: [account, operator],
-    watch: true,
   });
 
   const { loading, action, data } = useWrite(

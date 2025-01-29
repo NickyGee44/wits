@@ -1,4 +1,4 @@
-import { useContractRead } from 'wagmi';
+import { useReadContract } from 'wagmi';
 import { PACKETS_ABI } from '../../core/constants/abi';
 import { useStage } from '../../core/hooks/use-stage';
 import { useApi } from '../../core/hooks/use-api';
@@ -91,12 +91,11 @@ export function usePublicMint(
 }
 
 export function useMinted(account: `0x${string}`, tokenAddress: `0x${string}`) {
-  const { data } = useContractRead({
+  const { data } = useReadContract({
     abi: PACKETS_ABI,
     address: tokenAddress,
     functionName: 'minted',
     args: [account],
-    watch: true,
   });
 
   return { data: Number(data as bigint) };
