@@ -1,7 +1,7 @@
-import { useContractRead } from 'wagmi';
+import { useReadContract } from 'wagmi';
 
 export function useBalanceOf(address: `0x${string}`, account: `0x${string}`) {
-  const { data: balance } = useContractRead({
+  const { data: balance } = useReadContract({
     abi: [
       {
         inputs: [{ internalType: 'address', name: 'owner', type: 'address' }],
@@ -14,7 +14,6 @@ export function useBalanceOf(address: `0x${string}`, account: `0x${string}`) {
     address,
     functionName: 'balanceOf',
     args: [account],
-    watch: true,
   });
 
   return Number(balance);
@@ -25,7 +24,7 @@ export function useBalanceOfERC1155(
   account: `0x${string}`,
   id: number
 ) {
-  const { data: balance } = useContractRead({
+  const { data: balance } = useReadContract({
     abi: [
       {
         inputs: [
@@ -54,8 +53,7 @@ export function useBalanceOfERC1155(
     ],
     address,
     functionName: 'balanceOf',
-    args: [account, id],
-    watch: true,
+    args: [account, BigInt(id)],
   });
 
   return Number(balance || 0);

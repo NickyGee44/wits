@@ -6,10 +6,10 @@ import { IPacket } from '../../core/types/packets';
 
 interface OpenModalProps {
   idsByPackets: { id: number; cards: number[] }[];
-  writeReset: () => void;
+  // writeReset: () => void;
 }
 
-export function OpenModal({ idsByPackets, writeReset }: OpenModalProps) {
+export function OpenModal({ idsByPackets }: OpenModalProps) {
   const { isOpenModalOpen, closeModalOpen } = useModal();
   return (
     <Modal
@@ -27,7 +27,7 @@ export function OpenModal({ idsByPackets, writeReset }: OpenModalProps) {
       }}
       onRequestClose={() => {
         closeModalOpen();
-        writeReset();
+        // writeReset();
       }}
     >
       <div className="flex flex-col space-y-4 h-full">
@@ -36,7 +36,7 @@ export function OpenModal({ idsByPackets, writeReset }: OpenModalProps) {
             className="w-24 hover:cursor-pointer"
             onClick={() => {
               closeModalOpen();
-              writeReset();
+              // writeReset();
             }}
             src="/assets/images/close.png"
             alt=""

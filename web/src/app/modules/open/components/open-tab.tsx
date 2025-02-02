@@ -4,9 +4,6 @@ import { SubmitButton } from '../../core/components/buttons';
 import { CardPackType, Packet } from '../../core/components/packet';
 import { useModal } from '../../core/hooks/use-modal';
 import { useState } from 'react';
-import { useAccount, useNetwork } from 'wagmi';
-import { dripGas } from '../../../utils';
-import { skaleNebula } from 'viem/chains';
 
 interface OpenTabProps {
   idsByPackets: { id: number; cards: number[] }[];
@@ -29,8 +26,6 @@ export function OpenTab({
   open,
   isTxnLoading,
 }: OpenTabProps) {
-  const { chain } = useNetwork();
-  const { address } = useAccount();
   const { openModalOpen } = useModal();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -45,12 +40,6 @@ export function OpenTab({
       openModalOpen();
     }
   }, [idsByPackets]);
-
-  useEffect(() => {
-    if (address) {
-      dripGas(address);
-    }
-  }, [address]);
 
   return (
     <>
@@ -79,10 +68,7 @@ export function OpenTab({
         ))}
       </div>
       <div className="flex flex-row justify-center items-center w-full">
-        <SubmitButton
-          handleClick={action}
-          disabled={isLoading || isTxnLoading || chain?.id !== skaleNebula.id}
-        >
+        <SubmitButton handleClick={action} disabled={isLoading || isTxnLoading}>
           {isTxnLoading ? 'Opening your packs' : 'OPEN PACKS'}
         </SubmitButton>
       </div>

@@ -1,41 +1,24 @@
-import '@rainbow-me/rainbowkit/styles.css';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
-import { configureChains, createConfig, WagmiConfig } from 'wagmi';
-import { alchemyProvider } from 'wagmi/providers/alchemy';
-import { publicProvider } from 'wagmi/providers/public';
+import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import App from './app/app';
-import { environment } from './environments/environment';
-import { createPublicClient, createWalletClient, http } from 'viem';
-import { skaleNebula } from 'viem/chains';
-
-const { chains } = configureChains(
-  [skaleNebula],
-  [alchemyProvider({ apiKey: environment.ALCHEMY_KEY }), publicProvider()]
-);
+import { abstractTestnet } from 'viem/chains';
+import { createPublicClient, http } from 'viem';
+import { AbstractWalletProvider } from '@abstract-foundation/agw-react';
+import { abstractTestnetRPC } from './app/modules/core/constants/utils';
+import { QueryClient } from '@tanstack/react-query';
 
 export const publicClient = createPublicClient({
-  chain: skaleNebula,
+  chain: abstractTestnet,
   transport: http(),
 });
 
-export const walletClient = createWalletClient({
-  chain: skaleNebula,
-  transport: http(),
-});
+const config = {
+  chain: abstractTestnet,
+  transport: http(abstractTestnetRPC),
+};
 
-const { connectors } = getDefaultWallets({
-  appName: 'Wits',
-  projectId: '151fefc365d4d7e68f0272463d8e7c34',
-  chains,
-});
-
-const wagmiConfig = createConfig({
-  autoConnect: true,
-  connectors,
-  publicClient,
-});
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -43,10 +26,14 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <StrictMode>
-    <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider chains={chains} showRecentTransactions>
+    <AbstractWalletProvider
+      chain={config.chain}
+      transport={config.transport}
+      queryClient={queryClient}
+    >
+      <RainbowKitProvider>
         <App />
       </RainbowKitProvider>
-    </WagmiConfig>
+    </AbstractWalletProvider>
   </StrictMode>
 );

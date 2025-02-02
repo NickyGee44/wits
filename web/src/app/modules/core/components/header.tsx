@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useStage } from '../hooks/use-stage';
-import { ConnectButton } from './buttons';
+import { ConnectButton, DisconnectButton } from './buttons';
 
 interface HeaderProps {
   title?: string;
@@ -18,8 +18,9 @@ export function Header({ title }: HeaderProps) {
         />
         {/* <div className="font-dragon text-gold text-xl">{title}</div> */}
       </div>
-      <div className="lg:absolute right-0 top-0 flex flex-row justify-center items-center m-4">
+      <div className="lg:absolute right-0 top-0 flex flex-row justify-center items-center m-4 gap-4">
         <ConnectButton />
+        <DisconnectButton />
       </div>
     </div>
   );

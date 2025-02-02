@@ -1,4 +1,4 @@
-import { useContractReads, useContractRead } from 'wagmi';
+import { useReadContracts, useReadContract } from 'wagmi';
 
 export function useTokensOfOwnerUsingIndex(
   address: `0x${string}`,
@@ -26,7 +26,7 @@ export function useTokensOfOwnerUsingIndex(
     functionName: 'tokenOfOwnerByIndex',
     args: [account, index],
   }));
-  const { data } = useContractReads({
+  const { data } = useReadContracts({
     contracts,
   });
 
@@ -38,7 +38,7 @@ export function useTokensOfOwner(
   address: `0x${string}`,
   account: `0x${string}`
 ) {
-  const { data } = useContractRead({
+  const { data } = useReadContract({
     abi: [
       {
         inputs: [{ internalType: 'address', name: 'owner', type: 'address' }],
@@ -51,7 +51,6 @@ export function useTokensOfOwner(
     address,
     functionName: 'tokensOfOwner',
     args: [account],
-    watch: true,
   });
   return formatTokens(data as bigint[]);
 }

@@ -1,8 +1,8 @@
-import { useContractRead } from 'wagmi';
+import { useReadContract } from 'wagmi';
 import { PACKETS_ABI } from '../constants/abi';
 
 export function usePrice(address: `0x${string}`, stage: number): bigint {
-  const { data } = useContractRead({
+  const { data } = useReadContract({
     abi: PACKETS_ABI,
     address,
     functionName: 'price',
@@ -13,7 +13,7 @@ export function usePrice(address: `0x${string}`, stage: number): bigint {
 }
 
 export function useDiscountedPrice(address: `0x${string}`) {
-  const { data } = useContractRead({
+  const { data } = useReadContract({
     abi: PACKETS_ABI,
     address,
     functionName: 'discountPrice',

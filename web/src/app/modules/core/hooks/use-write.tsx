@@ -2,13 +2,9 @@ import {
   useAccountModal,
   useAddRecentTransaction,
 } from '@rainbow-me/rainbowkit';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
-import {
-  useContractWrite,
-  usePrepareContractWrite,
-  useWaitForTransaction,
-} from 'wagmi';
+import { useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 import { TransactionLink } from '../components/transaction';
 import { formatError } from '../utils/error';
 
@@ -25,22 +21,15 @@ export function useWrite(
   const addRecentTransaction = useAddRecentTransaction();
   const { openAccountModal } = useAccountModal();
 
-  const { config: prepareConfig, error } = usePrepareContractWrite({
+  const { writeContract, reset } = useWriteContract({
     ...config,
-  });
-  const { data, writeAsync, reset } = useContractWrite({
-    ...prepareConfig,
-    onSettled: () => {
-      stateReset && stateReset();
-      setLoading(false);
-    },
-    onSuccess: (data) => {
-      toast.success(successMessage || <TransactionLink tx={data.hash} />, {
+    onSuccess: (hash: `0x${string}`) => {
+      toast.success(successMessage || <TransactionLink tx={hash} />, {
         duration: 3000,
       });
-      setHash(data.hash);
+      setHash(hash);
       addRecentTransaction({
-        hash: data.hash,
+        hash,
         description: context || 'Transaction',
         confirmations: 10,
       });
@@ -48,15 +37,22 @@ export function useWrite(
       setLoading(false);
       reset();
     },
-    onError: (error) => {
+    onError: (error: any) => {
       setLoading(false);
       toast.error(formatError(error));
     },
+    onSettled: () => {
+      stateReset && stateReset();
+      setLoading(false);
+    },
   });
 
-  const { status } = useWaitForTransaction({
-    hash: hash ?? '0x',
-    onSuccess(data) {
+  const { isSuccess, data } = useWaitForTransactionReceipt({
+    hash,
+  });
+
+  useEffect(() => {
+    if (isSuccess && data) {
       setHash(undefined);
       toast.success(
         successMessage || (
@@ -71,34 +67,25 @@ export function useWrite(
       );
       setLoading(false);
       reset();
-    },
-  });
-
-  console.log(status, data);
+    }
+  }, [isSuccess, data]);
 
   const action = async () => {
-    if (error) {
-      toast.error(formatError(error));
-      return;
-    }
-    let loading;
     try {
       setLoading(true);
-      loading = toast.loading(loadingMessage || 'Sending transaction...');
-      writeAsync && (await writeAsync());
+      const loading = toast.loading(loadingMessage || 'Sending transaction...');
+      writeContract(config);
+      toast.dismiss(loading);
     } catch (error) {
       console.log(error);
-      setLoading(false);
-    } finally {
-      toast.dismiss(loading);
+      toast.error(formatError(error));
       setLoading(false);
     }
   };
 
   return {
-    data,
     action,
     loading,
-    useContractWrite,
+    data,
   };
 }

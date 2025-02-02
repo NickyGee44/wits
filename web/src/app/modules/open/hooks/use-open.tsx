@@ -2,13 +2,14 @@ import { useState, useCallback, useEffect } from 'react';
 import { useAddRecentTransaction } from '@rainbow-me/rainbowkit';
 import { sortBy } from 'lodash';
 import toast from 'react-hot-toast';
-import { decodeEventLog, Log } from 'viem';
-import { useAccount, useContractWrite, useWaitForTransaction } from 'wagmi';
-import { dripGas } from '../../../utils';
+import { decodeEventLog, Log, encodeFunctionData } from 'viem';
+import { useAccount, useWaitForTransactionReceipt } from 'wagmi';
 import { TransactionLink } from '../../core/components/transaction';
 import { CARDS_ABI, PACKETS_ABI } from '../../core/constants/abi';
 import { environment } from '../../../../environments/environment';
-
+import { getGeneralPaymasterInput } from 'viem/zksync';
+import { useAbstractClient } from '@abstract-foundation/agw-react';
+import { PAYMASTER_ADDRESS } from '../../core/constants/utils';
 const access_token = process.env.NEXT_PUBLIC_ACCESS_TOKEN;
 
 if (!access_token) {
@@ -32,11 +33,12 @@ export function useOpen(
   reset: () => void
 ) {
   const { address } = useAccount();
+  const [hash, setHash] = useState<`0x${string}` | undefined>(undefined);
   const addRecentTransaction = useAddRecentTransaction();
   const [idsByPackets, setIdsByPackets] = useState<
     { id: number; cards: number[] }[]
   >([]);
-  const [apiResult, setApiResult] = useState<any>(null);
+  // const [apiResult, setApiResult] = useState<any>(null);
   const [isApiLoading, setIsApiLoading] = useState(false);
 
   const calculateIdsByPackets = useCallback(
@@ -46,12 +48,14 @@ export function useOpen(
           .filter((log) => log.address.toLowerCase() === packets.toLowerCase())
           .map((log) => {
             try {
-              return decodeEventLog({
+              const decodedLog = decodeEventLog({
                 abi: [...CARDS_ABI, ...PACKETS_ABI],
                 data: log.data,
                 topics: log.topics,
                 strict: false,
-              }) as PacketOpenedEvent;
+              }) as unknown as PacketOpenedEvent;
+
+              return decodedLog;
             } catch {
               return null;
             }
@@ -71,36 +75,65 @@ export function useOpen(
     [packets]
   );
 
-  const {
-    writeAsync,
-    data: writeData,
-    isSuccess: isWriteSuccess,
-    reset: writeReset,
-  } = useContractWrite({
-    abi: PACKETS_ABI,
-    address: packets,
-    functionName: 'open',
-    args: [ids, amounts],
-    onSettled: reset,
-    onSuccess: (data) => {
-      toast.success(<TransactionLink tx={data.hash} />, { duration: 5000 });
-      addRecentTransaction({
-        hash: data.hash,
-        description: 'Open Pack',
+  const { data: agwClient } = useAbstractClient();
+
+  const handleWriteContract = async () => {
+    try {
+      if (!agwClient) return;
+
+      console.log(address);
+      console.log(packets);
+      console.log(ids);
+      console.log(amounts);
+
+      const hash = await agwClient.sendTransactionBatch({
+        calls: [
+          {
+            to: packets,
+            args: [packets, true],
+            data: encodeFunctionData({
+              abi: PACKETS_ABI,
+              functionName: 'setApprovalForAll',
+              args: [packets, true],
+            }),
+          },
+          {
+            to: packets,
+            args: [ids, amounts],
+            data: encodeFunctionData({
+              abi: PACKETS_ABI,
+              functionName: 'open',
+              args: [ids, amounts],
+            }),
+          },
+        ],
+        paymaster: PAYMASTER_ADDRESS,
+        paymasterInput: getGeneralPaymasterInput({
+          innerInput: '0x',
+        }),
       });
-    },
-    onError: (error) => {
+
+      setHash(hash);
+
+      if (hash) {
+        toast.success(<TransactionLink tx={hash} />, { duration: 5000 });
+        addRecentTransaction({
+          hash: hash,
+          description: 'Open Pack',
+        });
+      }
+    } catch (error) {
       toast.error('Error opening');
       console.error(error);
-    },
-  });
+    }
+  };
 
   const {
     data: txData,
     isLoading: isTxLoading,
     isSuccess: isTxSuccess,
-  } = useWaitForTransaction({
-    hash: writeData?.hash,
+  } = useWaitForTransactionReceipt({
+    hash: hash as `0x${string}` | undefined,
   });
 
   useEffect(() => {
@@ -117,24 +150,6 @@ export function useOpen(
               endTokenId: packet.cards[packet.cards.length - 1],
             };
           });
-
-          // const auth_reponse = await fetch(environment.api.auth, {
-          //   method: 'POST',
-          //   headers: {
-          //     'Content-Type': 'application/json',
-          //   },
-          //   body: JSON.stringify({
-          //     username: admin_username,
-          //     password: admin_password,
-          //   }),
-          // });
-
-          // const auth_result = await auth_reponse.json();
-          // const token = auth_result.access_token;
-
-          // if (!token) {
-          //   throw new Error('Invalid token');
-          // }
 
           await fetch(environment.api.openPackets, {
             method: 'POST',
@@ -160,8 +175,7 @@ export function useOpen(
   const open = async () => {
     try {
       if (address) {
-        await dripGas(address);
-        await writeAsync();
+        await handleWriteContract();
       }
     } catch (error) {
       console.error(error);
@@ -171,9 +185,9 @@ export function useOpen(
   return {
     open,
     idsByPackets,
-    isSuccess: isWriteSuccess && isTxSuccess,
-    writeReset,
+    isSuccess: isTxSuccess,
+    // writeReset,
     isLoading: isTxLoading || isApiLoading,
-    apiResult,
+    // apiResult,
   };
 }

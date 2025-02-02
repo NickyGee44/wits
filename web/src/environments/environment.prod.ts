@@ -23,6 +23,12 @@ export const environment = {
     jumbo: 'https://wits-metadata.s3.us-east-2.amazonaws.com/JumboBox.png',
     mystery: 'https://wits-metadata.s3.us-east-2.amazonaws.com/MysteryBox.png',
   },
+  abstract: {
+    gBabies: '0x0ff1f3a53f521d74af73fe7433abf802f91ddd4e' as const,
+    quillAndInk: '0xd38123a8f534a7bbcefefa59e74f254a46818538' as const,
+    cards: '0xc9BA5AEb4c566bD309BF6eeD4b6fA880d57d65AB' as const,
+    packets: '0x190CC4D249af8825B40dB622C45AEF43d8473212' as const,
+  },
   mainnet: {
     gBabies: '0x0ff1f3a53f521d74af73fe7433abf802f91ddd4e' as const,
     quillAndInk: '0xd38123a8f534a7bbcefefa59e74f254a46818538' as const,
@@ -41,6 +47,6 @@ export const environment = {
     gBabies: '0xbB047e6DaB367faE2eEbbd96867D2efe3C7158B3' as const,
     quillAndInk: '0x02167acD64dA8201b845507E9a8ddec16fe1F7b3' as const,
   },
-  fuelStation: '0x5a6869ef5b81DCb58EBF51b8F893c31f5AFE3Fa8' as `0x${string}`,
-  functionSignature: '0x0c11dedd' as `0x${string}`,
+  // fuelStation: '0x5a6869ef5b81DCb58EBF51b8F893c31f5AFE3Fa8' as `0x${string}`,
+  // functionSignature: '0x0c11dedd' as `0x${string}`,
 };

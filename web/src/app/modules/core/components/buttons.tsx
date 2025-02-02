@@ -1,5 +1,7 @@
-import { ConnectButton as RainbowConnectButton } from '@rainbow-me/rainbowkit';
 import classNames from 'classnames';
+import { useLoginWithAbstract } from '@abstract-foundation/agw-react';
+import { useAccount } from 'wagmi';
+import { LogOut } from 'lucide-react';
 
 interface ButtonProps {
   disabled?: boolean;
@@ -53,91 +55,113 @@ export const PrimaryButton = ({ children, handleClick }: ButtonProps) => (
   </button>
 );
 
-export const ConnectButton = () => (
-  <RainbowConnectButton.Custom>
-    {({
-      account,
-      chain,
-      openAccountModal,
-      openChainModal,
-      openConnectModal,
-      authenticationStatus,
-      mounted,
-    }) => {
-      // Note: If your app doesn't use authentication, you
-      // can remove all 'authenticationStatus' checks
-      const ready = mounted && authenticationStatus !== 'loading';
-      const connected =
-        ready &&
-        account &&
-        chain &&
-        (!authenticationStatus || authenticationStatus === 'authenticated');
+export const ConnectButton = () => {
+  const { login } = useLoginWithAbstract();
+  const { address, isConnected } = useAccount();
 
-      return (
-        <div
-          {...(!ready && {
-            'aria-hidden': true,
-            style: {
-              opacity: 0,
-              pointerEvents: 'none',
-              userSelect: 'none',
-            },
-          })}
-        >
-          {(() => {
-            if (!connected) {
-              return (
-                <PrimaryButton handleClick={openConnectModal}>
-                  CONNECT WALLET
-                </PrimaryButton>
-              );
-            }
+  return (
+    <PrimaryButton handleClick={login}>
+      {isConnected
+        ? address?.slice(0, 6) + '...' + address?.slice(-4)
+        : 'Connect'}
+    </PrimaryButton>
+  );
+};
 
-            if (chain.unsupported) {
-              return (
-                <PrimaryButton handleClick={openChainModal}>
-                  Wrong network
-                </PrimaryButton>
-              );
-            }
+export const DisconnectButton = () => {
+  const { logout } = useLoginWithAbstract();
+  return (
+    <PrimaryButton handleClick={logout}>
+      <LogOut />
+    </PrimaryButton>
+  );
+};
 
-            return (
-              <div style={{ display: 'flex', gap: 12 }}>
-                <PrimaryButton handleClick={openChainModal}>
-                  <div className="flex flex-row nowrap justify-center items-center">
-                    {chain.hasIcon && (
-                      <div
-                        style={{
-                          background: chain.iconBackground,
-                          width: 12,
-                          height: 12,
-                          borderRadius: 999,
-                          overflow: 'hidden',
-                          marginRight: 4,
-                        }}
-                      >
-                        {chain.iconUrl && (
-                          <img
-                            alt={chain.name ?? 'Chain icon'}
-                            src={chain.iconUrl}
-                            style={{ width: 12, height: 12 }}
-                          />
-                        )}
-                      </div>
-                    )}
-                    {chain.name}
-                  </div>
-                </PrimaryButton>
+// export const ConnectButton = () => (
+//   <RainbowConnectButton.Custom>
+//     {({
+//       account,
+//       chain,
+//       openAccountModal,
+//       openChainModal,
+//       openConnectModal,
+//       authenticationStatus,
+//       mounted,
+//     }) => {
+//       // Note: If your app doesn't use authentication, you
+//       // can remove all 'authenticationStatus' checks
+//       const ready = mounted && authenticationStatus !== 'loading';
+//       const connected =
+//         ready &&
+//         account &&
+//         chain &&
+//         (!authenticationStatus || authenticationStatus === 'authenticated');
 
-                <PrimaryButton handleClick={openAccountModal}>
-                  {account.displayName}
-                  {account.displayBalance ? ` (${account.displayBalance})` : ''}
-                </PrimaryButton>
-              </div>
-            );
-          })()}
-        </div>
-      );
-    }}
-  </RainbowConnectButton.Custom>
-);
+//       return (
+//         <div
+//           {...(!ready && {
+//             'aria-hidden': true,
+//             style: {
+//               opacity: 0,
+//               pointerEvents: 'none',
+//               userSelect: 'none',
+//             },
+//           })}
+//         >
+//           {(() => {
+//             if (!connected) {
+//               return (
+//                 <PrimaryButton handleClick={openConnectModal}>
+//                   CONNECT WALLET
+//                 </PrimaryButton>
+//               );
+//             }
+
+//             if (chain.unsupported) {
+//               return (
+//                 <PrimaryButton handleClick={openChainModal}>
+//                   Wrong network
+//                 </PrimaryButton>
+//               );
+//             }
+
+//             return (
+//               <div style={{ display: 'flex', gap: 12 }}>
+//                 <PrimaryButton handleClick={openChainModal}>
+//                   <div className="flex flex-row nowrap justify-center items-center">
+//                     {chain.hasIcon && (
+//                       <div
+//                         style={{
+//                           background: chain.iconBackground,
+//                           width: 12,
+//                           height: 12,
+//                           borderRadius: 999,
+//                           overflow: 'hidden',
+//                           marginRight: 4,
+//                         }}
+//                       >
+//                         {chain.iconUrl && (
+//                           <img
+//                             alt={chain.name ?? 'Chain icon'}
+//                             src={chain.iconUrl}
+//                             style={{ width: 12, height: 12 }}
+//                           />
+//                         )}
+//                       </div>
+//                     )}
+//                     {chain.name}
+//                   </div>
+//                 </PrimaryButton>
+
+//                 <PrimaryButton handleClick={openAccountModal}>
+//                   {account.displayName}
+//                   {account.displayBalance ? ` (${account.displayBalance})` : ''}
+//                 </PrimaryButton>
+//               </div>
+//             );
+//           })()}
+//         </div>
+//       );
+//     }}
+//   </RainbowConnectButton.Custom>
+// );
