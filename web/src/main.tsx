@@ -2,20 +2,20 @@ import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import App from './app/app';
-import { abstractTestnet } from 'viem/chains';
+import { abstractTestnet, abstract } from 'viem/chains';
 import { createPublicClient, http } from 'viem';
 import { AbstractWalletProvider } from '@abstract-foundation/agw-react';
-import { abstractTestnetRPC } from './app/modules/core/constants/utils';
+import { abstractRPC } from './app/modules/core/constants/utils';
 import { QueryClient } from '@tanstack/react-query';
 
 export const publicClient = createPublicClient({
-  chain: abstractTestnet,
+  chain: abstract,
   transport: http(),
 });
 
 const config = {
-  chain: abstractTestnet,
-  transport: http(abstractTestnetRPC),
+  chain: abstract,
+  transport: http(abstractRPC),
 };
 
 const queryClient = new QueryClient();
