@@ -38,7 +38,6 @@ export function useOpen(
   const [idsByPackets, setIdsByPackets] = useState<
     { id: number; cards: number[] }[]
   >([]);
-  // const [apiResult, setApiResult] = useState<any>(null);
   const [isApiLoading, setIsApiLoading] = useState(false);
 
   const calculateIdsByPackets = useCallback(
@@ -80,11 +79,6 @@ export function useOpen(
   const handleWriteContract = async () => {
     try {
       if (!agwClient) return;
-
-      console.log(address);
-      console.log(packets);
-      console.log(ids);
-      console.log(amounts);
 
       const hash = await agwClient.sendTransactionBatch({
         calls: [
@@ -186,8 +180,6 @@ export function useOpen(
     open,
     idsByPackets,
     isSuccess: isTxSuccess,
-    // writeReset,
     isLoading: isTxLoading || isApiLoading,
-    // apiResult,
   };
 }
