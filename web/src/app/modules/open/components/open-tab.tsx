@@ -1,5 +1,5 @@
 import { flatten } from 'lodash';
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import { SubmitButton } from '../../core/components/buttons';
 import { CardPackType, Packet } from '../../core/components/packet';
 import { useModal } from '../../core/hooks/use-modal';
