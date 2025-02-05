@@ -10,6 +10,8 @@ interface OpenTabProps {
   isSuccess: boolean;
   isTxnLoading: boolean;
   open: () => Promise<void>;
+  approve: () => Promise<void>;
+  isApprovalPending: boolean;
   cards: {
     name: CardPackType;
     count: number;
@@ -24,15 +26,23 @@ export function OpenTab({
   idsByPackets,
   cards,
   open,
+  approve,
   isTxnLoading,
+  isApprovalPending,
 }: OpenTabProps) {
   const { openModalOpen } = useModal();
   const [isLoading, setIsLoading] = useState(false);
 
-  const action = async () => {
-    setIsLoading(true);
+  const approvePackets = async () => {
+    // setIsLoading(true);
+    await approve();
+    // setIsLoading(false);
+  };
+
+  const openPackets = async () => {
+    // setIsLoading(true);
     await open();
-    setIsLoading(false);
+    // setIsLoading(false);
   };
 
   useMemo(() => {
@@ -68,7 +78,13 @@ export function OpenTab({
         ))}
       </div>
       <div className="flex flex-row justify-center items-center w-full">
-        <SubmitButton handleClick={action} disabled={isLoading || isTxnLoading}>
+        <SubmitButton handleClick={approvePackets} disabled={isApprovalPending}>
+          {isTxnLoading ? 'Approving your packs' : 'APPROVE PACKS'}
+        </SubmitButton>
+        <SubmitButton
+          handleClick={openPackets}
+          disabled={isLoading || isTxnLoading}
+        >
           {isTxnLoading ? 'Opening your packs' : 'OPEN PACKS'}
         </SubmitButton>
       </div>

@@ -2,13 +2,18 @@ import { useState, useCallback, useEffect } from 'react';
 import { useAddRecentTransaction } from '@rainbow-me/rainbowkit';
 import { sortBy } from 'lodash';
 import toast from 'react-hot-toast';
-import { decodeEventLog, Log, encodeFunctionData } from 'viem';
+import {
+  decodeEventLog,
+  Log,
+  // encodeFunctionData
+} from 'viem';
 import { useAccount, useWaitForTransactionReceipt } from 'wagmi';
+import { useWriteContractSponsored } from '@abstract-foundation/agw-react';
 import { TransactionLink } from '../../core/components/transaction';
 import { CARDS_ABI, PACKETS_ABI } from '../../core/constants/abi';
 import { environment } from '../../../../environments/environment';
 import { getGeneralPaymasterInput } from 'viem/zksync';
-import { useAbstractClient } from '@abstract-foundation/agw-react';
+import { publicClient } from '../../../../main';
 import { PAYMASTER_ADDRESS } from '../../core/constants/utils';
 const access_token = process.env.NEXT_PUBLIC_ACCESS_TOKEN;
 
@@ -33,12 +38,32 @@ export function useOpen(
   reset: () => void
 ) {
   const { address } = useAccount();
-  const [hash, setHash] = useState<`0x${string}` | undefined>(undefined);
+  // const [hash, setHash] = useState<`0x${string}` | undefined>(undefined);
   const addRecentTransaction = useAddRecentTransaction();
   const [idsByPackets, setIdsByPackets] = useState<
     { id: number; cards: number[] }[]
   >([]);
   const [isApiLoading, setIsApiLoading] = useState(false);
+
+  const {
+    writeContractSponsored: writeContractSponsoredApproval,
+    // data: approvalHash,
+    isSuccess: isApprovalSuccess,
+    isPending: isApprovalPending,
+  } = useWriteContractSponsored();
+
+  const {
+    writeContractSponsored: writeContractSponsoredOpen,
+    data: openHash,
+    isSuccess: isOpenSuccess,
+    // isPending: isOpenPending,
+  } = useWriteContractSponsored();
+
+  useEffect(() => {
+    if (isApprovalSuccess) {
+      toast.success('Packets approved');
+    }
+  }, [isApprovalSuccess]);
 
   const calculateIdsByPackets = useCallback(
     (logs: Log[]) => {
@@ -74,45 +99,66 @@ export function useOpen(
     [packets]
   );
 
-  const { data: agwClient } = useAbstractClient();
-
-  const handleWriteContract = async () => {
+  const handleWriteContractApproval = async () => {
     try {
-      if (!agwClient) return;
-
-      const hash = await agwClient.sendTransactionBatch({
-        calls: [
-          {
-            to: packets,
-            args: [packets, true],
-            data: encodeFunctionData({
-              abi: PACKETS_ABI,
-              functionName: 'setApprovalForAll',
-              args: [packets, true],
-            }),
-          },
-          {
-            to: packets,
-            args: [ids, amounts],
-            data: encodeFunctionData({
-              abi: PACKETS_ABI,
-              functionName: 'open',
-              args: [ids, amounts],
-            }),
-          },
-        ],
-        paymaster: PAYMASTER_ADDRESS,
-        paymasterInput: getGeneralPaymasterInput({
-          innerInput: '0x',
-        }),
+      const isApproved = await publicClient.readContract({
+        address: packets,
+        abi: PACKETS_ABI,
+        functionName: 'isApprovedForAll',
+        args: [address, packets],
       });
 
-      setHash(hash);
+      if (!isApproved) {
+        writeContractSponsoredApproval({
+          abi: PACKETS_ABI,
+          address: packets,
+          functionName: 'setApprovalForAll',
+          args: [packets, true],
+          paymaster: PAYMASTER_ADDRESS,
+          paymasterInput: getGeneralPaymasterInput({
+            innerInput: '0x',
+          }),
+        });
+      } else {
+        toast.success('Packets already approved');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-      if (hash) {
-        toast.success(<TransactionLink tx={hash} />, { duration: 5000 });
+  const handleWriteContractOpen = async () => {
+    try {
+      const isApproved = await publicClient.readContract({
+        address: packets,
+        abi: PACKETS_ABI,
+        functionName: 'isApprovedForAll',
+        args: [address, packets],
+      });
+
+      if (isApproved) {
+        writeContractSponsoredOpen({
+          abi: PACKETS_ABI,
+          address: packets,
+          functionName: 'open',
+          args: [ids, amounts],
+          paymaster: PAYMASTER_ADDRESS,
+          paymasterInput: getGeneralPaymasterInput({
+            innerInput: '0x',
+          }),
+        });
+      } else {
+        toast.error('Packets not approved');
+      }
+
+      console.log('openHash', openHash);
+
+      // setHash(openHash);
+
+      if (openHash) {
+        toast.success(<TransactionLink tx={openHash} />, { duration: 5000 });
         addRecentTransaction({
-          hash: hash,
+          hash: openHash,
           description: 'Open Pack',
         });
       }
@@ -127,13 +173,16 @@ export function useOpen(
     isLoading: isTxLoading,
     isSuccess: isTxSuccess,
   } = useWaitForTransactionReceipt({
-    hash: hash as `0x${string}` | undefined,
+    hash: openHash as `0x${string}` | undefined,
   });
+
+  console.log(txData);
 
   useEffect(() => {
     const processTransaction = async () => {
-      if (isTxSuccess && txData) {
+      if (isOpenSuccess && txData) {
         const calculatedIdsByPackets = calculateIdsByPackets(txData.logs);
+        console.log(calculatedIdsByPackets);
 
         setIsApiLoading(true);
         try {
@@ -164,19 +213,29 @@ export function useOpen(
     };
 
     processTransaction();
-  }, [isTxSuccess, txData, calculateIdsByPackets]);
+  }, [isTxSuccess, txData, calculateIdsByPackets, isOpenSuccess]);
 
   const open = async () => {
     try {
       if (address) {
-        await handleWriteContract();
+        await handleWriteContractOpen();
       }
     } catch (error) {
       console.error(error);
     }
   };
 
+  const approve = async () => {
+    try {
+      await handleWriteContractApproval();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return {
+    isApprovalPending,
+    approve,
     open,
     idsByPackets,
     isSuccess: isTxSuccess,
