@@ -14,8 +14,6 @@ import { CARDS_ABI, PACKETS_ABI } from '../../core/constants/abi';
 import { environment } from '../../../../environments/environment';
 import { getGeneralPaymasterInput } from 'viem/zksync';
 import { publicClient } from '../../../../main';
-
-// import { useAbstractClient } from '@abstract-foundation/agw-react';
 import { PAYMASTER_ADDRESS } from '../../core/constants/utils';
 const access_token = process.env.NEXT_PUBLIC_ACCESS_TOKEN;
 
@@ -40,7 +38,7 @@ export function useOpen(
   reset: () => void
 ) {
   const { address } = useAccount();
-  const [hash, setHash] = useState<`0x${string}` | undefined>(undefined);
+  // const [hash, setHash] = useState<`0x${string}` | undefined>(undefined);
   const addRecentTransaction = useAddRecentTransaction();
   const [idsByPackets, setIdsByPackets] = useState<
     { id: number; cards: number[] }[]
@@ -57,7 +55,7 @@ export function useOpen(
   const {
     writeContractSponsored: writeContractSponsoredOpen,
     data: openHash,
-    // isSuccess: isOpenSuccess,
+    isSuccess: isOpenSuccess,
     // isPending: isOpenPending,
   } = useWriteContractSponsored();
 
@@ -153,12 +151,14 @@ export function useOpen(
         toast.error('Packets not approved');
       }
 
-      setHash(openHash);
+      console.log('openHash', openHash);
 
-      if (hash) {
-        toast.success(<TransactionLink tx={hash} />, { duration: 5000 });
+      // setHash(openHash);
+
+      if (openHash) {
+        toast.success(<TransactionLink tx={openHash} />, { duration: 5000 });
         addRecentTransaction({
-          hash: hash,
+          hash: openHash,
           description: 'Open Pack',
         });
       }
@@ -173,13 +173,16 @@ export function useOpen(
     isLoading: isTxLoading,
     isSuccess: isTxSuccess,
   } = useWaitForTransactionReceipt({
-    hash: hash as `0x${string}` | undefined,
+    hash: openHash as `0x${string}` | undefined,
   });
+
+  console.log(txData);
 
   useEffect(() => {
     const processTransaction = async () => {
-      if (isTxSuccess && txData) {
+      if (isOpenSuccess && txData) {
         const calculatedIdsByPackets = calculateIdsByPackets(txData.logs);
+        console.log(calculatedIdsByPackets);
 
         setIsApiLoading(true);
         try {
@@ -210,7 +213,7 @@ export function useOpen(
     };
 
     processTransaction();
-  }, [isTxSuccess, txData, calculateIdsByPackets]);
+  }, [isTxSuccess, txData, calculateIdsByPackets, isOpenSuccess]);
 
   const open = async () => {
     try {
