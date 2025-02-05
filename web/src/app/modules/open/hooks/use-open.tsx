@@ -51,7 +51,7 @@ export function useOpen(
     writeContractSponsored: writeContractSponsoredApproval,
     // data: approvalHash,
     isSuccess: isApprovalSuccess,
-    // isPending: isApprovalPending,
+    isPending: isApprovalPending,
   } = useWriteContractSponsored();
 
   const {
@@ -60,6 +60,12 @@ export function useOpen(
     // isSuccess: isOpenSuccess,
     // isPending: isOpenPending,
   } = useWriteContractSponsored();
+
+  useEffect(() => {
+    if (isApprovalSuccess) {
+      toast.success('Packets approved');
+    }
+  }, [isApprovalSuccess]);
 
   const calculateIdsByPackets = useCallback(
     (logs: Log[]) => {
@@ -95,10 +101,8 @@ export function useOpen(
     [packets]
   );
 
-  const handleWriteContract = async () => {
+  const handleWriteContractApproval = async () => {
     try {
-      console.log(packets);
-
       const isApproved = await publicClient.readContract({
         address: packets,
         abi: PACKETS_ABI,
@@ -117,9 +121,24 @@ export function useOpen(
             innerInput: '0x',
           }),
         });
+      } else {
+        toast.success('Packets already approved');
       }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-      if (!isApproved ? isApprovalSuccess : true) {
+  const handleWriteContractOpen = async () => {
+    try {
+      const isApproved = await publicClient.readContract({
+        address: packets,
+        abi: PACKETS_ABI,
+        functionName: 'isApprovedForAll',
+        args: [address, packets],
+      });
+
+      if (isApproved) {
         writeContractSponsoredOpen({
           abi: PACKETS_ABI,
           address: packets,
@@ -130,6 +149,8 @@ export function useOpen(
             innerInput: '0x',
           }),
         });
+      } else {
+        toast.error('Packets not approved');
       }
 
       setHash(openHash);
@@ -194,14 +215,24 @@ export function useOpen(
   const open = async () => {
     try {
       if (address) {
-        await handleWriteContract();
+        await handleWriteContractOpen();
       }
     } catch (error) {
       console.error(error);
     }
   };
 
+  const approve = async () => {
+    try {
+      await handleWriteContractApproval();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return {
+    isApprovalPending,
+    approve,
     open,
     idsByPackets,
     isSuccess: isTxSuccess,
