@@ -2,13 +2,20 @@ import { useState, useCallback, useEffect } from 'react';
 import { useAddRecentTransaction } from '@rainbow-me/rainbowkit';
 import { sortBy } from 'lodash';
 import toast from 'react-hot-toast';
-import { decodeEventLog, Log, encodeFunctionData } from 'viem';
+import {
+  decodeEventLog,
+  Log,
+  // encodeFunctionData
+} from 'viem';
 import { useAccount, useWaitForTransactionReceipt } from 'wagmi';
+import { useWriteContractSponsored } from '@abstract-foundation/agw-react';
 import { TransactionLink } from '../../core/components/transaction';
 import { CARDS_ABI, PACKETS_ABI } from '../../core/constants/abi';
 import { environment } from '../../../../environments/environment';
 import { getGeneralPaymasterInput } from 'viem/zksync';
-import { useAbstractClient } from '@abstract-foundation/agw-react';
+import { publicClient } from '../../../../main';
+
+// import { useAbstractClient } from '@abstract-foundation/agw-react';
 import { PAYMASTER_ADDRESS } from '../../core/constants/utils';
 const access_token = process.env.NEXT_PUBLIC_ACCESS_TOKEN;
 
@@ -39,6 +46,20 @@ export function useOpen(
     { id: number; cards: number[] }[]
   >([]);
   const [isApiLoading, setIsApiLoading] = useState(false);
+
+  const {
+    writeContractSponsored: writeContractSponsoredApproval,
+    // data: approvalHash,
+    isSuccess: isApprovalSuccess,
+    // isPending: isApprovalPending,
+  } = useWriteContractSponsored();
+
+  const {
+    writeContractSponsored: writeContractSponsoredOpen,
+    data: openHash,
+    // isSuccess: isOpenSuccess,
+    // isPending: isOpenPending,
+  } = useWriteContractSponsored();
 
   const calculateIdsByPackets = useCallback(
     (logs: Log[]) => {
@@ -74,40 +95,44 @@ export function useOpen(
     [packets]
   );
 
-  const { data: agwClient } = useAbstractClient();
-
   const handleWriteContract = async () => {
     try {
-      if (!agwClient) return;
+      console.log(packets);
 
-      const hash = await agwClient.sendTransactionBatch({
-        calls: [
-          {
-            to: packets,
-            args: [packets, true],
-            data: encodeFunctionData({
-              abi: PACKETS_ABI,
-              functionName: 'setApprovalForAll',
-              args: [packets, true],
-            }),
-          },
-          {
-            to: packets,
-            args: [ids, amounts],
-            data: encodeFunctionData({
-              abi: PACKETS_ABI,
-              functionName: 'open',
-              args: [ids, amounts],
-            }),
-          },
-        ],
-        paymaster: PAYMASTER_ADDRESS,
-        paymasterInput: getGeneralPaymasterInput({
-          innerInput: '0x',
-        }),
+      const isApproved = await publicClient.readContract({
+        address: packets,
+        abi: PACKETS_ABI,
+        functionName: 'isApprovedForAll',
+        args: [address, packets],
       });
 
-      setHash(hash);
+      if (!isApproved) {
+        writeContractSponsoredApproval({
+          abi: PACKETS_ABI,
+          address: packets,
+          functionName: 'setApprovalForAll',
+          args: [packets, true],
+          paymaster: PAYMASTER_ADDRESS,
+          paymasterInput: getGeneralPaymasterInput({
+            innerInput: '0x',
+          }),
+        });
+      }
+
+      if (!isApproved ? isApprovalSuccess : true) {
+        writeContractSponsoredOpen({
+          abi: PACKETS_ABI,
+          address: packets,
+          functionName: 'open',
+          args: [ids, amounts],
+          paymaster: PAYMASTER_ADDRESS,
+          paymasterInput: getGeneralPaymasterInput({
+            innerInput: '0x',
+          }),
+        });
+      }
+
+      setHash(openHash);
 
       if (hash) {
         toast.success(<TransactionLink tx={hash} />, { duration: 5000 });
