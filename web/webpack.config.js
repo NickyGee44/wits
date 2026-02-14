@@ -17,7 +17,7 @@ module.exports = composePlugins(
     if (isProduction) {
       // In production, use the environment variables set in the environment
       envKeys = Object.keys(process.env).reduce((prev, next) => {
-        if (next.startsWith('NEXT_PUBLIC_')) {
+        if (next.startsWith('NEXT_PUBLIC_') || next.startsWith('NX_')) {
           prev[`process.env.${next}`] = JSON.stringify(process.env[next]);
         }
         return prev;

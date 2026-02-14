@@ -1,5 +1,5 @@
 export const environment = {
-  ALCHEMY_KEY: 'm3ADmeHfQSDpLG8JGiakIHdOwKdH9p_Z',
+  ALCHEMY_KEY: process.env.NX_ALCHEMY_KEY || '',
   metadata: {
     url: 'https://api.wits.academy/packs/token',
     image: 'https://api.wits.academy/images/cards',
